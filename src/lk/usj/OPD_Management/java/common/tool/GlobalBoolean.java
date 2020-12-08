@@ -12,16 +12,4 @@ public final class GlobalBoolean {
         GlobalBoolean.lock = lock;
     }
 
-//    private static BooleanProperty discardProperty = new SimpleBooleanProperty();
-//    public static boolean getDiscardProperty() {
-//        return discardProperty.get();
-//    }
-//
-//    public static void setDiscardProperty(boolean value) {
-//        discardProperty.set(value);
-//    }
-//
-//    public static BooleanProperty discardProperty() {
-//        return discardProperty;
-//    }
 }

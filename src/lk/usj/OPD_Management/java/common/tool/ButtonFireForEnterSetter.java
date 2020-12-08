@@ -8,13 +8,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 
-/**
- * Created by IntelliJ IDEA.
- *
- * @author pandu
- * Date: 7/11/2018
- * Time: 11:12 AM
- */
 public final class ButtonFireForEnterSetter {
 
 
