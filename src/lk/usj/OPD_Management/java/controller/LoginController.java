@@ -20,6 +20,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import lk.usj.OPD_Management.java.common.Common;
 import lk.usj.OPD_Management.java.common.tool.ButtonFireForEnterSetter;
 import lk.usj.OPD_Management.java.common.tool.GlobalBoolean;
 import lk.usj.OPD_Management.java.dto.AdminDTO;
@@ -61,13 +62,13 @@ public class LoginController implements Initializable{
     @FXML
     void loginButton1_onAction(ActionEvent event){
         try {
-
             if (loginBO.isValidPassword(new AdminDTO(usernameTxt1.getText(), passwordTxt1.getText()))) {
                 try {
                     Parent parent = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/dashboard.fxml"));
                     Scene scene = new Scene(parent);
                     Stage stage = new Stage();
                     stage.setScene(scene);
+                    stage.setTitle("Dashboard");
                     stage.centerOnScreen();
                     stage.setResizable(true);
                     stage.setMaximized(true);
@@ -77,15 +78,15 @@ public class LoginController implements Initializable{
 
 
                 } catch (IOException e) {
-//                    callLogger(e);
+                    e.printStackTrace();
                 }
             } else {
-                //Common.showError("Invalid Email name or password.");
+                Common.showError("Invalid Email name or password.");
             }
         } catch (NullPointerException e) {
-            //Common.showMessage("This Email is no longer available.");
+            Common.showMessage("This Email is no longer available.");
         } catch (Exception e) {
-//            callLogger(e);
+            e.printStackTrace();
         }
     }
 
@@ -98,7 +99,7 @@ public class LoginController implements Initializable{
         passwordTxt1.clear();
         loginBO = BOFactory.getInstance().getBO(BOFactory.BOTypes.LOG_IN);
 
-        FadeTransition fade = new FadeTransition(Duration.seconds(2), root);
+        FadeTransition fade = new FadeTransition(Duration.seconds(3), root);
 
         fade.setFromValue(0);
         fade.setToValue(2);

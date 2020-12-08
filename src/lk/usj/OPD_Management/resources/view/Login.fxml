@@ -151,7 +151,7 @@
                                     </VBox>
                                     <VBox alignment="TOP_CENTER">
                                        <children>
-                                          <JFXTextField fx:id="usernameTxt1" focusColor="#cdcdcd" prefHeight="27.0" prefWidth="179.0" promptText="username" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" unFocusColor="#4d4d4d00">
+                                          <JFXTextField fx:id="usernameTxt1" focusColor="#cdcdcd" onAction="#usernameTxt1_onAction" prefHeight="27.0" prefWidth="179.0" promptText="username" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" unFocusColor="#4d4d4d00">
                                              <font>
                                                 <Font name="Gotham-Book" size="10.0" />
                                              </font>
@@ -172,7 +172,7 @@
                                     </VBox>
                                     <VBox alignment="CENTER">
                                        <children>
-                                          <JFXPasswordField fx:id="passwordTxt1" focusColor="#cdcdcd" prefHeight="21.0" prefWidth="177.0" promptText="Password" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" unFocusColor="#4d4d4d00">
+                                          <JFXPasswordField fx:id="passwordTxt1" focusColor="#cdcdcd" onAction="#passwordTxt1_onAction" prefHeight="21.0" prefWidth="177.0" promptText="Password" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" unFocusColor="#4d4d4d00">
                                              <font>
                                                 <Font name="Gotham-Book" size="10.0" />
                                              </font>
@@ -199,7 +199,7 @@
                                     </VBox>
                                     <VBox alignment="TOP_CENTER" prefWidth="219.0" VBox.vgrow="ALWAYS">
                                        <children>
-                                          <JFXButton fx:id="loginButton1" prefHeight="35.0" prefWidth="177.0" ripplerFill="#00000010" style="-fx-background-color: #1CC270; -fx-background-radius: 5px;" text="LOGIN" textFill="WHITE">
+                                          <JFXButton fx:id="loginButton1" onAction="#loginButton1_onAction" prefHeight="35.0" prefWidth="177.0" ripplerFill="#00000010" style="-fx-background-color: #1CC270; -fx-background-radius: 5px;" text="LOGIN" textFill="WHITE">
                                              <font>
                                                 <Font name="Gotham Bold" size="12.0" />
                                              </font>
