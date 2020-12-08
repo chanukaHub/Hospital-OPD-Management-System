@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXPasswordField?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import java.lang.String?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <HBox fx:id="root" minHeight="414.0" minWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.LoginController">
    <children>
@@ -78,20 +73,23 @@
                            <children>
                               <VBox prefHeight="341.0" prefWidth="219.0" style="-fx-background-color: #ffffff;">
                                  <children>
-                                    <VBox alignment="BOTTOM_CENTER" prefWidth="219.0" VBox.vgrow="ALWAYS">
+                                    <VBox alignment="BOTTOM_CENTER" prefHeight="40.0" prefWidth="219.0" VBox.vgrow="ALWAYS">
                                        <children>
-                                          <Label text="Login">
+                                          <Label prefWidth="70.0" text="Login">
                                              <font>
                                                 <Font name="Gotham Bold" size="24.0" />
                                              </font>
                                           </Label>
                                        </children>
+                                       <padding>
+                                          <Insets bottom="15.0" />
+                                       </padding>
                                     </VBox>
-                                    <VBox prefHeight="50.0" prefWidth="100.0">
+                                    <VBox prefHeight="60.0" prefWidth="100.0">
                                        <children>
                                           <HBox alignment="CENTER" spacing="12.0" VBox.vgrow="ALWAYS">
                                              <children>
-                                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #2484FF; -fx-background-radius: 50px;" styleClass="hover_login_user_button" stylesheets="@../css/styles.css">
+                                                <HBox fx:id="patientBtn" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #2484FF; -fx-background-radius: 50px;" styleClass="hover_login_user_button" stylesheets="@../css/styles.css">
                                                    <HBox.margin>
                                                       <Insets />
                                                    </HBox.margin>
@@ -103,7 +101,7 @@
                                                       </ImageView>
                                                    </children>
                                                 </HBox>
-                                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #B8B6C7; -fx-background-radius: 50px;" stylesheets="@../css/styles.css">
+                                                <HBox fx:id="doctorBtn" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #B8B6C7; -fx-background-radius: 50px;" stylesheets="@../css/styles.css">
                                                    <HBox.margin>
                                                       <Insets />
                                                    </HBox.margin>
@@ -115,7 +113,7 @@
                                                       </ImageView>
                                                    </children>
                                                 </HBox>
-                                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #B8B6C7; -fx-background-radius: 50px;" styleClass="hover_login_user_button" stylesheets="@../css/styles.css">
+                                                <HBox fx:id="receptionistBtn" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #B8B6C7; -fx-background-radius: 50px;" styleClass="hover_login_user_button" stylesheets="@../css/styles.css">
                                                    <HBox.margin>
                                                       <Insets />
                                                    </HBox.margin>
@@ -127,7 +125,7 @@
                                                       </ImageView>
                                                    </children>
                                                 </HBox>
-                                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #B8B6C7; -fx-background-radius: 50px;" styleClass="hover_login_user_button" stylesheets="@../css/styles.css">
+                                                <HBox fx:id="adminBtn" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #B8B6C7; -fx-background-radius: 50px;" styleClass="hover_login_user_button" stylesheets="@../css/styles.css">
                                                    <HBox.margin>
                                                       <Insets />
                                                    </HBox.margin>
@@ -141,12 +139,76 @@
                                                 </HBox>
                                              </children>
                                              <VBox.margin>
-                                                <Insets bottom="10.0" left="30.0" right="30.0" top="10.0" />
+                                                <Insets left="30.0" right="30.0" top="10.0" />
                                              </VBox.margin>
+                                          </HBox>
+                                          <HBox prefWidth="200.0">
+                                             <VBox.margin>
+                                                <Insets left="20.0" right="20.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <HBox alignment="CENTER" prefWidth="200.0">
+                                                   <children>
+                                                      <Text fill="#7f858d" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient">
+                                                         <font>
+                                                            <Font name="Gotham-Book" size="8.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets bottom="6.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Text>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="5.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <HBox alignment="CENTER" prefWidth="200.0" spacing="5.0">
+                                                   <children>
+                                                      <Text fill="#7f858d" strokeType="OUTSIDE" strokeWidth="0.0" text="Doctor">
+                                                         <font>
+                                                            <Font name="Gotham-Book" size="8.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets bottom="6.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Text>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="3.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <HBox alignment="CENTER" prefWidth="200.0">
+                                                   <children>
+                                                      <Text fill="#7f858d" strokeType="OUTSIDE" strokeWidth="0.0" text="Receptionist">
+                                                         <font>
+                                                            <Font name="Gotham-Book" size="8.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets bottom="6.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Text>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER" prefWidth="200.0">
+                                                   <children>
+                                                      <Text fill="#7f858d" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin">
+                                                         <font>
+                                                            <Font name="Gotham-Book" size="8.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets bottom="6.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Text>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets right="5.0" />
+                                                   </padding>
+                                                </HBox>
+                                             </children>
                                           </HBox>
                                        </children>
                                        <VBox.margin>
-                                          <Insets top="20.0" />
+                                          <Insets />
                                        </VBox.margin>
                                     </VBox>
                                     <VBox alignment="TOP_CENTER">
@@ -187,7 +249,7 @@
                                     </VBox>
                                     <VBox alignment="TOP_RIGHT">
                                        <children>
-                                          <Label accessibleRole="HYPERLINK" text="Forgot Your Password?" textFill="#b8b6c7">
+                                          <Label accessibleRole="HYPERLINK" text="Forgot Your Password?" textFill="#7f858d">
                                              <font>
                                                 <Font name="Gotham-Book" size="10.0" />
                                              </font>
