@@ -64,7 +64,7 @@ public class LoginController implements Initializable{
         try {
             if (loginBO.isValidPassword(new AdminDTO(usernameTxt1.getText(), passwordTxt1.getText()))) {
                 try {
-                    Parent parent = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/dashboard.fxml"));
+                    Parent parent = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_base.fxml"));
                     Scene scene = new Scene(parent);
                     Stage stage = new Stage();
                     stage.setScene(scene);
