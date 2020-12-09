@@ -51,12 +51,12 @@ public class LoginController implements Initializable{
 
     @FXML
     void usernameTxt1_onAction(ActionEvent event){
-        usernameTxt1.requestFocus();
+        passwordTxt1.requestFocus();
     }
 
     @FXML
     void passwordTxt1_onAction(ActionEvent event){
-        passwordTxt1.requestFocus();
+        loginButton1.requestFocus();
     }
 
     @FXML
