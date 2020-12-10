@@ -14,10 +14,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import lk.usj.OPD_Management.java.common.Common;
@@ -41,6 +47,18 @@ public class LoginController implements Initializable{
     private URL location;
 
     @FXML
+    private HBox patientBtn;
+
+    @FXML
+    private HBox doctorBtn;
+
+    @FXML
+    private HBox receptionistBtn;
+
+    @FXML
+    private HBox adminBtn;
+
+    @FXML
     private JFXTextField usernameTxt1;
 
     @FXML
@@ -48,6 +66,78 @@ public class LoginController implements Initializable{
 
     @FXML
     private JFXButton loginButton1;
+
+    @FXML
+    void ReceptionistClick(MouseEvent event) {
+        patientBtn.getStyleClass().removeAll("selected_login_type_btn");
+        doctorBtn.getStyleClass().removeAll("selected_login_type_btn");
+        receptionistBtn.getStyleClass().removeAll("selected_login_type_btn");
+        adminBtn.getStyleClass().removeAll("selected_login_type_btn");
+
+        patientBtn.getStyleClass().add("login_type_btn");
+        doctorBtn.getStyleClass().add("login_type_btn");
+        receptionistBtn.getStyleClass().add("selected_login_type_btn");
+        adminBtn.getStyleClass().add("login_type_btn");
+
+        /*BackgroundFill background_fill = new BackgroundFill(Color.rgb(80, 157, 255), CornerRadii.EMPTY, Insets.EMPTY);
+        Background background = new Background(background_fill);
+        receptionistBtn.setBackground(background);*/
+
+    }
+
+    @FXML
+    void adminClick(MouseEvent event) {
+        patientBtn.getStyleClass().removeAll("selected_login_type_btn");
+        doctorBtn.getStyleClass().removeAll("selected_login_type_btn");
+        receptionistBtn.getStyleClass().removeAll("selected_login_type_btn");
+        adminBtn.getStyleClass().removeAll("selected_login_type_btn");
+
+        patientBtn.getStyleClass().add("login_type_btn");
+        doctorBtn.getStyleClass().add("login_type_btn");
+        receptionistBtn.getStyleClass().add("login_type_btn");
+        adminBtn.getStyleClass().add("selected_login_type_btn");
+
+        /*BackgroundFill background_fill = new BackgroundFill(Color.rgb(80, 157, 255), CornerRadii.EMPTY, Insets.EMPTY);
+        Background background = new Background(background_fill);
+        adminBtn.setBackground(background);*/
+
+
+    }
+
+    @FXML
+    void doctorClick(MouseEvent event) {
+        patientBtn.getStyleClass().removeAll("selected_login_type_btn");
+        doctorBtn.getStyleClass().removeAll("selected_login_type_btn");
+        receptionistBtn.getStyleClass().removeAll("selected_login_type_btn");
+        adminBtn.getStyleClass().removeAll("selected_login_type_btn");
+
+        patientBtn.getStyleClass().add("login_type_btn");
+        doctorBtn.getStyleClass().add("selected_login_type_btn");
+        receptionistBtn.getStyleClass().add("login_type_btn");
+        adminBtn.getStyleClass().add("login_type_btn");
+
+        /*BackgroundFill background_fill = new BackgroundFill(Color.rgb(80, 157, 255), CornerRadii.EMPTY, Insets.EMPTY);
+        Background background = new Background(background_fill);
+        adminBtn.setBackground(background);*/
+    }
+
+    @FXML
+    void patientClick(MouseEvent event) {
+        patientBtn.getStyleClass().removeAll("selected_login_type_btn");
+        doctorBtn.getStyleClass().removeAll("selected_login_type_btn");
+        receptionistBtn.getStyleClass().removeAll("selected_login_type_btn");
+        adminBtn.getStyleClass().removeAll("selected_login_type_btn");
+
+        patientBtn.getStyleClass().add("selected_login_type_btn");
+        doctorBtn.getStyleClass().add("login_type_btn");
+        receptionistBtn.getStyleClass().add("login_type_btn");
+        adminBtn.getStyleClass().add("login_type_btn");
+
+        /*BackgroundFill background_fill = new BackgroundFill(Color.rgb(80, 157, 255), CornerRadii.EMPTY, Insets.EMPTY);
+        Background background = new Background(background_fill);
+        patientBtn.setBackground(background);*/
+
+    }
 
     @FXML
     void usernameTxt1_onAction(ActionEvent event){
@@ -93,6 +183,21 @@ public class LoginController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        patientBtn.getStyleClass().add("selected_login_type_btn");
+        doctorBtn.getStyleClass().add("login_type_btn");
+        receptionistBtn.getStyleClass().add("login_type_btn");
+        adminBtn.getStyleClass().add("login_type_btn");
+
+        /*BackgroundFill background_fill = new BackgroundFill(Color.rgb(80, 157, 255), CornerRadii.EMPTY, Insets.EMPTY);
+        Background background = new Background(background_fill);
+        patientBtn.setBackground(background);
+
+        BackgroundFill background_fill2 = new BackgroundFill(Color.rgb(184, 182, 199), CornerRadii.EMPTY, Insets.EMPTY);
+        Background background2 = new Background(background_fill2);
+        doctorBtn.setBackground(background2);*/
+
+
         GlobalBoolean.setLock(false);
         ButtonFireForEnterSetter.setGlobalEventHandler(root);
         usernameTxt1.clear();

@@ -14,3 +14,13 @@
 .hover_mouse_hand:hover {
     -fx-cursor: hand;
 }
+
+.login_type_btn{
+    -fx-background-radius: 50;
+    -fx-background-color: #B8B6C7;
+}
+
+.selected_login_type_btn{
+    -fx-background-radius: 50;
+    -fx-background-color: #2484ff;
+}
