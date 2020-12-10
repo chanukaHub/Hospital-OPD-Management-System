@@ -37,6 +37,8 @@ import lk.usj.OPD_Management.java.service.custom.LoginBO;
 public class LoginController implements Initializable{
 
     private LoginBO loginBO;
+    String userType="Patient";
+
     @FXML
     private HBox root;
 
@@ -79,10 +81,7 @@ public class LoginController implements Initializable{
         receptionistBtn.getStyleClass().add("selected_login_type_btn");
         adminBtn.getStyleClass().add("login_type_btn");
 
-        /*BackgroundFill background_fill = new BackgroundFill(Color.rgb(80, 157, 255), CornerRadii.EMPTY, Insets.EMPTY);
-        Background background = new Background(background_fill);
-        receptionistBtn.setBackground(background);*/
-
+        userType = "Receptionist";
     }
 
     @FXML
@@ -97,10 +96,7 @@ public class LoginController implements Initializable{
         receptionistBtn.getStyleClass().add("login_type_btn");
         adminBtn.getStyleClass().add("selected_login_type_btn");
 
-        /*BackgroundFill background_fill = new BackgroundFill(Color.rgb(80, 157, 255), CornerRadii.EMPTY, Insets.EMPTY);
-        Background background = new Background(background_fill);
-        adminBtn.setBackground(background);*/
-
+        userType = "Admin";
 
     }
 
@@ -116,9 +112,7 @@ public class LoginController implements Initializable{
         receptionistBtn.getStyleClass().add("login_type_btn");
         adminBtn.getStyleClass().add("login_type_btn");
 
-        /*BackgroundFill background_fill = new BackgroundFill(Color.rgb(80, 157, 255), CornerRadii.EMPTY, Insets.EMPTY);
-        Background background = new Background(background_fill);
-        adminBtn.setBackground(background);*/
+        userType = "Doctor";
     }
 
     @FXML
@@ -133,10 +127,7 @@ public class LoginController implements Initializable{
         receptionistBtn.getStyleClass().add("login_type_btn");
         adminBtn.getStyleClass().add("login_type_btn");
 
-        /*BackgroundFill background_fill = new BackgroundFill(Color.rgb(80, 157, 255), CornerRadii.EMPTY, Insets.EMPTY);
-        Background background = new Background(background_fill);
-        patientBtn.setBackground(background);*/
-
+        userType = "Patient";
     }
 
     @FXML
@@ -146,33 +137,42 @@ public class LoginController implements Initializable{
 
     @FXML
     void passwordTxt1_onAction(ActionEvent event){
-        loginButton1.requestFocus();
+        loginButton1_onAction(event);
     }
 
     @FXML
     void loginButton1_onAction(ActionEvent event){
         try {
-            if (loginBO.isValidPassword(new AdminDTO(usernameTxt1.getText(), passwordTxt1.getText()))) {
-                try {
-                    Parent parent = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_base.fxml"));
-                    Scene scene = new Scene(parent);
-                    Stage stage = new Stage();
-                    stage.setScene(scene);
-                    stage.setTitle("Dashboard");
-                    stage.centerOnScreen();
-                    stage.setResizable(false);
-                    //stage.setMaximized(true);
-                    stage.show();
+            if (userType.equals("Admin")){
+                if (loginBO.isValidPassword(new AdminDTO(usernameTxt1.getText(), passwordTxt1.getText()))) {
+                    try {
+                        Parent parent = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_base.fxml"));
+                        Scene scene = new Scene(parent);
+                        Stage stage = new Stage();
+                        stage.setScene(scene);
+                        stage.setTitle("Admin Dashboard");
+                        stage.centerOnScreen();
+                        stage.setResizable(false);
+                        //stage.setMaximized(true);
+                        stage.show();
 
-                    ((Node)(event.getSource())).getScene().getWindow().hide();
+                        ((Node)(event.getSource())).getScene().getWindow().hide();
 
 
-                } catch (IOException e) {
-                    e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    Common.showError("Invalid Email name or password.");
                 }
-            } else {
-                Common.showError("Invalid Email name or password.");
+            }else{
+                Common.showError("Oi Oi Admin vitharai hadala thiyenne.....");
             }
+
+
+
+
+
         } catch (NullPointerException e) {
             Common.showMessage("This Email is no longer available.");
         } catch (Exception e) {
@@ -188,14 +188,6 @@ public class LoginController implements Initializable{
         doctorBtn.getStyleClass().add("login_type_btn");
         receptionistBtn.getStyleClass().add("login_type_btn");
         adminBtn.getStyleClass().add("login_type_btn");
-
-        /*BackgroundFill background_fill = new BackgroundFill(Color.rgb(80, 157, 255), CornerRadii.EMPTY, Insets.EMPTY);
-        Background background = new Background(background_fill);
-        patientBtn.setBackground(background);
-
-        BackgroundFill background_fill2 = new BackgroundFill(Color.rgb(184, 182, 199), CornerRadii.EMPTY, Insets.EMPTY);
-        Background background2 = new Background(background_fill2);
-        doctorBtn.setBackground(background2);*/
 
 
         GlobalBoolean.setLock(false);
