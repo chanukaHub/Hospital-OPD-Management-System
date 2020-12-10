@@ -12,13 +12,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox>
          <children>
             <VBox>
                <children>
-                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Visitor">
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Postal">
                      <font>
                         <Font name="Gotham Bold" size="16.0" />
                      </font>
@@ -50,7 +50,7 @@
                   <Insets left="15.0" right="15.0" top="15.0" />
                </padding>
                <children>
-                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Reference No">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
                      </font>
@@ -58,7 +58,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <Label prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="Name" textFill="#282b2f">
+                  <Label prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="Reference No" textFill="#282b2f">
                      <padding>
                         <Insets left="5.0" />
                      </padding>
@@ -69,7 +69,7 @@
                         <Insets bottom="25.0" />
                      </VBox.margin>
                   </Label>
-                  <Text fill="#282b2f" layoutX="25.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Purpose">
+                  <Text fill="#282b2f" layoutX="25.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="From Address">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
                      </font>
@@ -88,7 +88,7 @@
                         <Insets bottom="25.0" />
                      </VBox.margin>
                   </Label>
-                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone No">
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="To Adress">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
                      </font>
@@ -96,7 +96,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <Label layoutX="25.0" layoutY="166.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="012 345 6789" textFill="#282b2f">
+                  <Label layoutX="25.0" layoutY="166.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="To Adress" textFill="#282b2f">
                      <padding>
                         <Insets left="5.0" />
                      </padding>
@@ -107,7 +107,7 @@
                         <Insets bottom="25.0" />
                      </VBox.margin>
                   </Label>
-                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="NIC No">
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="From Name">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
                      </font>
@@ -115,7 +115,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <Label layoutX="25.0" layoutY="191.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="123456789V" textFill="#282b2f">
+                  <Label layoutX="25.0" layoutY="191.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="John Doe" textFill="#282b2f">
                      <padding>
                         <Insets left="5.0" />
                      </padding>
@@ -126,6 +126,40 @@
                         <Insets bottom="25.0" />
                      </VBox.margin>
                   </Label>
+                  <Text fill="#282b2f" layoutX="25.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To Name">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Label layoutX="25.0" layoutY="270.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="John Doe" textFill="#282b2f">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="25.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+            <VBox prefWidth="250.0">
+               <padding>
+                  <Insets left="15.0" right="15.0" top="15.0" />
+               </padding>
+               <children>
+                  <HBox layoutX="25.0" layoutY="45.0" spacing="10.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
                   <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
@@ -135,9 +169,6 @@
                      </VBox.margin>
                   </Text>
                   <HBox spacing="5.0">
-                     <VBox.margin>
-                        <Insets bottom="25.0" />
-                     </VBox.margin>
                      <children>
                         <Label prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="31" textFill="#282b2f">
                            <padding>
@@ -164,98 +195,8 @@
                            </font>
                         </Label>
                      </children>
-                  </HBox>
-               </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </VBox>
-            <VBox prefWidth="250.0">
-               <padding>
-                  <Insets left="15.0" right="15.0" top="15.0" />
-               </padding>
-               <children>
-                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="In Time">
-                     <font>
-                        <Font name="Gotham-Book" size="12.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets bottom="5.0" />
-                     </VBox.margin>
-                  </Text>
-                  <HBox spacing="5.0">
-                     <children>
-                        <Label prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="00" textFill="#282b2f">
-                           <padding>
-                              <Insets left="5.0" />
-                           </padding>
-                           <font>
-                              <Font name="Gotham-Book" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="00" textFill="#282b2f">
-                           <padding>
-                              <Insets left="5.0" />
-                           </padding>
-                           <font>
-                              <Font name="Gotham-Book" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="AM" textFill="#282b2f">
-                           <padding>
-                              <Insets left="5.0" />
-                           </padding>
-                           <font>
-                              <Font name="Gotham-Book" size="12.0" />
-                           </font>
-                        </Label>
-                     </children>
                      <VBox.margin>
                         <Insets bottom="25.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <Text fill="#282b2f" layoutX="25.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OutTime">
-                     <font>
-                        <Font name="Gotham-Book" size="12.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets bottom="5.0" />
-                     </VBox.margin>
-                  </Text>
-                  <HBox layoutX="25.0" layoutY="45.0" spacing="5.0">
-                     <children>
-                        <Label prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="00" textFill="#282b2f">
-                           <padding>
-                              <Insets left="5.0" />
-                           </padding>
-                           <font>
-                              <Font name="Gotham-Book" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="00" textFill="#282b2f">
-                           <padding>
-                              <Insets left="5.0" />
-                           </padding>
-                           <font>
-                              <Font name="Gotham-Book" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="AM" textFill="#282b2f">
-                           <padding>
-                              <Insets left="5.0" />
-                           </padding>
-                           <font>
-                              <Font name="Gotham-Book" size="12.0" />
-                           </font>
-                        </Label>
-                     </children>
-                     <VBox.margin>
-                        <Insets bottom="25.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox layoutX="25.0" layoutY="45.0" spacing="10.0">
-                     <VBox.margin>
-                        <Insets />
                      </VBox.margin>
                   </HBox>
                   <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Attachments">
