@@ -70,8 +70,8 @@ public class LoginController implements Initializable{
                     stage.setScene(scene);
                     stage.setTitle("Dashboard");
                     stage.centerOnScreen();
-                    stage.setResizable(true);
-                    stage.setMaximized(true);
+                    stage.setResizable(false);
+                    //stage.setMaximized(true);
                     stage.show();
 
                     ((Node)(event.getSource())).getScene().getWindow().hide();
