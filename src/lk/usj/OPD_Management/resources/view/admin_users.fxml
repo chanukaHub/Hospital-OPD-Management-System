@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.admin.AdminUsersController">
    <children>
       <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Support Request">
          <font>
@@ -29,7 +29,7 @@
                <children>
                   <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="187.0" spacing="40.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <AnchorPane prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #2484FF; -fx-background-radius: 100px;">
+                        <AnchorPane fx:id="patientBtn_AnchorPane" onMouseClicked="#patientBtn_MouseEvent" prefHeight="30.0" prefWidth="30.0" stylesheets="@../css/styles.css">
                            <HBox.margin>
                               <Insets bottom="10.0" top="10.0" />
                            </HBox.margin>
@@ -41,7 +41,7 @@
                               </ImageView>
                            </children>
                         </AnchorPane>
-                        <AnchorPane prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #7F858D; -fx-background-radius: 100px;">
+                        <AnchorPane fx:id="doctorBtn_AnchorPane" onMouseClicked="#doctorBtn_MouseEvent" prefHeight="30.0" prefWidth="30.0" stylesheets="@../css/styles.css">
                            <HBox.margin>
                               <Insets bottom="10.0" top="10.0" />
                            </HBox.margin>
@@ -53,7 +53,7 @@
                               </ImageView>
                            </children>
                         </AnchorPane>
-                        <AnchorPane prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #7F858D; -fx-background-radius: 100px;">
+                        <AnchorPane fx:id="receptionistBtn_AnchorPane" onMouseClicked="#receptionistBtn_MouseEvent" prefHeight="30.0" prefWidth="30.0" stylesheets="@../css/styles.css">
                            <HBox.margin>
                               <Insets bottom="10.0" top="10.0" />
                            </HBox.margin>
@@ -86,6 +86,9 @@
                            <font>
                               <Font name="Gotham-Book" size="10.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets left="17.0" />
+                           </HBox.margin>
                         </Text>
                      </children>
                      <VBox.margin>
@@ -99,24 +102,24 @@
             </VBox>
          </children>
       </HBox>
-      <AnchorPane VBox.vgrow="ALWAYS">
+      <AnchorPane fx:id="root" VBox.vgrow="ALWAYS">
          <VBox.margin>
             <Insets left="15.0" right="15.0" />
          </VBox.margin>
       </AnchorPane>
       <HBox alignment="CENTER_RIGHT">
          <children>
-            <JFXButton ripplerFill="TRANSPARENT" style="-fx-background-color: #1CC270;" text="Add User" textFill="WHITE">
+            <JFXButton fx:id="addBtn" onAction="#addBtn_ActionEvent" ripplerFill="TRANSPARENT" style="-fx-background-color: #1CC270;" text="Add User" textFill="WHITE">
                <HBox.margin>
                   <Insets bottom="15.0" right="15.0" top="10.0" />
                </HBox.margin>
             </JFXButton>
-            <JFXButton layoutX="535.0" layoutY="23.0" prefWidth="65.0" ripplerFill="TRANSPARENT" style="-fx-background-color: #FFC400;" text="Edit " textFill="WHITE">
+            <JFXButton fx:id="editBtn" layoutX="535.0" layoutY="23.0" onAction="#editBtn_ActionEvent" prefWidth="65.0" ripplerFill="TRANSPARENT" style="-fx-background-color: #FFC400;" text="Edit " textFill="WHITE">
                <HBox.margin>
                   <Insets bottom="15.0" right="15.0" top="10.0" />
                </HBox.margin>
             </JFXButton>
-            <JFXButton layoutX="470.0" layoutY="23.0" prefWidth="65.0" ripplerFill="TRANSPARENT" style="-fx-background-color: #FF4242;" text="Delete" textFill="WHITE">
+            <JFXButton fx:id="deleteBtn" layoutX="470.0" layoutY="23.0" onAction="#deleteBtn_ActionEvent" prefWidth="65.0" ripplerFill="TRANSPARENT" style="-fx-background-color: #FF4242;" text="Delete" textFill="WHITE">
                <HBox.margin>
                   <Insets bottom="15.0" right="15.0" top="10.0" />
                </HBox.margin>

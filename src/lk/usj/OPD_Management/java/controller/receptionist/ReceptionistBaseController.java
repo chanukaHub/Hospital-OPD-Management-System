@@ -207,5 +207,9 @@ public class ReceptionistBaseController implements Initializable {
             e.printStackTrace();
         }
     }
+
+    public void transferMessage(String text) {
+        profileNameTxt.setText(text);
+    }
 }
 

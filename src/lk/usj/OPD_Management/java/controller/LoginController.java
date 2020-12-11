@@ -29,6 +29,8 @@ import javafx.util.Duration;
 import lk.usj.OPD_Management.java.common.Common;
 import lk.usj.OPD_Management.java.common.tool.ButtonFireForEnterSetter;
 import lk.usj.OPD_Management.java.common.tool.GlobalBoolean;
+import lk.usj.OPD_Management.java.controller.admin.AdminBaseController;
+import lk.usj.OPD_Management.java.controller.receptionist.ReceptionistBaseController;
 import lk.usj.OPD_Management.java.dto.AdminDTO;
 import lk.usj.OPD_Management.java.dto.ReceptionistDTO;
 import lk.usj.OPD_Management.java.dto.UserDTO;
@@ -147,10 +149,17 @@ public class LoginController implements Initializable{
             if (userType.equals("Admin")){
                 if (loginBO.isValidAdminPassword(new AdminDTO(usernameTxt1.getText(), passwordTxt1.getText()))) {
                     try {
-                        Parent parent = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_base.fxml"));
-                        Scene scene = new Scene(parent);
+                        //Load second scene
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_base.fxml"));
+                        Parent root = loader.load();
+
+                        //Get controller of scene2
+                        AdminBaseController adminBaseController = loader.getController();
+                        //Pass whatever data you want. You can have multiple method calls here
+                        adminBaseController.transferMessage(usernameTxt1.getText());
+
                         Stage stage = new Stage();
-                        stage.setScene(scene);
+                        stage.setScene(new Scene(root));
                         stage.setTitle("Admin Dashboard");
                         stage.centerOnScreen();
                         stage.setResizable(false);
@@ -169,10 +178,17 @@ public class LoginController implements Initializable{
             }else if (userType.equals("Receptionist")){
                 if (loginBO.isValidReceptionistPassword(new ReceptionistDTO(usernameTxt1.getText(), passwordTxt1.getText()))) {
                     try {
-                        Parent parent = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_base.fxml"));
-                        Scene scene = new Scene(parent);
+                        //Load second scene
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_base.fxml"));
+                        Parent root = loader.load();
+
+                        //Get controller of scene2
+                        ReceptionistBaseController receptionistBaseController = loader.getController();
+                        //Pass whatever data you want. You can have multiple method calls here
+                        receptionistBaseController.transferMessage(usernameTxt1.getText());
+
                         Stage stage = new Stage();
-                        stage.setScene(scene);
+                        stage.setScene(new Scene(root));
                         stage.setTitle("Receptionist Dashboard");
                         stage.centerOnScreen();
                         stage.setResizable(false);
