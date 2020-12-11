@@ -1,6 +1,7 @@
 package lk.usj.OPD_Management.java.dao;
 
 import lk.usj.OPD_Management.java.dao.custom.Impl.AdminDAOImpl;
+import lk.usj.OPD_Management.java.dao.custom.Impl.ReceptionistDAOImpl;
 
 public class DAOFactory {
     private static DAOFactory dAOFactory;
@@ -20,13 +21,16 @@ public class DAOFactory {
         switch (daoType) {
             case ADMIN:
                 return (T) new AdminDAOImpl();
+            case RECEPTIONIST:
+                return (T) new ReceptionistDAOImpl();
             default:
                 return null;
         }
     }
 
     public static enum DAOTypes {
-        ADMIN;
+        ADMIN,
+        RECEPTIONIST;
 
         private DAOTypes() {
         }

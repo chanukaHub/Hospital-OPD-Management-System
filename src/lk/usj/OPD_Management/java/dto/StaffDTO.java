@@ -1,18 +1,22 @@
-package lk.usj.OPD_Management.java.entity;
+package lk.usj.OPD_Management.java.dto;
 
 import java.util.Date;
 
-public abstract class Staff extends User{
+public abstract class StaffDTO extends UserDTO{
     private String staffID;
     private String staffEmail;
     private Date dateOfJoin;
     private String photograph;
     private String document;
 
-    public Staff() {
+    public StaffDTO() {
     }
 
-    public Staff(String username, String name, String gender, String phoneNumber, String idCard, Date dateOfBirth, String address, String maritalStatus, String password, String staffID, String staffEmail, Date dateOfJoin, String photograph, String document) {
+    public StaffDTO(String username, String password) {
+        super(username, password);
+    }
+
+    public StaffDTO(String username, String name, String gender, String phoneNumber, String idCard, Date dateOfBirth, String address, String maritalStatus, String password, String staffID, String staffEmail, Date dateOfJoin, String photograph, String document) {
         super(username, name, gender, phoneNumber, idCard, dateOfBirth, address, maritalStatus, password);
         this.staffID = staffID;
         this.staffEmail = staffEmail;

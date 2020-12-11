@@ -14,16 +14,23 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import lk.usj.OPD_Management.java.common.Common;
 import lk.usj.OPD_Management.java.common.tool.ButtonFireForEnterSetter;
 import lk.usj.OPD_Management.java.common.tool.GlobalBoolean;
 import lk.usj.OPD_Management.java.dto.AdminDTO;
+import lk.usj.OPD_Management.java.dto.ReceptionistDTO;
 import lk.usj.OPD_Management.java.dto.UserDTO;
 import lk.usj.OPD_Management.java.service.BOFactory;
 import lk.usj.OPD_Management.java.service.custom.LoginBO;
@@ -31,6 +38,8 @@ import lk.usj.OPD_Management.java.service.custom.LoginBO;
 public class LoginController implements Initializable{
 
     private LoginBO loginBO;
+    String userType="Patient";
+
     @FXML
     private HBox root;
 
@@ -39,6 +48,18 @@ public class LoginController implements Initializable{
 
     @FXML
     private URL location;
+
+    @FXML
+    private HBox patientBtn;
+
+    @FXML
+    private HBox doctorBtn;
+
+    @FXML
+    private HBox receptionistBtn;
+
+    @FXML
+    private HBox adminBtn;
 
     @FXML
     private JFXTextField usernameTxt1;
@@ -50,39 +71,134 @@ public class LoginController implements Initializable{
     private JFXButton loginButton1;
 
     @FXML
+    void ReceptionistClick(MouseEvent event) {
+        patientBtn.getStyleClass().removeAll("selected_login_type_btn");
+        doctorBtn.getStyleClass().removeAll("selected_login_type_btn");
+        receptionistBtn.getStyleClass().removeAll("selected_login_type_btn");
+        adminBtn.getStyleClass().removeAll("selected_login_type_btn");
+
+        patientBtn.getStyleClass().add("login_type_btn");
+        doctorBtn.getStyleClass().add("login_type_btn");
+        receptionistBtn.getStyleClass().add("selected_login_type_btn");
+        adminBtn.getStyleClass().add("login_type_btn");
+
+        userType = "Receptionist";
+    }
+
+    @FXML
+    void adminClick(MouseEvent event) {
+        patientBtn.getStyleClass().removeAll("selected_login_type_btn");
+        doctorBtn.getStyleClass().removeAll("selected_login_type_btn");
+        receptionistBtn.getStyleClass().removeAll("selected_login_type_btn");
+        adminBtn.getStyleClass().removeAll("selected_login_type_btn");
+
+        patientBtn.getStyleClass().add("login_type_btn");
+        doctorBtn.getStyleClass().add("login_type_btn");
+        receptionistBtn.getStyleClass().add("login_type_btn");
+        adminBtn.getStyleClass().add("selected_login_type_btn");
+
+        userType = "Admin";
+
+    }
+
+    @FXML
+    void doctorClick(MouseEvent event) {
+        patientBtn.getStyleClass().removeAll("selected_login_type_btn");
+        doctorBtn.getStyleClass().removeAll("selected_login_type_btn");
+        receptionistBtn.getStyleClass().removeAll("selected_login_type_btn");
+        adminBtn.getStyleClass().removeAll("selected_login_type_btn");
+
+        patientBtn.getStyleClass().add("login_type_btn");
+        doctorBtn.getStyleClass().add("selected_login_type_btn");
+        receptionistBtn.getStyleClass().add("login_type_btn");
+        adminBtn.getStyleClass().add("login_type_btn");
+
+        userType = "Doctor";
+    }
+
+    @FXML
+    void patientClick(MouseEvent event) {
+        patientBtn.getStyleClass().removeAll("selected_login_type_btn");
+        doctorBtn.getStyleClass().removeAll("selected_login_type_btn");
+        receptionistBtn.getStyleClass().removeAll("selected_login_type_btn");
+        adminBtn.getStyleClass().removeAll("selected_login_type_btn");
+
+        patientBtn.getStyleClass().add("selected_login_type_btn");
+        doctorBtn.getStyleClass().add("login_type_btn");
+        receptionistBtn.getStyleClass().add("login_type_btn");
+        adminBtn.getStyleClass().add("login_type_btn");
+
+        userType = "Patient";
+    }
+
+    @FXML
     void usernameTxt1_onAction(ActionEvent event){
         passwordTxt1.requestFocus();
     }
 
     @FXML
     void passwordTxt1_onAction(ActionEvent event){
-        loginButton1.requestFocus();
+        loginButton1_onAction(event);
     }
 
     @FXML
     void loginButton1_onAction(ActionEvent event){
         try {
-            if (loginBO.isValidPassword(new AdminDTO(usernameTxt1.getText(), passwordTxt1.getText()))) {
-                try {
-                    Parent parent = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_base.fxml"));
-                    Scene scene = new Scene(parent);
-                    Stage stage = new Stage();
-                    stage.setScene(scene);
-                    stage.setTitle("Dashboard");
-                    stage.centerOnScreen();
-                    stage.setResizable(false);
-                    //stage.setMaximized(true);
-                    stage.show();
+            if (userType.equals("Admin")){
+                if (loginBO.isValidAdminPassword(new AdminDTO(usernameTxt1.getText(), passwordTxt1.getText()))) {
+                    try {
+                        Parent parent = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_base.fxml"));
+                        Scene scene = new Scene(parent);
+                        Stage stage = new Stage();
+                        stage.setScene(scene);
+                        stage.setTitle("Admin Dashboard");
+                        stage.centerOnScreen();
+                        stage.setResizable(false);
+                        //stage.setMaximized(true);
+                        stage.show();
 
-                    ((Node)(event.getSource())).getScene().getWindow().hide();
+                        ((Node)(event.getSource())).getScene().getWindow().hide();
 
 
-                } catch (IOException e) {
-                    e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    Common.showError("Invalid Email name or password.");
                 }
-            } else {
-                Common.showError("Invalid Email name or password.");
+            }else if (userType.equals("Receptionist")){
+                if (loginBO.isValidReceptionistPassword(new ReceptionistDTO(usernameTxt1.getText(), passwordTxt1.getText()))) {
+                    try {
+                        Parent parent = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_base.fxml"));
+                        Scene scene = new Scene(parent);
+                        Stage stage = new Stage();
+                        stage.setScene(scene);
+                        stage.setTitle("Receptionist Dashboard");
+                        stage.centerOnScreen();
+                        stage.setResizable(false);
+                        //stage.setMaximized(true);
+                        stage.show();
+
+                        ((Node)(event.getSource())).getScene().getWindow().hide();
+
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    Common.showError("Invalid Email name or password.");
+                }
             }
+
+
+            else{
+                Common.showError("Oi Oi Admin & Receptionist vitharai hadala thiyenne.....");
+            }
+
+
+
+
+
         } catch (NullPointerException e) {
             Common.showMessage("This Email is no longer available.");
         } catch (Exception e) {
@@ -93,6 +209,13 @@ public class LoginController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        patientBtn.getStyleClass().add("selected_login_type_btn");
+        doctorBtn.getStyleClass().add("login_type_btn");
+        receptionistBtn.getStyleClass().add("login_type_btn");
+        adminBtn.getStyleClass().add("login_type_btn");
+
+
         GlobalBoolean.setLock(false);
         ButtonFireForEnterSetter.setGlobalEventHandler(root);
         usernameTxt1.clear();

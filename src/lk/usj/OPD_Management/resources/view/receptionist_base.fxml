@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="950.0" style="-fx-background-color: #F2F0FB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="950.0" style="-fx-background-color: #F2F0FB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.ReceptionistBaseController">
    <top>
       <HBox BorderPane.alignment="CENTER"> 
          <children>
@@ -35,9 +35,9 @@
                <children>
                   <HBox style="-fx-background-color: #ffffff;">
                      <children>
-                        <HBox alignment="CENTER">
+                        <HBox fx:id="profileHBox" alignment="CENTER" onMouseClicked="#profileHBox_MouseEvent">
                            <children>
-                              <ImageView fitHeight="33.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="prifileImageView" fitHeight="33.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/user_Image.png" />
                                  </image>
@@ -54,7 +54,7 @@
                            <children>
                               <VBox alignment="BOTTOM_LEFT" VBox.vgrow="ALWAYS">
                                  <children>
-                                    <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Sithumini Nimesha">
+                                    <Text fx:id="profileNameTxt" fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Sithumini Nimesha">
                                        <font>
                                           <Font name="Gotham-Book" size="12.0" />
                                        </font>
@@ -137,7 +137,7 @@
          <children>
             <VBox>
                <children>
-                  <HBox styleClass="hover_border" stylesheets="@../css/styles.css">
+                  <HBox fx:id="dashboardHBox" onMouseClicked="#dashboardHBox_MouseEvent" stylesheets="@../css/styles.css">
                      <children>
                         <HBox>
                            <children>
@@ -171,7 +171,7 @@
                         <Insets left="5.0" />
                      </padding>
                   </HBox>
-                  <HBox layoutX="10.0" layoutY="10.0" styleClass="hover_border" stylesheets="@../css/styles.css">
+                  <HBox fx:id="visitorsHBox" layoutX="10.0" layoutY="10.0" onMouseClicked="#visitorsHBox_MouseEvent" stylesheets="@../css/styles.css">
                      <children>
                         <HBox>
                            <children>
@@ -205,7 +205,7 @@
                         <Insets left="5.0" />
                      </padding>
                   </HBox>
-                  <HBox layoutX="10.0" layoutY="50.0" styleClass="hover_border" stylesheets="@../css/styles.css">
+                  <HBox fx:id="postalHBox" layoutX="10.0" layoutY="50.0" onMouseClicked="#postalHBox_MouseEvent" stylesheets="@../css/styles.css">
                      <children>
                         <HBox>
                            <children>
@@ -239,7 +239,7 @@
                         <Insets left="5.0" />
                      </padding>
                   </HBox>
-                  <HBox layoutX="10.0" layoutY="90.0" styleClass="hover_border" stylesheets="@../css/styles.css">
+                  <HBox fx:id="complaintsHBox" layoutX="10.0" layoutY="90.0" onMouseClicked="#complaintsHBox_MouseEvent" stylesheets="@../css/styles.css">
                      <children>
                         <HBox>
                            <children>
@@ -273,7 +273,7 @@
                         <Insets left="5.0" />
                      </padding>
                   </HBox>
-                  <HBox layoutX="10.0" layoutY="130.0" styleClass="hover_border" stylesheets="@../css/styles.css">
+                  <HBox fx:id="appointmentsHBox" layoutX="10.0" layoutY="130.0" onMouseClicked="#appointmentsHBox_MouseEvent" stylesheets="@../css/styles.css">
                      <children>
                         <HBox>
                            <children>
@@ -307,7 +307,7 @@
                         <Insets left="5.0" />
                      </padding>
                   </HBox>
-                  <HBox layoutX="10.0" layoutY="170.0" styleClass="hover_border" stylesheets="@../css/styles.css">
+                  <HBox fx:id="patientHBox" layoutX="10.0" layoutY="170.0" onMouseClicked="#patientHBox_MouseEvent" stylesheets="@../css/styles.css">
                      <children>
                         <HBox>
                            <children>
@@ -348,7 +348,7 @@
                   <HBox VBox.vgrow="ALWAYS" />
                   <HBox alignment="BOTTOM_CENTER">
                      <children>
-                        <JFXButton alignment="BOTTOM_CENTER" ripplerFill="WHITE" style="-fx-background-color: transparent; -fx-border-color: White; -fx-border-radius: 5px;" text="LOG OUT" textFill="WHITE">
+                        <JFXButton fx:id="logoutBtn" alignment="BOTTOM_CENTER" onAction="#logoutBtn_ActionEvent" ripplerFill="WHITE" style="-fx-background-color: transparent; -fx-border-color: White; -fx-border-radius: 5px;" text="LOG OUT" textFill="WHITE">
                            <font>
                               <Font name="Gotham Bold" size="12.0" />
                            </font>
@@ -366,7 +366,7 @@
          </children></VBox>
    </left>
    <center>
-      <AnchorPane BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="root" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </BorderPane.margin>
