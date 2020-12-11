@@ -30,6 +30,7 @@ import lk.usj.OPD_Management.java.common.Common;
 import lk.usj.OPD_Management.java.common.tool.ButtonFireForEnterSetter;
 import lk.usj.OPD_Management.java.common.tool.GlobalBoolean;
 import lk.usj.OPD_Management.java.dto.AdminDTO;
+import lk.usj.OPD_Management.java.dto.ReceptionistDTO;
 import lk.usj.OPD_Management.java.dto.UserDTO;
 import lk.usj.OPD_Management.java.service.BOFactory;
 import lk.usj.OPD_Management.java.service.custom.LoginBO;
@@ -144,7 +145,7 @@ public class LoginController implements Initializable{
     void loginButton1_onAction(ActionEvent event){
         try {
             if (userType.equals("Admin")){
-                if (loginBO.isValidPassword(new AdminDTO(usernameTxt1.getText(), passwordTxt1.getText()))) {
+                if (loginBO.isValidAdminPassword(new AdminDTO(usernameTxt1.getText(), passwordTxt1.getText()))) {
                     try {
                         Parent parent = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_base.fxml"));
                         Scene scene = new Scene(parent);
@@ -165,7 +166,32 @@ public class LoginController implements Initializable{
                 } else {
                     Common.showError("Invalid Email name or password.");
                 }
-            }else{
+            }else if (userType.equals("Receptionist")){
+                if (loginBO.isValidReceptionistPassword(new ReceptionistDTO(usernameTxt1.getText(), passwordTxt1.getText()))) {
+                    try {
+                        Parent parent = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_base.fxml"));
+                        Scene scene = new Scene(parent);
+                        Stage stage = new Stage();
+                        stage.setScene(scene);
+                        stage.setTitle("Receptionist Dashboard");
+                        stage.centerOnScreen();
+                        stage.setResizable(false);
+                        //stage.setMaximized(true);
+                        stage.show();
+
+                        ((Node)(event.getSource())).getScene().getWindow().hide();
+
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    Common.showError("Invalid Email name or password.");
+                }
+            }
+
+
+            else{
                 Common.showError("Oi Oi Admin vitharai hadala thiyenne.....");
             }
 
