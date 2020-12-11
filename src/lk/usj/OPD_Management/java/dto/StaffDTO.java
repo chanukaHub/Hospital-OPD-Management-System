@@ -8,6 +8,7 @@ public abstract class StaffDTO extends UserDTO{
     private Date dateOfJoin;
     private String photograph;
     private String document;
+    private String note;
 
     public StaffDTO() {
     }
@@ -16,13 +17,14 @@ public abstract class StaffDTO extends UserDTO{
         super(username, password);
     }
 
-    public StaffDTO(String username, String name, String gender, String phoneNumber, String idCard, Date dateOfBirth, String address, String maritalStatus, String password, String staffID, String staffEmail, Date dateOfJoin, String photograph, String document) {
+    public StaffDTO(String username, String name, String gender, String phoneNumber, String idCard, Date dateOfBirth, String address, String maritalStatus, String password, String staffID, String staffEmail, Date dateOfJoin, String photograph, String document, String note) {
         super(username, name, gender, phoneNumber, idCard, dateOfBirth, address, maritalStatus, password);
         this.staffID = staffID;
         this.staffEmail = staffEmail;
         this.dateOfJoin = dateOfJoin;
         this.photograph = photograph;
         this.document = document;
+        this.note = note;
     }
 
     public String getStaffID() {
@@ -65,6 +67,14 @@ public abstract class StaffDTO extends UserDTO{
         this.document = document;
     }
 
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
     @Override
     public String toString() {
         return "StaffDTO{" +
@@ -73,6 +83,7 @@ public abstract class StaffDTO extends UserDTO{
                 ", dateOfJoin=" + dateOfJoin +
                 ", photograph='" + photograph + '\'' +
                 ", document='" + document + '\'' +
+                ", note='" + note + '\'' +
                 '}';
     }
 }

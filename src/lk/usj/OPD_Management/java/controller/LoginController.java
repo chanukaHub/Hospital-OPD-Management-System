@@ -32,6 +32,7 @@ import lk.usj.OPD_Management.java.common.tool.GlobalBoolean;
 import lk.usj.OPD_Management.java.controller.admin.AdminBaseController;
 import lk.usj.OPD_Management.java.controller.receptionist.ReceptionistBaseController;
 import lk.usj.OPD_Management.java.dto.AdminDTO;
+import lk.usj.OPD_Management.java.dto.PatientDTO;
 import lk.usj.OPD_Management.java.dto.ReceptionistDTO;
 import lk.usj.OPD_Management.java.dto.UserDTO;
 import lk.usj.OPD_Management.java.service.BOFactory;
@@ -204,11 +205,40 @@ public class LoginController implements Initializable{
                 } else {
                     Common.showError("Invalid Email name or password.");
                 }
+            }else if (userType.equals("Patient")){
+                if (loginBO.isValidPatientPassword(new PatientDTO(usernameTxt1.getText(), passwordTxt1.getText()))) {
+                    try {
+                        //Load second scene
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/patient_base.fxml"));
+                        Parent root = loader.load();
+
+                        //Get controller of scene2
+                        //ReceptionistBaseController receptionistBaseController = loader.getController();
+                        //Pass whatever data you want. You can have multiple method calls here
+                        //receptionistBaseController.transferMessage(usernameTxt1.getText());
+
+                        Stage stage = new Stage();
+                        stage.setScene(new Scene(root));
+                        stage.setTitle("Patient Dashboard");
+                        stage.centerOnScreen();
+                        stage.setResizable(false);
+                        //stage.setMaximized(true);
+                        stage.show();
+
+                        ((Node)(event.getSource())).getScene().getWindow().hide();
+
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    Common.showError("Invalid Email name or password.");
+                }
             }
 
 
             else{
-                Common.showError("Oi Oi Admin & Receptionist vitharai hadala thiyenne.....");
+                Common.showError("Oi Oi doctor thama hadala na.....");
             }
 
 

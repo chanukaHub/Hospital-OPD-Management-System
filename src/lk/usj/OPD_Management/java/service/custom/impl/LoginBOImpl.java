@@ -3,11 +3,14 @@ package lk.usj.OPD_Management.java.service.custom.impl;
 import lk.usj.OPD_Management.java.dao.DAOFactory;
 import lk.usj.OPD_Management.java.dao.custom.AdminDAO;
 import lk.usj.OPD_Management.java.dao.custom.Impl.AdminDAOImpl;
+import lk.usj.OPD_Management.java.dao.custom.PatientDAO;
 import lk.usj.OPD_Management.java.dao.custom.ReceptionistDAO;
 import lk.usj.OPD_Management.java.dto.AdminDTO;
+import lk.usj.OPD_Management.java.dto.PatientDTO;
 import lk.usj.OPD_Management.java.dto.ReceptionistDTO;
 import lk.usj.OPD_Management.java.dto.UserDTO;
 import lk.usj.OPD_Management.java.entity.Admin;
+import lk.usj.OPD_Management.java.entity.Patient;
 import lk.usj.OPD_Management.java.entity.Receptionist;
 import lk.usj.OPD_Management.java.entity.User;
 import lk.usj.OPD_Management.java.service.custom.LoginBO;
@@ -15,6 +18,7 @@ import lk.usj.OPD_Management.java.service.custom.LoginBO;
 public class LoginBOImpl implements LoginBO {
     private AdminDAO adminDAO = DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.ADMIN);
     private ReceptionistDAO receptionistDAO = DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.RECEPTIONIST);
+    private PatientDAO patientDAO = DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.PATIENT);
 
     public LoginBOImpl() {
     }
@@ -43,6 +47,20 @@ public class LoginBOImpl implements LoginBO {
             return false;
         else{
             if(searchReceptionist.getPassword().equals(receptionistDTO.getPassword())){
+                return true;
+            }else{
+                return false;
+            }
+        }
+    }
+
+    @Override
+    public boolean isValidPatientPassword(PatientDTO patientDTO) throws Exception {
+        Patient searchPatient = patientDAO.search(patientDTO.getUsername());
+        if (searchPatient == null)
+            return false;
+        else{
+            if(searchPatient.getPassword().equals(patientDTO.getPassword())){
                 return true;
             }else{
                 return false;

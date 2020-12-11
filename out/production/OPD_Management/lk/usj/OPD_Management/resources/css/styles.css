@@ -1,0 +1,26 @@
+.hover_border:hover {
+    -fx-background-color:#509DFF;
+    -fx-cursor: hand;
+    }
+
+.hover_bg_color_grey:hover {
+    -fx-background-color:#F2F0FB;
+    }
+
+.hover_bg_color_red:hover {
+    -fx-background-color:#FF4242;
+    }
+
+.hover_mouse_hand:hover {
+    -fx-cursor: hand;
+}
+
+.login_type_btn{
+    -fx-background-radius: 50;
+    -fx-background-color: #B8B6C7;
+}
+
+.selected_login_type_btn{
+    -fx-background-radius: 50;
+    -fx-background-color: #2484ff;
+}
