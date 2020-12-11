@@ -192,7 +192,7 @@ public class LoginController implements Initializable{
 
 
             else{
-                Common.showError("Oi Oi Admin vitharai hadala thiyenne.....");
+                Common.showError("Oi Oi Admin & Receptionist vitharai hadala thiyenne.....");
             }
 
 
