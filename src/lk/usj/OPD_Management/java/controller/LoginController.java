@@ -30,6 +30,7 @@ import lk.usj.OPD_Management.java.common.Common;
 import lk.usj.OPD_Management.java.common.tool.ButtonFireForEnterSetter;
 import lk.usj.OPD_Management.java.common.tool.GlobalBoolean;
 import lk.usj.OPD_Management.java.controller.admin.AdminBaseController;
+import lk.usj.OPD_Management.java.controller.patient.PatientBaseController;
 import lk.usj.OPD_Management.java.controller.receptionist.ReceptionistBaseController;
 import lk.usj.OPD_Management.java.dto.AdminDTO;
 import lk.usj.OPD_Management.java.dto.PatientDTO;
@@ -213,9 +214,9 @@ public class LoginController implements Initializable{
                         Parent root = loader.load();
 
                         //Get controller of scene2
-                        //ReceptionistBaseController receptionistBaseController = loader.getController();
+                        PatientBaseController patientBaseController = loader.getController();
                         //Pass whatever data you want. You can have multiple method calls here
-                        //receptionistBaseController.transferMessage(usernameTxt1.getText());
+                        patientBaseController.transferMessage(usernameTxt1.getText());
 
                         Stage stage = new Stage();
                         stage.setScene(new Scene(root));

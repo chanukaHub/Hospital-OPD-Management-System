@@ -47,7 +47,7 @@ public class AdminDAOImpl implements AdminDAO {
 
             while(scanner.hasNextLine()){
                 String line =scanner.nextLine();
-                String[] details = line.split(",");
+                String[] details = line.split("#");
                 username=details[0];
                 name=details[1];
                 gender=details[2];
