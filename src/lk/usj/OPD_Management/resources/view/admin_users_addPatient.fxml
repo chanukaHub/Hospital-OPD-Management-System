@@ -165,7 +165,7 @@
                         <Insets bottom="25.0" />
                      </VBox.margin>
                      <children>
-                        <DatePicker fx:id="dobDatePicker" onAction="#dobDatePicker_ActionEvent" prefHeight="30.0" prefWidth="200.0" />
+                        <DatePicker fx:id="dobDatePicker" onAction="#dobDatePicker_ActionEvent" prefHeight="30.0" prefWidth="200.0" promptText="Choose a Date" />
                      </children>
                   </HBox>
                </children>

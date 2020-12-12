@@ -145,29 +145,59 @@ public class AdminUsersSavePatientController implements Initializable {
 
     @FXML
     void saveBtn_ActionEvent(ActionEvent event) {
-        String address=address1TextField.getText()+","+address2TextField.getText()+","+address3TextField.getText();
-        String initialPassword =nicNoTextField.getText();
-        LocalDate ld = dobDatePicker.getValue();
-        Calendar c =  Calendar.getInstance();
-        c.set(ld.getYear(), ld.getMonthValue() - 1, ld.getDayOfMonth());
-        Date date = c.getTime();
-
-        PatientDTO patientDTO= new PatientDTO(
-            usernameTextField.getText(),
-            nameTextField.getText(),
-            Gender.getSelectedToggle().getUserData().toString(),
-            phoneNoTextField.getText(),
-            nicNoTextField.getText(),
-            date,
-            address,
-            maritalStatusComboBox.getSelectionModel().getSelectedItem(),
-            initialPassword,
-            bloodGroupComboBox.getSelectionModel().getSelectedItem(),
-            allergiesTextField.getText(),
-            notesTextArea.getText()
-        );
-
         try{
+            String address,maritalStatus,bloodGroup;
+            if (usernameTextField.getText().equals("")){
+                Common.showError("Please Enter username");
+                return;
+            }else if(nicNoTextField.getText().equals("")){
+                Common.showError("Please Enter NIC No");
+                return;
+            }
+            if(address1TextField.getText().equals("")&&address3TextField.getText().equals("")&&address2TextField.getText().equals("")){
+                address=null;
+            }else {
+                address=address1TextField.getText()+","+address2TextField.getText()+","+address3TextField.getText();
+            }
+            String initialPassword =nicNoTextField.getText();
+            LocalDate ld = dobDatePicker.getValue();
+            Calendar c =  Calendar.getInstance();
+            if (ld == null){
+                Common.showError("Please Enter BirthDay");
+                return;
+            }
+            c.set(ld.getYear(), ld.getMonthValue() - 1, ld.getDayOfMonth());
+            Date date = c.getTime();
+            if (Gender.getSelectedToggle() == null){
+                Common.showError("Please Select Gender");
+                return;
+            }
+            if (maritalStatusComboBox.getSelectionModel().getSelectedItem().equals("Choose a Status")){
+                maritalStatus = null;
+            }else{
+                maritalStatus = maritalStatusComboBox.getSelectionModel().getSelectedItem();
+            }
+            if (bloodGroupComboBox.getSelectionModel().getSelectedItem().equals("Choose")){
+                bloodGroup = null;
+            }else{
+                bloodGroup = bloodGroupComboBox.getSelectionModel().getSelectedItem();
+            }
+
+            PatientDTO patientDTO= new PatientDTO(
+                    usernameTextField.getText(),
+                    nameTextField.getText(),
+                    Gender.getSelectedToggle().getUserData().toString(),
+                    phoneNoTextField.getText(),
+                    nicNoTextField.getText(),
+                    date,
+                    address,
+                    maritalStatus,
+                    initialPassword,
+                    bloodGroup,
+                    allergiesTextField.getText(),
+                    notesTextArea.getText()
+            );
+
             boolean b = patientBO.addPatient(patientDTO);
 
             if (b){
@@ -210,6 +240,7 @@ public class AdminUsersSavePatientController implements Initializable {
         otherRadioBtn.setUserData("Other");
 
         bloodGroupComboBox.getItems().addAll(
+                "Choose",
                 "A−",
                 "A+",
                 "B−",
@@ -220,11 +251,15 @@ public class AdminUsersSavePatientController implements Initializable {
                 "O+"
         );
         maritalStatusComboBox.getItems().addAll(
+                "Choose a Status",
                 "Single",
                 "Married",
                 "Divorced",
                 "Widowed"
         );
+
+        maritalStatusComboBox.getSelectionModel().selectFirst();
+        bloodGroupComboBox.getSelectionModel().selectFirst();
 
     }
 }

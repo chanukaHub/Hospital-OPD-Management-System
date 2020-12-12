@@ -14,7 +14,7 @@ import lk.usj.OPD_Management.java.service.custom.VisitorBO;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ReceptionistDashboardVisitorController implements Initializable {
+public class ReceptionistDashboardAddVisitorsController implements Initializable {
     @FXML
     private VBox root;
 
