@@ -6,6 +6,7 @@
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -15,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.admin.AdminUsersSavePatientController">
    <children>
       <HBox>
          <children>
@@ -26,15 +27,7 @@
                         <Font name="Gotham Bold" size="16.0" />
                      </font>
                      <VBox.margin>
-                        <Insets bottom="5.0" left="15.0" right="15.0" top="15.0" />
-                     </VBox.margin>
-                  </Text>
-                  <Text fill="#7f858d" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient ID">
-                     <font>
-                        <Font name="Gotham-Book" size="12.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets bottom="15.0" left="15.0" right="15.0" />
+                        <Insets bottom="20.0" left="15.0" right="15.0" top="15.0" />
                      </VBox.margin>
                   </Text>
                </children>
@@ -69,7 +62,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTextField focusColor="#b8b6c7" prefWidth="200.0" promptText="Name" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                  <JFXTextField fx:id="nameTextField" focusColor="#b8b6c7" onAction="#nameTextField_ActionEvent" prefWidth="200.0" promptText="Name" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
                      <VBox.margin>
                         <Insets bottom="25.0" />
                      </VBox.margin>
@@ -88,7 +81,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTextField focusColor="#b8b6c7" prefWidth="200.0" promptText="username" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                  <JFXTextField fx:id="usernameTextField" focusColor="#b8b6c7" onAction="#usernameTextField_ActionEvent" prefWidth="200.0" promptText="Username" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
                      <VBox.margin>
                         <Insets bottom="25.0" />
                      </VBox.margin>
@@ -109,13 +102,13 @@
                   </Text>
                   <HBox spacing="10.0">
                      <children>
-                        <JFXRadioButton fx:id="genderRadioBtn" text="Male">
+                        <JFXRadioButton fx:id="maleRadioBtn" text="Male">
                            <toggleGroup>
                               <ToggleGroup fx:id="Gender" />
                            </toggleGroup>
                         </JFXRadioButton>
-                        <JFXRadioButton text="Female" toggleGroup="$Gender" />
-                        <JFXRadioButton text="Other" toggleGroup="$Gender" />
+                        <JFXRadioButton fx:id="femaleRadioBtn" text="Female" toggleGroup="$Gender" />
+                        <JFXRadioButton fx:id="otherRadioBtn" text="Other" toggleGroup="$Gender" />
                      </children>
                      <VBox.margin>
                         <Insets bottom="25.0" />
@@ -129,7 +122,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTextField focusColor="#b8b6c7" prefWidth="200.0" style="-fx-background-color: #F2F0FB;" text="012 3456 789" unFocusColor="#ffffff00">
+                  <JFXTextField fx:id="phoneNoTextField" focusColor="#b8b6c7" onAction="#phoneNoTextField_ActinEvent" prefWidth="200.0" promptText="Phone No" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
                      <VBox.margin>
                         <Insets bottom="25.0" />
                      </VBox.margin>
@@ -148,7 +141,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTextField focusColor="#b8b6c7" prefWidth="200.0" promptText="123456789V" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                  <JFXTextField fx:id="nicNoTextField" focusColor="#b8b6c7" onAction="#nicNoTextField_ActionEvent" prefWidth="200.0" promptText="NIC No" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
                      <VBox.margin>
                         <Insets bottom="25.0" />
                      </VBox.margin>
@@ -168,29 +161,12 @@
                      </VBox.margin>
                   </Text>
                   <HBox spacing="5.0">
-                     <children>
-                        <JFXComboBox focusColor="#f2f0fb" promptText="DD" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                           <padding>
-                              <Insets bottom="2.0" left="8.0" top="2.0" />
-                           </padding>
-                        </JFXComboBox>
-                        <JFXComboBox focusColor="#f2f0fb" promptText="MM" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
-                           <padding>
-                              <Insets bottom="2.0" left="8.0" top="2.0" />
-                           </padding>
-                        </JFXComboBox>
-                        <JFXComboBox focusColor="#f2f0fb" promptText="YYYY" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
-                           <padding>
-                              <Insets bottom="2.0" left="8.0" top="2.0" />
-                           </padding>
-                        </JFXComboBox>
-                     </children>
                      <VBox.margin>
                         <Insets bottom="25.0" />
                      </VBox.margin>
+                     <children>
+                        <DatePicker fx:id="dobDatePicker" onAction="#dobDatePicker_ActionEvent" prefHeight="30.0" prefWidth="200.0" />
+                     </children>
                   </HBox>
                </children>
                <opaqueInsets>
@@ -210,7 +186,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTextField focusColor="#b8b6c7" promptText="Address Line 1" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                  <JFXTextField fx:id="address1TextField" focusColor="#b8b6c7" onAction="#address1TextField_ActionEvent" promptText="Address Line 1" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
@@ -218,12 +194,12 @@
                         <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                      </padding>
                   </JFXTextField>
-                  <JFXTextField focusColor="#b8b6c7" layoutX="25.0" layoutY="42.0" style="-fx-background-color: #F2F0FB;" text="Address line 2" unFocusColor="#ffffff00">
+                  <JFXTextField fx:id="address2TextField" focusColor="#b8b6c7" layoutX="25.0" layoutY="42.0" onAction="#address2TextField_ActionEvent" promptText="Address line 2" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
                      <padding>
                         <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                      </padding>
                   </JFXTextField>
-                  <JFXTextField focusColor="#b8b6c7" layoutX="25.0" layoutY="83.0" style="-fx-background-color: #F2F0FB;" text="City" unFocusColor="#ffffff00">
+                  <JFXTextField fx:id="address3TextField" focusColor="#b8b6c7" layoutX="25.0" layoutY="83.0" onAction="#address2TextField_ActionEvent" promptText="City" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
                      <padding>
                         <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                      </padding>
@@ -239,7 +215,7 @@
                         <Insets bottom="5.0" top="25.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXComboBox focusColor="#f2f0fb" promptText="A+" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                  <JFXComboBox fx:id="bloodGroupComboBox" focusColor="#f2f0fb" onAction="#bloodGroupComboBox_ActionEvent" promptText="A+" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
                      <padding>
                         <Insets bottom="2.0" left="8.0" top="2.0" />
                      </padding>
@@ -252,7 +228,7 @@
                         <Insets bottom="5.0" top="25.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTextField focusColor="#b8b6c7" promptText="Address Line 1" style="-fx-background-color: #F2F0FB;" text="Allergies" unFocusColor="#ffffff00">
+                  <JFXTextField fx:id="allergiesTextField" focusColor="#b8b6c7" onAction="#allergiesTextField_ActionEvent" promptText="Allergies" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
                      <padding>
                         <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                      </padding>
@@ -260,7 +236,7 @@
                         <Insets bottom="25.0" />
                      </VBox.margin>
                   </JFXTextField>
-                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Martial Status">
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Marital Status">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
                      </font>
@@ -268,7 +244,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXComboBox focusColor="#f2f0fb" promptText="Married" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                  <JFXComboBox fx:id="maritalStatusComboBox" focusColor="#f2f0fb" onAction="#maritalStatusComboBox_ActionEvent" promptText="Married" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
                      <padding>
                         <Insets bottom="2.0" left="8.0" top="2.0" />
                      </padding>
@@ -288,7 +264,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTextArea focusColor="#b8b6c7" prefColumnCount="25" promptText="Write here" style="-fx-background-radius: 5px; -fx-background-color: #F2F0FB;" unFocusColor="#4d4d4d00" VBox.vgrow="ALWAYS">
+                  <JFXTextArea fx:id="notesTextArea" focusColor="#b8b6c7" prefColumnCount="25" prefHeight="309.0" prefWidth="248.0" promptText="Write here" style="-fx-background-radius: 5px; -fx-background-color: #F2F0FB;" unFocusColor="#4d4d4d00" VBox.vgrow="ALWAYS">
                      <font>
                         <Font name="Gotham-Book" size="10.0" />
                      </font>
@@ -299,36 +275,36 @@
                         <Insets bottom="25.0" />
                      </VBox.margin>
                   </JFXTextArea>
+                  <VBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="65.0">
+                     <children>
+                        <HBox alignment="BOTTOM_RIGHT" spacing="20.0">
+                           <children>
+                              <JFXButton fx:id="cancelBtn" onAction="#cancelBtn_ActionEvent" style="-fx-background-color: transparent; -fx-border-color: #2484FF; -fx-border-radius: 5px; -fx-border-width: 1px;" text="Cancel" textFill="#2484ff">
+                                 <font>
+                                    <Font name="Gotham-Book" size="12.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
+                                 </padding>
+                              </JFXButton>
+                              <JFXButton fx:id="saveBtn" layoutX="646.0" layoutY="10.0" onAction="#saveBtn_ActionEvent" style="-fx-background-color: #2484FF;" text="Save Account" textFill="WHITE">
+                                 <font>
+                                    <Font name="Gotham-Book" size="12.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
+                                 </padding>
+                              </JFXButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
                </children>
             </VBox>
          </children>
       </HBox>
-      <VBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="65.0">
-         <children>
-            <HBox alignment="BOTTOM_RIGHT" spacing="20.0">
-               <children>
-                  <JFXButton style="-fx-background-color: transparent; -fx-border-color: #2484FF; -fx-border-radius: 5px; -fx-border-width: 1px;" text="Cancel" textFill="#2484ff">
-                     <font>
-                        <Font name="Gotham-Book" size="12.0" />
-                     </font>
-                     <padding>
-                        <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
-                     </padding>
-                  </JFXButton>
-                  <JFXButton layoutX="646.0" layoutY="10.0" style="-fx-background-color: #2484FF;" text="Save Changes" textFill="WHITE">
-                     <font>
-                        <Font name="Gotham-Book" size="12.0" />
-                     </font>
-                     <padding>
-                        <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
-                     </padding>
-                  </JFXButton>
-               </children>
-               <VBox.margin>
-                  <Insets bottom="15.0" left="15.0" right="15.0" />
-               </VBox.margin>
-            </HBox>
-         </children>
-      </VBox>
    </children>
 </VBox>
