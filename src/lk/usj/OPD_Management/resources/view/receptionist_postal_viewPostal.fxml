@@ -170,23 +170,7 @@
                   </Text>
                   <HBox spacing="5.0">
                      <children>
-                        <Label prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="31" textFill="#282b2f">
-                           <padding>
-                              <Insets left="5.0" />
-                           </padding>
-                           <font>
-                              <Font name="Gotham-Book" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="12" textFill="#282b2f">
-                           <padding>
-                              <Insets left="5.0" />
-                           </padding>
-                           <font>
-                              <Font name="Gotham-Book" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="2020" textFill="#282b2f">
+                        <Label prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="Date" textFill="#282b2f">
                            <padding>
                               <Insets left="5.0" />
                            </padding>

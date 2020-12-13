@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -21,14 +30,14 @@
                         <Insets bottom="5.0" left="15.0" right="15.0" top="15.0" />
                      </VBox.margin>
                   </Text>
-                  <Text fill="#7f858d" strokeType="OUTSIDE" strokeWidth="0.0" text="Receptionist ID">
+                  <Label text="Staff ID" textFill="#7f858d">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
                      </font>
                      <VBox.margin>
-                        <Insets bottom="15.0" left="15.0" right="15.0" />
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="5.0" />
                      </VBox.margin>
-                  </Text>
+                  </Label>
                </children>
             </VBox>
             <VBox alignment="TOP_RIGHT" prefWidth="50.0" HBox.hgrow="ALWAYS">
@@ -262,25 +271,6 @@
                   <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                </padding>
                <children>
-                  <Text fill="#282b2f" layoutX="25.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notes">
-                     <font>
-                        <Font name="Gotham-Book" size="12.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets bottom="5.0" />
-                     </VBox.margin>
-                  </Text>
-                  <JFXTextArea focusColor="#b8b6c7" prefColumnCount="25" promptText="Write here" style="-fx-background-radius: 5px; -fx-background-color: #F2F0FB;" unFocusColor="#4d4d4d00">
-                     <font>
-                        <Font name="Gotham-Book" size="10.0" />
-                     </font>
-                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </padding>
-                     <VBox.margin>
-                        <Insets bottom="25.0" />
-                     </VBox.margin>
-                  </JFXTextArea>
                   <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff Photograph">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
@@ -298,9 +288,20 @@
                         </ImageView>
                      </graphic>
                      <VBox.margin>
-                        <Insets bottom="25.0" />
+                        <Insets />
                      </VBox.margin>
                   </JFXButton>
+                  <Label layoutX="25.0" layoutY="315.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="sample.jpg" textFill="#7f858d">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="25.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
                   <Text fill="#282b2f" layoutX="25.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attachments">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
@@ -318,6 +319,36 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
+                  <Label prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="sample.txt" textFill="#7f858d">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="25.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Text fill="#282b2f" layoutX="25.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notes">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <JFXTextArea focusColor="#b8b6c7" prefColumnCount="25" prefWidth="254.0" promptText="Write here" style="-fx-background-radius: 5px; -fx-background-color: #F2F0FB;" unFocusColor="#4d4d4d00" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Gotham-Book" size="10.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </JFXTextArea>
                   <VBox alignment="BOTTOM_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="65.0">
                      <children>
                         <HBox alignment="BOTTOM_RIGHT" spacing="20.0">

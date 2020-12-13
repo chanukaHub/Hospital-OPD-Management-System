@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="760.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox>
+         <children>
+            <VBox>
+               <children>
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointments">
+                     <font>
+                        <Font name="Gotham Bold" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="15.0" right="15.0" top="15.0" />
+                     </VBox.margin>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_RIGHT" prefWidth="50.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="32.0" styleClass="hover_bg_color_red" stylesheets="@../css/styles.css">
+                     <children>
+                        <ImageView fitHeight="8.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="8.0">
+                           <image>
+                              <Image url="@../images/Close_Icon.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox prefHeight="200.0">
+               <padding>
+                  <Insets left="15.0" right="15.0" top="15.0" />
+               </padding>
+               <children>
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Name">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <JFXTextField focusColor="#b8b6c7" prefWidth="200.0" promptText="Name" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                     <VBox.margin>
+                        <Insets bottom="25.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </JFXTextField>
+                  <Text fill="#282b2f" layoutX="25.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient ID">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <JFXTextField focusColor="#b8b6c7" prefWidth="200.0" promptText="username" style="-fx-background-color: #F2F0FB;" text="P0001" unFocusColor="#ffffff00">
+                     <VBox.margin>
+                        <Insets bottom="25.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </JFXTextField>
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone No">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <JFXTextField focusColor="#b8b6c7" prefWidth="200.0" style="-fx-background-color: #F2F0FB;" text="012 3456 789" unFocusColor="#ffffff00">
+                     <VBox.margin>
+                        <Insets bottom="25.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </JFXTextField>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+            <VBox prefWidth="250.0">
+               <padding>
+                  <Insets left="15.0" right="15.0" top="15.0" />
+               </padding>
+               <children>
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Doctor Specialty Area">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <JFXComboBox focusColor="#f2f0fb" prefHeight="29.0" prefWidth="200.0" promptText="Dermatology" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                     <padding>
+                        <Insets bottom="2.0" left="8.0" top="2.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="25.0" />
+                     </VBox.margin>
+                  </JFXComboBox>
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Doctor  for Consulttation">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <JFXComboBox focusColor="#f2f0fb" layoutX="25.0" layoutY="45.0" prefHeight="29.0" prefWidth="200.0" promptText="Dermatology" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                     <padding>
+                        <Insets bottom="2.0" left="8.0" top="2.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="25.0" />
+                     </VBox.margin>
+                  </JFXComboBox>
+                  <Text fill="#282b2f" layoutX="25.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <HBox spacing="10.0">
+                     <children>
+                        <JFXComboBox focusColor="#f2f0fb" promptText="DD" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                           <padding>
+                              <Insets bottom="2.0" left="8.0" top="2.0" />
+                           </padding>
+                        </JFXComboBox>
+                        <JFXComboBox focusColor="#f2f0fb" layoutX="10.0" layoutY="10.0" promptText="MM" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                           <padding>
+                              <Insets bottom="2.0" left="8.0" top="2.0" />
+                           </padding>
+                        </JFXComboBox>
+                        <JFXComboBox focusColor="#f2f0fb" layoutX="10.0" layoutY="10.0" promptText="YYYY" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                           <padding>
+                              <Insets bottom="2.0" left="8.0" top="2.0" />
+                           </padding>
+                        </JFXComboBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="25.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Text fill="#282b2f" layoutX="25.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <HBox layoutX="25.0" layoutY="45.0" spacing="10.0">
+                     <children>
+                        <JFXComboBox focusColor="#f2f0fb" promptText="00" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                           <padding>
+                              <Insets bottom="2.0" left="8.0" top="2.0" />
+                           </padding>
+                        </JFXComboBox>
+                        <JFXComboBox focusColor="#f2f0fb" layoutX="10.0" layoutY="10.0" promptText="00" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                           <padding>
+                              <Insets bottom="2.0" left="8.0" top="2.0" />
+                           </padding>
+                        </JFXComboBox>
+                        <JFXComboBox focusColor="#f2f0fb" layoutX="10.0" layoutY="10.0" promptText="PM" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                           <padding>
+                              <Insets bottom="2.0" left="8.0" top="2.0" />
+                           </padding>
+                        </JFXComboBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0">
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+               <children>
+                  <Text fill="#282b2f" layoutX="25.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Symptoms">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <JFXTextArea focusColor="#b8b6c7" prefColumnCount="25" promptText="Write here" style="-fx-background-radius: 5px; -fx-background-color: #F2F0FB;" unFocusColor="#4d4d4d00" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Gotham-Book" size="10.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="25.0" />
+                     </VBox.margin>
+                  </JFXTextArea>
+                  <VBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="65.0">
+                     <children>
+                        <HBox alignment="BOTTOM_RIGHT" spacing="20.0">
+                           <children>
+                              <JFXButton style="-fx-background-color: transparent; -fx-border-color: #2484FF; -fx-border-radius: 5px; -fx-border-width: 1px;" text="Cancel" textFill="#2484ff">
+                                 <font>
+                                    <Font name="Gotham-Book" size="12.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
+                                 </padding>
+                              </JFXButton>
+                              <JFXButton layoutX="646.0" layoutY="10.0" prefWidth="100.0" style="-fx-background-color: #2484FF;" text="save" textFill="WHITE">
+                                 <font>
+                                    <Font name="Gotham-Book" size="12.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
+                                 </padding>
+                              </JFXButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="15.0" left="15.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

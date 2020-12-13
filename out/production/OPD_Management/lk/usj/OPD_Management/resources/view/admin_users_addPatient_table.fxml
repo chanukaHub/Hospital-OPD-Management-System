@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="388.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView prefHeight="421.0" prefWidth="730.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;">
+        <columns>
+            <TableColumn prefWidth="105.19999694824219" text="NIC No" />
+          <TableColumn prefWidth="120.39999389648438" text="Name " />
+          <TableColumn prefWidth="115.39999389648438" text="Username" />
+            <TableColumn prefWidth="110.19998168945312" text="Gender" />
+            <TableColumn prefWidth="140.0" text="Adderess" />
+            <TableColumn minWidth="0.0" prefWidth="141.0" text="Phone No" />
+        </columns>
+      </TableView>
+   </children>
+</Pane>

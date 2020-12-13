@@ -2,11 +2,12 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -27,9 +28,17 @@
                         <Font name="Gotham Bold" size="16.0" />
                      </font>
                      <VBox.margin>
-                        <Insets bottom="20.0" left="15.0" right="15.0" top="15.0" />
+                        <Insets bottom="5.0" left="15.0" right="15.0" top="15.0" />
                      </VBox.margin>
                   </Text>
+                  <Label text="Patient ID" textFill="#7f858d">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" />
+                     </VBox.margin>
+                  </Label>
                </children>
             </VBox>
             <VBox alignment="TOP_RIGHT" prefWidth="50.0" HBox.hgrow="ALWAYS">
@@ -165,7 +174,11 @@
                         <Insets bottom="25.0" />
                      </VBox.margin>
                      <children>
-                        <DatePicker fx:id="dobDatePicker" onAction="#dobDatePicker_ActionEvent" prefHeight="30.0" prefWidth="200.0" promptText="Choose a Date" />
+                        <JFXDatePicker defaultColor="#b8b6c7" prefHeight="30.0" prefWidth="200.0" promptText="Select date" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-date-picker" stylesheets="@../css/styles.css">
+                           <padding>
+                              <Insets left="10.0" right="5.0" />
+                           </padding>
+                        </JFXDatePicker>
                      </children>
                   </HBox>
                </children>

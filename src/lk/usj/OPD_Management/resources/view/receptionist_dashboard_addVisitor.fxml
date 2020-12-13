@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -13,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="760.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.ReceptionistDashboardAddVisitorsController" >
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="760.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.ReceptionistDashboardAddVisitorsController">
    <children>
       <HBox>
          <children>
@@ -135,31 +137,11 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <HBox spacing="5.0">
-                     <children>
-                        <JFXComboBox fx:id="dateCBox" focusColor="#f2f0fb" onAction="#dateCBox_OnActon" promptText="DD" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                           <padding>
-                              <Insets bottom="2.0" left="8.0" top="2.0" />
-                           </padding>
-                        </JFXComboBox>
-                        <JFXComboBox fx:id="monthCBox" focusColor="#f2f0fb" onAction="#monthCBox_OnActon" promptText="MM" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
-                           <padding>
-                              <Insets bottom="2.0" left="8.0" top="2.0" />
-                           </padding>
-                        </JFXComboBox>
-                        <JFXComboBox fx:id="yearCBox" focusColor="#f2f0fb" onAction="#yearCBox_OnActon" promptText="YYYY" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
-                           <padding>
-                              <Insets bottom="2.0" left="8.0" top="2.0" />
-                           </padding>
-                        </JFXComboBox>
-                     </children>
-                     <VBox.margin>
-                        <Insets bottom="25.0" />
-                     </VBox.margin>
-                  </HBox>
+                  <JFXDatePicker defaultColor="#b8b6c7" prefHeight="30.0" prefWidth="200.0" promptText="Select date" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-date-picker" stylesheets="@../css/styles.css">
+                     <padding>
+                        <Insets left="10.0" right="5.0" />
+                     </padding>
+                  </JFXDatePicker>
                </children>
                <opaqueInsets>
                   <Insets />
@@ -178,28 +160,14 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <HBox spacing="10.0">
-                     <children>
-                        <JFXComboBox fx:id="inTImeHourCBox" focusColor="#f2f0fb" onAction="#inTImeHourCBox_OnActon" promptText="00" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
-                           <padding>
-                              <Insets bottom="2.0" left="8.0" top="2.0" />
-                           </padding>
-                        </JFXComboBox>
-                        <JFXComboBox fx:id="inTimeMinutesCBox" focusColor="#f2f0fb" layoutX="10.0" layoutY="10.0" onAction="#inTimeMinutesCBox_OnActon" promptText="00" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
-                           <padding>
-                              <Insets bottom="2.0" left="8.0" top="2.0" />
-                           </padding>
-                        </JFXComboBox>
-                        <JFXComboBox fx:id="inTimeAmPmCBox" focusColor="#f2f0fb" layoutX="10.0" layoutY="10.0" onAction="#inTimeAmPmCBox_OnActon" promptText="AM" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
-                           <padding>
-                              <Insets bottom="2.0" left="8.0" top="2.0" />
-                           </padding>
-                        </JFXComboBox>
-                     </children>
+                  <JFXTimePicker defaultColor="#b8b6c7" prefHeight="30.0" prefWidth="200.0" promptText="Select time" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-time-picker" stylesheets="@../css/styles.css">
+                     <padding>
+                        <Insets left="10.0" right="5.0" />
+                     </padding>
                      <VBox.margin>
                         <Insets bottom="25.0" />
                      </VBox.margin>
-                  </HBox>
+                  </JFXTimePicker>
                   <Text fill="#282b2f" layoutX="25.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Out Time">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
@@ -208,28 +176,11 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <HBox layoutX="25.0" layoutY="45.0" spacing="10.0">
-                     <children>
-                        <JFXComboBox fx:id="outTimeHourCBox" focusColor="#f2f0fb" onAction="#outTimeHourCBox_OnActon" promptText="00" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
-                           <padding>
-                              <Insets bottom="2.0" left="8.0" top="2.0" />
-                           </padding>
-                        </JFXComboBox>
-                        <JFXComboBox fx:id="outTimeMinutesCBox" focusColor="#f2f0fb" layoutX="10.0" layoutY="10.0" onAction="#outTimeMinutesCBox_OnActon" promptText="00" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
-                           <padding>
-                              <Insets bottom="2.0" left="8.0" top="2.0" />
-                           </padding>
-                        </JFXComboBox>
-                        <JFXComboBox fx:id="outTimeAmPmCBox" focusColor="#f2f0fb" layoutX="10.0" layoutY="10.0" onAction="#outTimeAmPmCBox_OnActon" promptText="PM" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
-                           <padding>
-                              <Insets bottom="2.0" left="8.0" top="2.0" />
-                           </padding>
-                        </JFXComboBox>
-                     </children>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </HBox>
+                  <JFXTimePicker defaultColor="#b8b6c7" prefHeight="30.0" prefWidth="200.0" promptText="Select time" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-time-picker" stylesheets="@../css/styles.css">
+                     <padding>
+                        <Insets left="10.0" right="5.0" />
+                     </padding>
+                  </JFXTimePicker>
                   <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Attachments">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
@@ -247,6 +198,17 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
+                  <Label prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="sample.txt" textFill="#7f858d">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Label>
                </children>
             </VBox>
             <VBox fx:id="VBoxArea3" prefHeight="200.0">
