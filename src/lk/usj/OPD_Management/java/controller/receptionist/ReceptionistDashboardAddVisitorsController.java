@@ -194,7 +194,7 @@ public class ReceptionistDashboardAddVisitorsController implements Initializable
 
             vistorNameTxt.setText("File selected: " + selectedFile.getPath());
             try {
-                File newFile = new File("attachmentDocuments\\new.txt");
+                File newFile = new File("AttachmentDocumentsStorage\\new.txt");
                 Files.copy(selectedFile.toPath(),newFile.toPath());
             }catch (Exception e){
                 e.printStackTrace();
