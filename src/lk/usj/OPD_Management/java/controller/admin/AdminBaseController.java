@@ -250,4 +250,8 @@ public class AdminBaseController implements Initializable {
 
 
     }
+
+    public void transferMessage(String text) {
+        nameTxt.setText(text);
+    }
 }

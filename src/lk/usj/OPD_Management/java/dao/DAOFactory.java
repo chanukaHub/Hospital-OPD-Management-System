@@ -1,7 +1,6 @@
 package lk.usj.OPD_Management.java.dao;
 
-import lk.usj.OPD_Management.java.dao.custom.Impl.AdminDAOImpl;
-import lk.usj.OPD_Management.java.dao.custom.Impl.ReceptionistDAOImpl;
+import lk.usj.OPD_Management.java.dao.custom.Impl.*;
 
 public class DAOFactory {
     private static DAOFactory dAOFactory;
@@ -23,6 +22,12 @@ public class DAOFactory {
                 return (T) new AdminDAOImpl();
             case RECEPTIONIST:
                 return (T) new ReceptionistDAOImpl();
+            case PATIENT:
+                return (T) new PatientDAOImpl();
+            case DOCTOR:
+                return (T) new DoctorDAOImpl();
+            case VISITOR:
+                return (T) new VisitorDAOImpl();
             default:
                 return null;
         }
@@ -30,7 +35,10 @@ public class DAOFactory {
 
     public static enum DAOTypes {
         ADMIN,
-        RECEPTIONIST;
+        RECEPTIONIST,
+        PATIENT,
+        DOCTOR,
+        VISITOR;
 
         private DAOTypes() {
         }

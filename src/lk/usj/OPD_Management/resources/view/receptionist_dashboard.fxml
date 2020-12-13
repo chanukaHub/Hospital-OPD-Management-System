@@ -7,27 +7,26 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #F2F0FB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #F2F0FB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.ReceptionistDashboardController">
    <children>
       <HBox alignment="CENTER" spacing="38.0">
          <children>
-            <JFXButton prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" text="Add &#10;New Visitor" textAlignment="CENTER">
+            <JFXButton fx:id="addNewVisitorBtn" onAction="#addNewVisitorBtn_OnActon" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" text="Add &#10;New Visitor" textAlignment="CENTER">
                <font>
                   <Font name="Gotham Bold" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" text="Add &#10;New Patient" textAlignment="CENTER">
+            <JFXButton fx:id="addNewPatientBtn" layoutX="10.0" layoutY="10.0" onAction="#addNewPatientBtn_OnActon" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" text="Add &#10;New Patient" textAlignment="CENTER">
                <font>
                   <Font name="Gotham Bold" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="113.0" layoutY="10.0" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" text="Add&#10; Appointment" textAlignment="CENTER">
+            <JFXButton fx:id="addAppointmentBtn" layoutX="113.0" layoutY="10.0" onAction="#addAppointmentBtn_OnActon" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" text="Add&#10; Appointment" textAlignment="CENTER">
                <font>
                   <Font name="Gotham Bold" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="220.0" layoutY="10.0" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" text="Add &#10; complaint" textAlignment="CENTER">
+            <JFXButton fx:id="AddComplaintBtn" layoutX="220.0" layoutY="10.0" onAction="#AddComplaintBtn_OnActon" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" text="Add &#10; complaint" textAlignment="CENTER">
                <font>
                   <Font name="Gotham Bold" size="14.0" />
                </font>
@@ -39,7 +38,7 @@
             <Insets top="15.0" />
          </VBox.margin>
          <children>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+            <AnchorPane fx:id="root" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
    </children>

@@ -1,7 +1,7 @@
 package lk.usj.OPD_Management.java.dao.custom.Impl;
 
-import lk.usj.OPD_Management.java.dao.custom.ReceptionistDAO;
-import lk.usj.OPD_Management.java.entity.Admin;
+import lk.usj.OPD_Management.java.dao.custom.DoctorDAO;
+import lk.usj.OPD_Management.java.entity.Doctor;
 import lk.usj.OPD_Management.java.entity.Receptionist;
 
 import java.io.File;
@@ -14,14 +14,14 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
-public class ReceptionistDAOImpl implements ReceptionistDAO {
+public class DoctorDAOImpl implements DoctorDAO {
     @Override
-    public boolean save(Receptionist var1) throws Exception {
+    public boolean save(Doctor var1) throws Exception {
         return false;
     }
 
     @Override
-    public boolean update(Receptionist var1) throws Exception {
+    public boolean update(Doctor var1) throws Exception {
         return false;
     }
 
@@ -31,12 +31,13 @@ public class ReceptionistDAOImpl implements ReceptionistDAO {
     }
 
     @Override
-    public Receptionist search(String var1) throws Exception {
+    public Doctor search(String var1) throws Exception {
         try{
             String username, name, gender, phoneNumber, idCard,dateOfBirth, address, maritalStatus, password;
             String staffId, staffEmail,dateOfJoin,photograph,document,note;
+            String specialistArea;
             SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-            File file = new File("Receptionist.txt");
+            File file = new File("Doctor.txt");
             if (!file.exists()) {//checking the is given file exists
 
                 file.createNewFile();//creating new file
@@ -45,7 +46,7 @@ public class ReceptionistDAOImpl implements ReceptionistDAO {
             }
             Scanner scanner =new Scanner(file);
 
-            List<Receptionist> receptionists = new ArrayList<>();
+            List<Doctor> doctors = new ArrayList<>();
 
             while(scanner.hasNextLine()){
                 String line =scanner.nextLine();
@@ -65,19 +66,20 @@ public class ReceptionistDAOImpl implements ReceptionistDAO {
                 photograph=details[12];
                 document=details[13];
                 note =details[14];
+                specialistArea =details[15];
 
                 try {
                     Date birthDate =format.parse(dateOfBirth);
                     Date joinDate =format.parse(dateOfJoin);
-                    Receptionist receptionist= new Receptionist(username, name, gender, phoneNumber, idCard,birthDate, address, maritalStatus, password,staffId,staffEmail,joinDate,photograph,document,note);
-                    receptionists.add(receptionist);
+                    Doctor doctor= new Doctor(username, name, gender, phoneNumber, idCard,birthDate, address, maritalStatus, password,staffId,staffEmail,joinDate,photograph,document,note,specialistArea);
+                    doctors.add(doctor);
                 }catch (ParseException e){
                     e.printStackTrace();
                 }
             }
-            for (Receptionist r:receptionists){
-                if(r.getUsername().equals(var1)){
-                    return r;
+            for (Doctor d:doctors){
+                if(d.getUsername().equals(var1)){
+                    return d;
                 }
             }
 
@@ -88,7 +90,7 @@ public class ReceptionistDAOImpl implements ReceptionistDAO {
     }
 
     @Override
-    public ArrayList<Receptionist> getAll() throws Exception {
+    public ArrayList<Doctor> getAll() throws Exception {
         return null;
     }
 }

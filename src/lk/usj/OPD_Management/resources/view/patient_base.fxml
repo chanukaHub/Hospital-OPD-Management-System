@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="950.0" style="-fx-background-color: #F2F0FB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.AdminBaseController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="950.0" style="-fx-background-color: #F2F0FB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.patient.PatientBaseController">
    <top>
       <HBox BorderPane.alignment="CENTER"> 
          <children>
@@ -35,7 +35,7 @@
                <children>
                   <HBox style="-fx-background-color: #ffffff;">
                      <children>
-                        <HBox alignment="CENTER">
+                        <HBox fx:id="profileHBox" alignment="CENTER" onMouseClicked="#profileHBox_MouseEvent">
                            <children>
                               <ImageView fx:id="profileImageView" fitHeight="33.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -137,7 +137,7 @@
          <children>
             <VBox>
                <children>
-                  <HBox fx:id="dashboardHBox" onMouseClicked="#dashboardHBox_OnAction" stylesheets="@../css/styles.css">
+                  <HBox fx:id="dashboardHBox" onMouseClicked="#dashboardHBox_MouseEvent" stylesheets="@../css/styles.css">
                      <children>
                         <HBox>
                            <children>
@@ -171,7 +171,7 @@
                         <Insets left="5.0" />
                      </padding>
                   </HBox>
-                  <HBox fx:id="appointmentHBox" layoutX="10.0" layoutY="130.0" stylesheets="@../css/styles.css">
+                  <HBox fx:id="appointmentHBox" layoutX="10.0" layoutY="130.0" onMouseClicked="#appointmentHBox_MouseEvent" stylesheets="@../css/styles.css">
                      <children>
                         <HBox>
                            <children>
@@ -205,7 +205,7 @@
                         <Insets left="5.0" />
                      </padding>
                   </HBox>
-                  <HBox fx:id="complainsHBox" layoutX="10.0" layoutY="90.0" stylesheets="@../css/styles.css">
+                  <HBox fx:id="complainsHBox" layoutX="10.0" layoutY="90.0" onMouseClicked="#complainsHBox_MouseEvent" stylesheets="@../css/styles.css">
                      <children>
                         <HBox>
                            <children>
@@ -239,7 +239,7 @@
                         <Insets left="5.0" />
                      </padding>
                   </HBox>
-                  <HBox fx:id="referenceHBox" layoutX="10.0" layoutY="170.0" stylesheets="@../css/styles.css">
+                  <HBox fx:id="supportHBox" layoutX="10.0" layoutY="170.0" onMouseClicked="#supportHBox_MouseEvent" stylesheets="@../css/styles.css">
                      <children>
                         <HBox>
                            <children>
@@ -280,7 +280,7 @@
                   <HBox VBox.vgrow="ALWAYS" />
                   <HBox alignment="BOTTOM_CENTER">
                      <children>
-                        <JFXButton fx:id="logoutBtn" alignment="BOTTOM_CENTER" onAction="#logout" ripplerFill="WHITE" style="-fx-background-color: transparent; -fx-border-color: White; -fx-border-radius: 5px;" text="LOG OUT" textFill="WHITE">
+                        <JFXButton fx:id="logoutBtn" alignment="BOTTOM_CENTER" onAction="#logoutBtn_ActionEvent" ripplerFill="WHITE" style="-fx-background-color: transparent; -fx-border-color: White; -fx-border-radius: 5px;" text="LOG OUT" textFill="WHITE">
                            <font>
                               <Font name="Gotham Bold" size="12.0" />
                            </font>

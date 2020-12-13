@@ -20,12 +20,15 @@ public class BOFactory {
         switch(boType) {
             case LOG_IN:
                 return (T) new LoginBOImpl();
+            case PATIENT:
+                return (T) new LoginBOImpl();
             default:
                 return null;
         }
     }
 
     public static enum BOTypes {
-         LOG_IN
+         LOG_IN,
+        PATIENT
     }
 }
