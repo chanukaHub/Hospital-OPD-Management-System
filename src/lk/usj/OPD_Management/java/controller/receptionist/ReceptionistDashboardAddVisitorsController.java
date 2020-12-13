@@ -9,9 +9,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import javafx.stage.Window;
 import lk.usj.OPD_Management.java.service.custom.VisitorBO;
 
+import java.io.File;
 import java.net.URL;
+import java.nio.file.Files;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ReceptionistDashboardAddVisitorsController implements Initializable {
@@ -83,7 +89,6 @@ public class ReceptionistDashboardAddVisitorsController implements Initializable
 
 
     private VisitorBO VisitorBO;
-    private Object Stage;
 
     @FXML
     void cancelBtn_OnActon(ActionEvent event) {
@@ -147,7 +152,7 @@ public class ReceptionistDashboardAddVisitorsController implements Initializable
 
     @FXML
     void saveBtn_OnActon(ActionEvent event) {
-         String visitorName=vistorNameTxt.getText();
+  /*       String visitorName=vistorNameTxt.getText();
          String purpose=purposeTxt.getText();
          String telNo=telNotxt.getText();
          String nicNo=nicTxt.getText();
@@ -161,12 +166,14 @@ public class ReceptionistDashboardAddVisitorsController implements Initializable
          int outTimeMinutes= (int) outTimeMinutesCBox.getValue();
          String outTimeAMPM= (String) outTimeAmPmCBox.getValue();
          String attchment=visitorAttachmentBtn.getText();
-//         JFileChooser attachment=visitorAttachmentBtn.getExtensionFilters().addAll(
-//                 new FileChooser.ExtensionFilter("All Images", "*.*"),
-//                 new FileChooser.ExtensionFilter("JPG", "*.jpg"),
-//                 new FileChooser.ExtensionFilter("PNG", "*.png")
-//         );
-         String notes;
+         JFileChooser attachment=visitorAttachmentBtn.getExtensionFilters().addAll(
+                 new FileChooser.ExtensionFilter("All Images", "*.*"),
+                 new FileChooser.ExtensionFilter("JPG", "*.jpg"),
+                 new FileChooser.ExtensionFilter("PNG", "*.png")
+         );
+        String notes;     */
+
+
     }
 
     @FXML
@@ -177,21 +184,29 @@ public class ReceptionistDashboardAddVisitorsController implements Initializable
     @FXML
 
     void visitorAttachmentBtn_OnActon(ActionEvent event){
-       notesTxtArea.requestFocus();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select PDF files");
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("TEXT Files", "*.txt"));
+
+        File selectedFile = fileChooser.showOpenDialog(null);
+
+        if (selectedFile != null) {
+
+            vistorNameTxt.setText("File selected: " + selectedFile.getPath());
+            try {
+                File newFile = new File("attachmentDocuments\\new.txt");
+                Files.copy(selectedFile.toPath(),newFile.toPath());
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        else {
+            vistorNameTxt.setText("File selection cancelled.");
+        }
+
+       //notesTxtArea.requestFocus();
     }
 
-//    @FXML
-
-//    void visitorAttachmentBtn_OnActon(new EventHandler<ActionEvent>(){
-//        public void handle(ActionEvent Event event;
-//        event){
-//            //Opening a dialog box
-//            FileChooser fileChooser = new FileChooser();
-//            List<File> files = fileChooser.showOpenMultipleDialog((Window) Stage);
-//        });
-//
-//        notesTxtArea.requestFocus();
-//    }
 
     @FXML
     void vistorNameTxt_OnActon(ActionEvent event) {

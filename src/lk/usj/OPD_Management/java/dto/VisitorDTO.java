@@ -1,33 +1,37 @@
 package lk.usj.OPD_Management.java.dto;
-
-
 import javafx.stage.FileChooser;
 
 import javax.swing.*;
+import java.sql.Time;
+import java.util.Date;
 
 public class VisitorDTO {
-    //Purpose, Name, Phone, ID Card Number of Person, Date, In Time, Out Time, Note
-    //Attached Document
+
 
     private String visitorName;
     private String purpose;
     private String telNo;
     private String nicNo;
-    private String visitDay;
-    private String visitMonth;
-    private String visitYear;
-    private String inTimeHour;
-    private String inTimeMinutes;
-    private String inTimeAMPM;
-    private String outTimeHour;
-    private String outTimeMinutes;
-    private String outTimeAMPM;
-    private JFileChooser attachment;
+    private Date date;
+    private Time inTime;
+    private Time outTime;
+    private String attachment;
     private String notes;
-    private FileChooser fileChooser;
 
 
     public VisitorDTO(){}
+
+    public VisitorDTO(String visitorName, String purpose, String telNo, String nicNo, Date date, Time inTime, Time outTime, String attachment, String notes) {
+        this.visitorName = visitorName;
+        this.purpose = purpose;
+        this.telNo = telNo;
+        this.nicNo = nicNo;
+        this.date = date;
+        this.inTime = inTime;
+        this.outTime = outTime;
+        this.attachment = attachment;
+        this.notes = notes;
+    }
 
     public String getVisitorName() {
         return visitorName;
@@ -61,84 +65,36 @@ public class VisitorDTO {
         this.nicNo = nicNo;
     }
 
-    public String getVisitDay() {
-        return visitDay;
+    public Date getDate() {
+        return date;
     }
 
-    public void setVisitDay(String visitDay) {
-        this.visitDay = visitDay;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public String getVisitMonth() {
-        return visitMonth;
+    public Time getInTime() {
+        return inTime;
     }
 
-    public void setVisitMonth(String visitMonth) {
-        this.visitMonth = visitMonth;
+    public void setInTime(Time inTime) {
+        this.inTime = inTime;
     }
 
-    public String getVisitYear() {
-        return visitYear;
+    public Time getOutTime() {
+        return outTime;
     }
 
-    public void setVisitYear(String visitYear) {
-        this.visitYear = visitYear;
+    public void setOutTime(Time outTime) {
+        this.outTime = outTime;
     }
 
-    public String getInTimeHour() {
-        return inTimeHour;
-    }
-
-    public void setInTimeHour(String inTimeHour) {
-        this.inTimeHour = inTimeHour;
-    }
-
-    public String getInTimeMinutes() {
-        return inTimeMinutes;
-    }
-
-    public void setInTimeMinutes(String inTimeMinutes) {
-        this.inTimeMinutes = inTimeMinutes;
-    }
-
-    public String getInTimeAMPM() {
-        return inTimeAMPM;
-    }
-
-    public void setInTimeAMPM(String inTimeAMPM) {
-        this.inTimeAMPM = inTimeAMPM;
-    }
-
-    public String getOutTimeHour() {
-        return outTimeHour;
-    }
-
-    public void setOutTimeHour(String outTimeHour) {
-        this.outTimeHour = outTimeHour;
-    }
-
-    public String getOutTimeMinutes() {
-        return outTimeMinutes;
-    }
-
-    public void setOutTimeMinutes(String outTimeMinutes) {
-        this.outTimeMinutes = outTimeMinutes;
-    }
-
-    public String getOutTimeAMPM() {
-        return outTimeAMPM;
-    }
-
-    public void setOutTimeAMPM(String outTimeAMPM) {
-        this.outTimeAMPM = outTimeAMPM;
-    }
-
-    public boolean getAttachment() {
-        return fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("All Files", "*.*"));
+    public String getAttachment() {
+        return attachment;
     }
 
     public void setAttachment(String attachment) {
-//        this.attachment = attachment;
+        this.attachment = attachment;
     }
 
     public String getNotes() {
@@ -156,15 +112,9 @@ public class VisitorDTO {
                 ", purpose='" + purpose + '\'' +
                 ", telNo='" + telNo + '\'' +
                 ", nicNo='" + nicNo + '\'' +
-                ", visitDay='" + visitDay + '\'' +
-                ", visitMonth='" + visitMonth + '\'' +
-                ", visitYear='" + visitYear + '\'' +
-                ", inTimeHour='" + inTimeHour + '\'' +
-                ", inTimeMinutes='" + inTimeMinutes + '\'' +
-                ", inTimeAMPM='" + inTimeAMPM + '\'' +
-                ", outTimeHour='" + outTimeHour + '\'' +
-                ", outTimeMinutes='" + outTimeMinutes + '\'' +
-                ", outTimeAMPM='" + outTimeAMPM + '\'' +
+                ", date=" + date +
+                ", inTime=" + inTime +
+                ", outTime=" + outTime +
                 ", attachment='" + attachment + '\'' +
                 ", notes='" + notes + '\'' +
                 '}';
