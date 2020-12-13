@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointments">
+         <font>
+            <Font name="Gotham Bold" size="16.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </VBox.margin>
+      </Text>
+      <TableView prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn prefWidth="228.0" text="Appointment ID" />
+          <TableColumn prefWidth="114.0" text="Patient ID" />
+            <TableColumn prefWidth="93.0" text="Name" />
+            <TableColumn prefWidth="92.0" text="Date" />
+            <TableColumn prefWidth="89.0" text="Time" />
+            <TableColumn prefWidth="113.0" text="Status" />
+        </columns>
+         <VBox.margin>
+            <Insets bottom="10.0" left="15.0" right="15.0" />
+         </VBox.margin>
+      </TableView>
+      <HBox alignment="CENTER_RIGHT">
+         <children>
+            <JFXButton layoutX="470.0" layoutY="23.0" prefWidth="65.0" ripplerFill="TRANSPARENT" style="-fx-background-color: #FF4242;" text="Delete" textFill="WHITE">
+               <HBox.margin>
+                  <Insets bottom="15.0" right="15.0" top="10.0" />
+               </HBox.margin>
+            </JFXButton>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
