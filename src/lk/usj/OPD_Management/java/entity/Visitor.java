@@ -1,22 +1,23 @@
 package lk.usj.OPD_Management.java.entity;
 
 import java.sql.Time;
+import java.time.LocalTime;
 import java.util.Date;
 
 public class Visitor {
     private String visitorName;
     private String purpose;
-    private String telNo;
+    private Integer telNo;
     private String nicNo;
     private Date date;
-    private Time inTime;
-    private Time outTime;
+    private LocalTime inTime;
+    private LocalTime outTime;
     private String attachment;
     private String notes;
 
     public Visitor(){}
 
-    public Visitor(String visitorName, String purpose, String telNo, String nicNo, Date date, Time inTime, Time outTime, String attachment, String notes) {
+    public Visitor(String visitorName, String purpose, Integer telNo, String nicNo, Date date, LocalTime inTime, LocalTime outTime, String attachment, String notes) {
         this.visitorName = visitorName;
         this.purpose = purpose;
         this.telNo = telNo;
@@ -44,11 +45,11 @@ public class Visitor {
         this.purpose = purpose;
     }
 
-    public String getTelNo() {
+    public Integer getTelNo() {
         return telNo;
     }
 
-    public void setTelNo(String telNo) {
+    public void setTelNo(Integer telNo) {
         this.telNo = telNo;
     }
 
@@ -68,19 +69,19 @@ public class Visitor {
         this.date = date;
     }
 
-    public Time getInTime() {
+    public LocalTime getInTime() {
         return inTime;
     }
 
-    public void setInTime(Time inTime) {
+    public void setInTime(LocalTime inTime) {
         this.inTime = inTime;
     }
 
-    public Time getOutTime() {
+    public LocalTime getOutTime() {
         return outTime;
     }
 
-    public void setOutTime(Time outTime) {
+    public void setOutTime(LocalTime outTime) {
         this.outTime = outTime;
     }
 

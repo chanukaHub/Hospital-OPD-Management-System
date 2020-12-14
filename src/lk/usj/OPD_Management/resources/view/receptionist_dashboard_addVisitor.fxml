@@ -48,7 +48,7 @@
       </HBox>
       <HBox prefWidth="200.0" VBox.vgrow="ALWAYS">
          <children>
-            <VBox fx:id="VBoxarea1" prefHeight="200.0">
+            <VBox prefHeight="200.0">
                <padding>
                   <Insets left="15.0" right="15.0" top="15.0" />
                </padding>
@@ -61,7 +61,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTextField fx:id="vistorNameTxt" focusColor="#b8b6c7" onAction="#vistorNameTxt_OnActon" prefWidth="200.0" promptText="Name" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                  <JFXTextField fx:id="visitorNameTxt" focusColor="#b8b6c7" onAction="#visitorNameTxt_OnActon" prefWidth="200.0" promptText="Name" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
                      <VBox.margin>
                         <Insets bottom="25.0" />
                      </VBox.margin>
@@ -99,7 +99,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTextField fx:id="telNotxt" focusColor="#b8b6c7" onAction="#telNotxt_OnActon" prefWidth="200.0" style="-fx-background-color: #F2F0FB;" text="012 3456 789" unFocusColor="#ffffff00">
+                  <JFXTextField fx:id="telNoTxt" focusColor="#b8b6c7" onAction="#telNoTxt_OnActon" prefWidth="200.0" promptText="Phone No" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
                      <VBox.margin>
                         <Insets bottom="25.0" />
                      </VBox.margin>
@@ -118,7 +118,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTextField fx:id="nicTxt" focusColor="#b8b6c7" onAction="#nicTxt_OnActon" prefWidth="200.0" promptText="123456789V" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                  <JFXTextField fx:id="nicTxt" focusColor="#b8b6c7" onAction="#nicTxt_OnActon" prefWidth="200.0" promptText="NIC number" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
                      <VBox.margin>
                         <Insets bottom="25.0" />
                      </VBox.margin>
@@ -137,7 +137,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXDatePicker defaultColor="#b8b6c7" prefHeight="30.0" prefWidth="200.0" promptText="Select date" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-date-picker" stylesheets="@../css/styles.css">
+                  <JFXDatePicker fx:id="dateDatePicker" defaultColor="#b8b6c7" onAction="#dateDatePicker_OnAction" prefHeight="30.0" prefWidth="200.0" promptText="Select date" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-date-picker" stylesheets="@../css/styles.css">
                      <padding>
                         <Insets left="10.0" />
                      </padding>
@@ -147,7 +147,7 @@
                   <Insets />
                </opaqueInsets>
             </VBox>
-            <VBox fx:id="VBoxArea2" prefWidth="250.0">
+            <VBox prefWidth="250.0">
                <padding>
                   <Insets left="15.0" right="15.0" top="15.0" />
                </padding>
@@ -160,7 +160,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTimePicker defaultColor="#b8b6c7" prefHeight="30.0" prefWidth="200.0" promptText="Select time" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-time-picker" stylesheets="@../css/styles.css">
+                  <JFXTimePicker fx:id="inTimeTimePicker" defaultColor="#b8b6c7" onAction="#inTimeTimePicker_OnAction" prefHeight="30.0" prefWidth="200.0" promptText="Select time" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-time-picker" stylesheets="@../css/styles.css">
                      <padding>
                         <Insets left="10.0" />
                      </padding>
@@ -176,7 +176,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTimePicker defaultColor="#b8b6c7" prefHeight="30.0" prefWidth="200.0" promptText="Select time" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-time-picker" stylesheets="@../css/styles.css">
+                  <JFXTimePicker fx:id="outTimeTimePicker" defaultColor="#b8b6c7" onAction="#outTimeTimePicker_Onaction" prefHeight="30.0" prefWidth="200.0" promptText="Select time" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-time-picker" stylesheets="@../css/styles.css">
                      <padding>
                         <Insets left="10.0" />
                      </padding>
@@ -198,7 +198,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <Label prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="sample.txt" textFill="#7f858d">
+                  <Label fx:id="attachmentLabel" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="sample.txt" textFill="#7f858d">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
                      </font>
@@ -211,7 +211,7 @@
                   </Label>
                </children>
             </VBox>
-            <VBox fx:id="VBoxArea3" prefHeight="200.0">
+            <VBox prefHeight="200.0">
                <padding>
                   <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                </padding>

@@ -1,28 +1,39 @@
 package lk.usj.OPD_Management.java.controller.receptionist;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.controls.JFXTimePicker;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
-import javafx.stage.Window;
+import lk.usj.OPD_Management.java.common.Common;
+import lk.usj.OPD_Management.java.dto.PatientDTO;
+import lk.usj.OPD_Management.java.dto.VisitorDTO;
+import lk.usj.OPD_Management.java.service.custom.PatientBO;
 import lk.usj.OPD_Management.java.service.custom.VisitorBO;
-
-import java.io.File;
-import java.net.URL;
-import java.nio.file.Files;
-import java.util.List;
-import java.util.ResourceBundle;
+import lk.usj.OPD_Management.java.service.custom.impl.PatientBOImpl;
+import lk.usj.OPD_Management.java.service.custom.impl.VisitorBOImpl;
 
 public class ReceptionistDashboardAddVisitorsController implements Initializable {
-    @FXML
-    private VBox root;
+    private VisitorBO visitorBO = new VisitorBOImpl();
+    String selectedFilePath;
 
     @FXML
     private ResourceBundle resources;
@@ -31,46 +42,34 @@ public class ReceptionistDashboardAddVisitorsController implements Initializable
     private URL location;
 
     @FXML
-    private JFXTextField vistorNameTxt;
+    private VBox root;
+
+    @FXML
+    private JFXTextField visitorNameTxt;
 
     @FXML
     private JFXTextField purposeTxt;
 
     @FXML
-    private JFXTextField telNotxt;
+    private JFXTextField telNoTxt;
 
     @FXML
     private JFXTextField nicTxt;
 
     @FXML
-    private JFXComboBox<?> dateCBox;
+    private JFXDatePicker dateDatePicker;
 
     @FXML
-    private JFXComboBox<?> monthCBox;
+    private JFXTimePicker inTimeTimePicker;
 
     @FXML
-    private JFXComboBox<?> yearCBox;
+    private JFXTimePicker outTimeTimePicker;
 
     @FXML
-    private JFXComboBox<?> inTImeHourCBox;
+    private JFXButton visitorAttachmentBtn;
 
     @FXML
-    private JFXComboBox<?> inTimeMinutesCBox;
-
-    @FXML
-    private JFXComboBox<?> inTimeAmPmCBox;
-
-    @FXML
-    private JFXComboBox<?> outTimeHourCBox;
-
-    @FXML
-    private JFXComboBox<?> outTimeMinutesCBox;
-
-    @FXML
-    private JFXComboBox<?> outTimeAmPmCBox;
-
-    @FXML
-    public JFXButton visitorAttachmentBtn;
+    private Label attachmentLabel;
 
     @FXML
     private JFXTextArea notesTxtArea;
@@ -80,110 +79,116 @@ public class ReceptionistDashboardAddVisitorsController implements Initializable
 
     @FXML
     private JFXButton saveBtn;
-    @FXML
-    private VBox VBoxarea1;
-    @FXML
-    private VBox VBoxarea2;
-    @FXML
-    private VBox VBoxarea3;
-
-
-    private VisitorBO VisitorBO;
 
     @FXML
-    void cancelBtn_OnActon(ActionEvent event) {
+    void cancelBtn_OnActon(ActionEvent event) throws IOException {
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_dashboard.fxml"));
+        root.getChildren().setAll(pane);
+    }
+
+    @FXML
+    void dateDatePicker_OnAction(ActionEvent event) {
 
     }
 
     @FXML
-    void dateCBox_OnActon(ActionEvent event) {
-        monthCBox.requestFocus();
-    }
+    void inTimeTimePicker_OnAction(ActionEvent event) {
 
-    @FXML
-    void inTImeHourCBox_OnActon(ActionEvent event) {
-        inTimeMinutesCBox.requestFocus();
-    }
-
-    @FXML
-    void inTimeAmPmCBox_OnActon(ActionEvent event) {
-        outTimeHourCBox.requestFocus();
-    }
-
-    @FXML
-    void inTimeMinutesCBox_OnActon(ActionEvent event) {
-        inTimeAmPmCBox.requestFocus();
-    }
-
-    @FXML
-    void monthCBox_OnActon(ActionEvent event) {
-        yearCBox.requestFocus();
     }
 
     @FXML
     void nicTxt_OnActon(ActionEvent event) {
-        dateCBox.requestFocus();
 
     }
 
     @FXML
     void notesTxtArea_OnActon(MouseEvent event) {
-        saveBtn.requestFocus();
+
     }
 
     @FXML
-    void outTimeAmPmCBox_OnActon(ActionEvent event) {
-        visitorAttachmentBtn.requestFocus();
-    }
-    @FXML
-    void outTimeHourCBox_OnActon(ActionEvent event) {
-        outTimeMinutesCBox.requestFocus();
-    }
+    void outTimeTimePicker_Onaction(ActionEvent event) {
 
-    @FXML
-    void outTimeMinutesCBox_OnActon(ActionEvent event) {
-        outTimeAmPmCBox.requestFocus();
     }
 
     @FXML
     void purposeTxt_OnActon(ActionEvent event) {
-    telNotxt.requestFocus();
+
     }
 
     @FXML
     void saveBtn_OnActon(ActionEvent event) {
-  /*       String visitorName=vistorNameTxt.getText();
-         String purpose=purposeTxt.getText();
-         String telNo=telNotxt.getText();
-         String nicNo=nicTxt.getText();
-         int visitDay= (int) dateCBox.getValue();
-         int visitMonth= (int) monthCBox.getValue();
-         int visitYear= (int) yearCBox.getValue();
-         int inTimeHour= (int) inTImeHourCBox.getValue();
-         int inTimeMinutes= (int) inTimeMinutesCBox.getValue();
-         String inTimeAMPM= (String) inTimeAmPmCBox.getValue();
-         int outTimeHour= (int) outTimeHourCBox.getValue();
-         int outTimeMinutes= (int) outTimeMinutesCBox.getValue();
-         String outTimeAMPM= (String) outTimeAmPmCBox.getValue();
-         String attchment=visitorAttachmentBtn.getText();
-         JFileChooser attachment=visitorAttachmentBtn.getExtensionFilters().addAll(
-                 new FileChooser.ExtensionFilter("All Images", "*.*"),
-                 new FileChooser.ExtensionFilter("JPG", "*.jpg"),
-                 new FileChooser.ExtensionFilter("PNG", "*.png")
-         );
-        String notes;     */
+        try{
+            String address,maritalStatus,bloodGroup;
+            if (visitorAttachmentBtn.getText().equals("")){
+                Common.showError("Please Enter Name");
+                return;
+            }else if(nicTxt.getText().equals("")){
+                Common.showError("Please Enter NIC No");
+                return;
+            }
+            LocalDate ld = dateDatePicker.getValue();
+            Calendar c =  Calendar.getInstance();
+            if (ld == null){
+                Common.showError("Please Enter Date");
+                return;
+            }
+            c.set(ld.getYear(), ld.getMonthValue() - 1, ld.getDayOfMonth());
+            Date date = c.getTime();
 
+            if (inTimeTimePicker.getValue()== null){
+                Common.showError("Please Enter In time");
+                return;
+            }else if (outTimeTimePicker.getValue()== null){
+                Common.showError("Please Enter Out time");
+                return;
+            }
+
+            File newFile = new File("AttachmentDocumentsStorage\\"+nicTxt.getText()+String.valueOf(date.getDate())+String.valueOf(inTimeTimePicker.getValue().getHour())+String.valueOf(inTimeTimePicker.getValue().getMinute())+String.valueOf(inTimeTimePicker.getValue().getSecond()));
+            Files.copy(Path.of(selectedFilePath),newFile.toPath());
+
+
+            VisitorDTO visitorDTO= new VisitorDTO(
+                    visitorNameTxt.getText(),
+                    purposeTxt.getText(),
+                    Integer.parseInt(telNoTxt.getText()),
+                    nicTxt.getText(),
+                    date,
+                    inTimeTimePicker.getValue(),
+                    outTimeTimePicker.getValue(),
+                    newFile.getPath(),
+                    notesTxtArea.getText()
+            );
+
+            boolean b = visitorBO.addVisitor(visitorDTO);
+
+            if (b){
+                Common.showMessage("Added Visitor!");
+                visitorNameTxt.clear();
+                purposeTxt.clear();
+                telNoTxt.clear();
+                nicTxt.clear();
+                dateDatePicker.getEditor().clear();
+                inTimeTimePicker.getEditor().clear();
+                outTimeTimePicker.getEditor().clear();
+                attachmentLabel.setText("");
+                notesTxtArea.clear();
+            }
+            else
+                Common.showError("Not added");
+        } catch (Exception e1) {
+            Common.showError("Not added");
+            e1.printStackTrace();
+        }
+    }
+
+    @FXML
+    void telNoTxt_OnActon(ActionEvent event) {
 
     }
 
     @FXML
-    void telNotxt_OnActon(ActionEvent event) {
-        nicTxt.requestFocus();
-    }
-
-    @FXML
-
-    void visitorAttachmentBtn_OnActon(ActionEvent event){
+    void visitorAttachmentBtn_OnActon(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select PDF files");
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("TEXT Files", "*.txt"));
@@ -192,31 +197,24 @@ public class ReceptionistDashboardAddVisitorsController implements Initializable
 
         if (selectedFile != null) {
 
-            vistorNameTxt.setText("File selected: " + selectedFile.getPath());
-            try {
-                File newFile = new File("AttachmentDocumentsStorage\\new.txt");
-                Files.copy(selectedFile.toPath(),newFile.toPath());
-            }catch (Exception e){
-                e.printStackTrace();
-            }
+            attachmentLabel.setText(selectedFile.getPath());
+            selectedFilePath = selectedFile.getPath();
+            //try {
+                //File newFile = new File("AttachmentDocumentsStorage\\new.txt");
+                //Files.copy(selectedFile.toPath(),newFile.toPath());
+            //}catch (Exception e){
+                //e.printStackTrace();
+            //}
         }
         else {
-            vistorNameTxt.setText("File selection cancelled.");
+            attachmentLabel.setText("File selection cancelled.");
         }
 
-       //notesTxtArea.requestFocus();
-    }
-
-
-    @FXML
-    void vistorNameTxt_OnActon(ActionEvent event) {
-        purposeTxt.requestFocus();
-
     }
 
     @FXML
-    void yearCBox_OnActon(ActionEvent event) {
-        inTImeHourCBox.requestFocus();
+    void visitorNameTxt_OnActon(ActionEvent event) {
+
     }
 
 

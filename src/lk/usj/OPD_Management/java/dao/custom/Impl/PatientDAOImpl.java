@@ -30,8 +30,8 @@ public class PatientDAOImpl implements PatientDAO {
         BufferedWriter bw = new BufferedWriter(fw);
 
         try {
-            bw.newLine();
             bw.write(wantedLine);
+            bw.newLine();
             bw.close();
             return true;
         }catch (Exception e){
