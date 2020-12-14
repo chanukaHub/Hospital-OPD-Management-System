@@ -174,7 +174,7 @@
                         <Insets bottom="25.0" />
                      </VBox.margin>
                      <children>
-                        <JFXDatePicker defaultColor="#b8b6c7" prefHeight="30.0" prefWidth="200.0" promptText="Select date" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-date-picker" stylesheets="@../css/styles.css">
+                        <JFXDatePicker fx:id="dobDatePicker" defaultColor="#b8b6c7" onAction="#dobDatePicker_ActionEvent" prefHeight="30.0" prefWidth="200.0" promptText="Select date" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-date-picker" stylesheets="@../css/styles.css">
                            <padding>
                               <Insets left="10.0" />
                            </padding>

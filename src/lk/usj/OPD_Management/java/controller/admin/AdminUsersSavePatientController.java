@@ -1,10 +1,6 @@
 package lk.usj.OPD_Management.java.controller.admin;
 
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXRadioButton;
-import com.jfoenix.controls.JFXTextArea;
-import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.controls.*;
 
 import java.io.IOException;
 import java.net.URL;
@@ -63,7 +59,8 @@ public class AdminUsersSavePatientController implements Initializable {
     private JFXTextField nicNoTextField;
 
     @FXML
-    private DatePicker dobDatePicker;
+    private JFXDatePicker dobDatePicker;
+
 
     @FXML
     private JFXTextField address1TextField;
