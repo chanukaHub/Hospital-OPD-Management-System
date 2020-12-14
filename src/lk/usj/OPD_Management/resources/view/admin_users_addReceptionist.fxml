@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
@@ -178,31 +179,14 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <HBox spacing="5.0">
-                     <children>
-                        <JFXComboBox focusColor="#f2f0fb" promptText="DD" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                           <padding>
-                              <Insets bottom="2.0" left="8.0" top="2.0" />
-                           </padding>
-                        </JFXComboBox>
-                        <JFXComboBox focusColor="#f2f0fb" promptText="MM" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
-                           <padding>
-                              <Insets bottom="2.0" left="8.0" top="2.0" />
-                           </padding>
-                        </JFXComboBox>
-                        <JFXComboBox focusColor="#f2f0fb" promptText="YYYY" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
-                           <padding>
-                              <Insets bottom="2.0" left="8.0" top="2.0" />
-                           </padding>
-                        </JFXComboBox>
-                     </children>
+                  <JFXDatePicker defaultColor="#b8b6c7" prefHeight="30.0" prefWidth="200.0" promptText="Select date" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-date-picker" stylesheets="@../css/styles.css">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
                      <VBox.margin>
                         <Insets bottom="25.0" />
                      </VBox.margin>
-                  </HBox>
+                  </JFXDatePicker>
                   <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Address">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />

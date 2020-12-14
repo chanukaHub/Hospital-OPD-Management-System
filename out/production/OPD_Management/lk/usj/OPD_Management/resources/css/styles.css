@@ -24,3 +24,15 @@
     -fx-background-radius: 50;
     -fx-background-color: #2484ff;
 }
+
+.jfx-date-picker .text-field{
+    -jfx-focus-color: #B8B6C7;
+    -jfx-unfocus-color: #ffffff00;
+    -fx-prompt-text-fill: #282B2F;
+}
+
+.jfx-time-picker .text-field{
+    -jfx-focus-color: #B8B6C7;
+    -jfx-unfocus-color: #ffffff00;
+    -fx-prompt-text-fill: #282B2F;
+}

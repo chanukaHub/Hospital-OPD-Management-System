@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -21,14 +31,14 @@
                         <Insets bottom="5.0" left="15.0" right="15.0" top="15.0" />
                      </VBox.margin>
                   </Text>
-                  <Text fill="#7f858d" strokeType="OUTSIDE" strokeWidth="0.0" text="Doctor ID">
+                  <Label text="Staff ID" textFill="#7f858d">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
                      </font>
                      <VBox.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" />
                      </VBox.margin>
-                  </Text>
+                  </Label>
                </children>
             </VBox>
             <VBox alignment="TOP_RIGHT" prefWidth="50.0" HBox.hgrow="ALWAYS">
@@ -161,24 +171,11 @@
                   </Text>
                   <HBox spacing="5.0">
                      <children>
-                        <JFXComboBox focusColor="#f2f0fb" promptText="DD" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
+                        <JFXDatePicker defaultColor="#b8b6c7" promptText="Select date" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" stylesheets="@../css/styles.css" HBox.hgrow="ALWAYS">
                            <padding>
-                              <Insets bottom="2.0" left="8.0" top="2.0" />
+                              <Insets left="10.0" right="5.0" />
                            </padding>
-                        </JFXComboBox>
-                        <JFXComboBox focusColor="#f2f0fb" promptText="MM" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
-                           <padding>
-                              <Insets bottom="2.0" left="8.0" top="2.0" />
-                           </padding>
-                        </JFXComboBox>
-                        <JFXComboBox focusColor="#f2f0fb" promptText="YYYY" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
-                           <padding>
-                              <Insets bottom="2.0" left="8.0" top="2.0" />
-                           </padding>
-                        </JFXComboBox>
+                        </JFXDatePicker>
                      </children>
                   </HBox>
                </children>
@@ -311,9 +308,20 @@
                         </ImageView>
                      </graphic>
                      <VBox.margin>
-                        <Insets bottom="25.0" />
+                        <Insets bottom="5.0" />
                      </VBox.margin>
                   </JFXButton>
+                  <Label prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="sample.jpg" textFill="#7f858d">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="25.0" />
+                     </VBox.margin>
+                  </Label>
                   <Text fill="#282b2f" layoutX="25.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attachments">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
@@ -330,7 +338,18 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
                   </JFXButton>
+                  <Label layoutX="25.0" layoutY="251.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="sample.txt" textFill="#7f858d">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
                   <VBox alignment="BOTTOM_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="65.0">
                      <children>
                         <HBox alignment="CENTER_RIGHT" spacing="20.0">

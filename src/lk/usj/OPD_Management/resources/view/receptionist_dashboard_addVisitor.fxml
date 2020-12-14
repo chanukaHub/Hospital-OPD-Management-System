@@ -139,7 +139,7 @@
                   </Text>
                   <JFXDatePicker defaultColor="#b8b6c7" prefHeight="30.0" prefWidth="200.0" promptText="Select date" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-date-picker" stylesheets="@../css/styles.css">
                      <padding>
-                        <Insets left="10.0" right="5.0" />
+                        <Insets left="10.0" />
                      </padding>
                   </JFXDatePicker>
                </children>
@@ -162,7 +162,7 @@
                   </Text>
                   <JFXTimePicker defaultColor="#b8b6c7" prefHeight="30.0" prefWidth="200.0" promptText="Select time" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-time-picker" stylesheets="@../css/styles.css">
                      <padding>
-                        <Insets left="10.0" right="5.0" />
+                        <Insets left="10.0" />
                      </padding>
                      <VBox.margin>
                         <Insets bottom="25.0" />
@@ -178,7 +178,7 @@
                   </Text>
                   <JFXTimePicker defaultColor="#b8b6c7" prefHeight="30.0" prefWidth="200.0" promptText="Select time" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-time-picker" stylesheets="@../css/styles.css">
                      <padding>
-                        <Insets left="10.0" right="5.0" />
+                        <Insets left="10.0" />
                      </padding>
                   </JFXTimePicker>
                   <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Attachments">
