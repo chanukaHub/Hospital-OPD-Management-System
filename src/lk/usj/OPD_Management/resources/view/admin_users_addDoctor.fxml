@@ -31,14 +31,23 @@
                         <Insets bottom="5.0" left="15.0" right="15.0" top="15.0" />
                      </VBox.margin>
                   </Text>
-                  <Label text="Staff ID" textFill="#7f858d">
-                     <font>
-                        <Font name="Gotham-Book" size="12.0" />
-                     </font>
+                  <HBox spacing="10.0">
                      <VBox.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" />
                      </VBox.margin>
-                  </Label>
+                     <children>
+                        <Label text="Staff ID" textFill="#7f858d">
+                           <font>
+                              <Font name="Gotham-Book" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="10.0" text="Staff ID" textFill="#7f858d">
+                           <font>
+                              <Font name="Gotham-Book" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
                </children>
             </VBox>
             <VBox alignment="TOP_RIGHT" prefWidth="50.0" HBox.hgrow="ALWAYS">
