@@ -106,6 +106,51 @@ public class PatientDAOImpl implements PatientDAO {
 
     @Override
     public ArrayList<Patient> getAll() throws Exception {
+        try{
+            String username, name, gender, phoneNumber, idCard,dateOfBirth, address, maritalStatus, password;
+            String bloodGroup,allergies,note;
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+            File file = new File("Patient.txt");
+            if (!file.exists()) {//checking the is given file exists
+
+                file.createNewFile();//creating new file
+                Exception fileError =new IOException("File is not founded");
+                System.out.println(fileError);
+            }
+            Scanner scanner =new Scanner(file);
+
+            ArrayList<Patient> patients = new ArrayList<>();
+
+            while(scanner.hasNextLine()){
+                String line =scanner.nextLine();
+                String[] details = line.split("#");
+                username=details[0];
+                name=details[1];
+                gender=details[2];
+                phoneNumber=details[3];
+                idCard=details[4];
+                dateOfBirth=details[5];
+                address=details[6];
+                maritalStatus=details[7];
+                password=details[8];
+                bloodGroup=details[9];
+                allergies=details[10];
+                note=details[11];
+
+
+                try {
+                    Date birthDate =format.parse(dateOfBirth);
+                    Patient patient= new Patient(username, name, gender, phoneNumber, idCard,birthDate, address, maritalStatus, password,bloodGroup,allergies,note);
+                    patients.add(patient);
+                }catch (ParseException e){
+                    e.printStackTrace();
+                }
+            }
+            return patients;
+
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
         return null;
     }
 }

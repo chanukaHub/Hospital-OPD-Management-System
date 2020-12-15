@@ -75,7 +75,7 @@ public class AdminUsersController implements Initializable {
 
         selectedUserType= "Patient";
 
-        Pane pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_addPatient_table.fxml"));
+        Pane pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_Patient_table.fxml"));
         root.getChildren().setAll(pane);
     }
 
@@ -126,7 +126,7 @@ public class AdminUsersController implements Initializable {
         receptionistBtn_AnchorPane.getStyleClass().add("login_type_btn");
         Pane pane= null;
         try {
-            pane = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_addPatient_table.fxml"));
+            pane = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_Patient_table.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }
