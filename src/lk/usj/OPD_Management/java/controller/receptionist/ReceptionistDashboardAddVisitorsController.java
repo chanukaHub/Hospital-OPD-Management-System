@@ -119,7 +119,7 @@ public class ReceptionistDashboardAddVisitorsController implements Initializable
     @FXML
     void saveBtn_OnActon(ActionEvent event) {
         try{
-            String address,maritalStatus,bloodGroup;
+            Integer telNo;
             if (visitorAttachmentBtn.getText().equals("")){
                 Common.showError("Please Enter Name");
                 return;
@@ -144,6 +144,17 @@ public class ReceptionistDashboardAddVisitorsController implements Initializable
                 return;
             }
 
+            if (selectedFilePath == null){
+                Common.showError("Please Attach document");
+                return;
+            }
+            try {
+                telNo =Integer.parseInt(telNoTxt.getText());
+            }catch (NumberFormatException e){
+                Common.showError("Please Enter valid phone Number");
+                return;
+            }
+
             File newFile = new File("AttachmentDocumentsStorage\\"+nicTxt.getText()+String.valueOf(date.getDate())+String.valueOf(inTimeTimePicker.getValue().getHour())+String.valueOf(inTimeTimePicker.getValue().getMinute())+String.valueOf(inTimeTimePicker.getValue().getSecond()));
             Files.copy(Path.of(selectedFilePath),newFile.toPath());
 
@@ -151,7 +162,7 @@ public class ReceptionistDashboardAddVisitorsController implements Initializable
             VisitorDTO visitorDTO= new VisitorDTO(
                     visitorNameTxt.getText(),
                     purposeTxt.getText(),
-                    Integer.parseInt(telNoTxt.getText()),
+                    telNo,
                     nicTxt.getText(),
                     date,
                     inTimeTimePicker.getValue(),
