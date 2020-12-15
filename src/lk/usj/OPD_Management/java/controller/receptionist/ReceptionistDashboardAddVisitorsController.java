@@ -155,7 +155,7 @@ public class ReceptionistDashboardAddVisitorsController implements Initializable
                 return;
             }
 
-            File newFile = new File("AttachmentDocumentsStorage\\"+nicTxt.getText()+String.valueOf(date.getDate())+String.valueOf(inTimeTimePicker.getValue().getHour())+String.valueOf(inTimeTimePicker.getValue().getMinute())+String.valueOf(inTimeTimePicker.getValue().getSecond()));
+            File newFile = new File("AttachmentDocumentsStorage\\"+nicTxt.getText()+String.valueOf(date.getDate())+String.valueOf(inTimeTimePicker.getValue().getHour())+String.valueOf(inTimeTimePicker.getValue().getMinute())+String.valueOf(inTimeTimePicker.getValue().getSecond())+".txt");
             Files.copy(Path.of(selectedFilePath),newFile.toPath());
 
 
