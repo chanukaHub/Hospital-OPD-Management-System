@@ -8,7 +8,7 @@ public class Doctor extends Staff {
     public Doctor() {
     }
 
-    public Doctor(String username, String name, String gender, String phoneNumber, String idCard, Date dateOfBirth, String address, String maritalStatus, String password, String staffID, String staffEmail, Date dateOfJoin, String photograph, String document, String note, String specialistArea) {
+    public Doctor(String username, String name, String gender, String phoneNumber, String idCard, Date dateOfBirth, String address, String maritalStatus, String password, int staffID, String staffEmail, Date dateOfJoin, String photograph, String document, String note, String specialistArea) {
         super(username, name, gender, phoneNumber, idCard, dateOfBirth, address, maritalStatus, password, staffID, staffEmail, dateOfJoin, photograph, document, note);
         this.specialistArea = specialistArea;
     }

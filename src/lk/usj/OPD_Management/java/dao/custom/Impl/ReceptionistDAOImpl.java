@@ -34,7 +34,12 @@ public class ReceptionistDAOImpl implements ReceptionistDAO {
     public Receptionist search(String var1) throws Exception {
         try{
             String username, name, gender, phoneNumber, idCard,dateOfBirth, address, maritalStatus, password;
-            String staffId, staffEmail,dateOfJoin,photograph,document,note;
+            int staffId;
+            String staffEmail;
+            String dateOfJoin;
+            String photograph;
+            String document;
+            String note;
             SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
             File file = new File("Receptionist.txt");
             if (!file.exists()) {//checking the is given file exists
@@ -59,7 +64,7 @@ public class ReceptionistDAOImpl implements ReceptionistDAO {
                 address=details[6];
                 maritalStatus=details[7];
                 password=details[8];
-                staffId=details[9];
+                staffId=Integer.parseInt(details[9]);
                 staffEmail=details[10];
                 dateOfJoin=details[11];
                 photograph=details[12];

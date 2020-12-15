@@ -3,7 +3,7 @@ package lk.usj.OPD_Management.java.entity;
 import java.util.Date;
 
 public abstract class Staff extends User{
-    private String staffID;
+    private int staffID;
     private String staffEmail;
     private Date dateOfJoin;
     private String photograph;
@@ -13,7 +13,7 @@ public abstract class Staff extends User{
     public Staff() {
     }
 
-    public Staff(String username, String name, String gender, String phoneNumber, String idCard, Date dateOfBirth, String address, String maritalStatus, String password, String staffID, String staffEmail, Date dateOfJoin, String photograph, String document, String note) {
+    public Staff(String username, String name, String gender, String phoneNumber, String idCard, Date dateOfBirth, String address, String maritalStatus, String password, int staffID, String staffEmail, Date dateOfJoin, String photograph, String document, String note) {
         super(username, name, gender, phoneNumber, idCard, dateOfBirth, address, maritalStatus, password);
         this.staffID = staffID;
         this.staffEmail = staffEmail;
@@ -23,11 +23,11 @@ public abstract class Staff extends User{
         this.note = note;
     }
 
-    public String getStaffID() {
+    public int getStaffID() {
         return staffID;
     }
 
-    public void setStaffID(String staffID) {
+    public void setStaffID(int staffID) {
         this.staffID = staffID;
     }
 

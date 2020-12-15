@@ -34,7 +34,12 @@ public class DoctorDAOImpl implements DoctorDAO {
     public Doctor search(String var1) throws Exception {
         try{
             String username, name, gender, phoneNumber, idCard,dateOfBirth, address, maritalStatus, password;
-            String staffId, staffEmail,dateOfJoin,photograph,document,note;
+            int staffId;
+            String staffEmail;
+            String dateOfJoin;
+            String photograph;
+            String document;
+            String note;
             String specialistArea;
             SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
             File file = new File("Doctor.txt");
@@ -60,7 +65,7 @@ public class DoctorDAOImpl implements DoctorDAO {
                 address=details[6];
                 maritalStatus=details[7];
                 password=details[8];
-                staffId=details[9];
+                staffId=Integer.parseInt(details[9]);
                 staffEmail=details[10];
                 dateOfJoin=details[11];
                 photograph=details[12];
@@ -92,5 +97,34 @@ public class DoctorDAOImpl implements DoctorDAO {
     @Override
     public ArrayList<Doctor> getAll() throws Exception {
         return null;
+    }
+
+    @Override
+    public int getLastDoctorID() throws Exception{
+        try{
+            int staffId=0;
+            File file = new File("Doctor.txt");
+            if (!file.exists()) {//checking the is given file exists
+
+                file.createNewFile();//creating new file
+                Exception fileError =new IOException("File is not founded");
+                System.out.println(fileError);
+            }
+            Scanner scanner =new Scanner(file);
+
+            String last = null;
+
+            while(scanner.hasNextLine()){
+                last=scanner.nextLine();
+            }
+            String[] details = last.split("#");
+            staffId=Integer.parseInt(details[9]);
+            return staffId;
+
+
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
+        return 0;
     }
 }
