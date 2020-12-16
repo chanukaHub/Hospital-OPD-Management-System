@@ -34,7 +34,7 @@ public class DoctorDAOImpl implements DoctorDAO {
     public Doctor search(String var1) throws Exception {
         try{
             String username, name, gender, phoneNumber, idCard,dateOfBirth, address, maritalStatus, password;
-            int staffId;
+            String staffId;
             String staffEmail;
             String dateOfJoin;
             String photograph;
@@ -65,7 +65,7 @@ public class DoctorDAOImpl implements DoctorDAO {
                 address=details[6];
                 maritalStatus=details[7];
                 password=details[8];
-                staffId=Integer.parseInt(details[9]);
+                staffId=details[9];
                 staffEmail=details[10];
                 dateOfJoin=details[11];
                 photograph=details[12];
@@ -102,7 +102,7 @@ public class DoctorDAOImpl implements DoctorDAO {
     @Override
     public int getLastDoctorID() throws Exception{
         try{
-            int staffId=0;
+            String staffId;
             File file = new File("Doctor.txt");
             if (!file.exists()) {//checking the is given file exists
 
@@ -118,8 +118,8 @@ public class DoctorDAOImpl implements DoctorDAO {
                 last=scanner.nextLine();
             }
             String[] details = last.split("#");
-            staffId=Integer.parseInt(details[9]);
-            return staffId;
+            staffId=details[9];
+            return Integer.parseInt(staffId.substring(4));
 
 
         }catch (FileNotFoundException e){

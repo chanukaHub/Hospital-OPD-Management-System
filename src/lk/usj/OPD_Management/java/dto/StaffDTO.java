@@ -3,7 +3,7 @@ package lk.usj.OPD_Management.java.dto;
 import java.util.Date;
 
 public abstract class StaffDTO extends UserDTO{
-    private int staffID;
+    private String staffID;
     private String staffEmail;
     private Date dateOfJoin;
     private String photograph;
@@ -17,7 +17,7 @@ public abstract class StaffDTO extends UserDTO{
         super(username, password);
     }
 
-    public StaffDTO(String username, String name, String gender, String phoneNumber, String idCard, Date dateOfBirth, String address, String maritalStatus, String password, int staffID, String staffEmail, Date dateOfJoin, String photograph, String document, String note) {
+    public StaffDTO(String username, String name, String gender, String phoneNumber, String idCard, Date dateOfBirth, String address, String maritalStatus, String password, String staffID, String staffEmail, Date dateOfJoin, String photograph, String document, String note) {
         super(username, name, gender, phoneNumber, idCard, dateOfBirth, address, maritalStatus, password);
         this.staffID = staffID;
         this.staffEmail = staffEmail;
@@ -27,11 +27,11 @@ public abstract class StaffDTO extends UserDTO{
         this.note = note;
     }
 
-    public int getStaffID() {
+    public String getStaffID() {
         return staffID;
     }
 
-    public void setStaffID(int staffID) {
+    public void setStaffID(String staffID) {
         this.staffID = staffID;
     }
 

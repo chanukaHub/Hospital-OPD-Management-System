@@ -34,7 +34,7 @@ public class ReceptionistDAOImpl implements ReceptionistDAO {
     public Receptionist search(String var1) throws Exception {
         try{
             String username, name, gender, phoneNumber, idCard,dateOfBirth, address, maritalStatus, password;
-            int staffId;
+            String staffId;
             String staffEmail;
             String dateOfJoin;
             String photograph;
@@ -64,7 +64,7 @@ public class ReceptionistDAOImpl implements ReceptionistDAO {
                 address=details[6];
                 maritalStatus=details[7];
                 password=details[8];
-                staffId=Integer.parseInt(details[9]);
+                staffId=details[9];
                 staffEmail=details[10];
                 dateOfJoin=details[11];
                 photograph=details[12];
