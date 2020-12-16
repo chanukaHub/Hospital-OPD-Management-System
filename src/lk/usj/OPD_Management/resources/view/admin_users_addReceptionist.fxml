@@ -284,17 +284,11 @@
                         <Insets />
                      </VBox.margin>
                   </JFXButton>
-                  <Label layoutX="25.0" layoutY="315.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="sample.jpg" textFill="#7f858d">
-                     <font>
-                        <Font name="Gotham-Book" size="12.0" />
-                     </font>
-                     <padding>
-                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-                     </padding>
+                  <ImageView fx:id="imageView" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 20;">
                      <VBox.margin>
                         <Insets bottom="25.0" top="5.0" />
                      </VBox.margin>
-                  </Label>
+                  </ImageView>
                   <Text fill="#282b2f" layoutX="25.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attachments">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />

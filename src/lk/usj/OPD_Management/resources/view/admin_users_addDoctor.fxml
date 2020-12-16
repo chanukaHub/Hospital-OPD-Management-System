@@ -320,7 +320,10 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </JFXButton>
-                  <ImageView fx:id="imageView" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imageView" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets bottom="25.0" top="5.0" />
+                     </VBox.margin></ImageView>
                   <Text fill="#282b2f" layoutX="25.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attachments">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
