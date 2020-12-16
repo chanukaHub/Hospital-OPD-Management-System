@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.admin.AdminUsersSaveDoctorTableController">
+    <children>
+        <TableView fx:id="doctorTable" onMouseClicked="#doctorTable_MouseEvent" prefHeight="390.0" prefWidth="730.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;">
+            <columns>
+                <TableColumn prefWidth="105.19999694824219" text="Staff ID" />
+                <TableColumn prefWidth="120.39999389648438" text="Name " />
+                <TableColumn prefWidth="115.39999389648438" text="NIC No" />
+                <TableColumn prefWidth="110.19998168945312" text="Phone No" />
+                <TableColumn prefWidth="140.0" text="Staff Email" />
+                <TableColumn minWidth="0.0" prefWidth="141.0" text="Specialist Area" />
+            </columns>
+        </TableView>
+    </children>
+</Pane>

@@ -2,6 +2,7 @@ package lk.usj.OPD_Management.java.dao.custom.Impl;
 
 import lk.usj.OPD_Management.java.dao.custom.DoctorDAO;
 import lk.usj.OPD_Management.java.entity.Doctor;
+import lk.usj.OPD_Management.java.entity.Patient;
 import lk.usj.OPD_Management.java.entity.Receptionist;
 
 import java.io.*;
@@ -120,6 +121,62 @@ public class DoctorDAOImpl implements DoctorDAO {
 
     @Override
     public ArrayList<Doctor> getAll() throws Exception {
+        try{
+            String username, name, gender, phoneNumber, idCard,dateOfBirth, address, maritalStatus, password;
+            String staffId;
+            String staffEmail;
+            String dateOfJoin;
+            String photograph;
+            String document;
+            String note;
+            String specialistArea;
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+            File file = new File("Doctor.txt");
+            if (!file.exists()) {//checking the is given file exists
+
+                file.createNewFile();//creating new file
+                Exception fileError =new IOException("File is not founded");
+                System.out.println(fileError);
+            }
+            Scanner scanner =new Scanner(file);
+
+            ArrayList<Doctor> doctors = new ArrayList<>();
+
+            while(scanner.hasNextLine()){
+                String line =scanner.nextLine();
+                String[] details = line.split("#");
+                username=details[0];
+                name=details[1];
+                gender=details[2];
+                phoneNumber=details[3];
+                idCard=details[4];
+                dateOfBirth=details[5];
+                address=details[6];
+                maritalStatus=details[7];
+                password=details[8];
+                staffId=details[9];
+                staffEmail=details[10];
+                dateOfJoin=details[11];
+                photograph=details[12];
+                document=details[13];
+                note =details[14];
+                specialistArea =details[15];
+
+
+                try {
+                    Date birthDate =format.parse(dateOfBirth);
+                    Date joinDate =format.parse(dateOfJoin);
+                    Doctor doctor= new Doctor(username, name, gender, phoneNumber, idCard,birthDate, address, maritalStatus, password,staffId,staffEmail,joinDate,photograph,document,note,specialistArea);
+                    doctors.add(doctor);
+                }catch (ParseException e){
+                    e.printStackTrace();
+                }
+            }
+            return doctors;
+
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
         return null;
     }
 
