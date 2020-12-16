@@ -4,9 +4,7 @@ import lk.usj.OPD_Management.java.dao.custom.DoctorDAO;
 import lk.usj.OPD_Management.java.entity.Doctor;
 import lk.usj.OPD_Management.java.entity.Receptionist;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -17,7 +15,33 @@ import java.util.Scanner;
 public class DoctorDAOImpl implements DoctorDAO {
     @Override
     public boolean save(Doctor var1) throws Exception {
-        return false;
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        String strDate = format.format(var1.getDateOfBirth());
+        String joinDate = format.format(var1.getDateOfJoin());
+
+        String wantedLine = var1.getUsername()+"#"+var1.getName()+"#"+var1.getGender()+"#"+var1.getPhoneNumber()+"#"+var1.getIdCard()+"#"+
+                strDate+"#"+var1.getAddress()+"#"+var1.getMaritalStatus()+"#"+var1.getPassword()+"#"+var1.getStaffID()+"#"+
+                var1.getStaffEmail()+"#"+joinDate+"#"+var1.getPhotograph()+"#"+var1.getDocument()+"#"+var1.getNote()+"#"+var1.getSpecialistArea();
+        File file = new File("Doctor.txt");
+        if (!file.exists()) {//checking the is given file exists
+
+            file.createNewFile();//creating new file
+            Exception fileError =new IOException("File is not founded");
+            System.out.println(fileError);
+        }
+        FileWriter fw = new FileWriter(file,true);
+
+        BufferedWriter bw = new BufferedWriter(fw);
+
+        try {
+            bw.write(wantedLine);
+            bw.newLine();
+            bw.close();
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
     }
 
     @Override

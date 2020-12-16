@@ -8,9 +8,12 @@ import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
@@ -21,6 +24,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
@@ -100,9 +105,6 @@ public class AdminUsersSaveDoctorController implements Initializable {
     private JFXButton staffPhotographBtn;
 
     @FXML
-    private Label photographPathLabel;
-
-    @FXML
     private JFXButton attachmentBtn;
 
     @FXML
@@ -113,6 +115,9 @@ public class AdminUsersSaveDoctorController implements Initializable {
 
     @FXML
     private JFXButton saveBtn;
+
+    @FXML
+    private ImageView imageView;
 
     @FXML
     void MaleRadioBtn_OnAction(ActionEvent event) {
@@ -136,6 +141,19 @@ public class AdminUsersSaveDoctorController implements Initializable {
 
     @FXML
     void attachmentBtn_OnAction(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select PDF files");
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("TEXT Files", "*.txt"));
+
+        File selectedFile = fileChooser.showOpenDialog(null);
+
+        if (selectedFile != null) {
+            attachmentLabel.setText(selectedFile.getPath());
+            selectedFilePath = selectedFile.getPath();
+        }
+        else {
+            attachmentLabel.setText("File selection cancelled.");
+        }
 
     }
 
@@ -209,7 +227,6 @@ public class AdminUsersSaveDoctorController implements Initializable {
                 Common.showError("Please Enter BirthDay");
                 return;
             }
-
             c.set(ld.getYear(), ld.getMonthValue() - 1, ld.getDayOfMonth());
             Date date = c.getTime();
             if (Gender.getSelectedToggle() == null){
@@ -227,7 +244,13 @@ public class AdminUsersSaveDoctorController implements Initializable {
                 specialistArea = specializedAreaComboBox.getSelectionModel().getSelectedItem();
             }
 
-            /*DoctorDTO doctorDTO= new DoctorDTO(
+            File newFile = new File("StaffPhotograph\\"+nicNoTextField.getText()+String.valueOf(today.getDate())+String.valueOf(today.getMinutes())+String.valueOf(today.getSeconds())+".jpg");
+            Files.copy(Path.of(selectedPhotographPath),newFile.toPath());
+
+            File newFile1 = new File("AttachmentDocumentsStorage\\"+nicNoTextField.getText()+String.valueOf(today.getDate())+String.valueOf(today.getMinutes())+String.valueOf(today.getSeconds())+".txt");
+            Files.copy(Path.of(selectedFilePath),newFile1.toPath());
+
+            DoctorDTO doctorDTO= new DoctorDTO(
                     usernameTextField.getText(),
                     nameTextField.getText(),
                     Gender.getSelectedToggle().getUserData().toString(),
@@ -240,32 +263,21 @@ public class AdminUsersSaveDoctorController implements Initializable {
                     staffIDLabel.getText(),
                     staffEmailTextField.getText(),
                     today,
-
-
+                    newFile.getPath(),
+                    newFile1.getPath(),
+                    notesTextArea.getText(),
+                    specialistArea
             );
 
             boolean b = doctorBO.addDoctor(doctorDTO);
 
             if (b){
-                Common.showMessage("Added Patient!");
-                usernameTextField.clear();
-                nameTextField.clear();
-                maleRadioBtn.setSelected(false);
-                femaleRadioBtn.setSelected(false);
-                otherRadioBtn.setSelected(false);
-                phoneNoTextField.clear();
-                nicNoTextField.clear();
-                dobDatePicker.getEditor().clear();
-                address1TextField.clear();
-                address2TextField.clear();
-                address3TextField.clear();
-                maritalStatusComboBox.getSelectionModel().clearSelection();
-                bloodGroupComboBox.getSelectionModel().clearSelection();
-                allergiesTextField.clear();
-                notesTextArea.clear();
+                Common.showMessage("Added Doctor!");
+                VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_addDoctor.fxml"));
+                root.getChildren().setAll(pane);
             }
             else
-                Common.showError("Not added");*/
+                Common.showError("Not added");
         } catch (Exception e1) {
             Common.showError("Not added");
             e1.printStackTrace();
@@ -283,7 +295,7 @@ public class AdminUsersSaveDoctorController implements Initializable {
     }
 
     @FXML
-    void staffPhotographBtn_OnAction(ActionEvent event) {
+    void staffPhotographBtn_OnAction(ActionEvent event) throws FileNotFoundException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select PDF files");
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JPG Images", "*.jpg"));
@@ -292,15 +304,16 @@ public class AdminUsersSaveDoctorController implements Initializable {
 
         if (selectedFile != null) {
 
-            attachmentLabel.setText(selectedFile.getPath());
-            //selectedPhotographPath = selectedFile.getPath();
+            String iconImagePath = selectedFile.getAbsolutePath();
+            imageView.setImage(new Image(new FileInputStream(iconImagePath)));
+            selectedPhotographPath = selectedFile.getPath();
 
-            try {
+            /*try {
             File newFile = new File("StaffPhotograph\\new.jpg");
             Files.copy(selectedFile.toPath(),newFile.toPath());
             }catch (Exception e){
             e.printStackTrace();
-            }
+            }*/
         }
         else {
             attachmentLabel.setText("File selection cancelled.");
