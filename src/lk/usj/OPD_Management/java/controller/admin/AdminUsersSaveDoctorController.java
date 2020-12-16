@@ -7,8 +7,10 @@ import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
 import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
@@ -21,6 +23,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
 import lk.usj.OPD_Management.java.common.Common;
 import lk.usj.OPD_Management.java.dto.DoctorDTO;
 import lk.usj.OPD_Management.java.dto.PatientDTO;
@@ -30,7 +33,8 @@ import lk.usj.OPD_Management.java.service.custom.impl.DoctorBOImpl;
 
 public class AdminUsersSaveDoctorController implements Initializable {
     private DoctorBO doctorBO = new DoctorBOImpl();
-    int count;
+    String selectedFilePath;
+    String selectedPhotographPath;
 
     @FXML
     private VBox root;
@@ -184,6 +188,7 @@ public class AdminUsersSaveDoctorController implements Initializable {
     @FXML
     void saveBtn_OnAction(ActionEvent event) {
         try{
+            Date today = new Date();
             String address,maritalStatus,specialistArea;
             if (usernameTextField.getText().equals("")){
                 Common.showError("Please Enter username");
@@ -204,6 +209,7 @@ public class AdminUsersSaveDoctorController implements Initializable {
                 Common.showError("Please Enter BirthDay");
                 return;
             }
+
             c.set(ld.getYear(), ld.getMonthValue() - 1, ld.getDayOfMonth());
             Date date = c.getTime();
             if (Gender.getSelectedToggle() == null){
@@ -231,6 +237,10 @@ public class AdminUsersSaveDoctorController implements Initializable {
                     address,
                     maritalStatus,
                     initialPassword,
+                    staffIDLabel.getText(),
+                    staffEmailTextField.getText(),
+                    today,
+
 
             );
 
@@ -274,7 +284,27 @@ public class AdminUsersSaveDoctorController implements Initializable {
 
     @FXML
     void staffPhotographBtn_OnAction(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select PDF files");
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JPG Images", "*.jpg"));
 
+        File selectedFile = fileChooser.showOpenDialog(null);
+
+        if (selectedFile != null) {
+
+            attachmentLabel.setText(selectedFile.getPath());
+            //selectedPhotographPath = selectedFile.getPath();
+
+            try {
+            File newFile = new File("StaffPhotograph\\new.jpg");
+            Files.copy(selectedFile.toPath(),newFile.toPath());
+            }catch (Exception e){
+            e.printStackTrace();
+            }
+        }
+        else {
+            attachmentLabel.setText("File selection cancelled.");
+        }
     }
 
     @FXML
