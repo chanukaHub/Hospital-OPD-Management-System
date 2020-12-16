@@ -1,6 +1,9 @@
 package lk.usj.OPD_Management.java.service;
 
+import lk.usj.OPD_Management.java.service.custom.impl.DoctorBOImpl;
 import lk.usj.OPD_Management.java.service.custom.impl.LoginBOImpl;
+import lk.usj.OPD_Management.java.service.custom.impl.PatientBOImpl;
+import lk.usj.OPD_Management.java.service.custom.impl.VisitorBOImpl;
 
 public class BOFactory {
     private static BOFactory boFactory;
@@ -21,7 +24,11 @@ public class BOFactory {
             case LOG_IN:
                 return (T) new LoginBOImpl();
             case PATIENT:
-                return (T) new LoginBOImpl();
+                return (T) new PatientBOImpl();
+            case VISITOR:
+                return (T) new VisitorBOImpl();
+            case DOCTOR:
+                return (T) new DoctorBOImpl();
             default:
                 return null;
         }
@@ -29,6 +36,8 @@ public class BOFactory {
 
     public static enum BOTypes {
          LOG_IN,
-        PATIENT
+        PATIENT,
+        VISITOR,
+        DOCTOR
     }
 }
