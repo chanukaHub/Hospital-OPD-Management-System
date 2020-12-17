@@ -15,7 +15,7 @@ import lk.usj.OPD_Management.java.service.custom.PatientBO;
 import lk.usj.OPD_Management.java.service.custom.impl.DoctorBOImpl;
 import lk.usj.OPD_Management.java.service.custom.impl.PatientBOImpl;
 
-public class AdminUsersSaveDoctorTableController implements Initializable {
+public class AdminUsersDoctorTableController implements Initializable {
     private DoctorBO doctorBO= new DoctorBOImpl();
 
     @FXML
