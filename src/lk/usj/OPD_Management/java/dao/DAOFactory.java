@@ -28,6 +28,8 @@ public class DAOFactory {
                 return (T) new DoctorDAOImpl();
             case VISITOR:
                 return (T) new VisitorDAOImpl();
+            case POSTAL:
+                return (T) new PostalIDAOImpl();
             default:
                 return null;
         }
@@ -38,7 +40,8 @@ public class DAOFactory {
         RECEPTIONIST,
         PATIENT,
         DOCTOR,
-        VISITOR;
+        VISITOR,
+        POSTAL;
 
         private DAOTypes() {
         }

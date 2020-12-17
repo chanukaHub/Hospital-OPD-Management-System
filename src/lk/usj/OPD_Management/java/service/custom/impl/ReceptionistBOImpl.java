@@ -7,6 +7,8 @@ import lk.usj.OPD_Management.java.entity.Doctor;
 import lk.usj.OPD_Management.java.entity.Receptionist;
 import lk.usj.OPD_Management.java.service.custom.ReceptionistBO;
 
+import java.util.ArrayList;
+
 public class ReceptionistBOImpl implements ReceptionistBO {
     private ReceptionistDAO receptionistDAO = DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.RECEPTIONIST);
     @Override
@@ -33,5 +35,32 @@ public class ReceptionistBOImpl implements ReceptionistBO {
                 receptionistDTO.getDocument(),
                 receptionistDTO.getNote()
         ));
+    }
+
+    @Override
+    public ArrayList<ReceptionistDTO> getAllReceptionist() throws Exception{
+        ArrayList<Receptionist> allReceptionists = receptionistDAO.getAll();
+        ArrayList<ReceptionistDTO> receptionists = new ArrayList<>();
+        for (Receptionist receptionist : allReceptionists) {
+            receptionists.add(new ReceptionistDTO(
+                    receptionist.getUsername(),
+                    receptionist.getName(),
+                    receptionist.getGender(),
+                    receptionist.getPhoneNumber(),
+                    receptionist.getIdCard(),
+                    receptionist.getDateOfBirth(),
+                    receptionist.getAddress(),
+                    receptionist.getMaritalStatus(),
+                    receptionist.getPassword(),
+                    receptionist.getStaffID(),
+                    receptionist.getStaffEmail(),
+                    receptionist.getDateOfJoin(),
+                    receptionist.getPhotograph(),
+                    receptionist.getDocument(),
+                    receptionist.getNote()
+            ));
+
+        }
+        return receptionists;
     }
 }
