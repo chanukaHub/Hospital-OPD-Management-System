@@ -96,4 +96,33 @@ public class ReceptionistDAOImpl implements ReceptionistDAO {
     public ArrayList<Receptionist> getAll() throws Exception {
         return null;
     }
+
+    @Override
+    public int getLastReceptionistID() throws Exception {
+        try{
+            String staffId;
+            File file = new File("Receptionist.txt");
+            if (!file.exists()) {//checking the is given file exists
+
+                file.createNewFile();//creating new file
+                Exception fileError =new IOException("File is not founded");
+                System.out.println(fileError);
+            }
+            Scanner scanner =new Scanner(file);
+
+            String last = null;
+
+            while(scanner.hasNextLine()){
+                last=scanner.nextLine();
+            }
+            String[] details = last.split("#");
+            staffId=details[9];
+            return Integer.parseInt(staffId.substring(4));
+
+
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
+        return 0;
+    }
 }
