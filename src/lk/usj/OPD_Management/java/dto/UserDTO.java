@@ -9,7 +9,7 @@ public abstract class UserDTO {
     private String phoneNumber;
     private String idCard;
     private Date dateOfBirth;
-    private String Address;
+    private String address;
     private String maritalStatus;
     private String password;
 
@@ -28,9 +28,18 @@ public abstract class UserDTO {
         this.phoneNumber = phoneNumber;
         this.idCard = idCard;
         this.dateOfBirth = dateOfBirth;
-        Address = address;
+        this.address = address;
         this.maritalStatus = maritalStatus;
         this.password = password;
+    }
+
+    public UserDTO(String idCard, String name, String username, String gender, String address, String phoneNumber) {
+        this.idCard=idCard;
+        this.name=name;
+        this.username=username;
+        this.gender=gender;
+        this.address=address;
+        this.phoneNumber=phoneNumber;
     }
 
     public String getUsername() {
@@ -82,11 +91,11 @@ public abstract class UserDTO {
     }
 
     public String getAddress() {
-        return Address;
+        return address;
     }
 
     public void setAddress(String address) {
-        Address = address;
+        address = address;
     }
 
     public String getMaritalStatus() {
@@ -114,7 +123,7 @@ public abstract class UserDTO {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", idCard='" + idCard + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
-                ", Address='" + Address + '\'' +
+                ", Address='" + address + '\'' +
                 ", maritalStatus='" + maritalStatus + '\'' +
                 ", password='" + password + '\'' +
                 '}';

@@ -18,4 +18,19 @@ public class DoctorDTO extends StaffDTO{
         super(username, name, gender, phoneNumber, idCard, dateOfBirth, address, maritalStatus, password, staffID, staffEmail, dateOfJoin, photograph, document, note);
         this.specialistArea = specialistArea;
     }
+
+    public String getSpecialistArea() {
+        return specialistArea;
+    }
+
+    public void setSpecialistArea(String specialistArea) {
+        this.specialistArea = specialistArea;
+    }
+
+    @Override
+    public String toString() {
+        return "DoctorDTO{" +
+                "specialistArea='" + specialistArea + '\'' +
+                '}';
+    }
 }

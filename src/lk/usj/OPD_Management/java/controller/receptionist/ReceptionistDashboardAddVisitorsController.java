@@ -82,8 +82,7 @@ public class ReceptionistDashboardAddVisitorsController implements Initializable
 
     @FXML
     void cancelBtn_OnActon(ActionEvent event) throws IOException {
-        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_dashboard.fxml"));
-        root.getChildren().setAll(pane);
+        root.setVisible(false);
     }
 
     @FXML

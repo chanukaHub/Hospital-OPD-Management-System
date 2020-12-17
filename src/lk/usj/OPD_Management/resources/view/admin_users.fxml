@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <VBox fx:id="mainRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.admin.AdminUsersController">
    <children>
-      <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Support Request">
+      <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Users">
          <font>
             <Font name="Gotham Bold" size="16.0" />
          </font>
@@ -98,7 +102,7 @@
             </VBox>
          </children>
       </HBox>
-      <AnchorPane fx:id="root" VBox.vgrow="ALWAYS">
+      <AnchorPane fx:id="root" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="730.0" VBox.vgrow="ALWAYS">
          <VBox.margin>
             <Insets left="15.0" right="15.0" />
          </VBox.margin>
@@ -122,7 +126,7 @@
             </JFXButton>
          </children>
          <VBox.margin>
-            <Insets />
+            <Insets top="10.0" />
          </VBox.margin>
       </HBox>
    </children>

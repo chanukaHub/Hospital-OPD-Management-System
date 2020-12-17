@@ -1,9 +1,10 @@
 out
 .idea
 OPD_Management.iml
-AttachmentDocumentsStorage
 Admin.txt
 Doctor.txt
 Receptionist.txt
 Visitor.txt
 Patient.txt
+StaffPhotograph
+AttachmentDocumentsStorage
