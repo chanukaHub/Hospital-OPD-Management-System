@@ -88,32 +88,32 @@ public class ReceptionistDashboardAddVisitorsController implements Initializable
 
     @FXML
     void dateDatePicker_OnAction(ActionEvent event) {
-
+        inTimeTimePicker.requestFocus();
     }
 
     @FXML
     void inTimeTimePicker_OnAction(ActionEvent event) {
-
+        outTimeTimePicker.requestFocus();
     }
 
     @FXML
     void nicTxt_OnActon(ActionEvent event) {
-
+        dateDatePicker.requestFocus();
     }
 
     @FXML
     void notesTxtArea_OnActon(MouseEvent event) {
-
+        saveBtn.requestFocus();
     }
 
     @FXML
     void outTimeTimePicker_Onaction(ActionEvent event) {
-
+        visitorAttachmentBtn.requestFocus();
     }
 
     @FXML
     void purposeTxt_OnActon(ActionEvent event) {
-
+        telNoTxt.requestFocus();
     }
 
     @FXML
@@ -195,7 +195,7 @@ public class ReceptionistDashboardAddVisitorsController implements Initializable
 
     @FXML
     void telNoTxt_OnActon(ActionEvent event) {
-
+        nicTxt.requestFocus();
     }
 
     @FXML
@@ -220,12 +220,12 @@ public class ReceptionistDashboardAddVisitorsController implements Initializable
         else {
             attachmentLabel.setText("File selection cancelled.");
         }
-
+        notesTxtArea.requestFocus();
     }
 
     @FXML
     void visitorNameTxt_OnActon(ActionEvent event) {
-
+            purposeTxt.requestFocus();
     }
 
 
