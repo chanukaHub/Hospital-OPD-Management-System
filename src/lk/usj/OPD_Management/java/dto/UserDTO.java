@@ -33,15 +33,6 @@ public abstract class UserDTO {
         this.password = password;
     }
 
-    public UserDTO(String idCard, String name, String username, String gender, String address, String phoneNumber) {
-        this.idCard=idCard;
-        this.name=name;
-        this.username=username;
-        this.gender=gender;
-        this.address=address;
-        this.phoneNumber=phoneNumber;
-    }
-
     public String getUsername() {
         return username;
     }

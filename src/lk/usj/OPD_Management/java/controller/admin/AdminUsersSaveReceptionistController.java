@@ -229,8 +229,8 @@ public class AdminUsersSaveReceptionistController implements Initializable {
         try{
             Date today = new Date();
             String address,maritalStatus;
-            if (usernameTextField.getText().equals("")){
-                Common.showError("Please Enter username");
+            if (nameTextField.getText().equals("")){
+                Common.showError("Please Enter name");
                 return;
             }else if(nicNoTextField.getText().equals("")){
                 Common.showError("Please Enter NIC No");
@@ -241,6 +241,8 @@ public class AdminUsersSaveReceptionistController implements Initializable {
             }else {
                 address=address1TextField.getText()+","+address2TextField.getText()+","+address3TextField.getText();
             }
+
+            String userName =nicNoTextField.getText();
             String initialPassword =nicNoTextField.getText();
             LocalDate ld = dobDatePicker.getValue();
             Calendar c =  Calendar.getInstance();
@@ -267,7 +269,7 @@ public class AdminUsersSaveReceptionistController implements Initializable {
             Files.copy(Path.of(selectedFilePath),newFile1.toPath());
 
             ReceptionistDTO receptionistDTO= new ReceptionistDTO(
-                    usernameTextField.getText(),
+                    userName,
                     nameTextField.getText(),
                     Gender.getSelectedToggle().getUserData().toString(),
                     phoneNoTextField.getText(),

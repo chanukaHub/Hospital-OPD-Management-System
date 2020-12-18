@@ -7,6 +7,7 @@ import lk.usj.OPD_Management.java.entity.Receptionist;
 import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.*;
 
 public class PatientDAOImpl implements PatientDAO {
@@ -107,7 +108,15 @@ public class PatientDAOImpl implements PatientDAO {
     @Override
     public ArrayList<Patient> getAll() throws Exception {
         try{
-            String username, name, gender, phoneNumber, idCard,dateOfBirth, address, maritalStatus, password;
+            String username;
+            String name;
+            String gender;
+            String phoneNumber;
+            String idCard;
+            String dateOfBirth;
+            String address;
+            String maritalStatus;
+            String password;
             String bloodGroup,allergies,note;
             SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
             File file = new File("Patient.txt");
@@ -139,10 +148,12 @@ public class PatientDAOImpl implements PatientDAO {
 
 
                 try {
-                    Date birthDate =format.parse(dateOfBirth);
+                    String[] dateArray = dateOfBirth.split("/");
+                    Date birthDate = new GregorianCalendar(Integer.parseInt(dateArray[2]), Integer.parseInt(dateArray[1]) - 1, Integer.parseInt(dateArray[0])).getTime();
+                    System.out.println(birthDate);
                     Patient patient= new Patient(username, name, gender, phoneNumber, idCard,birthDate, address, maritalStatus, password,bloodGroup,allergies,note);
                     patients.add(patient);
-                }catch (ParseException e){
+                }catch (Exception e){
                     e.printStackTrace();
                 }
             }

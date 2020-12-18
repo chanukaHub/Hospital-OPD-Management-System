@@ -9,16 +9,23 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import lk.usj.OPD_Management.java.controller.patient.PatientBaseController;
+import lk.usj.OPD_Management.java.dto.PatientDTO;
 
 public class AdminUsersController implements Initializable {
+
+    public AdminUsersController() {
+    }
+
     String selectedUserType= "Patient";
 
     @FXML
-    private VBox mainRoot;
+    VBox mainRoot;
 
     @FXML
     private ResourceBundle resources;
@@ -99,9 +106,9 @@ public class AdminUsersController implements Initializable {
     }
 
     @FXML
-    void editBtn_ActionEvent(ActionEvent event) {
-
+    void editBtn_ActionEvent(ActionEvent event) throws Exception{
     }
+
 
     @FXML
     void addBtn_ActionEvent(ActionEvent event) throws IOException{
@@ -139,4 +146,6 @@ public class AdminUsersController implements Initializable {
         root.getChildren().setAll(pane);
 
     }
+
+
 }

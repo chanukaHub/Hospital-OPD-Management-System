@@ -144,8 +144,9 @@ public class AdminUsersSavePatientController implements Initializable {
     void saveBtn_ActionEvent(ActionEvent event) {
         try{
             String address,maritalStatus,bloodGroup;
-            if (usernameTextField.getText().equals("")){
-                Common.showError("Please Enter username");
+
+            if (nameTextField.getText().equals("")){
+                Common.showError("Please Enter Name");
                 return;
             }else if(nicNoTextField.getText().equals("")){
                 Common.showError("Please Enter NIC No");
@@ -156,7 +157,9 @@ public class AdminUsersSavePatientController implements Initializable {
             }else {
                 address=address1TextField.getText()+","+address2TextField.getText()+","+address3TextField.getText();
             }
+            String userName =nicNoTextField.getText();
             String initialPassword =nicNoTextField.getText();
+
             LocalDate ld = dobDatePicker.getValue();
             Calendar c =  Calendar.getInstance();
             if (ld == null){
@@ -181,7 +184,7 @@ public class AdminUsersSavePatientController implements Initializable {
             }
 
             PatientDTO patientDTO= new PatientDTO(
-                    usernameTextField.getText(),
+                    userName,
                     nameTextField.getText(),
                     Gender.getSelectedToggle().getUserData().toString(),
                     phoneNoTextField.getText(),
@@ -199,7 +202,6 @@ public class AdminUsersSavePatientController implements Initializable {
 
             if (b){
                 Common.showMessage("Added Patient!");
-                usernameTextField.clear();
                 nameTextField.clear();
                 maleRadioBtn.setSelected(false);
                 femaleRadioBtn.setSelected(false);

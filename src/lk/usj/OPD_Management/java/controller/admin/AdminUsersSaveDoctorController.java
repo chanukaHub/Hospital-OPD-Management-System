@@ -208,8 +208,8 @@ public class AdminUsersSaveDoctorController implements Initializable {
         try{
             Date today = new Date();
             String address,maritalStatus,specialistArea;
-            if (usernameTextField.getText().equals("")){
-                Common.showError("Please Enter username");
+            if (nameTextField.getText().equals("")){
+                Common.showError("Please Enter Name");
                 return;
             }else if(nicNoTextField.getText().equals("")){
                 Common.showError("Please Enter NIC No");
@@ -220,7 +220,9 @@ public class AdminUsersSaveDoctorController implements Initializable {
             }else {
                 address=address1TextField.getText()+","+address2TextField.getText()+","+address3TextField.getText();
             }
+            String userName =nicNoTextField.getText();
             String initialPassword =nicNoTextField.getText();
+
             LocalDate ld = dobDatePicker.getValue();
             Calendar c =  Calendar.getInstance();
             if (ld == null){
@@ -251,7 +253,7 @@ public class AdminUsersSaveDoctorController implements Initializable {
             Files.copy(Path.of(selectedFilePath),newFile1.toPath());
 
             DoctorDTO doctorDTO= new DoctorDTO(
-                    usernameTextField.getText(),
+                    userName,
                     nameTextField.getText(),
                     Gender.getSelectedToggle().getUserData().toString(),
                     phoneNoTextField.getText(),

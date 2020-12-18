@@ -7,8 +7,7 @@ public class PatientDTO extends UserDTO{
     private String allergies;
     private String note;
 
-    public PatientDTO(String idCard, String name, String username, String gender, String address, String phoneNumber) {
-        super(idCard,name,username,gender,address,phoneNumber);
+    public PatientDTO() {
     }
 
     public PatientDTO(String username, String password) {

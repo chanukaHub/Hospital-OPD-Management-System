@@ -1,20 +1,29 @@
 package lk.usj.OPD_Management.java.controller.admin;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import lk.usj.OPD_Management.java.controller.patient.PatientBaseController;
 import lk.usj.OPD_Management.java.dto.PatientDTO;
 import lk.usj.OPD_Management.java.service.custom.PatientBO;
 import lk.usj.OPD_Management.java.service.custom.impl.PatientBOImpl;
 
 public class AdminUsersPatientTableController implements Initializable {
     private PatientBO patientBO= new PatientBOImpl();
+
+    @FXML
+    private VBox tableRoot;
 
     @FXML
     private ResourceBundle resources;
@@ -26,8 +35,22 @@ public class AdminUsersPatientTableController implements Initializable {
     private TableView<PatientDTO> patientTable;
 
     @FXML
-    void patientTable_MouseEvent(MouseEvent event) {
+    void patientTable_MouseEvent(MouseEvent event) throws IOException {
+        PatientDTO patientDTO=(patientTable.getSelectionModel().getSelectedItem());
+        //FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_editPatient.fxml"));
+        //root= loader.load();
+        //AdminUsersController adminUsersController= new AdminUsersController();
+        //VBox pane = adminUsersController.getvBox();
+        //VBox vBox= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_editPatient.fxml"));
+        //pane.getChildren().setAll(vBox);
+        //AdminUsersEditPatientController adminUsersEditPatientController = loader.getController();
+        //adminUsersEditPatientController.transferMessage(patientDTO);
 
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_editPatient.fxml"));
+        Parent root = loader.load();
+        tableRoot.getChildren().setAll(root);
+        AdminUsersEditPatientController adminUsersEditPatientController = loader.getController();
+        adminUsersEditPatientController.transferMessage(patientDTO);
     }
     private void loadPatientTable() throws Exception {
         patientTable.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("idCard"));
