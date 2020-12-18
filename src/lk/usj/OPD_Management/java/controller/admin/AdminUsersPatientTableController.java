@@ -8,12 +8,17 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import lk.usj.OPD_Management.java.common.Common;
 import lk.usj.OPD_Management.java.controller.patient.PatientBaseController;
 import lk.usj.OPD_Management.java.dto.PatientDTO;
 import lk.usj.OPD_Management.java.service.custom.PatientBO;
@@ -37,11 +42,30 @@ public class AdminUsersPatientTableController implements Initializable {
     @FXML
     void patientTable_MouseEvent(MouseEvent event) throws IOException {
         PatientDTO patientDTO=(patientTable.getSelectionModel().getSelectedItem());
+        if(patientDTO == null){
+            Common.showWarning("Please select patient records");
+            return;
+        }
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_editPatient.fxml"));
         Parent root = loader.load();
-        tableRoot.getChildren().setAll(root);
+        //tableRoot.getChildren().setAll(root);
+
         AdminUsersEditPatientController adminUsersEditPatientController = loader.getController();
         adminUsersEditPatientController.transferMessage(patientDTO);
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        //stage.setTitle("");
+        stage.centerOnScreen();
+        stage.setResizable(false);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.showAndWait();
+        try {
+            loadPatientTable();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     private void loadPatientTable() throws Exception {
         patientTable.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("idCard"));

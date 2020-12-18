@@ -10,6 +10,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -86,6 +87,9 @@ public class AdminUsersEditPatientController implements Initializable {
     @FXML
     private JFXButton saveBtn;
 
+    @FXML
+    private JFXButton deleteBtn;
+
 
 
 
@@ -106,11 +110,6 @@ public class AdminUsersEditPatientController implements Initializable {
 
     @FXML
     void bloodGroupComboBox_ActionEvent(ActionEvent event) {
-
-    }
-
-    @FXML
-    void cancelBtn_ActionEvent(ActionEvent event) {
 
     }
 
@@ -146,6 +145,16 @@ public class AdminUsersEditPatientController implements Initializable {
 
     @FXML
     void saveBtn_ActionEvent(ActionEvent event) {
+
+    }
+
+    @FXML
+    void cancelBtn_ActionEvent(ActionEvent event) {
+        ((Node)(event.getSource())).getScene().getWindow().hide();
+    }
+
+    @FXML
+    void deleteBtn_ActionEvent(ActionEvent event) {
 
     }
 
@@ -219,8 +228,15 @@ public class AdminUsersEditPatientController implements Initializable {
         nicNoTextField.setText(newPatientDTO.getIdCard());
         dobDatePicker.setValue(localDate);
         String addressLine = newPatientDTO.getAddress();
-
-
+        String[] address = addressLine.split(",");
+        address1TextField.setText(address[0]);
+        address2TextField.setText(address[1]);
+        address3TextField.setText(address[2]);
+        bloodGroupComboBox.getSelectionModel().select(newPatientDTO.getBloodGroup());
+        allergiesTextField.setText(newPatientDTO.getAllergies());
+        maritalStatusComboBox.getSelectionModel().select(newPatientDTO.getMaritalStatus());
+        passwordField.setText(newPatientDTO.getPassword());
+        notesTextArea.setText(newPatientDTO.getNote());
     }
 
 }
