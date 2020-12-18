@@ -37,15 +37,6 @@ public class AdminUsersPatientTableController implements Initializable {
     @FXML
     void patientTable_MouseEvent(MouseEvent event) throws IOException {
         PatientDTO patientDTO=(patientTable.getSelectionModel().getSelectedItem());
-        //FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_editPatient.fxml"));
-        //root= loader.load();
-        //AdminUsersController adminUsersController= new AdminUsersController();
-        //VBox pane = adminUsersController.getvBox();
-        //VBox vBox= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_editPatient.fxml"));
-        //pane.getChildren().setAll(vBox);
-        //AdminUsersEditPatientController adminUsersEditPatientController = loader.getController();
-        //adminUsersEditPatientController.transferMessage(patientDTO);
-
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_editPatient.fxml"));
         Parent root = loader.load();
         tableRoot.getChildren().setAll(root);

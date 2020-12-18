@@ -150,7 +150,6 @@ public class PatientDAOImpl implements PatientDAO {
                 try {
                     String[] dateArray = dateOfBirth.split("/");
                     Date birthDate = new GregorianCalendar(Integer.parseInt(dateArray[2]), Integer.parseInt(dateArray[1]) - 1, Integer.parseInt(dateArray[0])).getTime();
-                    System.out.println(birthDate);
                     Patient patient= new Patient(username, name, gender, phoneNumber, idCard,birthDate, address, maritalStatus, password,bloodGroup,allergies,note);
                     patients.add(patient);
                 }catch (Exception e){
