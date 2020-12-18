@@ -82,7 +82,7 @@
                   </Text>
                   <JFXTextField fx:id="nameTextField" focusColor="#b8b6c7" onAction="#nameTextField_OnAction" prefWidth="200.0" promptText="Name" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
                      <VBox.margin>
-                        <Insets bottom="25.0" />
+                        <Insets bottom="15.0" />
                      </VBox.margin>
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
@@ -99,9 +99,9 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTextField fx:id="usernameTextField" focusColor="#b8b6c7" onAction="#usernameTextField_OnAction" prefWidth="200.0" promptText="username" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                  <JFXTextField fx:id="usernameTextField" editable="false" focusColor="#b8b6c7" onAction="#usernameTextField_OnAction" prefWidth="200.0" promptText="username" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
                      <VBox.margin>
-                        <Insets bottom="25.0" />
+                        <Insets bottom="15.0" />
                      </VBox.margin>
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
@@ -142,7 +142,7 @@
                   </Text>
                   <JFXTextField fx:id="phoneNoTextField" focusColor="#b8b6c7" onAction="#phoneNoTextField_OnAction" prefWidth="200.0" promptText="Phone No" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
                      <VBox.margin>
-                        <Insets bottom="25.0" />
+                        <Insets bottom="15.0" />
                      </VBox.margin>
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
@@ -161,7 +161,7 @@
                   </Text>
                   <JFXTextField fx:id="nicNoTextField" focusColor="#b8b6c7" onAction="#nicNoTextField_OnAction" prefWidth="200.0" promptText="NIC No" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
                      <VBox.margin>
-                        <Insets bottom="25.0" />
+                        <Insets bottom="15.0" />
                      </VBox.margin>
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
@@ -223,7 +223,7 @@
                         <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                      </padding>
                      <VBox.margin>
-                        <Insets bottom="25.0" top="5.0" />
+                        <Insets bottom="15.0" top="5.0" />
                      </VBox.margin>
                   </JFXTextField>
                   <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Martial Status">
@@ -239,7 +239,7 @@
                         <Insets bottom="2.0" left="8.0" top="2.0" />
                      </padding>
                      <VBox.margin>
-                        <Insets bottom="25.0" />
+                        <Insets bottom="15.0" />
                      </VBox.margin>
                   </JFXComboBox>
                   <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff email">
@@ -255,7 +255,7 @@
                         <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                      </padding>
                      <VBox.margin>
-                        <Insets bottom="25.0" />
+                        <Insets bottom="15.0" />
                      </VBox.margin>
                   </JFXTextField>
                   <Text fill="#282b2f" layoutX="25.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Specialized Area">
@@ -271,7 +271,7 @@
                         <Insets bottom="2.0" left="8.0" top="2.0" />
                      </padding>
                      <VBox.margin>
-                        <Insets bottom="25.0" />
+                        <Insets bottom="15.0" />
                      </VBox.margin>
                   </JFXComboBox>
                </children>
@@ -354,7 +354,7 @@
                   </Label>
                   <VBox alignment="BOTTOM_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="0.0">
                      <children>
-                        <HBox alignment="CENTER_RIGHT" spacing="20.0">
+                        <HBox alignment="CENTER_RIGHT" spacing="10.0">
                            <VBox.margin>
                               <Insets bottom="15.0" right="15.0" top="20.0" />
                            </VBox.margin>
@@ -367,7 +367,7 @@
                                     <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
                                  </padding>
                               </JFXButton>
-                              <JFXButton fx:id="saveBtn" layoutX="646.0" layoutY="10.0" onAction="#saveBtn_OnAction" style="-fx-background-color: #2484FF;" text="Save Changes" textFill="WHITE">
+                              <JFXButton fx:id="saveBtn" layoutX="646.0" layoutY="10.0" onAction="#saveBtn_OnAction" prefWidth="90.0" style="-fx-background-color: #2484FF;" text="Save" textFill="WHITE">
                                  <font>
                                     <Font name="Gotham-Book" size="12.0" />
                                  </font>

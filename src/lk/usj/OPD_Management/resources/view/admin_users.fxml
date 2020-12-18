@@ -100,34 +100,21 @@
                   </HBox>
                </children>
             </VBox>
+            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+               <children>
+                  <JFXButton fx:id="addBtn" onAction="#addBtn_ActionEvent" ripplerFill="TRANSPARENT" style="-fx-background-color: #1CC270;" text="Add User" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets bottom="15.0" right="15.0" top="10.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
          </children>
       </HBox>
       <AnchorPane fx:id="root" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="730.0" VBox.vgrow="ALWAYS">
          <VBox.margin>
-            <Insets left="15.0" right="15.0" />
+            <Insets bottom="15.0" left="15.0" right="15.0" />
          </VBox.margin>
       </AnchorPane>
-      <HBox alignment="CENTER_RIGHT">
-         <children>
-            <JFXButton fx:id="addBtn" onAction="#addBtn_ActionEvent" ripplerFill="TRANSPARENT" style="-fx-background-color: #1CC270;" text="Add User" textFill="WHITE">
-               <HBox.margin>
-                  <Insets bottom="15.0" right="15.0" top="10.0" />
-               </HBox.margin>
-            </JFXButton>
-            <JFXButton fx:id="editBtn" layoutX="535.0" layoutY="23.0" onAction="#editBtn_ActionEvent" prefWidth="65.0" ripplerFill="TRANSPARENT" style="-fx-background-color: #FFC400;" text="Edit " textFill="WHITE">
-               <HBox.margin>
-                  <Insets bottom="15.0" right="15.0" top="10.0" />
-               </HBox.margin>
-            </JFXButton>
-            <JFXButton fx:id="deleteBtn" layoutX="470.0" layoutY="23.0" onAction="#deleteBtn_ActionEvent" prefWidth="65.0" ripplerFill="TRANSPARENT" style="-fx-background-color: #FF4242;" text="Delete" textFill="WHITE">
-               <HBox.margin>
-                  <Insets bottom="15.0" right="15.0" top="10.0" />
-               </HBox.margin>
-            </JFXButton>
-         </children>
-         <VBox.margin>
-            <Insets top="10.0" />
-         </VBox.margin>
-      </HBox>
    </children>
 </VBox>

@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
@@ -170,6 +171,22 @@
                         <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                      </padding>
                   </JFXTextField>
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff email">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <JFXTextField fx:id="staffEmailTextField" focusColor="#b8b6c7" onAction="#staffEmailTextField_OnAction" prefWidth="200.0" promptText="receptionist@gmail.com" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </JFXTextField>
                </children>
                <opaqueInsets>
                   <Insets />
@@ -241,7 +258,7 @@
                         <Insets bottom="15.0" />
                      </VBox.margin>
                   </JFXComboBox>
-                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff email">
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
                      </font>
@@ -249,14 +266,11 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTextField fx:id="staffEmailTextField" focusColor="#b8b6c7" onAction="#staffEmailTextField_OnAction" prefWidth="200.0" promptText="receptionist@gmail.com" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
-                     <font>
-                        <Font name="Gotham-Book" size="12.0" />
-                     </font>
+                  <JFXPasswordField focusColor="#b8b6c7" prefHeight="30.0" style="-fx-background-color: #F2F0FB;" text="Password" unFocusColor="#4d4d4d00">
                      <padding>
-                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
-                  </JFXTextField>
+                  </JFXPasswordField>
                </children>
             </VBox>
             <VBox prefHeight="200.0" HBox.hgrow="ALWAYS">
@@ -349,6 +363,14 @@
                                  </padding>
                               </JFXButton>
                               <JFXButton fx:id="saveBtn" layoutX="646.0" layoutY="10.0" onAction="#saveBtn_OnAction" prefWidth="90.0" style="-fx-background-color: #2484FF;" text="Save" textFill="WHITE">
+                                 <font>
+                                    <Font name="Gotham-Book" size="12.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
+                                 </padding>
+                              </JFXButton>
+                              <JFXButton fx:id="saveBtn1" layoutX="139.0" layoutY="12.0" onAction="#saveBtn_OnAction" style="-fx-background-color: #FF4242;" text="Delete" textFill="WHITE">
                                  <font>
                                     <Font name="Gotham-Book" size="12.0" />
                                  </font>
