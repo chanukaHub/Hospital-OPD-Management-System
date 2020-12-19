@@ -156,7 +156,7 @@ public class AdminUsersSavePatientController implements Initializable {
                 Common.showError("Please enter Address");
                 return;
             }else {
-                address=address1TextField.getText()+","+address2TextField.getText()+","+address3TextField.getText();
+                address=address1TextField.getText()+", "+address2TextField.getText()+", "+address3TextField.getText();
             }
             String userName =nicNoTextField.getText();
             String initialPassword =nicNoTextField.getText();
