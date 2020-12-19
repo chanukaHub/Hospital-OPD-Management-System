@@ -7,7 +7,12 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,6 +20,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
@@ -239,7 +245,7 @@ public class AdminUsersEditDoctorController implements Initializable {
 
     }
 
-    public void transferMessage(DoctorDTO doctorDTO) {
+    public void transferMessage(DoctorDTO doctorDTO){
         MaleRadioBtn.setUserData("Male");
         femaleRadioBtn.setUserData("Female");
         otherRadioBtn.setUserData("Other");
@@ -262,5 +268,36 @@ public class AdminUsersEditDoctorController implements Initializable {
                 "Divorced",
                 "Widowed"
         );
+        LocalDate localDate = (doctorDTO.getDateOfBirth()).toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        usernameTextField.setText(doctorDTO.getUsername());
+        nameTextField.setText(doctorDTO.getName());
+        String gender = doctorDTO.getGender();
+        if (gender.equals("Male"))
+            MaleRadioBtn.setSelected(true);
+        else if(gender.equals("Female"))
+            femaleRadioBtn.setSelected(true);
+        else
+            otherRadioBtn.setSelected(true);
+        phoneNoTextField.setText(doctorDTO.getPhoneNumber());
+        nicNoTextField.setText(doctorDTO.getIdCard());
+        dobDatePicker.setValue(localDate);
+        String addressLine = doctorDTO.getAddress();
+        String[] address = addressLine.split(",");
+        address1TextField.setText(address[0]);
+        address2TextField.setText(address[1]);
+        address3TextField.setText(address[2]);
+        specializedAreaComboBox.getSelectionModel().select(doctorDTO.getSpecialistArea());
+        maritalStatusComboBox.getSelectionModel().select(doctorDTO.getMaritalStatus());
+        passwordField.setText(doctorDTO.getPassword());
+        staffIDLabel.setText(doctorDTO.getStaffID());
+        notesTextArea.setText(doctorDTO.getNote());
+        staffEmailTextField.setText(doctorDTO.getStaffEmail());
+        try {
+            imageView.setImage(new Image(new FileInputStream(doctorDTO.getPhotograph())));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        attachmentLabel.setText(doctorDTO.getDocument());
+
     }
 }
