@@ -67,4 +67,26 @@ public class DoctorBOImpl implements DoctorBO {
         }
         return doctors;
     }
+
+    @Override
+    public boolean updateDoctor(DoctorDTO doctorDTO) throws Exception {
+        return doctorDAO.update(new Doctor(
+                doctorDTO.getUsername(),
+                doctorDTO.getName(),
+                doctorDTO.getGender(),
+                doctorDTO.getPhoneNumber(),
+                doctorDTO.getIdCard(),
+                doctorDTO.getDateOfBirth(),
+                doctorDTO.getAddress(),
+                doctorDTO.getMaritalStatus(),
+                doctorDTO.getPassword(),
+                doctorDTO.getStaffID(),
+                doctorDTO.getStaffEmail(),
+                doctorDTO.getDateOfJoin(),
+                doctorDTO.getPhotograph(),
+                doctorDTO.getDocument(),
+                doctorDTO.getNote(),
+                doctorDTO.getSpecialistArea()
+        ));
+    }
 }
