@@ -375,6 +375,37 @@
                         <Insets left="5.0" />
                      </padding>
                   </HBox>
+                  <HBox fx:id="userHBox1" layoutX="10.0" layoutY="328.0" onMouseClicked="#usersHBox_MouseEvent" prefHeight="38.0" stylesheets="@../css/styles.css">
+                     <children>
+                        <HBox>
+                           <children>
+                              <ImageView fitHeight="20.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/reports_module_icon.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="11.0" right="5.0" top="9.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <HBox HBox.hgrow="ALWAYS">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Reports">
+                                 <font>
+                                    <Font name="Gotham-Book" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="12.0" left="5.0" top="12.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </HBox>
                </children>
             </VBox>
             <VBox VBox.vgrow="ALWAYS">

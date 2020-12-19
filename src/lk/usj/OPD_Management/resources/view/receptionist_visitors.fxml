@@ -34,6 +34,11 @@
       </TableView>
       <HBox alignment="CENTER_RIGHT">
          <children>
+            <JFXButton layoutX="610.0" layoutY="20.0" prefWidth="90.0" ripplerFill="TRANSPARENT" style="-fx-background-color: #1CC270;" text="Add Visitor" textFill="WHITE">
+               <HBox.margin>
+                  <Insets bottom="15.0" right="15.0" top="10.0" />
+               </HBox.margin>
+            </JFXButton>
             <JFXButton layoutX="535.0" layoutY="23.0" prefWidth="65.0" ripplerFill="TRANSPARENT" style="-fx-background-color: #FFC400;" text="Edit " textFill="WHITE">
                <HBox.margin>
                   <Insets bottom="15.0" right="15.0" top="10.0" />

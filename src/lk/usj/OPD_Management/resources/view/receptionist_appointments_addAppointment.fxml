@@ -75,7 +75,7 @@
                         <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                      </padding>
                   </JFXTextField>
-                  <Text fill="#282b2f" layoutX="25.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient ID">
+                  <Text fill="#282b2f" layoutX="25.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient ">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
                      </font>
@@ -160,14 +160,33 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXComboBox focusColor="#f2f0fb" prefHeight="29.0" prefWidth="200.0" promptText="Dermatology" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
-                     <padding>
-                        <Insets bottom="2.0" left="8.0" top="2.0" />
-                     </padding>
+                  <HBox spacing="5.0">
                      <VBox.margin>
                         <Insets bottom="15.0" />
                      </VBox.margin>
-                  </JFXComboBox>
+                     <children>
+                        <JFXComboBox focusColor="#f2f0fb" prefHeight="29.0" prefWidth="170.0" promptText="Dermatology" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                           <padding>
+                              <Insets bottom="2.0" left="8.0" top="2.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </JFXComboBox>
+                        <JFXButton contentDisplay="CENTER" prefHeight="29.0" ripplerFill="BLACK" style="-fx-background-radius: 5; -fx-background-color: #F2F0FB;" text=" ">
+                           <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/search_icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                  </HBox>
                   <Text fill="#282b2f" layoutX="25.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Doctor">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />

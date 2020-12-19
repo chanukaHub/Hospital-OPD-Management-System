@@ -20,7 +20,7 @@
          <children>
             <VBox>
                <children>
-                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Postal">
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Dispatched Postal">
                      <font>
                         <Font name="Gotham Bold" size="16.0" />
                      </font>
