@@ -228,7 +228,16 @@ public class AdminUsersEditPatientController implements Initializable {
     }
 
     @FXML
-    void deleteBtn_ActionEvent(ActionEvent event) {
+    void deleteBtn_ActionEvent(ActionEvent event){
+        boolean deleted = false;
+        try {
+            deleted = patientBO.deletePatient(usernameTextField.getText());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (deleted) {
+            Common.showMessage("DELETE !");
+        }
 
     }
 
