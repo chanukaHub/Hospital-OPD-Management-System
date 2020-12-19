@@ -53,4 +53,22 @@ public class PatientBOImpl implements PatientBO {
         }
         return patients;
     }
+
+    @Override
+    public boolean updatePatient(PatientDTO patientDTO) throws Exception {
+        return patientDAO.update(new Patient(
+                patientDTO.getUsername(),
+                patientDTO.getName(),
+                patientDTO.getGender(),
+                patientDTO.getPhoneNumber(),
+                patientDTO.getIdCard(),
+                patientDTO.getDateOfBirth(),
+                patientDTO.getAddress(),
+                patientDTO.getMaritalStatus(),
+                patientDTO.getPassword(),
+                patientDTO.getBloodGroup(),
+                patientDTO.getAllergies(),
+                patientDTO.getNote()
+        ));
+    }
 }

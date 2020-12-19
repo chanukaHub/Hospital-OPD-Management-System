@@ -14,7 +14,10 @@ import javafx.scene.Node;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import lk.usj.OPD_Management.java.common.Common;
 import lk.usj.OPD_Management.java.dto.PatientDTO;
+import lk.usj.OPD_Management.java.service.custom.PatientBO;
+import lk.usj.OPD_Management.java.service.custom.impl.PatientBOImpl;
 
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -22,10 +25,13 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.ResourceBundle;
 
 public class AdminUsersEditPatientController implements Initializable {
+
+    private PatientBO patientBO = new PatientBOImpl();
 
     @FXML
     private VBox root;
@@ -145,6 +151,73 @@ public class AdminUsersEditPatientController implements Initializable {
 
     @FXML
     void saveBtn_ActionEvent(ActionEvent event) {
+        try{
+            String address,maritalStatus,bloodGroup;
+
+            if (nameTextField.getText().equals("")){
+                Common.showError("Please Enter Name");
+                return;
+            }else if(nicNoTextField.getText().equals("")){
+                Common.showError("Please Enter NIC No");
+                return;
+            }
+            if(address1TextField.getText().equals("")&&address3TextField.getText().equals("")&&address2TextField.getText().equals("")){
+                address=null;
+            }else {
+                address=address1TextField.getText()+","+address2TextField.getText()+","+address3TextField.getText();
+            }
+            String userName =nicNoTextField.getText();
+            String initialPassword =nicNoTextField.getText();
+
+            LocalDate ld = dobDatePicker.getValue();
+            Calendar c =  Calendar.getInstance();
+            if (ld == null){
+                Common.showError("Please Enter BirthDay");
+                return;
+            }
+            c.set(ld.getYear(), ld.getMonthValue() - 1, ld.getDayOfMonth());
+            Date date = c.getTime();
+            if (Gender.getSelectedToggle() == null){
+                Common.showError("Please Select Gender");
+                return;
+            }
+            if (maritalStatusComboBox.getSelectionModel().getSelectedItem().equals("Choose a Status")){
+                maritalStatus = null;
+            }else{
+                maritalStatus = maritalStatusComboBox.getSelectionModel().getSelectedItem();
+            }
+            if (bloodGroupComboBox.getSelectionModel().getSelectedItem().equals("Choose")){
+                bloodGroup = null;
+            }else{
+                bloodGroup = bloodGroupComboBox.getSelectionModel().getSelectedItem();
+            }
+
+            PatientDTO patientDTO= new PatientDTO(
+                    userName,
+                    nameTextField.getText(),
+                    Gender.getSelectedToggle().getUserData().toString(),
+                    phoneNoTextField.getText(),
+                    nicNoTextField.getText(),
+                    date,
+                    address,
+                    maritalStatus,
+                    initialPassword,
+                    bloodGroup,
+                    allergiesTextField.getText(),
+                    notesTextArea.getText()
+            );
+
+            boolean b = patientBO.updatePatient(patientDTO);
+
+            if (b){
+                Common.showMessage("Added Patient!");
+            }
+            else
+                Common.showError("Not added");
+        } catch (Exception e1) {
+            Common.showError("Not added");
+            e1.printStackTrace();
+        }
 
     }
 

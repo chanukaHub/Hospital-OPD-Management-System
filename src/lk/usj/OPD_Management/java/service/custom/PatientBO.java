@@ -10,4 +10,6 @@ public interface PatientBO extends SuperBO {
     boolean addPatient(PatientDTO patientDTO) throws Exception;
 
     ArrayList<PatientDTO> getAllPatient() throws Exception;
+
+    boolean updatePatient(PatientDTO patientDTO) throws Exception;
 }

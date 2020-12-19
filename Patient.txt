@@ -1,2 +1,2 @@
-patient#null#null#null#null#03/06/2000#lane1,lane2,town#null#patient#null#null#null
-chanuwa#chanuka#Male#0767188591#991531076V#01/06/1999#1,Dedduwa,bentota#Single#991531076V#B+#no#no notes
+patient#Test patient#Male#null#patient#03/06/2000#lane1,lane2,town#null#null#null#null#null
+991531076V#chanuka Dil#Female#0767188591#991531076V#01/06/1999#1,Dedduwa,bentota#Single#B+#B+#no#no notes
