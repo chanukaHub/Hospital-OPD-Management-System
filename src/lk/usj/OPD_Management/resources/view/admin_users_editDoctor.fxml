@@ -18,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.admin.AdminUsersSaveDoctorController">
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.admin.AdminUsersEditDoctorController">
    <children>
       <HBox>
          <children>
@@ -283,7 +283,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXPasswordField focusColor="#b8b6c7" prefHeight="30.0" style="-fx-background-color: #F2F0FB;" text="Password" unFocusColor="#4d4d4d00">
+                  <JFXPasswordField fx:id="passwordField" focusColor="#b8b6c7" onAction="#passwordField_OnAction" prefHeight="30.0" style="-fx-background-color: #F2F0FB;" text="Password" unFocusColor="#4d4d4d00">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
@@ -389,7 +389,7 @@
                                     <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
                                  </padding>
                               </JFXButton>
-                              <JFXButton fx:id="saveBtn1" layoutX="183.0" layoutY="11.0" onAction="#saveBtn_OnAction" style="-fx-background-color: #FF4242;" text="Delete" textFill="WHITE">
+                              <JFXButton fx:id="deleteBtn" layoutX="183.0" layoutY="11.0" onAction="#deleteBtn_OnAction" style="-fx-background-color: #FF4242;" text="Delete" textFill="WHITE">
                                  <font>
                                     <Font name="Gotham-Book" size="12.0" />
                                  </font>
