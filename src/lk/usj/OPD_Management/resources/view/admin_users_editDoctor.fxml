@@ -100,7 +100,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTextField fx:id="usernameTextField" editable="false" focusColor="#b8b6c7" onAction="#usernameTextField_OnAction" prefWidth="200.0" promptText="username" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                  <JFXTextField fx:id="usernameTextField" editable="false" focusColor="#b9b7c700" onAction="#usernameTextField_OnAction" prefWidth="200.0" promptText="username" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
                      <VBox.margin>
                         <Insets bottom="15.0" />
                      </VBox.margin>
@@ -160,7 +160,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTextField fx:id="nicNoTextField" focusColor="#b8b6c7" onAction="#nicNoTextField_OnAction" prefWidth="200.0" promptText="NIC No" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                  <JFXTextField fx:id="nicNoTextField" editable="false" focusColor="#b9b7c700" onAction="#nicNoTextField_OnAction" prefWidth="200.0" promptText="NIC No" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
                      <VBox.margin>
                         <Insets bottom="15.0" />
                      </VBox.margin>
