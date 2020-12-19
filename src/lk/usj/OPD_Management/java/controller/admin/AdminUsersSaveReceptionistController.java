@@ -237,7 +237,8 @@ public class AdminUsersSaveReceptionistController implements Initializable {
                 return;
             }
             if(address1TextField.getText().equals("")&&address3TextField.getText().equals("")&&address2TextField.getText().equals("")){
-                address=null;
+                Common.showError("Please enter Address");
+                return;
             }else {
                 address=address1TextField.getText()+","+address2TextField.getText()+","+address3TextField.getText();
             }

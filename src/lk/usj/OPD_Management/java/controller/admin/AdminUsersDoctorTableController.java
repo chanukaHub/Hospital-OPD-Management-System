@@ -56,6 +56,12 @@ public class AdminUsersDoctorTableController implements Initializable {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.showAndWait();
 
+        try {
+            loadDoctorTable();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     private void loadDoctorTable() throws Exception {
