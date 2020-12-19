@@ -36,7 +36,7 @@ import lk.usj.OPD_Management.java.dto.DoctorDTO;
 import lk.usj.OPD_Management.java.service.custom.DoctorBO;
 import lk.usj.OPD_Management.java.service.custom.impl.DoctorBOImpl;
 
-public class AdminUsersEditDoctorController implements Initializable {
+public class AdminUsersEditDeleteDoctorController implements Initializable {
     private DoctorBO doctorBO = new DoctorBOImpl();
     String path1,path2;
     String selectedFilePath="",currentFilePath;

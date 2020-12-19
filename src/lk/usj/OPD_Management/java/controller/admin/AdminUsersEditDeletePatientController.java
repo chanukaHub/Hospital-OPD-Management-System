@@ -29,7 +29,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-public class AdminUsersEditPatientController implements Initializable {
+public class AdminUsersEditDeletePatientController implements Initializable {
 
     private PatientBO patientBO = new PatientBOImpl();
 
