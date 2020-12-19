@@ -97,7 +97,7 @@ public class PatientDAOImpl implements PatientDAO {
                     p.setDateOfBirth(var1.getDateOfBirth());
                     p.setAddress(var1.getAddress());
                     p.setMaritalStatus(var1.getMaritalStatus());
-                    p.setPassword(var1.getBloodGroup());
+                    p.setPassword(var1.getPassword());
                     p.setBloodGroup(var1.getBloodGroup());
                     p.setAllergies(var1.getAllergies());
                     p.setNote(var1.getNote());
