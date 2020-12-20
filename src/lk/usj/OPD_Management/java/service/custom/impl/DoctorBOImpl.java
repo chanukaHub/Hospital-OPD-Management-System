@@ -91,7 +91,7 @@ public class DoctorBOImpl implements DoctorBO {
     }
 
     @Override
-    public boolean deletePatient(String username) throws Exception {
+    public boolean deleteDoctor(String username) throws Exception {
         return doctorDAO.delete(username);
     }
 }

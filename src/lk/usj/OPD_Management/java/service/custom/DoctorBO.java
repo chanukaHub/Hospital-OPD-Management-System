@@ -17,5 +17,5 @@ public interface DoctorBO extends SuperBO {
 
     boolean updateDoctor(DoctorDTO doctorDTO)throws Exception;
 
-    boolean deletePatient(String text)throws Exception;
+    boolean deleteDoctor(String text)throws Exception;
 }

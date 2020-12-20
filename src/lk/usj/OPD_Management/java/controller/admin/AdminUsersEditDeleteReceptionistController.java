@@ -145,7 +145,15 @@ public class AdminUsersEditDeleteReceptionistController implements Initializable
 
     @FXML
     void deleteBtn_OnAction(ActionEvent event) {
-
+        boolean deleted = false;
+        try {
+            deleted = receptionistBO.deleteReceptionist(usernameTextField.getText());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (deleted) {
+            Common.showMessage("DELETE !");
+        }
     }
 
     @FXML
@@ -310,7 +318,7 @@ public class AdminUsersEditDeleteReceptionistController implements Initializable
                     notesTextArea.getText()
             );
 
-            boolean b = receptionistBO.updateDoctor(receptionistDTO);
+            boolean b = receptionistBO.updateReceptionist(receptionistDTO);
 
             if (b){
                 Common.showMessage("Updated!");

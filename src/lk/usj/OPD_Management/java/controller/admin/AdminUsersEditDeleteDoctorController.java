@@ -173,7 +173,7 @@ public class AdminUsersEditDeleteDoctorController implements Initializable {
     void deleteBtn_OnAction(ActionEvent event) {
         boolean deleted = false;
         try {
-            deleted = doctorBO.deletePatient(usernameTextField.getText());
+            deleted = doctorBO.deleteDoctor(usernameTextField.getText());
         } catch (Exception e) {
             e.printStackTrace();
         }

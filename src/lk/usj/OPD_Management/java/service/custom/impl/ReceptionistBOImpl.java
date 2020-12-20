@@ -65,7 +65,7 @@ public class ReceptionistBOImpl implements ReceptionistBO {
     }
 
     @Override
-    public boolean updateDoctor(ReceptionistDTO receptionistDTO) throws Exception {
+    public boolean updateReceptionist(ReceptionistDTO receptionistDTO) throws Exception {
         return receptionistDAO.update(new Receptionist(
                 receptionistDTO.getUsername(),
                 receptionistDTO.getName(),
@@ -83,5 +83,10 @@ public class ReceptionistBOImpl implements ReceptionistBO {
                 receptionistDTO.getDocument(),
                 receptionistDTO.getNote()
         ));
+    }
+
+    @Override
+    public boolean deleteReceptionist(String username) throws Exception {
+        return receptionistDAO.delete(username);
     }
 }
