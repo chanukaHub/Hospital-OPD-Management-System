@@ -22,8 +22,8 @@
       <TableView prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" VBox.vgrow="ALWAYS">
         <columns>
           <TableColumn prefWidth="228.0" text="Appointment ID" />
-          <TableColumn prefWidth="114.0" text="Patient ID" />
-            <TableColumn prefWidth="93.0" text="Name" />
+          <TableColumn prefWidth="114.0" text="Name" />
+            <TableColumn prefWidth="93.0" text="NIC" />
             <TableColumn prefWidth="92.0" text="Date" />
             <TableColumn prefWidth="89.0" text="Time" />
             <TableColumn prefWidth="113.0" text="Status" />
@@ -37,13 +37,6 @@
             <HBox alignment="CENTER" spacing="15.0">
                <children>
                   <JFXButton prefWidth="100.0" ripplerFill="TRANSPARENT" style="-fx-background-color: #2484FF;" text="Export as PDF" textFill="WHITE" />
-               </children>
-            </HBox>
-            <HBox HBox.hgrow="ALWAYS" />
-            <HBox spacing="15.0">
-               <children>
-                  <JFXButton prefWidth="65.0" ripplerFill="TRANSPARENT" style="-fx-background-color: #FFC400;" text="Edit " textFill="WHITE" />
-                  <JFXButton prefWidth="65.0" ripplerFill="TRANSPARENT" style="-fx-background-color: #FF4242;" text="Delete" textFill="WHITE" />
                </children>
             </HBox>
          </children>
