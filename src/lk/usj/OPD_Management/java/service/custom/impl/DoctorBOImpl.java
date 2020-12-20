@@ -89,4 +89,9 @@ public class DoctorBOImpl implements DoctorBO {
                 doctorDTO.getSpecialistArea()
         ));
     }
+
+    @Override
+    public boolean deletePatient(String username) throws Exception {
+        return doctorDAO.delete(username);
+    }
 }
