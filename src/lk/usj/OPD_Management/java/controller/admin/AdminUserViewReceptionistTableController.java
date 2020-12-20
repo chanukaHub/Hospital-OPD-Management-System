@@ -1,4 +1,4 @@
-package lk.usj.OPD_Management.java.controller.receptionist;
+package lk.usj.OPD_Management.java.controller.admin;
 
 import java.io.IOException;
 import java.net.URL;
@@ -20,7 +20,7 @@ import lk.usj.OPD_Management.java.dto.ReceptionistDTO;
 import lk.usj.OPD_Management.java.service.custom.ReceptionistBO;
 import lk.usj.OPD_Management.java.service.custom.impl.ReceptionistBOImpl;
 
-public class ViewReceptionistTableController implements Initializable {
+public class AdminUserViewReceptionistTableController implements Initializable {
     private ReceptionistBO receptionistBO= new ReceptionistBOImpl();
 
     @FXML
@@ -42,8 +42,8 @@ public class ViewReceptionistTableController implements Initializable {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_editReceptionist.fxml"));
         Parent root = loader.load();
-        EditDeleteReceptionistController editDeleteReceptionistController = loader.getController();
-        editDeleteReceptionistController.transferMessage(receptionistDTO);
+        AdminUserEditDeleteReceptionistController adminUserEditDeleteReceptionistController = loader.getController();
+        adminUserEditDeleteReceptionistController.transferMessage(receptionistDTO);
 
         Stage stage = new Stage();
         stage.setScene(new Scene(root));

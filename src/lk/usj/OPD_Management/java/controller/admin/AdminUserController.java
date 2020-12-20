@@ -14,9 +14,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
-public class AdminUsersController implements Initializable {
+public class AdminUserController implements Initializable {
 
-    public AdminUsersController() {
+    public AdminUserController() {
     }
 
     String selectedUserType= "Patient";

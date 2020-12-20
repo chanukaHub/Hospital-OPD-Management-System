@@ -1,4 +1,4 @@
-package lk.usj.OPD_Management.java.controller.visitor;
+package lk.usj.OPD_Management.java.controller.receptionist;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
@@ -31,7 +31,7 @@ import lk.usj.OPD_Management.java.service.custom.VisitorBO;
 import lk.usj.OPD_Management.java.service.custom.impl.PatientBOImpl;
 import lk.usj.OPD_Management.java.service.custom.impl.VisitorBOImpl;
 
-public class SaveVisitorController implements Initializable {
+public class ReceptionistDashboardSaveVisitorController implements Initializable {
     private VisitorBO visitorBO = new VisitorBOImpl();
     String selectedFilePath;
 

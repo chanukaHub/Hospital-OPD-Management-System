@@ -1,4 +1,4 @@
-package lk.usj.OPD_Management.java.controller.receptionist;
+package lk.usj.OPD_Management.java.controller.admin;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -35,7 +35,7 @@ import lk.usj.OPD_Management.java.dto.ReceptionistDTO;
 import lk.usj.OPD_Management.java.service.custom.ReceptionistBO;
 import lk.usj.OPD_Management.java.service.custom.impl.ReceptionistBOImpl;
 
-public class SaveReceptionistController implements Initializable {
+public class AdminUserSaveReceptionistController implements Initializable {
     private ReceptionistBO receptionistBO=new ReceptionistBOImpl();
     String selectedFilePath;
     String selectedPhotographPath;
