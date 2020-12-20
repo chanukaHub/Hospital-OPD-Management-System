@@ -1,4 +1,4 @@
-package lk.usj.OPD_Management.java.controller.admin;
+package lk.usj.OPD_Management.java.controller.patient;
 
 import java.io.IOException;
 import java.net.URL;
@@ -21,7 +21,7 @@ import lk.usj.OPD_Management.java.dto.PatientDTO;
 import lk.usj.OPD_Management.java.service.custom.PatientBO;
 import lk.usj.OPD_Management.java.service.custom.impl.PatientBOImpl;
 
-public class AdminUsersPatientTableController implements Initializable {
+public class ViewPatientTableController implements Initializable {
     private PatientBO patientBO= new PatientBOImpl();
 
     @FXML
@@ -48,8 +48,8 @@ public class AdminUsersPatientTableController implements Initializable {
         Parent root = loader.load();
         //tableRoot.getChildren().setAll(root);
 
-        AdminUsersEditDeletePatientController adminUsersEditDeletePatientController = loader.getController();
-        adminUsersEditDeletePatientController.transferMessage(patientDTO);
+        EditDeletePatientController editDeletePatientController = loader.getController();
+        editDeletePatientController.transferMessage(patientDTO);
 
         Stage stage = new Stage();
         stage.setScene(new Scene(root));

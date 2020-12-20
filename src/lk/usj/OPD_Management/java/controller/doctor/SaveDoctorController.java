@@ -1,4 +1,4 @@
-package lk.usj.OPD_Management.java.controller.admin;
+package lk.usj.OPD_Management.java.controller.doctor;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -36,7 +36,7 @@ import lk.usj.OPD_Management.java.service.custom.DoctorBO;
 import lk.usj.OPD_Management.java.service.custom.impl.DoctorBOImpl;
 
 
-public class AdminUsersSaveDoctorController implements Initializable {
+public class SaveDoctorController implements Initializable {
     private DoctorBO doctorBO = new DoctorBOImpl();
     String selectedFilePath;
     String selectedPhotographPath;

@@ -1,4 +1,4 @@
-package lk.usj.OPD_Management.java.controller.admin;
+package lk.usj.OPD_Management.java.controller.receptionist;
 
 import java.io.IOException;
 import java.net.URL;
@@ -16,12 +16,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lk.usj.OPD_Management.java.common.Common;
-import lk.usj.OPD_Management.java.dto.DoctorDTO;
 import lk.usj.OPD_Management.java.dto.ReceptionistDTO;
 import lk.usj.OPD_Management.java.service.custom.ReceptionistBO;
 import lk.usj.OPD_Management.java.service.custom.impl.ReceptionistBOImpl;
 
-public class AdminUsersReceptionistTableController implements Initializable {
+public class ViewReceptionistTableController implements Initializable {
     private ReceptionistBO receptionistBO= new ReceptionistBOImpl();
 
     @FXML
@@ -43,8 +42,8 @@ public class AdminUsersReceptionistTableController implements Initializable {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_editReceptionist.fxml"));
         Parent root = loader.load();
-        AdminUsersEditDeleteReceptionistController adminUsersEditDeleteReceptionistController = loader.getController();
-        adminUsersEditDeleteReceptionistController.transferMessage(receptionistDTO);
+        EditDeleteReceptionistController editDeleteReceptionistController = loader.getController();
+        editDeleteReceptionistController.transferMessage(receptionistDTO);
 
         Stage stage = new Stage();
         stage.setScene(new Scene(root));

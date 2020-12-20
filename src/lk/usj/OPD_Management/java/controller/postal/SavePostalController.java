@@ -1,4 +1,4 @@
-package lk.usj.OPD_Management.java.controller.receptionist;
+package lk.usj.OPD_Management.java.controller.postal;
 
 
 import com.jfoenix.controls.JFXButton;
@@ -25,7 +25,7 @@ import lk.usj.OPD_Management.java.dto.VisitorDTO;
 import lk.usj.OPD_Management.java.service.custom.PostalBO;
 import lk.usj.OPD_Management.java.service.custom.impl.PostalBOImpl;
 
-public class ReceptionistDashboardAddPostalController implements Initializable {
+public class SavePostalController implements Initializable {
     private PostalBO postalBO=new PostalBOImpl();
     String selectedFilePath;
     @FXML

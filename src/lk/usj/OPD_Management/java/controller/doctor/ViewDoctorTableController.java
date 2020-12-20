@@ -1,4 +1,4 @@
-package lk.usj.OPD_Management.java.controller.admin;
+package lk.usj.OPD_Management.java.controller.doctor;
 
 import java.io.IOException;
 import java.net.URL;
@@ -20,7 +20,7 @@ import lk.usj.OPD_Management.java.dto.DoctorDTO;
 import lk.usj.OPD_Management.java.service.custom.DoctorBO;
 import lk.usj.OPD_Management.java.service.custom.impl.DoctorBOImpl;
 
-public class AdminUsersDoctorTableController implements Initializable {
+public class ViewDoctorTableController implements Initializable {
     private DoctorBO doctorBO= new DoctorBOImpl();
 
     @FXML
@@ -42,8 +42,8 @@ public class AdminUsersDoctorTableController implements Initializable {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_editDoctor.fxml"));
         Parent root = loader.load();
-        AdminUsersEditDeleteDoctorController adminUsersEditDeleteDoctorController = loader.getController();
-        adminUsersEditDeleteDoctorController.transferMessage(doctorDTO);
+        EditDeleteDoctorController editDeleteDoctorController = loader.getController();
+        editDeleteDoctorController.transferMessage(doctorDTO);
 
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
