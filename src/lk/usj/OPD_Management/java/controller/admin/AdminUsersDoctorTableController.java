@@ -36,7 +36,7 @@ public class AdminUsersDoctorTableController implements Initializable {
     void doctorTable_MouseEvent(MouseEvent event) throws IOException {
         DoctorDTO doctorDTO=(doctorTable.getSelectionModel().getSelectedItem());
         if(doctorDTO == null){
-            Common.showWarning("Please select patient records");
+            Common.showWarning("Please select Doctor records");
             return;
         }
 
