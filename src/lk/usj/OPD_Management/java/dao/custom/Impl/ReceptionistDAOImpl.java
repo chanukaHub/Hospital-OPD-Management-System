@@ -2,15 +2,13 @@ package lk.usj.OPD_Management.java.dao.custom.Impl;
 
 import lk.usj.OPD_Management.java.dao.custom.ReceptionistDAO;
 import lk.usj.OPD_Management.java.entity.Admin;
+import lk.usj.OPD_Management.java.entity.Doctor;
 import lk.usj.OPD_Management.java.entity.Receptionist;
 
 import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class ReceptionistDAOImpl implements ReceptionistDAO {
     @Override
@@ -46,11 +44,199 @@ public class ReceptionistDAOImpl implements ReceptionistDAO {
 
     @Override
     public boolean update(Receptionist var1) throws Exception {
+
+        try{
+            String username, name, gender, phoneNumber, idCard,dateOfBirth, address, maritalStatus, password;
+            String staffId;
+            String staffEmail;
+            String dateOfJoin;
+            String photograph;
+            String document;
+            String note;
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+            File file = new File("Receptionist.txt");
+            if (!file.exists()) {//checking the is given file exists
+
+                file.createNewFile();//creating new file
+                Exception fileError =new IOException("File is not founded");
+                System.out.println(fileError);
+            }
+            Scanner scanner =new Scanner(file);
+
+            List<Receptionist> receptionists = new ArrayList<>();
+
+            while(scanner.hasNextLine()){
+                String line =scanner.nextLine();
+                String[] details = line.split("#");
+                username=details[0];
+                name=details[1];
+                gender=details[2];
+                phoneNumber=details[3];
+                idCard=details[4];
+                dateOfBirth=details[5];
+                address=details[6];
+                maritalStatus=details[7];
+                password=details[8];
+                staffId=details[9];
+                staffEmail=details[10];
+                dateOfJoin=details[11];
+                photograph=details[12];
+                document=details[13];
+                note =details[14];
+
+
+                String[] dateArray = dateOfBirth.split("/");
+                Date birthDate = new GregorianCalendar(Integer.parseInt(dateArray[2]), Integer.parseInt(dateArray[1]) - 1, Integer.parseInt(dateArray[0])).getTime();
+                String[] joinDateArray = dateOfJoin.split("/");
+                Date joinDate = new GregorianCalendar(Integer.parseInt(joinDateArray[2]), Integer.parseInt(joinDateArray[1]) - 1, Integer.parseInt(joinDateArray[0])).getTime();
+                Receptionist receptionist= new Receptionist(username, name, gender, phoneNumber, idCard,birthDate, address, maritalStatus, password,staffId,staffEmail,joinDate,photograph,document,note);
+                receptionists.add(receptionist);
+
+            }
+
+            for (Receptionist r:receptionists){
+                if(r.getUsername().equals(var1.getUsername())){
+                    r.setName(var1.getName());
+                    r.setGender(var1.getGender());
+                    r.setPhoneNumber(var1.getPhoneNumber());
+                    r.setDateOfBirth(var1.getDateOfBirth());
+                    r.setAddress(var1.getAddress());
+                    r.setMaritalStatus(var1.getMaritalStatus());
+                    r.setPassword(var1.getPassword());
+                    r.setStaffID(var1.getStaffID());
+                    r.setStaffEmail(var1.getStaffEmail());
+                    r.setNote(var1.getNote());
+                    r.setPhotograph(var1.getPhotograph());
+                    r.setDocument(var1.getDocument());
+                }
+            }
+
+            PrintWriter writer = new PrintWriter(file);
+            writer.print("");
+            writer.close();
+
+            if (!file.exists()) {//checking the is given file exists
+
+                file.createNewFile();//creating new file
+                Exception fileError =new IOException("File is not founded");
+                System.out.println(fileError);
+            }
+
+            FileWriter fw = new FileWriter(file,true);
+            BufferedWriter bw = new BufferedWriter(fw);
+
+
+            for (Receptionist r:receptionists){
+                String strDate = format.format(r.getDateOfBirth());
+                String joinDate = format.format(r.getDateOfJoin());
+
+                String wantedLine = r.getUsername()+"#"+r.getName()+"#"+r.getGender()+"#"+r.getPhoneNumber()+"#"+r.getIdCard()+"#"+
+                        strDate+"#"+r.getAddress()+"#"+r.getMaritalStatus()+"#"+r.getPassword()+"#"+r.getStaffID()+"#"+
+                        r.getStaffEmail()+"#"+joinDate+"#"+r.getPhotograph()+"#"+r.getDocument()+"#"+r.getNote();
+                bw.write(wantedLine);
+                bw.newLine();
+            }
+
+            bw.close();
+            return true;
+
+
+
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
         return false;
     }
 
     @Override
     public boolean delete(String var1) throws Exception {
+        try{
+            String username, name, gender, phoneNumber, idCard,dateOfBirth, address, maritalStatus, password;
+            String staffId;
+            String staffEmail;
+            String dateOfJoin;
+            String photograph;
+            String document;
+            String note;
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+            File file = new File("Receptionist.txt");
+            if (!file.exists()) {//checking the is given file exists
+
+                file.createNewFile();//creating new file
+                Exception fileError =new IOException("File is not founded");
+                System.out.println(fileError);
+            }
+            Scanner scanner =new Scanner(file);
+
+            List<Receptionist> receptionists = new ArrayList<>();
+
+            while(scanner.hasNextLine()){
+                String line =scanner.nextLine();
+                String[] details = line.split("#");
+                username=details[0];
+                name=details[1];
+                gender=details[2];
+                phoneNumber=details[3];
+                idCard=details[4];
+                dateOfBirth=details[5];
+                address=details[6];
+                maritalStatus=details[7];
+                password=details[8];
+                staffId=details[9];
+                staffEmail=details[10];
+                dateOfJoin=details[11];
+                photograph=details[12];
+                document=details[13];
+                note =details[14];
+
+
+                String[] dateArray = dateOfBirth.split("/");
+                Date birthDate = new GregorianCalendar(Integer.parseInt(dateArray[2]), Integer.parseInt(dateArray[1]) - 1, Integer.parseInt(dateArray[0])).getTime();
+                String[] joinDateArray = dateOfJoin.split("/");
+                Date joinDate = new GregorianCalendar(Integer.parseInt(joinDateArray[2]), Integer.parseInt(joinDateArray[1]) - 1, Integer.parseInt(joinDateArray[0])).getTime();
+                Receptionist receptionist= new Receptionist(username, name, gender, phoneNumber, idCard,birthDate, address, maritalStatus, password,staffId,staffEmail,joinDate,photograph,document,note);
+                receptionists.add(receptionist);
+
+            }
+
+            PrintWriter writer = new PrintWriter(file);
+            writer.print("");
+            writer.close();
+
+            if (!file.exists()) {//checking the is given file exists
+
+                file.createNewFile();//creating new file
+                Exception fileError =new IOException("File is not founded");
+                System.out.println(fileError);
+            }
+
+            FileWriter fw = new FileWriter(file,true);
+            BufferedWriter bw = new BufferedWriter(fw);
+
+
+            for (Receptionist r:receptionists){
+                if (r.getUsername().equals(var1)){
+                    continue;
+                }else {
+                    String strDate = format.format(r.getDateOfBirth());
+                    String joinDate = format.format(r.getDateOfJoin());
+
+                    String wantedLine = r.getUsername() + "#" + r.getName() + "#" + r.getGender() + "#" + r.getPhoneNumber() + "#" + r.getIdCard() + "#" +
+                            strDate + "#" + r.getAddress() + "#" + r.getMaritalStatus() + "#" + r.getPassword() + "#" + r.getStaffID() + "#" +
+                            r.getStaffEmail() + "#" + joinDate + "#" + r.getPhotograph() + "#" + r.getDocument() + "#" + r.getNote();
+                    bw.write(wantedLine);
+                    bw.newLine();
+                }
+            }
+
+            bw.close();
+            return true;
+
+
+
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
         return false;
     }
 

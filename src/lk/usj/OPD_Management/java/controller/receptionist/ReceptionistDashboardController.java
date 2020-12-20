@@ -40,7 +40,9 @@ public class ReceptionistDashboardController implements Initializable {
     }
 
     @FXML
-    void addNewPatientBtn_OnActon(ActionEvent event) {
+    void addNewPatientBtn_OnActon(ActionEvent event) throws IOException{
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_dashboard_addPatient.fxml"));
+        root.getChildren().setAll(pane);
 
     }
 

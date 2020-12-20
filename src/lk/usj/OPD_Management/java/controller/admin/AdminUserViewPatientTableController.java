@@ -8,23 +8,20 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lk.usj.OPD_Management.java.common.Common;
-import lk.usj.OPD_Management.java.controller.patient.PatientBaseController;
 import lk.usj.OPD_Management.java.dto.PatientDTO;
 import lk.usj.OPD_Management.java.service.custom.PatientBO;
 import lk.usj.OPD_Management.java.service.custom.impl.PatientBOImpl;
 
-public class AdminUsersPatientTableController implements Initializable {
+public class AdminUserViewPatientTableController implements Initializable {
     private PatientBO patientBO= new PatientBOImpl();
 
     @FXML
@@ -51,8 +48,8 @@ public class AdminUsersPatientTableController implements Initializable {
         Parent root = loader.load();
         //tableRoot.getChildren().setAll(root);
 
-        AdminUsersEditPatientController adminUsersEditPatientController = loader.getController();
-        adminUsersEditPatientController.transferMessage(patientDTO);
+        AdminUserEditDeletePatientController adminUserEditDeletePatientController = loader.getController();
+        adminUserEditDeletePatientController.transferMessage(patientDTO);
 
         Stage stage = new Stage();
         stage.setScene(new Scene(root));

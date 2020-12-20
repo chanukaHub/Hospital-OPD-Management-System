@@ -9,17 +9,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import lk.usj.OPD_Management.java.controller.patient.PatientBaseController;
-import lk.usj.OPD_Management.java.dto.PatientDTO;
 
-public class AdminUsersController implements Initializable {
+public class AdminUserController implements Initializable {
 
-    public AdminUsersController() {
+    public AdminUserController() {
     }
 
     String selectedUserType= "Patient";
@@ -69,7 +66,7 @@ public class AdminUsersController implements Initializable {
 
         selectedUserType= "Doctor";
 
-        Pane pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_user_doctor_table.fxml"));
+        Pane pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_doctor_table.fxml"));
         root.getChildren().setAll(pane);
     }
 

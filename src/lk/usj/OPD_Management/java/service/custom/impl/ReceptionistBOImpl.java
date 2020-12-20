@@ -63,4 +63,30 @@ public class ReceptionistBOImpl implements ReceptionistBO {
         }
         return receptionists;
     }
+
+    @Override
+    public boolean updateReceptionist(ReceptionistDTO receptionistDTO) throws Exception {
+        return receptionistDAO.update(new Receptionist(
+                receptionistDTO.getUsername(),
+                receptionistDTO.getName(),
+                receptionistDTO.getGender(),
+                receptionistDTO.getPhoneNumber(),
+                receptionistDTO.getIdCard(),
+                receptionistDTO.getDateOfBirth(),
+                receptionistDTO.getAddress(),
+                receptionistDTO.getMaritalStatus(),
+                receptionistDTO.getPassword(),
+                receptionistDTO.getStaffID(),
+                receptionistDTO.getStaffEmail(),
+                receptionistDTO.getDateOfJoin(),
+                receptionistDTO.getPhotograph(),
+                receptionistDTO.getDocument(),
+                receptionistDTO.getNote()
+        ));
+    }
+
+    @Override
+    public boolean deleteReceptionist(String username) throws Exception {
+        return receptionistDAO.delete(username);
+    }
 }

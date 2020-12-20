@@ -11,4 +11,8 @@ public interface ReceptionistBO extends SuperBO {
     boolean addReceptionist(ReceptionistDTO receptionistDTO) throws Exception;
 
     ArrayList<ReceptionistDTO> getAllReceptionist() throws Exception;
+
+    boolean updateReceptionist(ReceptionistDTO receptionistDTO)throws Exception;
+
+    boolean deleteReceptionist(String text)throws Exception;
 }

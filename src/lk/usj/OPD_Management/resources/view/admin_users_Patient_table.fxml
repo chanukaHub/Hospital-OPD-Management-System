@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 
 
-<VBox fx:id="tableRoot" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.admin.AdminUsersPatientTableController">
+<VBox fx:id="tableRoot" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.admin.AdminUserViewPatientTableController">
    <children>
       <Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="730.0">
          <children>

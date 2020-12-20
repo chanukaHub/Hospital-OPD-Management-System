@@ -1,38 +1,40 @@
 package lk.usj.OPD_Management.java.controller.admin;
 
-import com.jfoenix.controls.*;
-
-import java.io.IOException;
-import java.net.URL;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.ResourceBundle;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXRadioButton;
+import com.jfoenix.controls.JFXTextArea;
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.DatePicker;
+import javafx.scene.Node;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import lk.usj.OPD_Management.java.common.Common;
 import lk.usj.OPD_Management.java.dto.PatientDTO;
 import lk.usj.OPD_Management.java.service.custom.PatientBO;
 import lk.usj.OPD_Management.java.service.custom.impl.PatientBOImpl;
 
-public class AdminUsersSavePatientController implements Initializable {
+import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.ResourceBundle;
+
+public class AdminUserEditDeletePatientController implements Initializable {
 
     private PatientBO patientBO = new PatientBOImpl();
 
     @FXML
     private VBox root;
-
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
 
     @FXML
     private JFXTextField nameTextField;
@@ -61,7 +63,6 @@ public class AdminUsersSavePatientController implements Initializable {
     @FXML
     private JFXDatePicker dobDatePicker;
 
-
     @FXML
     private JFXTextField address1TextField;
 
@@ -81,6 +82,9 @@ public class AdminUsersSavePatientController implements Initializable {
     private JFXComboBox<String> maritalStatusComboBox;
 
     @FXML
+    private JFXPasswordField passwordField;
+
+    @FXML
     private JFXTextArea notesTextArea;
 
     @FXML
@@ -88,6 +92,12 @@ public class AdminUsersSavePatientController implements Initializable {
 
     @FXML
     private JFXButton saveBtn;
+
+    @FXML
+    private JFXButton deleteBtn;
+
+
+
 
     @FXML
     void address1TextField_ActionEvent(ActionEvent event) {
@@ -110,12 +120,6 @@ public class AdminUsersSavePatientController implements Initializable {
     }
 
     @FXML
-    void cancelBtn_ActionEvent(ActionEvent event) throws IOException{
-        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users.fxml"));
-        root.getChildren().setAll(pane);
-    }
-
-    @FXML
     void dobDatePicker_ActionEvent(ActionEvent event) {
 
     }
@@ -132,6 +136,11 @@ public class AdminUsersSavePatientController implements Initializable {
 
     @FXML
     void nicNoTextField_ActionEvent(ActionEvent event) {
+
+    }
+
+    @FXML
+    void passwordField_OnAction(ActionEvent event) {
 
     }
 
@@ -199,24 +208,10 @@ public class AdminUsersSavePatientController implements Initializable {
                     notesTextArea.getText()
             );
 
-            boolean b = patientBO.addPatient(patientDTO);
+            boolean b = patientBO.updatePatient(patientDTO);
 
             if (b){
                 Common.showMessage("Added Patient!");
-                nameTextField.clear();
-                maleRadioBtn.setSelected(false);
-                femaleRadioBtn.setSelected(false);
-                otherRadioBtn.setSelected(false);
-                phoneNoTextField.clear();
-                nicNoTextField.clear();
-                dobDatePicker.getEditor().clear();
-                address1TextField.clear();
-                address2TextField.clear();
-                address3TextField.clear();
-                maritalStatusComboBox.getSelectionModel().clearSelection();
-                bloodGroupComboBox.getSelectionModel().clearSelection();
-                allergiesTextField.clear();
-                notesTextArea.clear();
             }
             else
                 Common.showError("Not added");
@@ -228,10 +223,28 @@ public class AdminUsersSavePatientController implements Initializable {
     }
 
     @FXML
-    void usernameTextField_ActionEvent(ActionEvent event) {
+    void cancelBtn_ActionEvent(ActionEvent event) {
+        ((Node)(event.getSource())).getScene().getWindow().hide();
+    }
+
+    @FXML
+    void deleteBtn_ActionEvent(ActionEvent event){
+        boolean deleted = false;
+        try {
+            deleted = patientBO.deletePatient(usernameTextField.getText());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (deleted) {
+            Common.showMessage("DELETE !");
+        }
 
     }
 
+    @FXML
+    void usernameTextField_ActionEvent(ActionEvent event) {
+
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -258,8 +271,55 @@ public class AdminUsersSavePatientController implements Initializable {
                 "Widowed"
         );
 
-        maritalStatusComboBox.getSelectionModel().selectFirst();
-        bloodGroupComboBox.getSelectionModel().selectFirst();
 
     }
+
+
+    public void transferMessage(PatientDTO newPatientDTO) {
+        maleRadioBtn.setUserData("Male");
+        femaleRadioBtn.setUserData("Female");
+        otherRadioBtn.setUserData("Other");
+        bloodGroupComboBox.getItems().addAll(
+                "Choose",
+                "A−",
+                "A+",
+                "B−",
+                "B+",
+                "AB−",
+                "AB+",
+                "O−",
+                "O+"
+        );
+        maritalStatusComboBox.getItems().addAll(
+                "Choose a Status",
+                "Single",
+                "Married",
+                "Divorced",
+                "Widowed"
+        );
+        LocalDate localDate = (newPatientDTO.getDateOfBirth()).toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        usernameTextField.setText(newPatientDTO.getUsername());
+        nameTextField.setText(newPatientDTO.getName());
+        String gender = newPatientDTO.getGender();
+        if (gender.equals("Male"))
+            maleRadioBtn.setSelected(true);
+        else if(gender.equals("Female"))
+            femaleRadioBtn.setSelected(true);
+        else
+            otherRadioBtn.setSelected(true);
+        phoneNoTextField.setText(newPatientDTO.getPhoneNumber());
+        nicNoTextField.setText(newPatientDTO.getIdCard());
+        dobDatePicker.setValue(localDate);
+        String addressLine = newPatientDTO.getAddress();
+        String[] address = addressLine.split(",");
+        address1TextField.setText(address[0]);
+        address2TextField.setText(address[1]);
+        address3TextField.setText(address[2]);
+        bloodGroupComboBox.getSelectionModel().select(newPatientDTO.getBloodGroup());
+        allergiesTextField.setText(newPatientDTO.getAllergies());
+        maritalStatusComboBox.getSelectionModel().select(newPatientDTO.getMaritalStatus());
+        passwordField.setText(newPatientDTO.getPassword());
+        notesTextArea.setText(newPatientDTO.getNote());
+    }
+
 }

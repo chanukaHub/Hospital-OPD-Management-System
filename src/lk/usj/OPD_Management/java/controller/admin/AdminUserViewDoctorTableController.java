@@ -17,13 +17,10 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lk.usj.OPD_Management.java.common.Common;
 import lk.usj.OPD_Management.java.dto.DoctorDTO;
-import lk.usj.OPD_Management.java.dto.PatientDTO;
 import lk.usj.OPD_Management.java.service.custom.DoctorBO;
-import lk.usj.OPD_Management.java.service.custom.PatientBO;
 import lk.usj.OPD_Management.java.service.custom.impl.DoctorBOImpl;
-import lk.usj.OPD_Management.java.service.custom.impl.PatientBOImpl;
 
-public class AdminUsersDoctorTableController implements Initializable {
+public class AdminUserViewDoctorTableController implements Initializable {
     private DoctorBO doctorBO= new DoctorBOImpl();
 
     @FXML
@@ -39,14 +36,14 @@ public class AdminUsersDoctorTableController implements Initializable {
     void doctorTable_MouseEvent(MouseEvent event) throws IOException {
         DoctorDTO doctorDTO=(doctorTable.getSelectionModel().getSelectedItem());
         if(doctorDTO == null){
-            Common.showWarning("Please select patient records");
+            Common.showWarning("Please select Doctor records");
             return;
         }
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_editDoctor.fxml"));
         Parent root = loader.load();
-        AdminUsersEditDoctorController adminUsersEditDoctorController = loader.getController();
-        adminUsersEditDoctorController.transferMessage(doctorDTO);
+        AdminUserEditDeleteDoctorController adminUserEditDeleteDoctorController = loader.getController();
+        adminUserEditDeleteDoctorController.transferMessage(doctorDTO);
 
         Stage stage = new Stage();
         stage.setScene(new Scene(root));

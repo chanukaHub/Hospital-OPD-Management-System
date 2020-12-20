@@ -71,4 +71,9 @@ public class PatientBOImpl implements PatientBO {
                 patientDTO.getNote()
         ));
     }
+
+    @Override
+    public boolean deletePatient(String username) throws Exception {
+        return patientDAO.delete(username);
+    }
 }

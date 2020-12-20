@@ -12,7 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
-public class Receptionist_PostalController implements Initializable {
+public class ReceptionistPostalController implements Initializable {
 
     @FXML
     private ResourceBundle resources;

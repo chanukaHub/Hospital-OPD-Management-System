@@ -31,7 +31,7 @@ import lk.usj.OPD_Management.java.service.custom.VisitorBO;
 import lk.usj.OPD_Management.java.service.custom.impl.PatientBOImpl;
 import lk.usj.OPD_Management.java.service.custom.impl.VisitorBOImpl;
 
-public class ReceptionistDashboardAddVisitorsController implements Initializable {
+public class ReceptionistDashboardSaveVisitorController implements Initializable {
     private VisitorBO visitorBO = new VisitorBOImpl();
     String selectedFilePath;
 

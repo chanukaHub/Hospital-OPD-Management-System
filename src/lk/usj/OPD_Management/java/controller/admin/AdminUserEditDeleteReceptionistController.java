@@ -3,6 +3,7 @@ package lk.usj.OPD_Management.java.controller.admin;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
@@ -10,18 +11,18 @@ import com.jfoenix.controls.JFXTextField;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
@@ -35,19 +36,20 @@ import lk.usj.OPD_Management.java.dto.ReceptionistDTO;
 import lk.usj.OPD_Management.java.service.custom.ReceptionistBO;
 import lk.usj.OPD_Management.java.service.custom.impl.ReceptionistBOImpl;
 
-public class AdminUsersSaveReceptionistController implements Initializable {
-    private ReceptionistBO receptionistBO=new ReceptionistBOImpl();
-    String selectedFilePath;
-    String selectedPhotographPath;
-
-    @FXML
-    private VBox root;
+public class AdminUserEditDeleteReceptionistController implements Initializable {
+    private ReceptionistBO receptionistBO = new ReceptionistBOImpl();
+    String path1,path2;
+    String selectedFilePath="",currentFilePath;
+    String selectedPhotographPath="",currentPhotographPath;
 
     @FXML
     private ResourceBundle resources;
 
     @FXML
     private URL location;
+
+    @FXML
+    private VBox root;
 
     @FXML
     private Label staffIDLabel;
@@ -77,6 +79,9 @@ public class AdminUsersSaveReceptionistController implements Initializable {
     private JFXTextField nicNoTextField;
 
     @FXML
+    private JFXTextField staffEmailTextField;
+
+    @FXML
     private JFXDatePicker dobDatePicker;
 
     @FXML
@@ -89,10 +94,10 @@ public class AdminUsersSaveReceptionistController implements Initializable {
     private JFXTextField address3TextField;
 
     @FXML
-    private JFXTextField staffEmailTextField;
+    private JFXComboBox<String> maritalStatusComboBox;
 
     @FXML
-    private JFXComboBox<String> maritalStatusComboBox;
+    private JFXPasswordField passwordField;
 
     @FXML
     private JFXButton photographBtn;
@@ -116,6 +121,9 @@ public class AdminUsersSaveReceptionistController implements Initializable {
     private JFXButton saveBtn;
 
     @FXML
+    private JFXButton deleteBtn;
+
+    @FXML
     void address1TextField_OnAction(ActionEvent event) {
 
     }
@@ -131,9 +139,21 @@ public class AdminUsersSaveReceptionistController implements Initializable {
     }
 
     @FXML
-    void cancelBtn_OnAction(ActionEvent event) throws IOException {
-        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users.fxml"));
-        root.getChildren().setAll(pane);
+    void cancelBtn_OnAction(ActionEvent event) {
+        ((Node)(event.getSource())).getScene().getWindow().hide();
+    }
+
+    @FXML
+    void deleteBtn_OnAction(ActionEvent event) {
+        boolean deleted = false;
+        try {
+            deleted = receptionistBO.deleteReceptionist(usernameTextField.getText());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (deleted) {
+            Common.showMessage("DELETE !");
+        }
     }
 
     @FXML
@@ -154,7 +174,7 @@ public class AdminUsersSaveReceptionistController implements Initializable {
             selectedFilePath = selectedFile.getPath();
         }
         else {
-            Common.showWarning("File selection cancelled.");
+            documentLabel.setText("File selection cancelled.");
         }
     }
 
@@ -194,6 +214,11 @@ public class AdminUsersSaveReceptionistController implements Initializable {
     }
 
     @FXML
+    void passwordField_OnAction(ActionEvent event) {
+
+    }
+
+    @FXML
     void phoneNoTextField_OnAction(ActionEvent event) {
 
     }
@@ -212,25 +237,21 @@ public class AdminUsersSaveReceptionistController implements Initializable {
             imageView.setImage(new Image(new FileInputStream(iconImagePath)));
             selectedPhotographPath = selectedFile.getPath();
 
-            /*try {
-            File newFile = new File("StaffPhotograph\\new.jpg");
-            Files.copy(selectedFile.toPath(),newFile.toPath());
-            }catch (Exception e){
-            e.printStackTrace();
-            }*/
         }
         else {
-            Common.showWarning("File selection cancelled.");
+            Common.showError("File selection cancelled.");
+            return;
         }
+
     }
 
     @FXML
     void saveBtn_OnAction(ActionEvent event) {
         try{
             Date today = new Date();
-            String address,maritalStatus;
+            String address,maritalStatus,specialistArea;
             if (nameTextField.getText().equals("")){
-                Common.showError("Please Enter name");
+                Common.showError("Please Enter Name");
                 return;
             }else if(nicNoTextField.getText().equals("")){
                 Common.showError("Please Enter NIC No");
@@ -242,9 +263,8 @@ public class AdminUsersSaveReceptionistController implements Initializable {
             }else {
                 address=address1TextField.getText()+","+address2TextField.getText()+","+address3TextField.getText();
             }
-
             String userName =nicNoTextField.getText();
-            String initialPassword =nicNoTextField.getText();
+
             LocalDate ld = dobDatePicker.getValue();
             Calendar c =  Calendar.getInstance();
             if (ld == null){
@@ -263,11 +283,22 @@ public class AdminUsersSaveReceptionistController implements Initializable {
                 maritalStatus = maritalStatusComboBox.getSelectionModel().getSelectedItem();
             }
 
-            File newFile = new File("StaffPhotograph\\"+nicNoTextField.getText()+String.valueOf(today.getDate())+String.valueOf(today.getMinutes())+String.valueOf(today.getSeconds())+".jpg");
-            Files.copy(Path.of(selectedPhotographPath),newFile.toPath());
+            if (selectedPhotographPath.equals("")){
+                path1 = currentPhotographPath;
+            }else {
+                File newFile = new File("StaffPhotograph\\"+nicNoTextField.getText()+String.valueOf(today.getDate())+String.valueOf(today.getMinutes())+String.valueOf(today.getSeconds())+".jpg");
+                Files.copy(Path.of(selectedPhotographPath),newFile.toPath());
+                path1 = newFile.getPath();
+            }
+            if (selectedFilePath.equals("")){
+                path2 = currentFilePath;
+            }else {
+                File newFile1 = new File("AttachmentDocumentsStorage\\"+nicNoTextField.getText()+String.valueOf(today.getDate())+String.valueOf(today.getMinutes())+String.valueOf(today.getSeconds())+".txt");
+                Files.copy(Path.of(selectedFilePath),newFile1.toPath());
+                path2 = newFile1.getPath();
+            }
 
-            File newFile1 = new File("AttachmentDocumentsStorage\\"+nicNoTextField.getText()+String.valueOf(today.getDate())+String.valueOf(today.getMinutes())+String.valueOf(today.getSeconds())+".txt");
-            Files.copy(Path.of(selectedFilePath),newFile1.toPath());
+
 
             ReceptionistDTO receptionistDTO= new ReceptionistDTO(
                     userName,
@@ -278,28 +309,27 @@ public class AdminUsersSaveReceptionistController implements Initializable {
                     date,
                     address,
                     maritalStatus,
-                    initialPassword,
+                    passwordField.getText(),
                     staffIDLabel.getText(),
                     staffEmailTextField.getText(),
                     today,
-                    newFile.getPath(),
-                    newFile1.getPath(),
+                    path1,
+                    path2,
                     notesTextArea.getText()
             );
 
-            boolean b = receptionistBO.addReceptionist(receptionistDTO);
+            boolean b = receptionistBO.updateReceptionist(receptionistDTO);
 
             if (b){
-                Common.showMessage("Added Receptionist!");
-                VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_addReceptionist.fxml"));
-                root.getChildren().setAll(pane);
+                Common.showMessage("Updated!");
             }
             else
-                Common.showError("Not added");
+                Common.showError("Not Updated");
         } catch (Exception e1) {
-            Common.showError("Not added");
+            Common.showError("Not Updated");
             e1.printStackTrace();
         }
+
     }
 
     @FXML
@@ -311,24 +341,13 @@ public class AdminUsersSaveReceptionistController implements Initializable {
     void usernameTextField_OnAction(ActionEvent event) {
 
     }
-    int getNextReceptionistID() throws Exception {
-        return receptionistBO.getNextReceptionistID();
-    }
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        try {
-            staffIDLabel.setText("R"+String.format("%04d",getNextReceptionistID()));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
         maleRadioBtn.setUserData("Male");
         femaleRadioBtn.setUserData("Female");
         otherRadioBtn.setUserData("Other");
-
 
         maritalStatusComboBox.getItems().addAll(
                 "Choose a Status",
@@ -338,6 +357,50 @@ public class AdminUsersSaveReceptionistController implements Initializable {
                 "Widowed"
         );
 
-        maritalStatusComboBox.getSelectionModel().selectFirst();
+    }
+
+    public void transferMessage(ReceptionistDTO receptionistDTO) {
+        maleRadioBtn.setUserData("Male");
+        femaleRadioBtn.setUserData("Female");
+        otherRadioBtn.setUserData("Other");
+
+        maritalStatusComboBox.getItems().addAll(
+                "Choose a Status",
+                "Single",
+                "Married",
+                "Divorced",
+                "Widowed"
+        );
+        LocalDate localDate = (receptionistDTO.getDateOfBirth()).toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        usernameTextField.setText(receptionistDTO.getUsername());
+        nameTextField.setText(receptionistDTO.getName());
+        String gender = receptionistDTO.getGender();
+        if (gender.equals("Male"))
+            maleRadioBtn.setSelected(true);
+        else if(gender.equals("Female"))
+            femaleRadioBtn.setSelected(true);
+        else
+            otherRadioBtn.setSelected(true);
+        phoneNoTextField.setText(receptionistDTO.getPhoneNumber());
+        nicNoTextField.setText(receptionistDTO.getIdCard());
+        dobDatePicker.setValue(localDate);
+        String addressLine = receptionistDTO.getAddress();
+        String[] address = addressLine.split(",");
+        address1TextField.setText(address[0]);
+        address2TextField.setText(address[1]);
+        address3TextField.setText(address[2]);
+        maritalStatusComboBox.getSelectionModel().select(receptionistDTO.getMaritalStatus());
+        passwordField.setText(receptionistDTO.getPassword());
+        staffIDLabel.setText(receptionistDTO.getStaffID());
+        notesTextArea.setText(receptionistDTO.getNote());
+        staffEmailTextField.setText(receptionistDTO.getStaffEmail());
+        try {
+            imageView.setImage(new Image(new FileInputStream(receptionistDTO.getPhotograph())));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        currentPhotographPath =receptionistDTO.getPhotograph();
+        documentLabel.setText(receptionistDTO.getDocument());
+        currentFilePath=receptionistDTO.getDocument();
     }
 }
