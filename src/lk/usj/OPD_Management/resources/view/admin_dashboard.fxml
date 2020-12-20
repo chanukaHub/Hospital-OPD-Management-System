@@ -41,8 +41,8 @@
                            <children>
                               <TableView prefHeight="200.0" prefWidth="200.0">
                                  <columns>
-                                    <TableColumn prefWidth="75.0" text="C1" />
-                                    <TableColumn prefWidth="75.0" text="C2" />
+                                    <TableColumn prefWidth="75.0" text="Request No" />
+                                    <TableColumn prefWidth="75.0" text="Title" />
                                  </columns>
                               </TableView>
                            </children></VBox>
