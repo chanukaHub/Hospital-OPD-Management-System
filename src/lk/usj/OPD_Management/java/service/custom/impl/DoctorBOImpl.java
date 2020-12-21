@@ -94,4 +94,32 @@ public class DoctorBOImpl implements DoctorBO {
     public boolean deleteDoctor(String username) throws Exception {
         return doctorDAO.delete(username);
     }
+
+    @Override
+    public ArrayList<DoctorDTO> getAllDoctorsUsingSpecialistArea(String specialistArea) throws Exception{
+        ArrayList<Doctor> allDoctors = doctorDAO.getAllDoctorsUsingSpecialistArea(specialistArea);
+        ArrayList<DoctorDTO> doctors = new ArrayList<>();
+        for (Doctor doctor : allDoctors) {
+            doctors.add(new DoctorDTO(
+                    doctor.getUsername(),
+                    doctor.getName(),
+                    doctor.getGender(),
+                    doctor.getPhoneNumber(),
+                    doctor.getIdCard(),
+                    doctor.getDateOfBirth(),
+                    doctor.getAddress(),
+                    doctor.getMaritalStatus(),
+                    doctor.getPassword(),
+                    doctor.getStaffID(),
+                    doctor.getStaffEmail(),
+                    doctor.getDateOfJoin(),
+                    doctor.getPhotograph(),
+                    doctor.getDocument(),
+                    doctor.getNote(),
+                    doctor.getSpecialistArea()
+            ));
+
+        }
+        return doctors;
+    }
 }

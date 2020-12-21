@@ -76,4 +76,23 @@ public class PatientBOImpl implements PatientBO {
     public boolean deletePatient(String username) throws Exception {
         return patientDAO.delete(username);
     }
+
+    @Override
+    public PatientDTO searchPatient(String text) throws Exception {
+        Patient patient=patientDAO.search(text);
+        return new PatientDTO(
+                patient.getUsername(),
+                patient.getName(),
+                patient.getGender(),
+                patient.getPhoneNumber(),
+                patient.getIdCard(),
+                patient.getDateOfBirth(),
+                patient.getAddress(),
+                patient.getMaritalStatus(),
+                patient.getPassword(),
+                patient.getBloodGroup(),
+                patient.getAllergies(),
+                patient.getNote()
+        );
+    }
 }

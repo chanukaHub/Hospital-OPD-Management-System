@@ -1,6 +1,7 @@
 package lk.usj.OPD_Management.java.dao.custom.Impl;
 
 import lk.usj.OPD_Management.java.dao.custom.PatientDAO;
+import lk.usj.OPD_Management.java.dto.PatientDTO;
 import lk.usj.OPD_Management.java.entity.Patient;
 import lk.usj.OPD_Management.java.entity.Receptionist;
 

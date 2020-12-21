@@ -38,6 +38,7 @@ public class BOFactory {
          LOG_IN,
         PATIENT,
         VISITOR,
-        DOCTOR
+        DOCTOR,
+        APPOINTMENT
     }
 }

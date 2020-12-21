@@ -18,4 +18,6 @@ public interface DoctorBO extends SuperBO {
     boolean updateDoctor(DoctorDTO doctorDTO)throws Exception;
 
     boolean deleteDoctor(String text)throws Exception;
+
+    ArrayList<DoctorDTO> getAllDoctorsUsingSpecialistArea(String specialistArea) throws Exception;
 }

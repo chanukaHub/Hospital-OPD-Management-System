@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
-<?import com.jfoenix.controls.JFXDatePicker?>
-<?import com.jfoenix.controls.JFXTextArea?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import com.jfoenix.controls.JFXTimePicker?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="760.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.ReceptionistDashboardSaveAppointmentController">
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="760.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.ReceptionistDashboardSaveAppointmentController">
    <children>
       <HBox>
          <children>
@@ -56,7 +45,7 @@
                   <Insets left="15.0" right="15.0" top="15.0" />
                </padding>
                <children>
-                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Name">
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Username">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
                      </font>
@@ -69,7 +58,7 @@
                         <Insets bottom="25.0" />
                      </VBox.margin>
                      <children>
-                        <JFXTextField fx:id="patientNameTextField" focusColor="#b8b6c7" onAction="#patientNameTextField_OnAction" prefWidth="200.0" promptText="Name" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                        <JFXTextField fx:id="patientUsernameTextField" focusColor="#b8b6c7" onAction="#patientUsernameTextField_OnAction" prefWidth="200.0" promptText="Username" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
                            <font>
                               <Font name="Gotham-Book" size="12.0" />
                            </font>
@@ -88,7 +77,7 @@
                         </JFXButton>
                      </children>
                   </HBox>
-                  <Text fill="#282b2f" layoutX="25.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NIC">
+                  <Text fill="#282b2f" layoutX="25.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
                      </font>
@@ -96,7 +85,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTextField fx:id="patientNICNoTextField" focusColor="#b8b6c7" onAction="#patientNICNoTextField_OnAction" prefWidth="200.0" promptText="NIC No" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                  <JFXTextField fx:id="patientNameTextField" focusColor="#b8b6c7" onAction="#patientNameTextField_OnAction" prefWidth="200.0" promptText="Name" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
                      <VBox.margin>
                         <Insets bottom="25.0" />
                      </VBox.margin>
@@ -150,11 +139,11 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTimePicker fx:id="appointmentTimeTimePicker" defaultColor="#b8b6c7" onAction="#appointmentTimeTimePicker_OnAction" prefHeight="30.0" prefWidth="200.0" promptText="Select time" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" stylesheets="@../css/styles.css">
+                  <JFXComboBox fx:id="timeComboBox" focusColor="#f2f0fb" onAction="#timeComboBox_OnAction" prefHeight="30.0" prefWidth="200.0" promptText="Choose Time" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
                      <padding>
-                        <Insets left="10.0" />
+                        <Insets bottom="2.0" left="8.0" top="2.0" />
                      </padding>
-                  </JFXTimePicker>
+                  </JFXComboBox>
                </children>
                <opaqueInsets>
                   <Insets />
@@ -178,7 +167,7 @@
                         <Insets bottom="15.0" />
                      </VBox.margin>
                      <children>
-                        <JFXComboBox fx:id="specialistAreaComboBox" focusColor="#f2f0fb" onAction="#specialistAreaComboBox_OnAction" prefHeight="29.0" prefWidth="170.0" promptText="Dermatology" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                        <JFXComboBox fx:id="specialistAreaComboBox" focusColor="#f2f0fb" onAction="#specialistAreaComboBox_OnAction" prefHeight="30.0" prefWidth="198.0" promptText="Choose" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
                            <padding>
                               <Insets bottom="2.0" left="8.0" top="2.0" />
                            </padding>
@@ -186,18 +175,6 @@
                               <Insets />
                            </HBox.margin>
                         </JFXComboBox>
-                        <JFXButton contentDisplay="CENTER" prefHeight="29.0" ripplerFill="BLACK" style="-fx-background-radius: 5; -fx-background-color: #F2F0FB;" text=" ">
-                           <graphic>
-                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/search_icon.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                        </JFXButton>
                      </children>
                   </HBox>
                   <Text fill="#282b2f" layoutX="25.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Doctor">
@@ -210,8 +187,8 @@
                   </Text>
                   <TableView fx:id="doctorTable" onMouseClicked="#doctorTable_MouseEvent" prefHeight="195.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB;">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="C1" />
-                      <TableColumn prefWidth="75.0" text="C2" />
+                      <TableColumn prefWidth="120.60001295804977" text="Name" />
+                      <TableColumn prefWidth="84.199951171875" text="Gender" />
                     </columns>
                      <VBox.margin>
                         <Insets bottom="15.0" />

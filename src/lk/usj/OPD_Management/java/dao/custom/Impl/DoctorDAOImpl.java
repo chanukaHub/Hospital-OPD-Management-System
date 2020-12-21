@@ -367,8 +367,8 @@ public class DoctorDAOImpl implements DoctorDAO {
     @Override
     public int getLastDoctorID() throws Exception{
         try{
-            String staffId;
-            File file = new File("Doctor.txt");
+            String appointmentId;
+            File file = new File("Appointment.txt");
             if (!file.exists()) {//checking the is given file exists
 
                 file.createNewFile();//creating new file
@@ -383,13 +383,75 @@ public class DoctorDAOImpl implements DoctorDAO {
                 last=scanner.nextLine();
             }
             String[] details = last.split("#");
-            staffId=details[9];
-            return Integer.parseInt(staffId.substring(4));
+            appointmentId=details[0];
+            return Integer.parseInt(appointmentId.substring(4));
 
 
         }catch (FileNotFoundException e){
             e.printStackTrace();
         }
         return 0;
+    }
+
+    @Override
+    public ArrayList<Doctor> getAllDoctorsUsingSpecialistArea(String specialistAreaString) throws Exception {
+        try{
+            String username, name, gender, phoneNumber, idCard,dateOfBirth, address, maritalStatus, password;
+            String staffId;
+            String staffEmail;
+            String dateOfJoin;
+            String photograph;
+            String document;
+            String note;
+            String specialistArea;
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+            File file = new File("Doctor.txt");
+            if (!file.exists()) {//checking the is given file exists
+
+                file.createNewFile();//creating new file
+                Exception fileError =new IOException("File is not founded");
+                System.out.println(fileError);
+            }
+            Scanner scanner =new Scanner(file);
+
+            ArrayList<Doctor> doctors = new ArrayList<>();
+
+            while(scanner.hasNextLine()){
+                String line =scanner.nextLine();
+                String[] details = line.split("#");
+                username=details[0];
+                name=details[1];
+                gender=details[2];
+                phoneNumber=details[3];
+                idCard=details[4];
+                dateOfBirth=details[5];
+                address=details[6];
+                maritalStatus=details[7];
+                password=details[8];
+                staffId=details[9];
+                staffEmail=details[10];
+                dateOfJoin=details[11];
+                photograph=details[12];
+                document=details[13];
+                note =details[14];
+                specialistArea =details[15];
+
+
+
+                if (specialistArea.equals(specialistAreaString)){
+                    Date birthDate =format.parse(dateOfBirth);
+                    Date joinDate =format.parse(dateOfJoin);
+                    Doctor doctor= new Doctor(username, name, gender, phoneNumber, idCard,birthDate, address, maritalStatus, password,staffId,staffEmail,joinDate,photograph,document,note,specialistArea);
+                    doctors.add(doctor);
+                }else {
+                    continue;
+                }
+            }
+            return doctors;
+
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
+        return null;
     }
 }
