@@ -35,8 +35,9 @@ public class ReceptionistDashboardController implements Initializable {
     }
 
     @FXML
-    void addAppointmentBtn_OnActon(ActionEvent event) {
-
+    void addAppointmentBtn_OnActon(ActionEvent event) throws IOException{
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_dashboard_addAppointment.fxml"));
+        root.getChildren().setAll(pane);
     }
 
     @FXML

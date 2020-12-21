@@ -7,8 +7,10 @@ import java.time.LocalTime;
 import java.util.Date;
 
 public class AppointmentDTO {
+    private String appointmentId;
     private Patient patient;
     private Doctor doctor;
+    private int appointmentNo;
     private Date appointmentDate;
     private LocalTime appointmentTime;
     private String symptoms;
@@ -17,9 +19,11 @@ public class AppointmentDTO {
     public AppointmentDTO() {
     }
 
-    public AppointmentDTO(Patient patient, Doctor doctor, Date appointmentDate, LocalTime appointmentTime, String symptoms, String status) {
+    public AppointmentDTO(String appointmentId, Patient patient, Doctor doctor, int appointmentNo, Date appointmentDate, LocalTime appointmentTime, String symptoms, String status) {
+        this.appointmentId = appointmentId;
         this.patient = patient;
         this.doctor = doctor;
+        this.appointmentNo = appointmentNo;
         this.appointmentDate = appointmentDate;
         this.appointmentTime = appointmentTime;
         this.symptoms = symptoms;
@@ -74,11 +78,29 @@ public class AppointmentDTO {
         Status = status;
     }
 
+    public String getAppointmentId() {
+        return appointmentId;
+    }
+
+    public void setAppointmentId(String appointmentId) {
+        this.appointmentId = appointmentId;
+    }
+
+    public int getAppointmentNo() {
+        return appointmentNo;
+    }
+
+    public void setAppointmentNo(int appointmentNo) {
+        this.appointmentNo = appointmentNo;
+    }
+
     @Override
     public String toString() {
-        return "Appointments{" +
-                "patient=" + patient +
+        return "AppointmentDTO{" +
+                "appointmentId='" + appointmentId + '\'' +
+                ", patient=" + patient +
                 ", doctor=" + doctor +
+                ", appointmentNo=" + appointmentNo +
                 ", appointmentDate=" + appointmentDate +
                 ", appointmentTime=" + appointmentTime +
                 ", symptoms='" + symptoms + '\'' +
