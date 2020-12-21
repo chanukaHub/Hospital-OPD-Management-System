@@ -100,8 +100,13 @@ public class ReceptionistDashboardSaveAppointmentController implements Initializ
     }
 
     @FXML
-    void doctorTable_MouseEvent(MouseEvent event) {
-
+    void doctorTable_MouseEvent(MouseEvent event) throws Exception{
+        DoctorDTO doctorDTO=(doctorTable.getSelectionModel().getSelectedItem());
+        if(doctorDTO == null){
+            Common.showWarning("Please select Doctor records");
+            return;
+        }
+        doctorNameLabel.setText(doctorDTO.getName());
     }
 
     private void loadDoctorTable(String specialistArea) throws Exception {
@@ -111,8 +116,8 @@ public class ReceptionistDashboardSaveAppointmentController implements Initializ
     }
 
     @FXML
-    void patientUsernameTextField_OnAction(ActionEvent event) {
-
+    void patientUsernameTextField_OnAction(ActionEvent event) throws Exception{
+        patientSearchBtn_OnAction(event);
     }
 
     @FXML
