@@ -379,9 +379,14 @@ public class ReceptionistDAOImpl implements ReceptionistDAO {
             while(scanner.hasNextLine()){
                 last=scanner.nextLine();
             }
-            String[] details = last.split("#");
-            staffId=details[9];
-            return Integer.parseInt(staffId.substring(4));
+            if (last == null){
+                return 0;
+            }else {
+                String[] details = last.split("#");
+                staffId=details[9];
+                return Integer.parseInt(staffId.substring(4));
+            }
+
 
 
         }catch (FileNotFoundException e){

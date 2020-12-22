@@ -367,8 +367,8 @@ public class DoctorDAOImpl implements DoctorDAO {
     @Override
     public int getLastDoctorID() throws Exception{
         try{
-            String appointmentId;
-            File file = new File("Appointment.txt");
+            String staffId;
+            File file = new File("Doctor.txt");
             if (!file.exists()) {//checking the is given file exists
 
                 file.createNewFile();//creating new file
@@ -382,9 +382,14 @@ public class DoctorDAOImpl implements DoctorDAO {
             while(scanner.hasNextLine()){
                 last=scanner.nextLine();
             }
-            String[] details = last.split("#");
-            appointmentId=details[0];
-            return Integer.parseInt(appointmentId.substring(4));
+            if (last == null){
+                return 0;
+            }else {
+                String[] details = last.split("#");
+                staffId=details[9];
+                return Integer.parseInt(staffId.substring(4));
+            }
+
 
 
         }catch (FileNotFoundException e){
@@ -392,6 +397,7 @@ public class DoctorDAOImpl implements DoctorDAO {
         }
         return 0;
     }
+
 
     @Override
     public ArrayList<Doctor> getAllDoctorsUsingSpecialistArea(String specialistAreaString) throws Exception {
