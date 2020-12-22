@@ -188,7 +188,7 @@
                   <TableView fx:id="doctorTable" onMouseClicked="#doctorTable_MouseEvent" prefHeight="195.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB;">
                     <columns>
                       <TableColumn prefWidth="120.60001295804977" text="Name" />
-                      <TableColumn prefWidth="84.199951171875" text="Gender" />
+                      <TableColumn prefWidth="69.39996337890625" text="Gender" />
                     </columns>
                      <VBox.margin>
                         <Insets bottom="15.0" />

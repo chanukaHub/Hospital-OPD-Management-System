@@ -8,18 +8,18 @@ import java.util.Date;
 
 public class AppointmentDTO {
     private String appointmentId;
-    private Patient patient;
-    private Doctor doctor;
+    private PatientDTO patient;
+    private DoctorDTO doctor;
     private int appointmentNo;
     private Date appointmentDate;
-    private LocalTime appointmentTime;
+    private String appointmentTime;
     private String symptoms;
     private String Status;
 
     public AppointmentDTO() {
     }
 
-    public AppointmentDTO(String appointmentId, Patient patient, Doctor doctor, int appointmentNo, Date appointmentDate, LocalTime appointmentTime, String symptoms, String status) {
+    public AppointmentDTO(String appointmentId, PatientDTO patient, DoctorDTO doctor, int appointmentNo, Date appointmentDate, String appointmentTime, String symptoms, String status) {
         this.appointmentId = appointmentId;
         this.patient = patient;
         this.doctor = doctor;
@@ -30,19 +30,19 @@ public class AppointmentDTO {
         Status = status;
     }
 
-    public Patient getPatient() {
+    public PatientDTO getPatient() {
         return patient;
     }
 
-    public void setPatient(Patient patient) {
+    public void setPatient(PatientDTO patient) {
         this.patient = patient;
     }
 
-    public Doctor getDoctor() {
+    public DoctorDTO getDoctor() {
         return doctor;
     }
 
-    public void setDoctor(Doctor doctor) {
+    public void setDoctor(DoctorDTO doctor) {
         this.doctor = doctor;
     }
 
@@ -54,11 +54,11 @@ public class AppointmentDTO {
         this.appointmentDate = appointmentDate;
     }
 
-    public LocalTime getAppointmentTime() {
+    public String getAppointmentTime() {
         return appointmentTime;
     }
 
-    public void setAppointmentTime(LocalTime appointmentTime) {
+    public void setAppointmentTime(String appointmentTime) {
         this.appointmentTime = appointmentTime;
     }
 

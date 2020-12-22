@@ -38,6 +38,8 @@ public class ReceptionistDashboardSaveAppointmentController implements Initializ
     private DoctorBO doctorBO=new DoctorBOImpl();
     private PatientBO patientBO=new PatientBOImpl();
     String appointmentId;
+    PatientDTO patientDTO;
+    DoctorDTO doctorDTO;
     @FXML
     private VBox root;
 
@@ -101,7 +103,7 @@ public class ReceptionistDashboardSaveAppointmentController implements Initializ
 
     @FXML
     void doctorTable_MouseEvent(MouseEvent event) throws Exception{
-        DoctorDTO doctorDTO=(doctorTable.getSelectionModel().getSelectedItem());
+        doctorDTO=(doctorTable.getSelectionModel().getSelectedItem());
         if(doctorDTO == null){
             Common.showWarning("Please select Doctor records");
             return;
@@ -137,7 +139,7 @@ public class ReceptionistDashboardSaveAppointmentController implements Initializ
             return;
         }else{
             try {
-                PatientDTO patientDTO=patientBO.searchPatient(patientUsernameTextField.getText());
+                patientDTO=patientBO.searchPatient(patientUsernameTextField.getText());
                 patientNameTextField.setText(patientDTO.getName());
                 patientPhoneNo.setText(patientDTO.getPhoneNumber());
             }catch (Exception e){
@@ -156,7 +158,7 @@ public class ReceptionistDashboardSaveAppointmentController implements Initializ
             int appointmentNo =-1;
 
             if (patientUsernameTextField.getText().equals("")){
-                Common.showError("Please Enter Patient Name");
+                Common.showError("Please Enter Patient Username");
                 return;
             }
 
@@ -171,37 +173,31 @@ public class ReceptionistDashboardSaveAppointmentController implements Initializ
             c.set(ld.getYear(), ld.getMonthValue() - 1, ld.getDayOfMonth());
             Date date = c.getTime();
 
-        /*    timeComboBox.getSelectionModel().getSelectedItem();
+            timeComboBox.getSelectionModel().getSelectedItem();
 
-            String specialistArea;
-            if (specialistAreaComboBox.getSelectionModel().getSelectedItem().equals("Choose")){
-                bloodGroup = null;
-            }else{
-                bloodGroup = bloodGroupComboBox.getSelectionModel().getSelectedItem();
+            if (doctorNameLabel.getText().equals("")){
+                Common.showWarning("Please select Doctor");
+                return;
             }
 
             AppointmentDTO appointmentDTO= new AppointmentDTO(
-                    userName,
-                    nameTextField.getText(),
-                    Gender.getSelectedToggle().getUserData().toString(),
-                    phoneNoTextField.getText(),
-                    nicNoTextField.getText(),
+                    appointmentId,
+                    patientDTO,
+                    doctorDTO,
+                    appointmentNo,
                     date,
-                    address,
-                    maritalStatus,
-                    initialPassword,
-                    bloodGroup,
-                    allergiesTextField.getText(),
-                    notesTextArea.getText()
+                    timeComboBox.getSelectionModel().getSelectedItem(),
+                    symptomsTextArea.getText(),
+                    status
             );
 
-            boolean b = AppointmentBO.addAppointment(appointmentDTO);
+            boolean b = appointmentBO.addAppointment(appointmentDTO);
 
             if (b){
                 Common.showMessage("Added Appointment!");
             }
             else
-                Common.showError("Not added"); */
+                Common.showError("Not added");
         } catch (Exception e1) {
             Common.showError("Not added");
             e1.printStackTrace();
