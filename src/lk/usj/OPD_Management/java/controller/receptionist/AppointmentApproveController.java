@@ -9,8 +9,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import lk.usj.OPD_Management.java.dto.AppointmentDTO;
+import lk.usj.OPD_Management.java.service.custom.AppointmentBO;
+import lk.usj.OPD_Management.java.service.custom.impl.AppointmentBOImpl;
 
 public class AppointmentApproveController implements Initializable {
+    private AppointmentBO appointmentBO=new AppointmentBOImpl();
 
     @FXML
     private ResourceBundle resources;
@@ -47,6 +50,13 @@ public class AppointmentApproveController implements Initializable {
     }
 
     public void transferMessage(AppointmentDTO appointmentDTO) {
+        int appointmentNo = 0;
         appointmentIDLabel.setText(appointmentDTO.getAppointmentId());
+        try {
+            appointmentNo = appointmentBO.getNextAppointmentNo(appointmentDTO.getDoctorUsername());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        appointmentNoLabel.setText(String.valueOf(appointmentNo));
     }
 }

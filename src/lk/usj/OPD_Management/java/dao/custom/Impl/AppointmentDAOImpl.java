@@ -132,7 +132,7 @@ public class AppointmentDAOImpl implements AppointmentDAO {
                 currentStatus=details[7];
 
 
-                try {
+                if (currentStatus.equals(status)){
                     String[] dateArray = date.split("/");
                     Date appointmentDate = new GregorianCalendar(Integer.parseInt(dateArray[2]), Integer.parseInt(dateArray[1]) - 1, Integer.parseInt(dateArray[0])).getTime();
                     int intAppointmentNo= Integer.parseInt(appointmentNo);
@@ -141,8 +141,8 @@ public class AppointmentDAOImpl implements AppointmentDAO {
 
                     Appointment appointment= new Appointment(appointmentID,patient1,doctor1,intAppointmentNo,appointmentDate,time,symptoms,currentStatus);
                     appointments.add(appointment);
-                }catch (ParseException e){
-                    e.printStackTrace();
+                }else {
+                    continue;
                 }
             }
             return appointments;
@@ -152,4 +152,50 @@ public class AppointmentDAOImpl implements AppointmentDAO {
         }
         return null;
     }
+
+    @Override
+    public int getNextAppointmentNo(String doctorUsername) throws Exception {
+        int count =1;
+        try{
+            Doctor doc = doctorDAO.search(doctorUsername);
+            String appointmentID, patient, doctor, appointmentNo, date,time, symptoms,currentStatus;
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+            File file = new File("Appointment.txt");
+            if (!file.exists()) {//checking the is given file exists
+
+                file.createNewFile();//creating new file
+                Exception fileError =new IOException("File is not founded");
+                System.out.println(fileError);
+            }
+            Scanner scanner =new Scanner(file);
+
+            ArrayList<Appointment> appointments = new ArrayList<>();
+
+            while(scanner.hasNextLine()){
+                String line =scanner.nextLine();
+                String[] details = line.split("#");
+                appointmentID=details[0];
+                patient=details[1];
+                doctor=details[2];
+                appointmentNo=details[3];
+                date=details[4];
+                time=details[5];
+                symptoms=details[6];
+                currentStatus=details[7];
+
+
+                if (doc.getUsername().equals(doctor) && currentStatus.equals("Approved")){
+                    count++;
+                }else {
+                    continue;
+                }
+            }
+            return count;
+
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
+        return count;
+    }
+
 }

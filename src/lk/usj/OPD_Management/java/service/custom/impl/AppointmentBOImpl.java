@@ -3,7 +3,6 @@ package lk.usj.OPD_Management.java.service.custom.impl;
 import lk.usj.OPD_Management.java.dao.DAOFactory;
 import lk.usj.OPD_Management.java.dao.custom.AppointmentDAO;
 import lk.usj.OPD_Management.java.dto.AppointmentDTO;
-import lk.usj.OPD_Management.java.dto.DoctorDTO;
 import lk.usj.OPD_Management.java.entity.Appointment;
 import lk.usj.OPD_Management.java.entity.Doctor;
 import lk.usj.OPD_Management.java.entity.Patient;
@@ -87,4 +86,11 @@ public class AppointmentBOImpl implements AppointmentBO {
         }
         return appointments;
     }
+
+    @Override
+    public int getNextAppointmentNo(String doctorUsername) throws Exception {
+        return appointmentDAO.getNextAppointmentNo(doctorUsername);
+    }
+
+
 }
