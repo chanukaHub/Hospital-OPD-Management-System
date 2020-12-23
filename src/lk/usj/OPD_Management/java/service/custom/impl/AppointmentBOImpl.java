@@ -3,10 +3,13 @@ package lk.usj.OPD_Management.java.service.custom.impl;
 import lk.usj.OPD_Management.java.dao.DAOFactory;
 import lk.usj.OPD_Management.java.dao.custom.AppointmentDAO;
 import lk.usj.OPD_Management.java.dto.AppointmentDTO;
+import lk.usj.OPD_Management.java.dto.DoctorDTO;
 import lk.usj.OPD_Management.java.entity.Appointment;
 import lk.usj.OPD_Management.java.entity.Doctor;
 import lk.usj.OPD_Management.java.entity.Patient;
 import lk.usj.OPD_Management.java.service.custom.AppointmentBO;
+
+import java.util.ArrayList;
 
 public class AppointmentBOImpl implements AppointmentBO {
     private AppointmentDAO appointmentDAO= DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.APPOINTMENT);
@@ -29,7 +32,8 @@ public class AppointmentBOImpl implements AppointmentBO {
                 appointmentDTO.getPatient().getPassword(),
                 appointmentDTO.getPatient().getBloodGroup(),
                 appointmentDTO.getPatient().getAllergies(),
-                appointmentDTO.getPatient().getNote());
+                appointmentDTO.getPatient().getNote()
+        );
         Doctor doctor =new Doctor(
                 appointmentDTO.getDoctor().getUsername(),
                 appointmentDTO.getDoctor().getName(),
@@ -59,5 +63,28 @@ public class AppointmentBOImpl implements AppointmentBO {
                 appointmentDTO.getSymptoms(),
                 appointmentDTO.getStatus()
         ));
+    }
+
+    @Override
+    public ArrayList<AppointmentDTO> getPendingAppointmentList() throws Exception {
+        String status ="Pending";
+        ArrayList<Appointment> pendingAppointments = appointmentDAO.getAllAppointmentUsingStatus(status);
+        ArrayList<AppointmentDTO> appointments = new ArrayList<>();
+        for (Appointment appointment : pendingAppointments) {
+            appointments.add(new AppointmentDTO(
+                    appointment.getAppointmentId(),
+                    appointment.getAppointmentNo(),
+                    appointment.getAppointmentDate(),
+                    appointment.getAppointmentTime(),
+                    appointment.getSymptoms(),
+                    appointment.getStatus(),
+                    appointment.getPatient().getUsername(),
+                    appointment.getPatient().getName(),
+                    appointment.getPatient().getPhoneNumber(),
+                    appointment.getDoctor().getUsername(),
+                    appointment.getDoctor().getName(),
+                    appointment.getDoctor().getSpecialistArea()));
+        }
+        return appointments;
     }
 }

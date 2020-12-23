@@ -14,7 +14,13 @@ public class AppointmentDTO {
     private Date appointmentDate;
     private String appointmentTime;
     private String symptoms;
-    private String Status;
+    private String status;
+    private String patientUsername;
+    private String patientName;
+    private String patientPhone;
+    private String doctorUsername;
+    private String doctorName;
+    private String specialistArea;
 
     public AppointmentDTO() {
     }
@@ -27,7 +33,39 @@ public class AppointmentDTO {
         this.appointmentDate = appointmentDate;
         this.appointmentTime = appointmentTime;
         this.symptoms = symptoms;
-        Status = status;
+        this.status = status;
+    }
+
+    public AppointmentDTO(String appointmentId, int appointmentNo, Date appointmentDate, String appointmentTime, String symptoms, String status, String patientUsername, String patientName, String patientPhone, String doctorUsername, String doctorName, String specialistArea) {
+        this.appointmentId = appointmentId;
+        this.appointmentNo = appointmentNo;
+        this.appointmentDate = appointmentDate;
+        this.appointmentTime = appointmentTime;
+        this.symptoms = symptoms;
+        this.status = status;
+        this.patientUsername = patientUsername;
+        this.patientName = patientName;
+        this.patientPhone = patientPhone;
+        this.doctorUsername = doctorUsername;
+        this.doctorName = doctorName;
+        this.specialistArea = specialistArea;
+    }
+
+    public AppointmentDTO(String appointmentId, PatientDTO patient, DoctorDTO doctor, int appointmentNo, Date appointmentDate, String appointmentTime, String symptoms, String status, String patientUsername, String patientName, String patientPhone, String doctorUsername, String doctorName, String specialistArea) {
+        this.appointmentId = appointmentId;
+        this.patient = patient;
+        this.doctor = doctor;
+        this.appointmentNo = appointmentNo;
+        this.appointmentDate = appointmentDate;
+        this.appointmentTime = appointmentTime;
+        this.symptoms = symptoms;
+        this.status = status;
+        this.patientUsername = patientUsername;
+        this.patientName = patientName;
+        this.patientPhone = patientPhone;
+        this.doctorUsername = doctorUsername;
+        this.doctorName = doctorName;
+        this.specialistArea = specialistArea;
     }
 
     public PatientDTO getPatient() {
@@ -71,11 +109,11 @@ public class AppointmentDTO {
     }
 
     public String getStatus() {
-        return Status;
+        return status;
     }
 
     public void setStatus(String status) {
-        Status = status;
+        status = status;
     }
 
     public String getAppointmentId() {
@@ -94,6 +132,54 @@ public class AppointmentDTO {
         this.appointmentNo = appointmentNo;
     }
 
+    public String getPatientName() {
+        return patientName;
+    }
+
+    public void setPatientName(String patientName) {
+        this.patientName = patientName;
+    }
+
+    public String getPatientPhone() {
+        return patientPhone;
+    }
+
+    public void setPatientPhone(String patientPhone) {
+        this.patientPhone = patientPhone;
+    }
+
+    public String getDoctorName() {
+        return doctorName;
+    }
+
+    public void setDoctorName(String doctorName) {
+        this.doctorName = doctorName;
+    }
+
+    public String getPatientUsername() {
+        return patientUsername;
+    }
+
+    public void setPatientUsername(String patientUsername) {
+        this.patientUsername = patientUsername;
+    }
+
+    public String getDoctorUsername() {
+        return doctorUsername;
+    }
+
+    public void setDoctorUsername(String doctorUsername) {
+        this.doctorUsername = doctorUsername;
+    }
+
+    public String getSpecialistArea() {
+        return specialistArea;
+    }
+
+    public void setSpecialistArea(String specialistArea) {
+        this.specialistArea = specialistArea;
+    }
+
     @Override
     public String toString() {
         return "AppointmentDTO{" +
@@ -102,9 +188,15 @@ public class AppointmentDTO {
                 ", doctor=" + doctor +
                 ", appointmentNo=" + appointmentNo +
                 ", appointmentDate=" + appointmentDate +
-                ", appointmentTime=" + appointmentTime +
+                ", appointmentTime='" + appointmentTime + '\'' +
                 ", symptoms='" + symptoms + '\'' +
-                ", Status='" + Status + '\'' +
+                ", Status='" + status + '\'' +
+                ", patientUsername='" + patientUsername + '\'' +
+                ", patientName='" + patientName + '\'' +
+                ", patientPhone='" + patientPhone + '\'' +
+                ", doctorUsername='" + doctorUsername + '\'' +
+                ", doctorName='" + doctorName + '\'' +
+                ", specialistArea='" + specialistArea + '\'' +
                 '}';
     }
 }

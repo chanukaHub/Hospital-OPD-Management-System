@@ -15,6 +15,7 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
@@ -97,8 +98,11 @@ public class ReceptionistDashboardSaveAppointmentController implements Initializ
     }
 
     @FXML
-    void cancelBtn_OnAction(ActionEvent event) {
-        root.setVisible(false);
+    void cancelBtn_OnAction(ActionEvent event) throws Exception{
+        //root.setVisible(false);
+        VBox pane = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_dashboard_default.fxml"));
+        root.getChildren().setAll(pane);
+
     }
 
     @FXML

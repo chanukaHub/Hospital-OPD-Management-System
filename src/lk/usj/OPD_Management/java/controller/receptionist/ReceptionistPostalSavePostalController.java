@@ -7,6 +7,7 @@ import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -16,8 +17,10 @@ import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import lk.usj.OPD_Management.java.common.Common;
 import lk.usj.OPD_Management.java.dto.PostalDTO;
@@ -25,7 +28,7 @@ import lk.usj.OPD_Management.java.dto.VisitorDTO;
 import lk.usj.OPD_Management.java.service.custom.PostalBO;
 import lk.usj.OPD_Management.java.service.custom.impl.PostalBOImpl;
 
-public class ReceptionistDashboardSavePostalController implements Initializable {
+public class ReceptionistPostalSavePostalController implements Initializable {
     private PostalBO postalBO=new PostalBOImpl();
     String selectedFilePath;
     @FXML
@@ -142,7 +145,8 @@ public class ReceptionistDashboardSavePostalController implements Initializable 
     }
 
     @FXML
-    void addpostalCancelBtn_OnAction(ActionEvent event) {
+    void addpostalCancelBtn_OnAction(ActionEvent event) throws IOException {
+
 
     }
 

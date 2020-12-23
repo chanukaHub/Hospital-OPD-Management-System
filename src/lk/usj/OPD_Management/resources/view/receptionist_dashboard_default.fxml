@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.ReceptionistDashboardSaveVisitorController">
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.ReceptionistDashboardDefaultController">
    <children>
       <HBox>
          <children>
             <VBox>
                <children>
-                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment status">
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Pending Appointment">
                      <font>
                         <Font name="Gotham Bold" size="16.0" />
                      </font>
@@ -48,12 +43,14 @@
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </VBox.margin>
          <children>
-            <TableView prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+            <TableView fx:id="pendingAppointmentTable" onMouseClicked="#pendingAppointmentTable_MouseEvent" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
-                  <TableColumn prefWidth="75.0" text="C3" />
-                  <TableColumn prefWidth="75.0" text="C4" />
+                <TableColumn prefWidth="102.40002745389938" text="Appointment ID" />
+                <TableColumn prefWidth="120.0" text="Patient" />
+                  <TableColumn minWidth="0.0" prefWidth="133.6000213623047" text="Doctor" />
+                  <TableColumn prefWidth="191.99993896484375" text="Date" />
+                  <TableColumn prefWidth="74.39996337890625" text="Time" />
+                  <TableColumn prefWidth="101.39996337890625" text="Patient Contact" />
               </columns>
             </TableView>
          </children>

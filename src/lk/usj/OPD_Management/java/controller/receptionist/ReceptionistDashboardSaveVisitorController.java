@@ -82,7 +82,9 @@ public class ReceptionistDashboardSaveVisitorController implements Initializable
 
     @FXML
     void cancelBtn_OnActon(ActionEvent event) throws IOException {
-        root.setVisible(false);
+        //root.setVisible(false);
+        VBox pane = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_dashboard_default.fxml"));
+        root.getChildren().setAll(pane);
     }
 
     @FXML
