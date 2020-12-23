@@ -8,8 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<VBox prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="218.0" prefWidth="313.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.AppointmentApproveController">
    <children>
       <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Do you want to &#10;approve this appointment?">
          <font>
@@ -19,6 +18,26 @@
             <Insets bottom="15.0" left="20.0" top="15.0" />
          </VBox.margin>
       </Text>
+      <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="104.0" spacing="10.0">
+         <children>
+            <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment ID :">
+               <font>
+                  <Font name="Gotham-Book" size="14.0" />
+               </font>
+            </Text>
+            <Label fx:id="appointmentIDLabel" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" text="12345">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font name="Gotham-Book" size="12.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </HBox>
       <HBox alignment="CENTER_LEFT" spacing="10.0">
          <VBox.margin>
             <Insets top="15.0" />
@@ -29,7 +48,7 @@
                   <Font name="Gotham-Book" size="14.0" />
                </font>
             </Text>
-            <Label fx:id="doctorNameLabel" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" text="12345">
+            <Label fx:id="appointmentNoLabel" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" text="12345">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
