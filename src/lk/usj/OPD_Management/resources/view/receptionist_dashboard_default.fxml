@@ -2,8 +2,6 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -18,7 +16,7 @@
          <children>
             <VBox>
                <children>
-                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment status">
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointments">
                      <font>
                         <Font name="Gotham Bold" size="16.0" />
                      </font>
@@ -43,28 +41,27 @@
             </VBox>
          </children>
       </HBox>
-      <HBox prefWidth="200.0" VBox.vgrow="ALWAYS">
+      <HBox spacing="20.0">
+         <children>
+            <JFXButton fx:id="postalRecivedBtn" onAction="#postalRecivedBtn_OnAction" prefWidth="80.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="Approved">
+               <font>
+                  <Font name="Gotham-Book" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="postalDispatchedBtn" layoutX="10.0" layoutY="10.0" onAction="#postalDispatchedBtn_OnAction" prefWidth="75.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="Pending">
+               <font>
+                  <Font name="Gotham-Book" size="12.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <VBox.margin>
+            <Insets left="15.0" top="15.0" />
+         </VBox.margin>
+      </HBox>
+      <AnchorPane VBox.vgrow="ALWAYS">
          <VBox.margin>
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </VBox.margin>
-         <children>
-            <TableView prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
-              <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
-                  <TableColumn prefWidth="75.0" text="C3" />
-                  <TableColumn prefWidth="75.0" text="C4" />
-              </columns>
-            </TableView>
-         </children>
-      </HBox>
-      <HBox alignment="TOP_RIGHT" layoutX="10.0" layoutY="46.0" prefWidth="200.0">
-         <children>
-            <JFXButton prefHeight="25.0" prefWidth="117.0" ripplerFill="TRANSPARENT" style="-fx-background-color: #1CC270;" text="Mark as Approved" textFill="WHITE" />
-         </children>
-         <VBox.margin>
-            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-         </VBox.margin>
-      </HBox>
+      </AnchorPane>
    </children>
 </VBox>
