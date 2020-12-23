@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="387.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox style="-fx-background-color: #ffffff;">
+         <children>
+            <TableView prefHeight="387.0" prefWidth="730.0">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="C1" />
+                  <TableColumn prefWidth="75.0" text="C2" />
+                  <TableColumn prefWidth="75.0" text="C3" />
+                  <TableColumn prefWidth="75.0" text="C4" />
+               </columns>
+            </TableView>
+            <HBox alignment="CENTER_RIGHT">
+               <children>
+                  <HBox alignment="CENTER" spacing="15.0">
+                     <children>
+                        <JFXButton alignment="CENTER" prefHeight="30.0" prefWidth="100.0" ripplerFill="TRANSPARENT" style="-fx-background-color: #2484FF;" text="Export as PDF" textFill="WHITE" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
