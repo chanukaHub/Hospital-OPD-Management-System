@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Do you want to &#10;complete this appointment?">
+         <font>
+            <Font name="Gotham Bold" size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="15.0" left="20.0" top="15.0" />
+         </VBox.margin>
+      </Text>
+      <HBox alignment="CENTER_LEFT" spacing="10.0">
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+         <children>
+            <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment No :">
+               <font>
+                  <Font name="Gotham-Book" size="14.0" />
+               </font>
+            </Text>
+            <Label fx:id="doctorNameLabel" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" text="12345">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font name="Gotham-Book" size="12.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" VBox.vgrow="ALWAYS">
+         <children>
+            <JFXButton fx:id="cancelBtn" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#cancelBtn_OnAction" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: #2484FF; -fx-border-radius: 5px; -fx-border-width: 1px;" text="No" textFill="#2484ff">
+               <font>
+                  <Font name="Gotham-Book" size="12.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="8.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="saveBtn" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#saveBtn_OnAction" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #2484FF;" text="Yes" textFill="WHITE">
+               <font>
+                  <Font name="Gotham-Book" size="12.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
+               </padding>
+            </JFXButton>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="15.0" right="15.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>
