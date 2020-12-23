@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -10,13 +11,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.ReceptionistDashboardSaveVisitorController">
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.ReceptionistDashboardDefaultController">
    <children>
       <HBox>
          <children>
             <VBox>
                <children>
-                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointments">
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Pending Appointment">
                      <font>
                         <Font name="Gotham Bold" size="16.0" />
                      </font>
@@ -41,27 +42,22 @@
             </VBox>
          </children>
       </HBox>
-      <HBox spacing="20.0">
-         <children>
-            <JFXButton fx:id="postalRecivedBtn" onAction="#postalRecivedBtn_OnAction" prefWidth="80.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="Approved">
-               <font>
-                  <Font name="Gotham-Book" size="12.0" />
-               </font>
-            </JFXButton>
-            <JFXButton fx:id="postalDispatchedBtn" layoutX="10.0" layoutY="10.0" onAction="#postalDispatchedBtn_OnAction" prefWidth="75.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="Pending">
-               <font>
-                  <Font name="Gotham-Book" size="12.0" />
-               </font>
-            </JFXButton>
-         </children>
-         <VBox.margin>
-            <Insets left="15.0" top="15.0" />
-         </VBox.margin>
-      </HBox>
-      <AnchorPane VBox.vgrow="ALWAYS">
+      <HBox prefWidth="200.0" VBox.vgrow="ALWAYS">
          <VBox.margin>
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </VBox.margin>
-      </AnchorPane>
+         <children>
+            <TableView fx:id="pendingAppointmentTable" onMouseClicked="#pendingAppointmentTable_MouseEvent" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+               <columns>
+                  <TableColumn prefWidth="102.40002745389938" text="Appointment ID" />
+                  <TableColumn prefWidth="120.0" text="Patient" />
+                  <TableColumn minWidth="0.0" prefWidth="133.6000213623047" text="Doctor" />
+                  <TableColumn prefWidth="191.99993896484375" text="Date" />
+                  <TableColumn prefWidth="74.39996337890625" text="Time" />
+                  <TableColumn prefWidth="101.39996337890625" text="Patient Contact" />
+               </columns>
+            </TableView>
+         </children>
+      </HBox>
    </children>
 </VBox>
