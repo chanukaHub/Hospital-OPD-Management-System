@@ -62,7 +62,29 @@ public class ReceptionistBaseController implements Initializable {
     private JFXButton logoutBtn;
 
     @FXML
-    void appointmentsHBox_MouseEvent(MouseEvent event) {
+    void appointmentsHBox_MouseEvent(MouseEvent event) throws Exception{
+        dashboardHBox.getStyleClass().add("hover_border");
+        visitorsHBox.getStyleClass().add("hover_border");
+        postalHBox.getStyleClass().add("hover_border");
+        complaintsHBox.getStyleClass().add("hover_border");
+        appointmentsHBox.getStyleClass().add("hover_border");
+        patientHBox.getStyleClass().add("hover_border");
+
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_appointments.fxml"));
+        root.getChildren().setAll(pane);
+        appointmentsHBox.getStyleClass().removeAll("hover_border");
+
+        BackgroundFill background_fill = new BackgroundFill(Color.rgb(80, 157, 255), CornerRadii.EMPTY, Insets.EMPTY);
+        Background background = new Background(background_fill);
+        appointmentsHBox.setBackground(background);
+
+        BackgroundFill background_fill2 = new BackgroundFill(Color.TRANSPARENT, CornerRadii.EMPTY, Insets.EMPTY);
+        Background background2 = new Background(background_fill2);
+        patientHBox.setBackground(background2);
+        visitorsHBox.setBackground(background2);
+        postalHBox.setBackground(background2);
+        complaintsHBox.setBackground(background2);
+        dashboardHBox.setBackground(background2);
 
     }
 

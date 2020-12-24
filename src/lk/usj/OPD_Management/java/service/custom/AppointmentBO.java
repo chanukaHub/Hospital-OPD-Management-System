@@ -14,5 +14,7 @@ public interface AppointmentBO extends SuperBO {
 
     int getNextAppointmentNo(String doctorUsername) throws Exception;
 
-    void approveAppointment(String appointmentID) throws Exception;
+    void approveAppointment(String appointmentID,String appointmentNo) throws Exception;
+
+    ArrayList<AppointmentDTO> getApprovedAppointmentList()throws Exception;
 }

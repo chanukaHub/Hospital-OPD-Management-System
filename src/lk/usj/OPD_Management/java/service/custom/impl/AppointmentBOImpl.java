@@ -93,8 +93,31 @@ public class AppointmentBOImpl implements AppointmentBO {
     }
 
     @Override
-    public void approveAppointment(String appointmentID) throws Exception {
-        appointmentDAO.approveAppointment(appointmentID);
+    public void approveAppointment(String appointmentID,String appointmentNo) throws Exception {
+        appointmentDAO.approveAppointment(appointmentID,appointmentNo);
+    }
+
+    @Override
+    public ArrayList<AppointmentDTO> getApprovedAppointmentList() throws Exception {
+        String status ="Approve";
+        ArrayList<Appointment> pendingAppointments = appointmentDAO.getAllAppointmentUsingStatus(status);
+        ArrayList<AppointmentDTO> appointments = new ArrayList<>();
+        for (Appointment appointment : pendingAppointments) {
+            appointments.add(new AppointmentDTO(
+                    appointment.getAppointmentId(),
+                    appointment.getAppointmentNo(),
+                    appointment.getAppointmentDate(),
+                    appointment.getAppointmentTime(),
+                    appointment.getSymptoms(),
+                    appointment.getStatus(),
+                    appointment.getPatient().getUsername(),
+                    appointment.getPatient().getName(),
+                    appointment.getPatient().getPhoneNumber(),
+                    appointment.getDoctor().getUsername(),
+                    appointment.getDoctor().getName(),
+                    appointment.getDoctor().getSpecialistArea()));
+        }
+        return appointments;
     }
 
 

@@ -197,7 +197,7 @@ public class AppointmentDAOImpl implements AppointmentDAO {
     }
 
     @Override
-    public void approveAppointment(String currentAppointmentID) throws Exception {
+    public void approveAppointment(String currentAppointmentID,String currentAppointmentNo) throws Exception {
         try {
             String appointmentID, patient, doctor, appointmentNo, date, time, symptoms, currentStatus;
             SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
@@ -237,6 +237,7 @@ public class AppointmentDAOImpl implements AppointmentDAO {
             for (Appointment appointment : appointments) {
                 if (appointment.getAppointmentId().equals(currentAppointmentID)) {
                     appointment.setStatus("Approve");
+                    appointment.setAppointmentNo(Integer.parseInt(currentAppointmentNo));
                 }
             }
 

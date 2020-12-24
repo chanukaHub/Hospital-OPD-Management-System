@@ -12,5 +12,5 @@ public interface AppointmentDAO extends CrudDAO<Appointment,String> {
 
     int getNextAppointmentNo(String doctorUsername)throws Exception;
 
-    void approveAppointment(String currentAppointmentID)throws Exception;
+    void approveAppointment(String currentAppointmentID,String currentAppointmentNo)throws Exception;
 }

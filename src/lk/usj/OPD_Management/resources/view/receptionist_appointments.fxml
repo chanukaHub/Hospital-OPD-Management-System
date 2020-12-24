@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="mainRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.ReceptionistAppointmentController">
    <children>
       <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointments">
          <font>
@@ -22,8 +19,8 @@
          <children>
             <HBox alignment="CENTER" spacing="15.0">
                <children>
-                  <JFXButton prefWidth="100.0" ripplerFill="TRANSPARENT" style="-fx-background-color: #F2F0FB;" text="Approved" />
-                  <JFXButton layoutX="10.0" layoutY="10.0" prefWidth="100.0" ripplerFill="TRANSPARENT" style="-fx-background-color: #F2F0FB;" text="Pending" />
+                  <JFXButton fx:id="approvedBtn" onAction="#approvedBtn_OnAction" prefWidth="100.0" ripplerFill="TRANSPARENT" stylesheets="@../css/styles.css" text="Approved" />
+                  <JFXButton fx:id="pendingBtn" layoutX="10.0" layoutY="10.0" onAction="#pendingBtn_OnAction" prefWidth="100.0" ripplerFill="TRANSPARENT" stylesheets="@../css/styles.css" text="Pending" />
                </children>
             </HBox>
          </children>
@@ -31,7 +28,7 @@
             <Insets bottom="15.0" left="15.0" right="15.0" />
          </VBox.margin>
       </HBox>
-      <AnchorPane VBox.vgrow="ALWAYS">
+      <AnchorPane fx:id="subRoot" VBox.vgrow="ALWAYS">
          <VBox.margin>
             <Insets bottom="10.0" left="15.0" right="15.0" />
          </VBox.margin>
