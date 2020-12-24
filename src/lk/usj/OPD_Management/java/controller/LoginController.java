@@ -14,16 +14,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import lk.usj.OPD_Management.java.common.Common;
@@ -150,7 +145,7 @@ public class LoginController implements Initializable{
                 if (loginBO.isValidAdminPassword(new AdminDTO(usernameTxt1.getText(), passwordTxt1.getText()))) {
                     try {
                         //Load second scene
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_base.fxml"));
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_base.fxml"));
                         Parent root = loader.load();
 
                         //Get controller of scene2
@@ -179,7 +174,7 @@ public class LoginController implements Initializable{
                 if (loginBO.isValidReceptionistPassword(new ReceptionistDTO(usernameTxt1.getText(), passwordTxt1.getText()))) {
                     try {
                         //Load second scene
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_base.fxml"));
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_base.fxml"));
                         Parent root = loader.load();
 
                         //Get controller of scene2

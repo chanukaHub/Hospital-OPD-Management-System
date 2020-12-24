@@ -5,7 +5,7 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
-import com.jfoenix.controls.JFXTimePicker;
+
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.Calendar;
@@ -100,7 +100,7 @@ public class ReceptionistDashboardSaveAppointmentController implements Initializ
     @FXML
     void cancelBtn_OnAction(ActionEvent event) throws Exception{
         //root.setVisible(false);
-        VBox pane = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_dashboard_default.fxml"));
+        VBox pane = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_dashboard_default.fxml"));
         root.getChildren().setAll(pane);
 
     }

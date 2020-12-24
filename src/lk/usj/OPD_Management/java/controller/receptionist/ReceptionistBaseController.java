@@ -70,7 +70,7 @@ public class ReceptionistBaseController implements Initializable {
         appointmentsHBox.getStyleClass().add("hover_border");
         patientHBox.getStyleClass().add("hover_border");
 
-        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_appointments.fxml"));
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_appointments.fxml"));
         root.getChildren().setAll(pane);
         appointmentsHBox.getStyleClass().removeAll("hover_border");
 
@@ -102,7 +102,7 @@ public class ReceptionistBaseController implements Initializable {
         appointmentsHBox.getStyleClass().add("hover_border");
         patientHBox.getStyleClass().add("hover_border");
 
-        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_dashboard.fxml"));
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_dashboard.fxml"));
         root.getChildren().setAll(pane);
         dashboardHBox.getStyleClass().removeAll("hover_border");
 
@@ -135,7 +135,7 @@ public class ReceptionistBaseController implements Initializable {
         appointmentsHBox.getStyleClass().add("hover_border");
         patientHBox.getStyleClass().add("hover_border");
 
-        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_postal.fxml"));
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_postal.fxml"));
         root.getChildren().setAll(pane);
         postalHBox.getStyleClass().removeAll("hover_border");
 
@@ -162,7 +162,7 @@ public class ReceptionistBaseController implements Initializable {
         appointmentsHBox.getStyleClass().add("hover_border");
         patientHBox.getStyleClass().add("hover_border");
 
-        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_visitors.fxml"));
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_visitors.fxml"));
         root.getChildren().setAll(pane);
         visitorsHBox.getStyleClass().removeAll("hover_border");
 
@@ -205,7 +205,7 @@ public class ReceptionistBaseController implements Initializable {
     }
 
     private void loadInitialPanel() throws IOException {
-        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_dashboard.fxml"));
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_dashboard.fxml"));
         root.getChildren().setAll(pane);
 
     }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="387.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.ReceptionistAppointmentPendingTableController">
+   <children>
+      <TableView fx:id="pendingAppointmentTable" onMouseClicked="#pendingAppointmentTable_MouseEvent" prefHeight="387.0" prefWidth="730.0">
+         <columns>
+            <TableColumn prefWidth="102.39999234676361" text="Appointment ID" />
+            <TableColumn prefWidth="119.9999771118164" text="Patient" />
+            <TableColumn prefWidth="116.0" text="Doctor" />
+            <TableColumn prefWidth="197.60000610351562" text="Date" />
+            <TableColumn prefWidth="83.20001220703125" text="Time" />
+            <TableColumn prefWidth="101.4000244140625" text="patient Contact" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

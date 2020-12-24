@@ -40,7 +40,7 @@ public class AdminUserViewDoctorTableController implements Initializable {
             return;
         }
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_editDoctor.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_users_editDoctor.fxml"));
         Parent root = loader.load();
         AdminUserEditDeleteDoctorController adminUserEditDeleteDoctorController = loader.getController();
         adminUserEditDeleteDoctorController.transferMessage(doctorDTO);

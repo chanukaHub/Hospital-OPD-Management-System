@@ -5,7 +5,6 @@ import com.jfoenix.controls.*;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.ResourceBundle;
@@ -13,7 +12,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.VBox;
 import lk.usj.OPD_Management.java.common.Common;
@@ -111,7 +109,7 @@ public class AdminUserSavePatientController implements Initializable {
 
     @FXML
     void cancelBtn_ActionEvent(ActionEvent event) throws IOException{
-        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users.fxml"));
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_users.fxml"));
         root.getChildren().setAll(pane);
     }
 

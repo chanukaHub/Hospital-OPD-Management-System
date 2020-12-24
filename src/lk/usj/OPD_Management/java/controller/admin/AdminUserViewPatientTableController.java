@@ -44,7 +44,7 @@ public class AdminUserViewPatientTableController implements Initializable {
             return;
         }
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_editPatient.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_users_editPatient.fxml"));
         Parent root = loader.load();
         //tableRoot.getChildren().setAll(root);
 

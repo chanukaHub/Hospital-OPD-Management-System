@@ -24,11 +24,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import lk.usj.OPD_Management.java.common.Common;
-import lk.usj.OPD_Management.java.dto.PatientDTO;
 import lk.usj.OPD_Management.java.dto.VisitorDTO;
-import lk.usj.OPD_Management.java.service.custom.PatientBO;
 import lk.usj.OPD_Management.java.service.custom.VisitorBO;
-import lk.usj.OPD_Management.java.service.custom.impl.PatientBOImpl;
 import lk.usj.OPD_Management.java.service.custom.impl.VisitorBOImpl;
 
 public class ReceptionistDashboardSaveVisitorController implements Initializable {
@@ -83,7 +80,7 @@ public class ReceptionistDashboardSaveVisitorController implements Initializable
     @FXML
     void cancelBtn_OnActon(ActionEvent event) throws IOException {
         //root.setVisible(false);
-        VBox pane = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_dashboard_default.fxml"));
+        VBox pane = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_dashboard_default.fxml"));
         root.getChildren().setAll(pane);
     }
 

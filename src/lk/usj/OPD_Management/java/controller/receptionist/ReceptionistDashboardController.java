@@ -36,20 +36,20 @@ public class ReceptionistDashboardController implements Initializable {
 
     @FXML
     void addAppointmentBtn_OnActon(ActionEvent event) throws IOException{
-        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_dashboard_addAppointment.fxml"));
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_dashboard_addAppointment.fxml"));
         root.getChildren().setAll(pane);
     }
 
     @FXML
     void addNewPatientBtn_OnActon(ActionEvent event) throws IOException{
-        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_dashboard_addPatient.fxml"));
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_dashboard_addPatient.fxml"));
         root.getChildren().setAll(pane);
 
     }
 
     @FXML
     void addNewVisitorBtn_OnActon(ActionEvent event) throws IOException {
-        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_dashboard_addVisitor.fxml"));
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_dashboard_addVisitor.fxml"));
         root.getChildren().setAll(pane);
 
     }
@@ -58,7 +58,7 @@ public class ReceptionistDashboardController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle){
         VBox pane= null;
         try {
-            pane = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_dashboard_default.fxml"));
+            pane = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_dashboard_default.fxml"));
             root.getChildren().setAll(pane);
         } catch (IOException e) {
             e.printStackTrace();

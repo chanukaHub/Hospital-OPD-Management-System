@@ -45,7 +45,7 @@ public class ReceptionistAppointmentController implements Initializable {
 
         selectedType= "Approved";
 
-        Pane pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_appointment_approvedTable.fxml"));
+        Pane pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_appointment_approvedTable.fxml"));
         subRoot.getChildren().setAll(pane);
     }
 
@@ -59,7 +59,7 @@ public class ReceptionistAppointmentController implements Initializable {
 
         selectedType= "Pending";
 
-        Pane pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_appointment_pendingTable.fxml"));
+        Pane pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_appointment_pendingTable.fxml"));
         subRoot.getChildren().setAll(pane);
     }
 
@@ -70,7 +70,7 @@ public class ReceptionistAppointmentController implements Initializable {
 
         Pane pane= null;
         try {
-            pane = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_appointment_approvedTable.fxml"));
+            pane = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_appointment_approvedTable.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }

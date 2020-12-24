@@ -30,7 +30,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import lk.usj.OPD_Management.java.common.Common;
-import lk.usj.OPD_Management.java.dto.DoctorDTO;
 import lk.usj.OPD_Management.java.dto.ReceptionistDTO;
 import lk.usj.OPD_Management.java.service.custom.ReceptionistBO;
 import lk.usj.OPD_Management.java.service.custom.impl.ReceptionistBOImpl;
@@ -132,7 +131,7 @@ public class AdminUserSaveReceptionistController implements Initializable {
 
     @FXML
     void cancelBtn_OnAction(ActionEvent event) throws IOException {
-        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users.fxml"));
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_users.fxml"));
         root.getChildren().setAll(pane);
     }
 
@@ -291,7 +290,7 @@ public class AdminUserSaveReceptionistController implements Initializable {
 
             if (b){
                 Common.showMessage("Added Receptionist!");
-                VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_addReceptionist.fxml"));
+                VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_users_addReceptionist.fxml"));
                 root.getChildren().setAll(pane);
             }
             else

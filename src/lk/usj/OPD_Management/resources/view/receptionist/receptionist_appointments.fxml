@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="mainRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.ReceptionistAppointmentController">
+   <children>
+      <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointments">
+         <font>
+            <Font name="Gotham Bold" size="16.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </VBox.margin>
+      </Text>
+      <HBox alignment="CENTER_LEFT">
+         <children>
+            <HBox alignment="CENTER" spacing="15.0">
+               <children>
+                  <JFXButton fx:id="approvedBtn" onAction="#approvedBtn_OnAction" prefWidth="100.0" ripplerFill="TRANSPARENT" stylesheets="@../../css/styles.css" text="Approved" />
+                  <JFXButton fx:id="pendingBtn" layoutX="10.0" layoutY="10.0" onAction="#pendingBtn_OnAction" prefWidth="100.0" ripplerFill="TRANSPARENT" stylesheets="@../../css/styles.css" text="Pending" />
+               </children>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets bottom="15.0" left="15.0" right="15.0" />
+         </VBox.margin>
+      </HBox>
+      <AnchorPane fx:id="subRoot" VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets bottom="10.0" left="15.0" right="15.0" />
+         </VBox.margin>
+      </AnchorPane>
+   </children>
+</VBox>

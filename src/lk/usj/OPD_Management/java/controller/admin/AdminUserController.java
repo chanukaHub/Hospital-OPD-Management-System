@@ -66,7 +66,7 @@ public class AdminUserController implements Initializable {
 
         selectedUserType= "Doctor";
 
-        Pane pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_doctor_table.fxml"));
+        Pane pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_users_doctor_table.fxml"));
         root.getChildren().setAll(pane);
     }
 
@@ -82,7 +82,7 @@ public class AdminUserController implements Initializable {
 
         selectedUserType= "Patient";
 
-        Pane pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_Patient_table.fxml"));
+        Pane pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_users_Patient_table.fxml"));
         root.getChildren().setAll(pane);
     }
 
@@ -98,7 +98,7 @@ public class AdminUserController implements Initializable {
 
         selectedUserType= "Receptionist";
 
-        Pane pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_receptionist_table.fxml"));
+        Pane pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_users_receptionist_table.fxml"));
         root.getChildren().setAll(pane);
     }
 
@@ -110,13 +110,13 @@ public class AdminUserController implements Initializable {
     @FXML
     void addBtn_ActionEvent(ActionEvent event) throws IOException{
         if (selectedUserType.equals("Patient")){
-            VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_addPatient.fxml"));
+            VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_users_addPatient.fxml"));
             mainRoot.getChildren().setAll(pane);
         }else if (selectedUserType.equals("Doctor")){
-            VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_addDoctor.fxml"));
+            VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_users_addDoctor.fxml"));
             mainRoot.getChildren().setAll(pane);
         }else if (selectedUserType.equals("Receptionist")){
-            VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_addReceptionist.fxml"));
+            VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_users_addReceptionist.fxml"));
             mainRoot.getChildren().setAll(pane);
         }
 
@@ -136,7 +136,7 @@ public class AdminUserController implements Initializable {
         receptionistBtn_AnchorPane.getStyleClass().add("login_type_btn");
         Pane pane= null;
         try {
-            pane = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_Patient_table.fxml"));
+            pane = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_users_Patient_table.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }

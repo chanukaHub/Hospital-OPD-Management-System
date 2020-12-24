@@ -40,7 +40,7 @@ public class AdminUserViewReceptionistTableController implements Initializable {
             return;
         }
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_editReceptionist.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_users_editReceptionist.fxml"));
         Parent root = loader.load();
         AdminUserEditDeleteReceptionistController adminUserEditDeleteReceptionistController = loader.getController();
         adminUserEditDeleteReceptionistController.transferMessage(receptionistDTO);

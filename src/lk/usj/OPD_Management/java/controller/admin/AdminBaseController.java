@@ -89,7 +89,7 @@ public class AdminBaseController implements Initializable {
         referenceHBox.getStyleClass().add("hover_border");
         userHBox.getStyleClass().add("hover_border");
 
-        HBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_dashboard.fxml"));
+        HBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_dashboard.fxml"));
         root.getChildren().setAll(pane);
         dashboardHBox.getStyleClass().removeAll("hover_border");
 
@@ -117,7 +117,7 @@ public class AdminBaseController implements Initializable {
         referenceHBox.getStyleClass().add("hover_border");
         userHBox.getStyleClass().add("hover_border");
 
-        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_visitors.fxml"));
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_visitors.fxml"));
         root.getChildren().setAll(pane);
         visitorHBox.getStyleClass().removeAll("hover_border");
 
@@ -146,7 +146,7 @@ public class AdminBaseController implements Initializable {
         referenceHBox.getStyleClass().add("hover_border");
         userHBox.getStyleClass().add("hover_border");
 
-        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_postal.fxml"));
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_postal.fxml"));
         root.getChildren().setAll(pane);
         postalHBox.getStyleClass().removeAll("hover_border");
 
@@ -180,7 +180,7 @@ public class AdminBaseController implements Initializable {
         referenceHBox.getStyleClass().add("hover_border");
         userHBox.getStyleClass().add("hover_border");
 
-        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users.fxml"));
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_users.fxml"));
         root.getChildren().setAll(pane);
         userHBox.getStyleClass().removeAll("hover_border");
 
@@ -222,7 +222,7 @@ public class AdminBaseController implements Initializable {
 
 
     private void loadInitialPanel() throws IOException {
-        HBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_dashboard.fxml"));
+        HBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_dashboard.fxml"));
         root.getChildren().setAll(pane);
 
     }

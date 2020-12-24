@@ -31,7 +31,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import lk.usj.OPD_Management.java.common.Common;
 import lk.usj.OPD_Management.java.dto.DoctorDTO;
-import lk.usj.OPD_Management.java.dto.PatientDTO;
 import lk.usj.OPD_Management.java.service.custom.DoctorBO;
 import lk.usj.OPD_Management.java.service.custom.impl.DoctorBOImpl;
 
@@ -159,7 +158,7 @@ public class AdminUserSaveDoctorController implements Initializable {
 
     @FXML
     void cancelBtn_OnAction(ActionEvent event) throws IOException {
-        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users.fxml"));
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_users.fxml"));
         root.getChildren().setAll(pane);
     }
 
@@ -276,7 +275,7 @@ public class AdminUserSaveDoctorController implements Initializable {
 
             if (b){
                 Common.showMessage("Added Doctor!");
-                VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin_users_addDoctor.fxml"));
+                VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_users_addDoctor.fxml"));
                 root.getChildren().setAll(pane);
             }
             else
