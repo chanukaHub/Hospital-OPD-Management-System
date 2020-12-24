@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -58,11 +59,13 @@ public class ReceptionistDashboardDefaultController implements Initializable {
         stage.showAndWait();
 
 
-        try {
-            loadPendingAppointmentTable();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        //try {
+        //    loadPendingAppointmentTable();
+        //} catch (Exception e) {
+        //    e.printStackTrace();
+        //}
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_dashboard_default.fxml"));
+        this.root.getChildren().setAll(pane);
 
     }
 

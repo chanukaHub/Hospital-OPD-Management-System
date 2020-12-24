@@ -39,8 +39,9 @@ public class AppointmentApproveController implements Initializable {
     }
 
     @FXML
-    void saveBtn_OnAction(ActionEvent event) {
-
+    void saveBtn_OnAction(ActionEvent event) throws Exception{
+        appointmentBO.approveAppointment(appointmentIDLabel.getText());
+        ((Node)(event.getSource())).getScene().getWindow().hide();
     }
 
 

@@ -92,5 +92,10 @@ public class AppointmentBOImpl implements AppointmentBO {
         return appointmentDAO.getNextAppointmentNo(doctorUsername);
     }
 
+    @Override
+    public void approveAppointment(String appointmentID) throws Exception {
+        appointmentDAO.approveAppointment(appointmentID);
+    }
+
 
 }
