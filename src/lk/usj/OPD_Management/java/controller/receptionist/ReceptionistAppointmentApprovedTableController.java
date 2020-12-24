@@ -7,11 +7,19 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import lk.usj.OPD_Management.java.common.Common;
 import lk.usj.OPD_Management.java.dto.AppointmentDTO;
 import lk.usj.OPD_Management.java.service.custom.AppointmentBO;
 import lk.usj.OPD_Management.java.service.custom.impl.AppointmentBOImpl;
@@ -35,12 +43,39 @@ public class ReceptionistAppointmentApprovedTableController implements Initializ
     private JFXButton exportPdfBtn;
 
     @FXML
-    void approvedTable_MouseEvent(MouseEvent event) {
+    void approvedTable_MouseEvent(MouseEvent event) throws Exception{
+        AppointmentDTO appointmentDTO=(approvedTable.getSelectionModel().getSelectedItem());
+        if(appointmentDTO == null){
+            Common.showWarning("Please select Appointment records");
+            return;
+        }
 
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_appointments_viewAppointment.fxml"));
+        Parent root = loader.load();
+        ReceptionistAppointmentViewAppointmentController receptionistAppointmentViewAppointmentController = loader.getController();
+        receptionistAppointmentViewAppointmentController.transferMessage(appointmentDTO);
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        //stage.setTitle("");
+        stage.centerOnScreen();
+        stage.setResizable(false);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.showAndWait();
+
+
+        //try {
+        //    loadPendingAppointmentTable();
+        //} catch (Exception e) {
+        //    e.printStackTrace();
+        //}
+        Pane pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_appointment_approvedTable.fxml"));
+        this.root.getChildren().setAll(pane);
     }
 
     @FXML
-    void exportPdfBtn_OnAction(ActionEvent event) {
+    void exportPdfBtn_OnAction(ActionEvent event) throws Exception{
+
 
     }
 
