@@ -86,6 +86,15 @@ public class ReceptionistPostalEditReceivedPostalController implements Initializ
 
     @FXML
     void deleteBtn_OnAction(ActionEvent event) throws Exception{
+        boolean deleted = false;
+        try {
+            deleted = postalBO.deleteDoctor(postalReferenceNOTxt.getText());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (deleted) {
+            Common.showMessage("DELETE !");
+        }
 
         ((Node)(event.getSource())).getScene().getWindow().hide();
     }

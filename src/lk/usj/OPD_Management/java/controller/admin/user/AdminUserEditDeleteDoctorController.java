@@ -180,6 +180,8 @@ public class AdminUserEditDeleteDoctorController implements Initializable {
         if (deleted) {
             Common.showMessage("DELETE !");
         }
+
+        ((Node)(event.getSource())).getScene().getWindow().hide();
     }
 
     @FXML

@@ -131,6 +131,78 @@ public class PostalDAOImpl implements PostalDAO {
 
     @Override
     public boolean delete(String var1) throws Exception {
+        try{
+            String referenceNo, fromAddress, toAddress, fromName, toName,date, attachment, notes, postalType;
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+            File file = new File("Postal.txt");
+            if (!file.exists()) {//checking the is given file exists
+
+                file.createNewFile();//creating new file
+                Exception fileError =new IOException("File is not founded");
+                System.out.println(fileError);
+            }
+            Scanner scanner =new Scanner(file);
+
+            ArrayList<Postal> postals = new ArrayList<>();
+
+            while(scanner.hasNextLine()){
+                String line =scanner.nextLine();
+                String[] details = line.split("#");
+                referenceNo=details[0];
+                fromAddress=details[1];
+                toAddress=details[2];
+                fromName=details[3];
+                toName=details[4];
+                date=details[5];
+                attachment=details[6];
+                notes=details[7];
+                postalType=details[8];
+
+
+
+                String[] dateArray = date.split("/");
+                Date postalDate = new GregorianCalendar(Integer.parseInt(dateArray[2]), Integer.parseInt(dateArray[1]) - 1, Integer.parseInt(dateArray[0])).getTime();
+                Postal postal = new Postal(referenceNo, fromAddress, toAddress, fromName, toName, postalDate, attachment, notes, postalType);
+                postals.add(postal);
+            }
+
+            PrintWriter writer = new PrintWriter(file);
+            writer.print("");
+            writer.close();
+
+            if (!file.exists()) {//checking the is given file exists
+
+                file.createNewFile();//creating new file
+                Exception fileError =new IOException("File is not founded");
+                System.out.println(fileError);
+            }
+
+            FileWriter fw = new FileWriter(file,true);
+            BufferedWriter bw = new BufferedWriter(fw);
+
+
+            for (Postal p:postals){
+                if (p.getReferenceNumber().equals(var1)){
+                    continue;
+                }else {
+                    String strDate = format.format(p.getPostalDate());
+                    String wantedLine = p.getReferenceNumber()+"#"+p.getFromAddress()+"#"+p.getToAddress()+"#"+p.getFromName()+"#"+p.getToName()+"#"+strDate+"#"+
+                            p.getAttachment()+"#"+p.getNotes()+"#"+p.getType();
+
+                    bw.write(wantedLine);
+                    bw.newLine();
+                }
+
+            }
+
+            bw.close();
+            return true;
+
+
+
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
         return false;
     }
 

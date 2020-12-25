@@ -88,4 +88,9 @@ public class PostalBOImpl implements PostalBO {
         ));
 
     }
+
+    @Override
+    public boolean deleteDoctor(String text) throws Exception {
+        return postalDAO.delete(text);
+    }
 }
