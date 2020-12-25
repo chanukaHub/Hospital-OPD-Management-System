@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXDatePicker?>
-<?import com.jfoenix.controls.JFXTextArea?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.postal.ReceptionistPostalSaveReceivedPostalController">
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.postal.ReceptionistPostalEditDispatchedPostalController">
    <children>
       <HBox>
          <children>
@@ -60,7 +53,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTextField fx:id="postalReferenceNOTxt" focusColor="#b8b6c7" onAction="#postalReferenceNOTxt_OnAction" prefWidth="200.0" promptText="reference No" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
+                  <JFXTextField fx:id="postalReferenceNOTxt" editable="false" focusColor="#b8b6c7" onAction="#postalReferenceNOTxt_OnAction" prefWidth="200.0" promptText="reference No" style="-fx-background-color: #F2F0FB;" unFocusColor="#ffffff00">
                      <VBox.margin>
                         <Insets bottom="25.0" />
                      </VBox.margin>
@@ -232,7 +225,7 @@
          <children>
             <HBox alignment="BOTTOM_RIGHT" spacing="20.0">
                <children>
-                  <JFXButton fx:id="addpostalCancelBtn1" alignment="CENTER" onAction="#addpostalCancelBtn_OnAction" prefWidth="90.0" style="-fx-background-color: transparent; -fx-border-color: #2484FF; -fx-border-radius: 5px; -fx-border-width: 1px;" text="Cancel" textFill="#2484ff">
+                  <JFXButton fx:id="cancelBtn" alignment="CENTER" onAction="#cancelBtn_OnAction" prefWidth="90.0" style="-fx-background-color: transparent; -fx-border-color: #2484FF; -fx-border-radius: 5px; -fx-border-width: 1px;" text="Cancel" textFill="#2484ff">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
                      </font>
@@ -240,7 +233,7 @@
                         <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
                      </padding>
                   </JFXButton>
-                  <JFXButton fx:id="addPostalSaveBtn1" alignment="CENTER" layoutX="646.0" layoutY="10.0" onAction="#addPostalSaveBtn_OnAction" prefWidth="90.0" style="-fx-background-color: #FF4242;" text="Delete" textFill="WHITE">
+                  <JFXButton fx:id="deleteBtn" alignment="CENTER" layoutX="646.0" layoutY="10.0" onAction="#deleteBtn_OnAction" prefWidth="90.0" style="-fx-background-color: #FF4242;" text="Delete" textFill="WHITE">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
                      </font>
@@ -248,7 +241,7 @@
                         <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
                      </padding>
                   </JFXButton>
-                  <JFXButton fx:id="addPostalSaveBtn11" alignment="CENTER" layoutX="610.0" layoutY="10.0" onAction="#addPostalSaveBtn_OnAction" prefWidth="130.0" style="-fx-background-color: #2484FF;" text="Save Changes" textFill="WHITE">
+                  <JFXButton fx:id="saveBtn" alignment="CENTER" layoutX="610.0" layoutY="10.0" onAction="#saveBtn_OnAction" prefWidth="130.0" style="-fx-background-color: #2484FF;" text="Save Changes" textFill="WHITE">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
                      </font>
