@@ -11,4 +11,6 @@ public interface PostalBO extends SuperBO {
     ArrayList<PostalDTO> getReceivedPostalList() throws Exception;
 
     ArrayList<PostalDTO> getDispatchedPostalList() throws Exception;
+
+    boolean updatePostal(PostalDTO postalDTO)throws Exception;
 }

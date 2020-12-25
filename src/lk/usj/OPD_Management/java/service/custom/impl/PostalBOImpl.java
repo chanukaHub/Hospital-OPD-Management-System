@@ -72,4 +72,20 @@ public class PostalBOImpl implements PostalBO {
         }
         return postal;
     }
+
+    @Override
+    public boolean updatePostal(PostalDTO postalDTO) throws Exception {
+        return postalDAO.update(new Postal(
+                postalDTO.getReferenceNumber(),
+                postalDTO.getFromAddress(),
+                postalDTO.getToAddress(),
+                postalDTO.getFromName(),
+                postalDTO.getToName(),
+                postalDTO.getPostalDate(),
+                postalDTO.getAttachment(),
+                postalDTO.getNotes(),
+                postalDTO.getType()
+        ));
+
+    }
 }
