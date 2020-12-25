@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Patients">
+         <font>
+            <Font name="Gotham Bold" size="16.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </VBox.margin>
+      </Text>
+      <TableView fx:id="patientTable" onMouseClicked="#patientTable_MouseEvent" prefHeight="390.0" prefWidth="730.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" VBox.vgrow="ALWAYS">
+         <columns>
+            <TableColumn prefWidth="105.19999694824219" text="NIC No" />
+            <TableColumn prefWidth="120.39999389648438" text="Name " />
+            <TableColumn prefWidth="115.39999389648438" text="Username" />
+            <TableColumn prefWidth="110.19998168945312" text="Gender" />
+            <TableColumn prefWidth="140.0" text="Adderess" />
+            <TableColumn minWidth="0.0" prefWidth="141.0" text="Phone No" />
+         </columns>
+         <VBox.margin>
+            <Insets bottom="15.0" left="15.0" right="15.0" />
+         </VBox.margin>
+      </TableView>
+   </children>
+</VBox>
