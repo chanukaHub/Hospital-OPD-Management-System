@@ -318,6 +318,7 @@ public class AdminUserEditDeleteDoctorController implements Initializable {
             e1.printStackTrace();
         }
 
+        ((Node)(event.getSource())).getScene().getWindow().hide();
 
     }
 

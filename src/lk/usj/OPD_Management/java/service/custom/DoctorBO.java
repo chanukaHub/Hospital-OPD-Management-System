@@ -20,4 +20,6 @@ public interface DoctorBO extends SuperBO {
     boolean deleteDoctor(String text)throws Exception;
 
     ArrayList<DoctorDTO> getAllDoctorsUsingSpecialistArea(String specialistArea) throws Exception;
+
+    DoctorDTO searchDoctor(String doctorUsername)throws Exception;
 }

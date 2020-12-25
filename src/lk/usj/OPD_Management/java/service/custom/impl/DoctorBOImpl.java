@@ -122,4 +122,27 @@ public class DoctorBOImpl implements DoctorBO {
         }
         return doctors;
     }
+
+    @Override
+    public DoctorDTO searchDoctor(String doctorUsername) throws Exception {
+        Doctor doctor = doctorDAO.search(doctorUsername);
+        return new DoctorDTO(
+                doctor.getUsername(),
+                doctor.getName(),
+                doctor.getGender(),
+                doctor.getPhoneNumber(),
+                doctor.getIdCard(),
+                doctor.getDateOfBirth(),
+                doctor.getAddress(),
+                doctor.getMaritalStatus(),
+                doctor.getPassword(),
+                doctor.getStaffID(),
+                doctor.getStaffEmail(),
+                doctor.getDateOfJoin(),
+                doctor.getPhotograph(),
+                doctor.getDocument(),
+                doctor.getNote(),
+                doctor.getSpecialistArea()
+        );
+    }
 }
