@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.ReceptionistPostalController">
+<VBox fx:id="mainRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.ReceptionistPostalController">
    <children>
       <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Postal ">
          <font>
@@ -23,12 +20,12 @@
             <Insets bottom="15.0" left="15.0" right="15.0" />
          </VBox.margin>
          <children>
-            <JFXButton fx:id="postalRecivedBtn" onAction="#postalRecivedBtn_OnAction" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="Recieved">
+            <JFXButton fx:id="postalRecivedBtn" onAction="#postalRecivedBtn_OnAction" stylesheets="@../../css/styles.css" text="Recieved">
                <font>
                   <Font name="Gotham-Book" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="postalDispatchedBtn" layoutX="10.0" layoutY="10.0" onAction="#postalDispatchedBtn_OnAction" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="Dispatched">
+            <JFXButton fx:id="postalDispatchedBtn" layoutX="10.0" layoutY="10.0" onAction="#postalDispatchedBtn_OnAction" stylesheets="@../../css/styles.css" text="Dispatched">
                <font>
                   <Font name="Gotham-Book" size="12.0" />
                </font>
@@ -43,16 +40,6 @@
       <HBox alignment="CENTER_RIGHT">
          <children>
             <JFXButton fx:id="addPostalBtn" minWidth="65.0" onAction="#addPostalBtn_OnAction" ripplerFill="TRANSPARENT" style="-fx-background-color: #1CC270;" text="Add" textFill="WHITE">
-               <HBox.margin>
-                  <Insets bottom="15.0" right="15.0" top="10.0" />
-               </HBox.margin>
-            </JFXButton>
-            <JFXButton fx:id="editPostalBtn" layoutX="535.0" layoutY="23.0" minWidth="65.0" onAction="#editPostalBtn_OnAction" ripplerFill="TRANSPARENT" style="-fx-background-color: #FFC400;" text="Edit " textFill="WHITE">
-               <HBox.margin>
-                  <Insets bottom="15.0" right="15.0" top="10.0" />
-               </HBox.margin>
-            </JFXButton>
-            <JFXButton fx:id="deletePostalBtn" layoutX="470.0" layoutY="23.0" minWidth="65.0" onAction="#deletePostalBtn_OnAction" ripplerFill="TRANSPARENT" style="-fx-background-color: #FF4242;" text="Delete" textFill="WHITE">
                <HBox.margin>
                   <Insets bottom="15.0" right="15.0" top="10.0" />
                </HBox.margin>

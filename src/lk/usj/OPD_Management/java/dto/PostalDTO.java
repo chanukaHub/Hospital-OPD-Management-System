@@ -11,11 +11,12 @@ public class PostalDTO {
     private Date postalDate;
     private String attachment;
     private String notes;
+    private String type;
 
     public PostalDTO() {
     }
 
-    public PostalDTO(String referenceNumber, String fromAddress, String toAddress, String fromName, String toName, Date postalDate, String attachment, String notes) {
+    public PostalDTO(String referenceNumber, String fromAddress, String toAddress, String fromName, String toName, Date postalDate, String attachment, String notes, String type) {
         this.referenceNumber = referenceNumber;
         this.fromAddress = fromAddress;
         this.toAddress = toAddress;
@@ -24,6 +25,7 @@ public class PostalDTO {
         this.postalDate = postalDate;
         this.attachment = attachment;
         this.notes = notes;
+        this.type = type;
     }
 
     public String getReferenceNumber() {
@@ -90,6 +92,14 @@ public class PostalDTO {
         this.notes = notes;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public String toString() {
         return "PostalDTO{" +
@@ -98,9 +108,10 @@ public class PostalDTO {
                 ", toAddress='" + toAddress + '\'' +
                 ", fromName='" + fromName + '\'' +
                 ", toName='" + toName + '\'' +
-                ", postalDate='" + postalDate + '\'' +
+                ", postalDate=" + postalDate +
                 ", attachment='" + attachment + '\'' +
                 ", notes='" + notes + '\'' +
+                ", type='" + type + '\'' +
                 '}';
     }
 }
