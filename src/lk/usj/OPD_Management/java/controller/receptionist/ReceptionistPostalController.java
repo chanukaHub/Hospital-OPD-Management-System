@@ -40,8 +40,8 @@ public class ReceptionistPostalController implements Initializable {
 
     @FXML
     void addPostalBtn_OnAction(ActionEvent event) throws IOException {
-        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_postal_addPostal.fxml"));
-        root.getChildren().setAll(pane);
+        //VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist_postal_addPostal.fxml"));
+        //root.getChildren().setAll(pane);
     }
 
     @FXML
