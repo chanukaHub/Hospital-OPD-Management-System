@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="760.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.ReceptionistPostalSaveReceivedPostalController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.ReceptionistPostalSaveReceivedPostalController">
    <children>
       <HBox>
          <children>
@@ -47,7 +47,7 @@
       </HBox>
       <HBox prefWidth="200.0" VBox.vgrow="ALWAYS">
          <children>
-            <VBox prefHeight="200.0">
+            <VBox prefHeight="200.0" HBox.hgrow="ALWAYS">
                <padding>
                   <Insets left="15.0" right="15.0" top="15.0" />
                </padding>
@@ -149,7 +149,7 @@
                   <Insets />
                </opaqueInsets>
             </VBox>
-            <VBox prefWidth="250.0">
+            <VBox prefWidth="250.0" HBox.hgrow="ALWAYS">
                <padding>
                   <Insets left="15.0" right="15.0" top="15.0" />
                </padding>
@@ -200,7 +200,7 @@
                   </Label>
                </children>
             </VBox>
-            <VBox prefHeight="200.0">
+            <VBox prefHeight="200.0" HBox.hgrow="ALWAYS">
                <padding>
                   <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                </padding>
@@ -224,7 +224,7 @@
                         <Insets bottom="25.0" />
                      </VBox.margin>
                   </JFXTextArea>
-                  <VBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="65.0">
+                  <VBox alignment="BOTTOM_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="65.0">
                      <children>
                         <HBox alignment="BOTTOM_RIGHT" spacing="20.0">
                            <children>
@@ -236,7 +236,7 @@
                                     <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
                                  </padding>
                               </JFXButton>
-                              <JFXButton fx:id="addPostalSaveBtn" layoutX="646.0" layoutY="10.0" onAction="#addPostalSaveBtn_OnAction" prefWidth="100.0" style="-fx-background-color: #2484FF;" text="save" textFill="WHITE">
+                              <JFXButton fx:id="addPostalSaveBtn" alignment="CENTER" layoutX="646.0" layoutY="10.0" onAction="#addPostalSaveBtn_OnAction" prefWidth="130.0" style="-fx-background-color: #2484FF;" text="Save Changes" textFill="WHITE">
                                  <font>
                                     <Font name="Gotham-Book" size="12.0" />
                                  </font>
@@ -246,7 +246,7 @@
                               </JFXButton>
                            </children>
                            <VBox.margin>
-                              <Insets bottom="15.0" left="15.0" />
+                              <Insets left="15.0" />
                            </VBox.margin>
                         </HBox>
                      </children>
