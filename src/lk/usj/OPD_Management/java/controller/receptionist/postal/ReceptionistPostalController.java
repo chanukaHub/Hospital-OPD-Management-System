@@ -1,4 +1,4 @@
-package lk.usj.OPD_Management.java.controller.receptionist;
+package lk.usj.OPD_Management.java.controller.receptionist.postal;
 
 import com.jfoenix.controls.JFXButton;
 
@@ -56,7 +56,7 @@ public class ReceptionistPostalController implements Initializable {
         postalRecivedBtn.getStyleClass().add("login_type_btn");
         postalType ="Dispatched";
 
-        Pane pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_postal_receivedTable.fxml"));
+        Pane pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_postal_dispatchedTable.fxml"));
         root.getChildren().setAll(pane);
     }
 
@@ -69,7 +69,7 @@ public class ReceptionistPostalController implements Initializable {
         postalDispatchedBtn.getStyleClass().add("login_type_btn");
         postalType = "received";
 
-        Pane pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_postal_dispatchedTable.fxml"));
+        Pane pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_postal_receivedTable.fxml"));
         root.getChildren().setAll(pane);
     }
 

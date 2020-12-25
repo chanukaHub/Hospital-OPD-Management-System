@@ -1,4 +1,4 @@
-package lk.usj.OPD_Management.java.controller.admin;
+package lk.usj.OPD_Management.java.controller.admin.user;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -21,7 +21,6 @@ import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
@@ -33,11 +32,12 @@ import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import lk.usj.OPD_Management.java.common.Common;
 import lk.usj.OPD_Management.java.dto.DoctorDTO;
-import lk.usj.OPD_Management.java.service.custom.DoctorBO;
-import lk.usj.OPD_Management.java.service.custom.impl.DoctorBOImpl;
+import lk.usj.OPD_Management.java.dto.ReceptionistDTO;
+import lk.usj.OPD_Management.java.service.custom.ReceptionistBO;
+import lk.usj.OPD_Management.java.service.custom.impl.ReceptionistBOImpl;
 
-public class AdminUserEditDeleteDoctorController implements Initializable {
-    private DoctorBO doctorBO = new DoctorBOImpl();
+public class AdminUserEditDeleteReceptionistController implements Initializable {
+    private ReceptionistBO receptionistBO = new ReceptionistBOImpl();
     String path1,path2;
     String selectedFilePath="",currentFilePath;
     String selectedPhotographPath="",currentPhotographPath;
@@ -61,7 +61,7 @@ public class AdminUserEditDeleteDoctorController implements Initializable {
     private JFXTextField usernameTextField;
 
     @FXML
-    private JFXRadioButton MaleRadioBtn;
+    private JFXRadioButton maleRadioBtn;
 
     @FXML
     private ToggleGroup Gender;
@@ -79,6 +79,9 @@ public class AdminUserEditDeleteDoctorController implements Initializable {
     private JFXTextField nicNoTextField;
 
     @FXML
+    private JFXTextField staffEmailTextField;
+
+    @FXML
     private JFXDatePicker dobDatePicker;
 
     @FXML
@@ -94,28 +97,22 @@ public class AdminUserEditDeleteDoctorController implements Initializable {
     private JFXComboBox<String> maritalStatusComboBox;
 
     @FXML
-    private JFXTextField staffEmailTextField;
-
-    @FXML
-    private JFXComboBox<String> specializedAreaComboBox;
-
-    @FXML
     private JFXPasswordField passwordField;
 
     @FXML
-    private JFXTextArea notesTextArea;
-
-    @FXML
-    private JFXButton staffPhotographBtn;
+    private JFXButton photographBtn;
 
     @FXML
     private ImageView imageView;
 
     @FXML
-    private JFXButton attachmentBtn;
+    private JFXButton documentBtn;
 
     @FXML
-    private Label attachmentLabel;
+    private Label documentLabel;
+
+    @FXML
+    private JFXTextArea notesTextArea;
 
     @FXML
     private JFXButton cancelBtn;
@@ -125,11 +122,6 @@ public class AdminUserEditDeleteDoctorController implements Initializable {
 
     @FXML
     private JFXButton deleteBtn;
-
-    @FXML
-    void MaleRadioBtn_OnAction(ActionEvent event) {
-
-    }
 
     @FXML
     void address1TextField_OnAction(ActionEvent event) {
@@ -147,24 +139,6 @@ public class AdminUserEditDeleteDoctorController implements Initializable {
     }
 
     @FXML
-    void attachmentBtn_OnAction(ActionEvent event) {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Select PDF files");
-        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("TEXT Files", "*.txt"));
-
-        File selectedFile = fileChooser.showOpenDialog(null);
-
-        if (selectedFile != null) {
-            attachmentLabel.setText(selectedFile.getPath());
-            selectedFilePath = selectedFile.getPath();
-        }
-        else {
-            attachmentLabel.setText("File selection cancelled.");
-        }
-
-    }
-
-    @FXML
     void cancelBtn_OnAction(ActionEvent event) {
         ((Node)(event.getSource())).getScene().getWindow().hide();
     }
@@ -173,7 +147,7 @@ public class AdminUserEditDeleteDoctorController implements Initializable {
     void deleteBtn_OnAction(ActionEvent event) {
         boolean deleted = false;
         try {
-            deleted = doctorBO.deleteDoctor(usernameTextField.getText());
+            deleted = receptionistBO.deleteReceptionist(usernameTextField.getText());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -188,7 +162,29 @@ public class AdminUserEditDeleteDoctorController implements Initializable {
     }
 
     @FXML
+    void documentBtn_OnAction(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select PDF files");
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("TEXT Files", "*.txt"));
+
+        File selectedFile = fileChooser.showOpenDialog(null);
+
+        if (selectedFile != null) {
+            documentLabel.setText(selectedFile.getPath());
+            selectedFilePath = selectedFile.getPath();
+        }
+        else {
+            documentLabel.setText("File selection cancelled.");
+        }
+    }
+
+    @FXML
     void femaleRadioBtn_OnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void maleRadioBtn_OnAction(ActionEvent event) {
 
     }
 
@@ -224,6 +220,28 @@ public class AdminUserEditDeleteDoctorController implements Initializable {
 
     @FXML
     void phoneNoTextField_OnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void photographBtn_OnAction(ActionEvent event) throws FileNotFoundException {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select PDF files");
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JPG Images", "*.jpg"));
+
+        File selectedFile = fileChooser.showOpenDialog(null);
+
+        if (selectedFile != null) {
+
+            String iconImagePath = selectedFile.getAbsolutePath();
+            imageView.setImage(new Image(new FileInputStream(iconImagePath)));
+            selectedPhotographPath = selectedFile.getPath();
+
+        }
+        else {
+            Common.showError("File selection cancelled.");
+            return;
+        }
 
     }
 
@@ -264,11 +282,6 @@ public class AdminUserEditDeleteDoctorController implements Initializable {
             }else{
                 maritalStatus = maritalStatusComboBox.getSelectionModel().getSelectedItem();
             }
-            if (specializedAreaComboBox.getSelectionModel().getSelectedItem().equals("Choose")){
-                specialistArea = null;
-            }else{
-                specialistArea = specializedAreaComboBox.getSelectionModel().getSelectedItem();
-            }
 
             if (selectedPhotographPath.equals("")){
                 path1 = currentPhotographPath;
@@ -287,7 +300,7 @@ public class AdminUserEditDeleteDoctorController implements Initializable {
 
 
 
-            DoctorDTO doctorDTO= new DoctorDTO(
+            ReceptionistDTO receptionistDTO= new ReceptionistDTO(
                     userName,
                     nameTextField.getText(),
                     Gender.getSelectedToggle().getUserData().toString(),
@@ -302,54 +315,26 @@ public class AdminUserEditDeleteDoctorController implements Initializable {
                     today,
                     path1,
                     path2,
-                    notesTextArea.getText(),
-                    specialistArea
+                    notesTextArea.getText()
             );
 
-            boolean b = doctorBO.updateDoctor(doctorDTO);
+            boolean b = receptionistBO.updateReceptionist(receptionistDTO);
 
             if (b){
-                Common.showMessage("Added Doctor!");
+                Common.showMessage("Updated!");
             }
             else
-                Common.showError("Not added");
+                Common.showError("Not Updated");
         } catch (Exception e1) {
-            Common.showError("Not added");
+            Common.showError("Not Updated");
             e1.printStackTrace();
         }
-
-        ((Node)(event.getSource())).getScene().getWindow().hide();
-
-    }
-
-    @FXML
-    void specializedAreaComboBox_OnAction(ActionEvent event) {
 
     }
 
     @FXML
     void staffEmailTextField_OnAction(ActionEvent event) {
 
-    }
-
-    @FXML
-    void staffPhotographBtn_OnAction(ActionEvent event) throws FileNotFoundException{
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Select PDF files");
-        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JPG Images", "*.jpg"));
-
-        File selectedFile = fileChooser.showOpenDialog(null);
-
-        if (selectedFile != null) {
-
-            String iconImagePath = selectedFile.getAbsolutePath();
-            imageView.setImage(new Image(new FileInputStream(iconImagePath)));
-            selectedPhotographPath = selectedFile.getPath();
-
-        }
-        else {
-            attachmentLabel.setText("File selection cancelled.");
-        }
     }
 
     @FXML
@@ -360,21 +345,10 @@ public class AdminUserEditDeleteDoctorController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        MaleRadioBtn.setUserData("Male");
+        maleRadioBtn.setUserData("Male");
         femaleRadioBtn.setUserData("Female");
         otherRadioBtn.setUserData("Other");
 
-        specializedAreaComboBox.getItems().addAll(
-                "Choose",
-                "Psychiatrist",
-                "Surgeon",
-                "Cardiologist",
-                "Dermatologist",
-                "Endocrinologist",
-                "Gastroenterologist",
-                "Oncologist",
-                "Radiologist"
-        );
         maritalStatusComboBox.getItems().addAll(
                 "Choose a Status",
                 "Single",
@@ -385,22 +359,11 @@ public class AdminUserEditDeleteDoctorController implements Initializable {
 
     }
 
-    public void transferMessage(DoctorDTO doctorDTO){
-        MaleRadioBtn.setUserData("Male");
+    public void transferMessage(ReceptionistDTO receptionistDTO) {
+        maleRadioBtn.setUserData("Male");
         femaleRadioBtn.setUserData("Female");
         otherRadioBtn.setUserData("Other");
 
-        specializedAreaComboBox.getItems().addAll(
-                "Choose",
-                "Psychiatrist",
-                "Surgeon",
-                "Cardiologist",
-                "Dermatologist",
-                "Endocrinologist",
-                "Gastroenterologist",
-                "Oncologist",
-                "Radiologist"
-        );
         maritalStatusComboBox.getItems().addAll(
                 "Choose a Status",
                 "Single",
@@ -408,38 +371,36 @@ public class AdminUserEditDeleteDoctorController implements Initializable {
                 "Divorced",
                 "Widowed"
         );
-        LocalDate localDate = (doctorDTO.getDateOfBirth()).toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        usernameTextField.setText(doctorDTO.getUsername());
-        nameTextField.setText(doctorDTO.getName());
-        String gender = doctorDTO.getGender();
+        LocalDate localDate = (receptionistDTO.getDateOfBirth()).toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        usernameTextField.setText(receptionistDTO.getUsername());
+        nameTextField.setText(receptionistDTO.getName());
+        String gender = receptionistDTO.getGender();
         if (gender.equals("Male"))
-            MaleRadioBtn.setSelected(true);
+            maleRadioBtn.setSelected(true);
         else if(gender.equals("Female"))
             femaleRadioBtn.setSelected(true);
         else
             otherRadioBtn.setSelected(true);
-        phoneNoTextField.setText(doctorDTO.getPhoneNumber());
-        nicNoTextField.setText(doctorDTO.getIdCard());
+        phoneNoTextField.setText(receptionistDTO.getPhoneNumber());
+        nicNoTextField.setText(receptionistDTO.getIdCard());
         dobDatePicker.setValue(localDate);
-        String addressLine = doctorDTO.getAddress();
+        String addressLine = receptionistDTO.getAddress();
         String[] address = addressLine.split(",");
         address1TextField.setText(address[0]);
         address2TextField.setText(address[1]);
         address3TextField.setText(address[2]);
-        specializedAreaComboBox.getSelectionModel().select(doctorDTO.getSpecialistArea());
-        maritalStatusComboBox.getSelectionModel().select(doctorDTO.getMaritalStatus());
-        passwordField.setText(doctorDTO.getPassword());
-        staffIDLabel.setText(doctorDTO.getStaffID());
-        notesTextArea.setText(doctorDTO.getNote());
-        staffEmailTextField.setText(doctorDTO.getStaffEmail());
+        maritalStatusComboBox.getSelectionModel().select(receptionistDTO.getMaritalStatus());
+        passwordField.setText(receptionistDTO.getPassword());
+        staffIDLabel.setText(receptionistDTO.getStaffID());
+        notesTextArea.setText(receptionistDTO.getNote());
+        staffEmailTextField.setText(receptionistDTO.getStaffEmail());
         try {
-            imageView.setImage(new Image(new FileInputStream(doctorDTO.getPhotograph())));
+            imageView.setImage(new Image(new FileInputStream(receptionistDTO.getPhotograph())));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        currentPhotographPath =doctorDTO.getPhotograph();
-        attachmentLabel.setText(doctorDTO.getDocument());
-        currentFilePath=doctorDTO.getDocument();
-
+        currentPhotographPath =receptionistDTO.getPhotograph();
+        documentLabel.setText(receptionistDTO.getDocument());
+        currentFilePath=receptionistDTO.getDocument();
     }
 }

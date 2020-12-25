@@ -1,4 +1,4 @@
-package lk.usj.OPD_Management.java.controller.receptionist;
+package lk.usj.OPD_Management.java.controller.receptionist.appointment;
 
 import com.jfoenix.controls.JFXButton;
 

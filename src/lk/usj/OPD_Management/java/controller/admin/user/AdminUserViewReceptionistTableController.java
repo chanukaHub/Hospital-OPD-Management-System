@@ -1,4 +1,4 @@
-package lk.usj.OPD_Management.java.controller.admin;
+package lk.usj.OPD_Management.java.controller.admin.user;
 
 import java.io.IOException;
 import java.net.URL;

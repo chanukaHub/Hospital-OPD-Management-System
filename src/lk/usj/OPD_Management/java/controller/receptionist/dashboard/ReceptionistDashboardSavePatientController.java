@@ -1,6 +1,11 @@
-package lk.usj.OPD_Management.java.controller.admin;
+package lk.usj.OPD_Management.java.controller.receptionist.dashboard;
 
-import com.jfoenix.controls.*;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXRadioButton;
+import com.jfoenix.controls.JFXTextArea;
+import com.jfoenix.controls.JFXTextField;
 
 import java.io.IOException;
 import java.net.URL;
@@ -19,7 +24,7 @@ import lk.usj.OPD_Management.java.dto.PatientDTO;
 import lk.usj.OPD_Management.java.service.custom.PatientBO;
 import lk.usj.OPD_Management.java.service.custom.impl.PatientBOImpl;
 
-public class AdminUserSavePatientController implements Initializable {
+public class ReceptionistDashboardSavePatientController implements Initializable {
 
     private PatientBO patientBO = new PatientBOImpl();
 
@@ -108,8 +113,9 @@ public class AdminUserSavePatientController implements Initializable {
     }
 
     @FXML
-    void cancelBtn_ActionEvent(ActionEvent event) throws IOException{
-        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_users.fxml"));
+    void cancelBtn_ActionEvent(ActionEvent event) throws IOException {
+        //root.setVisible(false);
+        VBox pane = FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_dashboard_default.fxml"));
         root.getChildren().setAll(pane);
     }
 

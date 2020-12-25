@@ -1,4 +1,4 @@
-package lk.usj.OPD_Management.java.controller.receptionist;
+package lk.usj.OPD_Management.java.controller.receptionist.appointment;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,16 +12,18 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lk.usj.OPD_Management.java.common.Common;
+import lk.usj.OPD_Management.java.controller.receptionist.appointment.ReceptionistAppointmentEditAppointmentController;
 import lk.usj.OPD_Management.java.dto.AppointmentDTO;
 import lk.usj.OPD_Management.java.service.custom.AppointmentBO;
 import lk.usj.OPD_Management.java.service.custom.impl.AppointmentBOImpl;
 
-public class ReceptionistDashboardDefaultController implements Initializable {
-    private AppointmentBO appointmentBO= new AppointmentBOImpl();
+public class ReceptionistAppointmentPendingTableController implements Initializable {
+    private AppointmentBO appointmentBO=new AppointmentBOImpl();
 
     @FXML
     private ResourceBundle resources;
@@ -30,7 +32,7 @@ public class ReceptionistDashboardDefaultController implements Initializable {
     private URL location;
 
     @FXML
-    private VBox root;
+    private AnchorPane root;
 
     @FXML
     private TableView<AppointmentDTO> pendingAppointmentTable;
@@ -39,14 +41,14 @@ public class ReceptionistDashboardDefaultController implements Initializable {
     void pendingAppointmentTable_MouseEvent(MouseEvent event) throws Exception{
         AppointmentDTO appointmentDTO=(pendingAppointmentTable.getSelectionModel().getSelectedItem());
         if(appointmentDTO == null){
-            Common.showWarning("Please select Doctor records");
+            Common.showWarning("Please select Appointment records");
             return;
         }
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/appointments_approve.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_appointments_editAppointment.fxml"));
         Parent root = loader.load();
-        AppointmentApproveController appointmentApproveController = loader.getController();
-        appointmentApproveController.transferMessage(appointmentDTO);
+        ReceptionistAppointmentEditAppointmentController receptionistAppointmentEditAppointmentController = loader.getController();
+        receptionistAppointmentEditAppointmentController.transferMessage(appointmentDTO);
 
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
@@ -57,15 +59,11 @@ public class ReceptionistDashboardDefaultController implements Initializable {
         stage.showAndWait();
 
 
-        //try {
-        //    loadPendingAppointmentTable();
-        //} catch (Exception e) {
-        //    e.printStackTrace();
-        //}
-        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_dashboard_default.fxml"));
+        Pane pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_appointment_pendingTable.fxml"));
         this.root.getChildren().setAll(pane);
 
     }
+
 
     private void loadPendingAppointmentTable() throws Exception {
         pendingAppointmentTable.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("appointmentId"));

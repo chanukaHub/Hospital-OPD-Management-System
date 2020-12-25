@@ -1,4 +1,4 @@
-package lk.usj.OPD_Management.java.controller.receptionist;
+package lk.usj.OPD_Management.java.controller.receptionist.dashboard;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;

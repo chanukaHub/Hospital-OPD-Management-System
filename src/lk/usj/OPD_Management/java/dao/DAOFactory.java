@@ -29,7 +29,7 @@ public class DAOFactory {
             case VISITOR:
                 return (T) new VisitorDAOImpl();
             case POSTAL:
-                return (T) new PostalIDAOImpl();
+                return (T) new PostalDAOImpl();
             case APPOINTMENT:
                 return (T) new AppointmentDAOImpl();
             default:

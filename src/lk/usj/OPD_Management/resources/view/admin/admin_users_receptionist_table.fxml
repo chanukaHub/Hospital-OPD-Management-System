@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.admin.AdminUserViewReceptionistTableController">
+<Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.admin.user.AdminUserViewReceptionistTableController">
     <children>
         <TableView fx:id="receptionistTable" onMouseClicked="#receptionistTable_MouseEvent" prefHeight="390.0" prefWidth="730.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;">
             <columns>

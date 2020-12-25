@@ -4,9 +4,9 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="432.0" minWidth="730.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="root" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="432.0" minWidth="730.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.postal.ReceptionistPostalReceivedTableController">
    <children>
-      <TableView minHeight="432.0" minWidth="730.0">
+      <TableView fx:id="receivedPostalTable" minHeight="432.0" minWidth="730.0" onMouseClicked="#receivedPostalTable_OnAction">
         <columns>
           <TableColumn prefWidth="142.0" text="Ref No" />
             <TableColumn prefWidth="144.0" text="Date" />
