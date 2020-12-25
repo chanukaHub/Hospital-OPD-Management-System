@@ -1,10 +1,20 @@
 package lk.usj.OPD_Management.java.controller.receptionist;
 
-
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
+import lk.usj.OPD_Management.java.common.Common;
+import lk.usj.OPD_Management.java.dto.PostalDTO;
+import lk.usj.OPD_Management.java.service.custom.PostalBO;
+import lk.usj.OPD_Management.java.service.custom.impl.PostalBOImpl;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,23 +25,11 @@ import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
-import javafx.stage.FileChooser;
-import lk.usj.OPD_Management.java.common.Common;
-import lk.usj.OPD_Management.java.dto.PostalDTO;
-import lk.usj.OPD_Management.java.dto.VisitorDTO;
-import lk.usj.OPD_Management.java.service.custom.PostalBO;
-import lk.usj.OPD_Management.java.service.custom.impl.PostalBOImpl;
 
-public class ReceptionistPostalSaveReceivedPostalController implements Initializable {
+public class ReceptionistPostalSaveDispatchedPostalController implements Initializable {
     private PostalBO postalBO=new PostalBOImpl();
     String selectedFilePath;
-    final String postalType="Received";
+    final String postalType="Dispatched";
 
     @FXML
     private VBox root;
@@ -133,13 +131,13 @@ public class ReceptionistPostalSaveReceivedPostalController implements Initializ
             if (b){
                 Common.showMessage("Added Postal Details!");
                 postalReferenceNOTxt.clear();
-                        fromAddressTxt.clear();
-                        toAddressTxt.clear();
-                        fromNameTxt.clear();
-                        toNameTxt.clear();
-                        postalDateDatePicker.getEditor().clear();
-                        postalAttachmentLbl.setText("");
-                        postalNotesTxtArea.clear();
+                fromAddressTxt.clear();
+                toAddressTxt.clear();
+                fromNameTxt.clear();
+                toNameTxt.clear();
+                postalDateDatePicker.getEditor().clear();
+                postalAttachmentLbl.setText("");
+                postalNotesTxtArea.clear();
             }
             else
                 Common.showError("Not added");
@@ -181,12 +179,6 @@ public class ReceptionistPostalSaveReceivedPostalController implements Initializ
 
             postalAttachmentLbl.setText(selectedFile.getPath());
             selectedFilePath = selectedFile.getPath();
-            //try {
-            //File newFile = new File("AttachmentDocumentsStorage\\new.txt");
-            //Files.copy(selectedFile.toPath(),newFile.toPath());
-            //}catch (Exception e){
-            //e.printStackTrace();
-            //}
         }
         else {
             postalAttachmentLbl.setText("File selection cancelled.");
@@ -215,6 +207,4 @@ public class ReceptionistPostalSaveReceivedPostalController implements Initializ
 
     }
 
-
-    }
-
+}
