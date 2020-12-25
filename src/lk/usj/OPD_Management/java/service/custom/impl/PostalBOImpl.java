@@ -22,7 +22,8 @@ public class PostalBOImpl implements PostalBO {
                 postalDTO.getToName(),
                 postalDTO.getPostalDate(),
                 postalDTO.getAttachment(),
-                postalDTO.getNotes()
+                postalDTO.getNotes(),
+                postalDTO.getType()
         ));
     }
 }

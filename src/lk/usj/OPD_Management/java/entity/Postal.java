@@ -11,12 +11,13 @@ public class Postal {
     private Date postalDate;
     private String attachment;
     private String notes;
+    private String type;
 
     public Postal() {
 
     }
 
-    public Postal(String referenceNumber, String fromAddress, String toAddress, String fromName, String toName, Date postalDate, String attachment, String notes) {
+    public Postal(String referenceNumber, String fromAddress, String toAddress, String fromName, String toName, Date postalDate, String attachment, String notes, String type) {
         this.referenceNumber = referenceNumber;
         this.fromAddress = fromAddress;
         this.toAddress = toAddress;
@@ -25,6 +26,7 @@ public class Postal {
         this.postalDate = postalDate;
         this.attachment = attachment;
         this.notes = notes;
+        this.type = type;
     }
 
     public String getReferenceNumber() {
@@ -91,6 +93,14 @@ public class Postal {
         this.notes = notes;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public String toString() {
         return "Postal{" +
@@ -102,6 +112,7 @@ public class Postal {
                 ", postalDate=" + postalDate +
                 ", attachment='" + attachment + '\'' +
                 ", notes='" + notes + '\'' +
+                ", type='" + type + '\'' +
                 '}';
     }
 }

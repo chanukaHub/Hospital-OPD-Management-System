@@ -17,7 +17,7 @@ public class PostalIDAOImpl implements PostalDAO {
         String strDate = format.format(var1.getPostalDate());
 
         String wantedLine = var1.getReferenceNumber()+"#"+var1.getFromAddress()+"#"+var1.getToAddress().toString()+"#"+var1.getFromName()+"#"+var1.getToName()+"#"+strDate+"#"+
-                var1.getAttachment()+"#"+var1.getNotes();
+                var1.getAttachment()+"#"+var1.getNotes()+"#"+var1.getType();
         File file = new File("Postal.txt");
         if (!file.exists()) {//checking the is given file exists
 
