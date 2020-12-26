@@ -17,9 +17,9 @@
       </Text>
       <TableView fx:id="visitorTable" onMouseClicked="#visitorTable_OnAction" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" VBox.vgrow="ALWAYS">
         <columns>
-          <TableColumn prefWidth="228.0" text="Name" />
-          <TableColumn prefWidth="114.0" text="NIC No" />
-            <TableColumn prefWidth="93.0" text="Date" />
+          <TableColumn prefWidth="147.00000113248825" text="Name" />
+          <TableColumn prefWidth="124.19996643066406" text="NIC No" />
+            <TableColumn prefWidth="167.79998779296875" text="Date" />
             <TableColumn prefWidth="92.0" text="In Time" />
             <TableColumn prefWidth="89.0" text="Out Time" />
             <TableColumn prefWidth="113.0" text="Phone No" />

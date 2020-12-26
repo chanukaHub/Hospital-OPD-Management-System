@@ -59,5 +59,21 @@ public class VisitorBOImpl implements VisitorBO {
         return visitors;
     }
 
+    @Override
+    public boolean updateVisitor(VisitorDTO visitorDTO) throws Exception {
+        return visitorDAO.update(new Visitor(
+                visitorDTO.getVisitorId(),
+                visitorDTO.getVisitorName(),
+                visitorDTO.getPurpose(),
+                visitorDTO.getTelNo(),
+                visitorDTO.getNicNo(),
+                visitorDTO.getDate(),
+                visitorDTO.getInTime(),
+                visitorDTO.getOutTime(),
+                visitorDTO.getAttachment(),
+                visitorDTO.getNotes()
+        ));
+    }
+
 
 }

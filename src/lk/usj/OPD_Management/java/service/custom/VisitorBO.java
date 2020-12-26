@@ -12,4 +12,6 @@ public interface VisitorBO extends SuperBO {
     int getNextVisitorID() throws Exception;
 
     ArrayList<VisitorDTO> getAllVisitor() throws Exception;
+
+    boolean updateVisitor(VisitorDTO visitorDTO) throws Exception;
 }
