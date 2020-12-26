@@ -15,7 +15,7 @@ public class VisitorDAOImpl implements VisitorDAO {
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         String strDate = format.format(var1.getDate());
 
-        String wantedLine = var1.getVisitorName()+"#"+var1.getPurpose()+"#"+var1.getTelNo().toString()+"#"+var1.getNicNo()+"#"+strDate+"#"+
+        String wantedLine = var1.getVisitorId()+"#"+var1.getVisitorName()+"#"+var1.getPurpose()+"#"+var1.getTelNo().toString()+"#"+var1.getNicNo()+"#"+strDate+"#"+
                 var1.getInTime().toString()+"#"+var1.getOutTime().toString()+"#"+var1.getAttachment()+"#"+var1.getNotes();
         File file = new File("Visitor.txt");
         if (!file.exists()) {//checking the is given file exists
@@ -57,5 +57,39 @@ public class VisitorDAOImpl implements VisitorDAO {
     @Override
     public ArrayList<Visitor> getAll() throws Exception {
         return null;
+    }
+
+    @Override
+    public int getLastVisitorID() throws Exception {
+        try{
+            String visitorId;
+            File file = new File("Visitor.txt");
+            if (!file.exists()) {//checking the is given file exists
+
+                file.createNewFile();//creating new file
+                Exception fileError =new IOException("File is not founded");
+                System.out.println(fileError);
+            }
+            Scanner scanner =new Scanner(file);
+
+            String last = null;
+
+            while(scanner.hasNextLine()){
+                last=scanner.nextLine();
+            }
+            if (last == null){
+                return 0;
+            }else {
+                String[] details = last.split("#");
+                visitorId=details[0];
+                return Integer.parseInt(visitorId.substring(4));
+            }
+
+
+
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
+        return 0;
     }
 }

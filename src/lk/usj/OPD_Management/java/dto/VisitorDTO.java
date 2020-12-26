@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class VisitorDTO {
 
-
+    private String visitorId;
     private String visitorName;
     private String purpose;
     private Integer telNo;
@@ -20,7 +20,8 @@ public class VisitorDTO {
 
     public VisitorDTO(){}
 
-    public VisitorDTO(String visitorName, String purpose, Integer telNo, String nicNo, Date date, LocalTime inTime, LocalTime outTime, String attachment, String notes) {
+    public VisitorDTO(String visitorId, String visitorName, String purpose, Integer telNo, String nicNo, Date date, LocalTime inTime, LocalTime outTime, String attachment, String notes) {
+        this.visitorId = visitorId;
         this.visitorName = visitorName;
         this.purpose = purpose;
         this.telNo = telNo;
@@ -104,12 +105,21 @@ public class VisitorDTO {
         this.notes = notes;
     }
 
+    public String getVisitorId() {
+        return visitorId;
+    }
+
+    public void setVisitorId(String visitorId) {
+        this.visitorId = visitorId;
+    }
+
     @Override
     public String toString() {
         return "VisitorDTO{" +
-                "visitorName='" + visitorName + '\'' +
+                "visitorId='" + visitorId + '\'' +
+                ", visitorName='" + visitorName + '\'' +
                 ", purpose='" + purpose + '\'' +
-                ", telNo='" + telNo + '\'' +
+                ", telNo=" + telNo +
                 ", nicNo='" + nicNo + '\'' +
                 ", date=" + date +
                 ", inTime=" + inTime +

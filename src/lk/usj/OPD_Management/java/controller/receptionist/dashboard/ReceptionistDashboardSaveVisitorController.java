@@ -31,6 +31,7 @@ import lk.usj.OPD_Management.java.service.custom.impl.VisitorBOImpl;
 public class ReceptionistDashboardSaveVisitorController implements Initializable {
     private VisitorBO visitorBO = new VisitorBOImpl();
     String selectedFilePath;
+    String visitorId;
 
     @FXML
     private ResourceBundle resources;
@@ -117,6 +118,7 @@ public class ReceptionistDashboardSaveVisitorController implements Initializable
     @FXML
     void saveBtn_OnActon(ActionEvent event) {
         try{
+
             Integer telNo;
             if (visitorAttachmentBtn.getText().equals("")){
                 Common.showError("Please Enter Name");
@@ -158,6 +160,7 @@ public class ReceptionistDashboardSaveVisitorController implements Initializable
 
 
             VisitorDTO visitorDTO= new VisitorDTO(
+                    visitorId,
                     visitorNameTxt.getText(),
                     purposeTxt.getText(),
                     telNo,
@@ -173,15 +176,8 @@ public class ReceptionistDashboardSaveVisitorController implements Initializable
 
             if (b){
                 Common.showMessage("Added Visitor!");
-                visitorNameTxt.clear();
-                purposeTxt.clear();
-                telNoTxt.clear();
-                nicTxt.clear();
-                dateDatePicker.getEditor().clear();
-                inTimeTimePicker.getEditor().clear();
-                outTimeTimePicker.getEditor().clear();
-                attachmentLabel.setText("");
-                notesTxtArea.clear();
+                VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_dashboard_addVisitor.fxml"));
+                root.getChildren().setAll(pane);
             }
             else
                 Common.showError("Not added");
@@ -226,9 +222,16 @@ public class ReceptionistDashboardSaveVisitorController implements Initializable
             purposeTxt.requestFocus();
     }
 
+    int getNextVisitorID() throws Exception {
+        return visitorBO.getNextVisitorID();
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        try {
+            visitorId=("V"+String.format("%04d",getNextVisitorID()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

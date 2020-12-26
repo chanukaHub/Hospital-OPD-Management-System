@@ -199,6 +199,8 @@ public class ReceptionistDashboardSaveAppointmentController implements Initializ
 
             if (b){
                 Common.showMessage("Added Appointment!");
+                VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_dashboard_addAppointment.fxml"));
+                root.getChildren().setAll(pane);
             }
             else
                 Common.showError("Not added");

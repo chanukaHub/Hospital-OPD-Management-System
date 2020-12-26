@@ -17,6 +17,7 @@ public class VisitorBOImpl implements VisitorBO {
     @Override
     public boolean addVisitor(VisitorDTO visitorDTO) throws Exception {
         return visitorDAO.save(new Visitor(
+                visitorDTO.getVisitorId(),
                 visitorDTO.getVisitorName(),
                 visitorDTO.getPurpose(),
                 visitorDTO.getTelNo(),
@@ -27,5 +28,10 @@ public class VisitorBOImpl implements VisitorBO {
                 visitorDTO.getAttachment(),
                 visitorDTO.getNotes()
         ));
+    }
+
+    @Override
+    public int getNextVisitorID() throws Exception {
+        return (visitorDAO.getLastVisitorID()+1);
     }
 }

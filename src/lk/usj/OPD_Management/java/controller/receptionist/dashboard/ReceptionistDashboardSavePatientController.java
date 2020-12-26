@@ -207,20 +207,8 @@ public class ReceptionistDashboardSavePatientController implements Initializable
 
             if (b){
                 Common.showMessage("Added Patient!");
-                nameTextField.clear();
-                maleRadioBtn.setSelected(false);
-                femaleRadioBtn.setSelected(false);
-                otherRadioBtn.setSelected(false);
-                phoneNoTextField.clear();
-                nicNoTextField.clear();
-                dobDatePicker.getEditor().clear();
-                address1TextField.clear();
-                address2TextField.clear();
-                address3TextField.clear();
-                maritalStatusComboBox.getSelectionModel().clearSelection();
-                bloodGroupComboBox.getSelectionModel().clearSelection();
-                allergiesTextField.clear();
-                notesTextArea.clear();
+                VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_dashboard_addPatient.fxml"));
+                root.getChildren().setAll(pane);
             }
             else
                 Common.showError("Not added");
