@@ -1,13 +1,13 @@
 package lk.usj.OPD_Management.java.dao.custom.Impl;
 
 import lk.usj.OPD_Management.java.dao.custom.VisitorDAO;
+import lk.usj.OPD_Management.java.entity.Patient;
 import lk.usj.OPD_Management.java.entity.Visitor;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.time.LocalTime;
+import java.util.*;
 
 public class VisitorDAOImpl implements VisitorDAO {
     @Override
@@ -56,6 +56,50 @@ public class VisitorDAOImpl implements VisitorDAO {
 
     @Override
     public ArrayList<Visitor> getAll() throws Exception {
+        try{
+            String visitorId,visitorName,purpose,phoneNumber,nicNo,date,inTime,outTime,attachment,note;
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+            File file = new File("Visitor.txt");
+            if (!file.exists()) {//checking the is given file exists
+
+                file.createNewFile();//creating new file
+                Exception fileError =new IOException("File is not founded");
+                System.out.println(fileError);
+            }
+            Scanner scanner =new Scanner(file);
+
+            ArrayList<Visitor> visitors = new ArrayList<>();
+
+            while(scanner.hasNextLine()){
+                String line =scanner.nextLine();
+                String[] details = line.split("#");
+                visitorId=details[0];
+                visitorName=details[1];
+                purpose=details[2];
+                phoneNumber=details[3];
+                nicNo=details[4];
+                date=details[5];
+                inTime=details[6];
+                outTime=details[7];
+                attachment=details[8];
+                note=details[9];
+
+                try {
+                    String[] dateArray = date.split("/");
+                    Date date1 = new GregorianCalendar(Integer.parseInt(dateArray[2]), Integer.parseInt(dateArray[1]) - 1, Integer.parseInt(dateArray[0])).getTime();
+                    LocalTime localInTime= LocalTime.parse(inTime);
+                    LocalTime localOutTime= LocalTime.parse(outTime);
+                    Visitor visitor= new Visitor(visitorId, visitorName, purpose, Integer.parseInt(phoneNumber), nicNo,date1, localInTime, localOutTime, attachment,note);
+                    visitors.add(visitor);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+            return visitors;
+
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
         return null;
     }
 
