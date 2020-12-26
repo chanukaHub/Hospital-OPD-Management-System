@@ -33,11 +33,11 @@
             </VBox>
             <VBox alignment="TOP_RIGHT" prefWidth="50.0" HBox.hgrow="ALWAYS">
                <children>
-                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="32.0" styleClass="hover_bg_color_red" stylesheets="@../css/styles.css">
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="32.0" styleClass="hover_bg_color_red" stylesheets="@../../css/styles.css">
                      <children>
                         <ImageView fitHeight="8.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="8.0">
                            <image>
-                              <Image url="@../images/Close_Icon.png" />
+                              <Image url="@../../images/Close_Icon.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -70,14 +70,14 @@
                                     <Rectangle2D />
                                  </viewport>
                                  <image>
-                                    <Image url="@../images/default_user_image.png" />
+                                    <Image url="@../../images/default_user_image.png" />
                                  </image>
                               </ImageView>
                               <JFXButton alignment="CENTER_RIGHT" layoutX="63.0" layoutY="69.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="26.0" prefWidth="30.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5;" text=" " textFill="#282b2f" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="14.0">
                                  <graphic>
                                     <ImageView fitHeight="18.0" fitWidth="18.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" translateX="2.0">
                                        <image>
-                                          <Image url="@../images/Photo_icon.png" />
+                                          <Image url="@../../images/Photo_icon.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>

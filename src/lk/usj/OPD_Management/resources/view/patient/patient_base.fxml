@@ -20,7 +20,7 @@
                <children>
                   <ImageView fitHeight="51.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/blue_logo.png" />
+                        <Image url="@../../images/blue_logo.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="16.0" />
@@ -39,7 +39,7 @@
                            <children>
                               <ImageView fx:id="profileImageView" fitHeight="33.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../images/user_Image.png" />
+                                    <Image url="@../../images/user_Image.png" />
                                  </image>
                                  <HBox.margin>
                                     <Insets />
@@ -86,11 +86,11 @@
                <children>
                   <VBox style="-fx-background-color: #ffffff;" HBox.hgrow="ALWAYS">
                      <children>
-                        <HBox alignment="CENTER" prefHeight="20.0" styleClass="hover_bg_color_grey" stylesheets="@../css/styles.css">
+                        <HBox alignment="CENTER" prefHeight="20.0" styleClass="hover_bg_color_grey" stylesheets="@../../css/styles.css">
                            <children>
                               <ImageView fitHeight="8.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../images/minimize_icon.png" />
+                                    <Image url="@../../images/minimize_icon.png" />
                                  </image>
                               </ImageView>
                            </children>
@@ -99,11 +99,11 @@
                   </VBox>
                   <VBox layoutX="10.0" layoutY="10.0" style="-fx-background-color: #ffffff;" HBox.hgrow="ALWAYS">
                      <children>
-                        <HBox alignment="CENTER" prefHeight="20.0" styleClass="hover_bg_color_grey" stylesheets="@../css/styles.css">
+                        <HBox alignment="CENTER" prefHeight="20.0" styleClass="hover_bg_color_grey" stylesheets="@../../css/styles.css">
                            <children>
                               <ImageView fitHeight="8.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../images/maximize_icon.png" />
+                                    <Image url="@../../images/maximize_icon.png" />
                                  </image>
                               </ImageView>
                            </children>
@@ -112,11 +112,11 @@
                   </VBox>
                   <VBox layoutX="110.0" layoutY="10.0" style="-fx-background-color: #ffffff;" HBox.hgrow="ALWAYS">
                      <children>
-                        <HBox alignment="CENTER" prefHeight="20.0" stylesheets="@../css/styles.css">
+                        <HBox alignment="CENTER" prefHeight="20.0" stylesheets="@../../css/styles.css">
                            <children>
                               <ImageView fitHeight="8.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../images/Close_Icon.png" />
+                                    <Image url="@../../images/Close_Icon.png" />
                                  </image>
                               </ImageView>
                            </children>
@@ -137,13 +137,13 @@
          <children>
             <VBox>
                <children>
-                  <HBox fx:id="dashboardHBox" onMouseClicked="#dashboardHBox_MouseEvent" stylesheets="@../css/styles.css">
+                  <HBox fx:id="dashboardHBox" onMouseClicked="#dashboardHBox_MouseEvent" stylesheets="@../../css/styles.css">
                      <children>
                         <HBox>
                            <children>
                               <ImageView fitHeight="20.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../images/dashboard_icon.png" />
+                                    <Image url="@../../images/dashboard_icon.png" />
                                  </image>
                                  <HBox.margin>
                                     <Insets bottom="5.0" left="10.0" right="5.0" top="11.0" />
@@ -171,13 +171,13 @@
                         <Insets left="5.0" />
                      </padding>
                   </HBox>
-                  <HBox fx:id="appointmentHBox" layoutX="10.0" layoutY="130.0" onMouseClicked="#appointmentHBox_MouseEvent" stylesheets="@../css/styles.css">
+                  <HBox fx:id="appointmentHBox" layoutX="10.0" layoutY="130.0" onMouseClicked="#appointmentHBox_MouseEvent" stylesheets="@../../css/styles.css">
                      <children>
                         <HBox>
                            <children>
                               <ImageView fitHeight="20.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../images/Appointments_Icon.png" />
+                                    <Image url="@../../images/Appointments_Icon.png" />
                                  </image>
                                  <HBox.margin>
                                     <Insets bottom="5.0" left="10.0" right="5.0" top="11.0" />
@@ -205,13 +205,13 @@
                         <Insets left="5.0" />
                      </padding>
                   </HBox>
-                  <HBox fx:id="complainsHBox" layoutX="10.0" layoutY="90.0" onMouseClicked="#complainsHBox_MouseEvent" stylesheets="@../css/styles.css">
+                  <HBox fx:id="complainsHBox" layoutX="10.0" layoutY="90.0" onMouseClicked="#complainsHBox_MouseEvent" stylesheets="@../../css/styles.css">
                      <children>
                         <HBox>
                            <children>
                               <ImageView fitHeight="20.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../images/complaints_icon.png" />
+                                    <Image url="@../../images/complaints_icon.png" />
                                  </image>
                                  <HBox.margin>
                                     <Insets bottom="5.0" left="10.0" right="5.0" top="11.0" />
@@ -239,13 +239,13 @@
                         <Insets left="5.0" />
                      </padding>
                   </HBox>
-                  <HBox fx:id="supportHBox" layoutX="10.0" layoutY="170.0" onMouseClicked="#supportHBox_MouseEvent" stylesheets="@../css/styles.css">
+                  <HBox fx:id="supportHBox" layoutX="10.0" layoutY="170.0" onMouseClicked="#supportHBox_MouseEvent" stylesheets="@../../css/styles.css">
                      <children>
                         <HBox>
                            <children>
                               <ImageView fitHeight="20.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../images/support_icon.png" />
+                                    <Image url="@../../images/support_icon.png" />
                                  </image>
                                  <HBox.margin>
                                     <Insets bottom="5.0" left="10.0" right="5.0" top="11.0" />

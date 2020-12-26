@@ -203,7 +203,7 @@ public class LoginController implements Initializable{
                 if (loginBO.isValidPatientPassword(new PatientDTO(usernameTxt1.getText(), passwordTxt1.getText()))) {
                     try {
                         //Load second scene
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/patient_base.fxml"));
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/patient/patient_base.fxml"));
                         Parent root = loader.load();
 
                         //Get controller of scene2
@@ -232,7 +232,7 @@ public class LoginController implements Initializable{
                 if (loginBO.isValidDoctorPassword(new DoctorDTO(usernameTxt1.getText(), passwordTxt1.getText()))) {
                     try {
                         //Load second scene
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/doctor_base.fxml"));
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/doctor/doctor_base.fxml"));
                         Parent root = loader.load();
 
                         //Get controller of scene2
