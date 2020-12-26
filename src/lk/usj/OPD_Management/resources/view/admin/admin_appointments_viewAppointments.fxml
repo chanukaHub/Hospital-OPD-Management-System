@@ -165,23 +165,7 @@
                   </Text>
                   <HBox spacing="5.0">
                      <children>
-                        <Label prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="DD" textFill="#282b2f">
-                           <padding>
-                              <Insets left="5.0" />
-                           </padding>
-                           <font>
-                              <Font name="Gotham-Book" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="MM" textFill="#282b2f">
-                           <padding>
-                              <Insets left="5.0" />
-                           </padding>
-                           <font>
-                              <Font name="Gotham-Book" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="45.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="YYYY" textFill="#282b2f">
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="YYYY" textFill="#282b2f">
                            <padding>
                               <Insets left="5.0" />
                            </padding>
@@ -204,23 +188,7 @@
                   </Text>
                   <HBox layoutX="25.0" layoutY="45.0" spacing="5.0">
                      <children>
-                        <Label prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="00" textFill="#282b2f">
-                           <padding>
-                              <Insets left="5.0" />
-                           </padding>
-                           <font>
-                              <Font name="Gotham-Book" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="00" textFill="#282b2f">
-                           <padding>
-                              <Insets left="5.0" />
-                           </padding>
-                           <font>
-                              <Font name="Gotham-Book" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="AM" textFill="#282b2f">
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="AM" textFill="#282b2f">
                            <padding>
                               <Insets left="5.0" />
                            </padding>
@@ -268,7 +236,15 @@
                      <children>
                         <HBox alignment="BOTTOM_RIGHT" spacing="20.0">
                            <children>
-                              <JFXButton layoutX="646.0" layoutY="10.0" prefWidth="100.0" style="-fx-background-color: #2484FF;" text="Ok" textFill="WHITE">
+                              <JFXButton style="-fx-background-color: transparent; -fx-border-color: #2484FF; -fx-border-radius: 5px; -fx-border-width: 1px;" text="Cancel" textFill="#2484ff">
+                                 <font>
+                                    <Font name="Gotham-Book" size="12.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
+                                 </padding>
+                              </JFXButton>
+                              <JFXButton prefHeight="37.0" prefWidth="100.0" style="-fx-background-color: #FF4242;" text="Delete" textFill="WHITE">
                                  <font>
                                     <Font name="Gotham-Book" size="12.0" />
                                  </font>
