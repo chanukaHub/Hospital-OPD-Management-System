@@ -42,7 +42,7 @@ public class ReceptionistPostalReceivedTableController implements Initializable 
     void receivedPostalTable_OnAction(MouseEvent event) throws Exception{
         PostalDTO postalDTO=(receivedPostalTable.getSelectionModel().getSelectedItem());
         if(postalDTO == null){
-            Common.showWarning("Please select Doctor records");
+            Common.showWarning("Please select Postal records");
             return;
         }
 

@@ -15,4 +15,6 @@ public interface PostalBO extends SuperBO {
     boolean updatePostal(PostalDTO postalDTO)throws Exception;
 
     boolean deleteDoctor(String text) throws Exception;
+
+    ArrayList<PostalDTO> getPostalList() throws Exception;
 }

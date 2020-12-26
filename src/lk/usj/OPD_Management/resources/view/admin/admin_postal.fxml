@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.admin.postal.AdminPostalController">
    <children>
       <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Postal">
          <font>
@@ -17,12 +17,13 @@
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </VBox.margin>
       </Text>
-      <TableView prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" VBox.vgrow="ALWAYS">
+      <TableView fx:id="postalTable" onMouseClicked="#postalTable_MouseEvent" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" VBox.vgrow="ALWAYS">
         <columns>
-          <TableColumn prefWidth="121.0" text="Reference No" />
-          <TableColumn prefWidth="122.0" text="Date" />
-            <TableColumn prefWidth="229.0" text="From" />
-            <TableColumn prefWidth="257.0" text="To" />
+          <TableColumn prefWidth="113.59997862577438" text="Reference No" />
+          <TableColumn prefWidth="185.6000213623047" text="Date" />
+            <TableColumn prefWidth="144.79998779296875" text="From" />
+            <TableColumn prefWidth="155.20001220703125" text="To" />
+            <TableColumn prefWidth="123.20001220703125" text="Postal Type" />
         </columns>
          <VBox.margin>
             <Insets bottom="15.0" left="15.0" right="15.0" />

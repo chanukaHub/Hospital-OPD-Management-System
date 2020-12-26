@@ -93,4 +93,24 @@ public class PostalBOImpl implements PostalBO {
     public boolean deleteDoctor(String text) throws Exception {
         return postalDAO.delete(text);
     }
+
+    @Override
+    public ArrayList<PostalDTO> getPostalList() throws Exception {
+        ArrayList<Postal> allPostal = postalDAO.getAll();
+        ArrayList<PostalDTO> postal = new ArrayList<>();
+        for (Postal postal1 : allPostal) {
+            postal.add(new PostalDTO(
+                    postal1.getReferenceNumber(),
+                    postal1.getFromAddress(),
+                    postal1.getToAddress(),
+                    postal1.getFromName(),
+                    postal1.getToName(),
+                    postal1.getPostalDate(),
+                    postal1.getAttachment(),
+                    postal1.getNotes(),
+                    postal1.getType()
+            ));
+        }
+        return postal;
+    }
 }

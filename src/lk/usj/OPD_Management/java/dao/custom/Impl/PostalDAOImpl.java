@@ -213,6 +213,46 @@ public class PostalDAOImpl implements PostalDAO {
 
     @Override
     public ArrayList<Postal> getAll() throws Exception {
+        try{
+            String referenceNo, fromAddress, toAddress, fromName, toName,date, attachment, notes, postalType;
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+            File file = new File("Postal.txt");
+            if (!file.exists()) {//checking the is given file exists
+
+                file.createNewFile();//creating new file
+                Exception fileError =new IOException("File is not founded");
+                System.out.println(fileError);
+            }
+            Scanner scanner =new Scanner(file);
+
+            ArrayList<Postal> postals = new ArrayList<>();
+
+            while(scanner.hasNextLine()){
+                String line =scanner.nextLine();
+                String[] details = line.split("#");
+                referenceNo=details[0];
+                fromAddress=details[1];
+                toAddress=details[2];
+                fromName=details[3];
+                toName=details[4];
+                date=details[5];
+                attachment=details[6];
+                notes=details[7];
+                postalType=details[8];
+
+
+                String[] dateArray = date.split("/");
+                Date postalDate = new GregorianCalendar(Integer.parseInt(dateArray[2]), Integer.parseInt(dateArray[1]) - 1, Integer.parseInt(dateArray[0])).getTime();
+                Postal postal = new Postal(referenceNo, fromAddress, toAddress, fromName, toName, postalDate, attachment, notes, postalType);
+                postals.add(postal);
+
+
+            }
+            return postals;
+
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
         return null;
     }
 
