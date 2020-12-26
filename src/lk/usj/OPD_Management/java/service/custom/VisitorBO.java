@@ -14,4 +14,6 @@ public interface VisitorBO extends SuperBO {
     ArrayList<VisitorDTO> getAllVisitor() throws Exception;
 
     boolean updateVisitor(VisitorDTO visitorDTO) throws Exception;
+
+    boolean deleteVisitor(String visitorId) throws Exception;
 }

@@ -95,7 +95,17 @@ public class ReceptionistVisitorEditVisitorController implements Initializable {
 
     @FXML
     void deleteBtn_OnAction(ActionEvent event) {
+        boolean deleted = false;
+        try {
+            deleted = visitorBO.deleteVisitor(visitorId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (deleted) {
+            Common.showMessage("DELETE !");
+        }
 
+        ((Node)(event.getSource())).getScene().getWindow().hide();
     }
 
     @FXML

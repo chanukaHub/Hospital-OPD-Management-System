@@ -130,6 +130,81 @@ public class VisitorDAOImpl implements VisitorDAO {
 
     @Override
     public boolean delete(String var1) throws Exception {
+        try{
+            String visitorId,visitorName,purpose,phoneNumber,nicNo,date,inTime,outTime,attachment,note;
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+            File file = new File("Visitor.txt");
+            if (!file.exists()) {//checking the is given file exists
+
+                file.createNewFile();//creating new file
+                Exception fileError =new IOException("File is not founded");
+                System.out.println(fileError);
+            }
+            Scanner scanner =new Scanner(file);
+
+            ArrayList<Visitor> visitors = new ArrayList<>();
+
+            while(scanner.hasNextLine()){
+                String line =scanner.nextLine();
+                String[] details = line.split("#");
+                visitorId=details[0];
+                visitorName=details[1];
+                purpose=details[2];
+                phoneNumber=details[3];
+                nicNo=details[4];
+                date=details[5];
+                inTime=details[6];
+                outTime=details[7];
+                attachment=details[8];
+                note=details[9];
+
+
+                if (visitorId.equals(var1)){
+                    continue;
+                }else {
+                    String[] dateArray = date.split("/");
+                    Date date1 = new GregorianCalendar(Integer.parseInt(dateArray[2]), Integer.parseInt(dateArray[1]) - 1, Integer.parseInt(dateArray[0])).getTime();
+                    LocalTime localInTime= LocalTime.parse(inTime);
+                    LocalTime localOutTime= LocalTime.parse(outTime);
+                    Visitor visitor= new Visitor(visitorId, visitorName, purpose, Integer.parseInt(phoneNumber), nicNo,date1, localInTime, localOutTime, attachment,note);
+                    visitors.add(visitor);
+                }
+
+
+            }
+
+            PrintWriter writer = new PrintWriter(file);
+            writer.print("");
+            writer.close();
+
+            if (!file.exists()) {//checking the is given file exists
+
+                file.createNewFile();//creating new file
+                Exception fileError =new IOException("File is not founded");
+                System.out.println(fileError);
+            }
+
+            FileWriter fw = new FileWriter(file,true);
+            BufferedWriter bw = new BufferedWriter(fw);
+
+
+            for (Visitor v:visitors){
+                String strDate = format.format(v.getDate());
+
+                String wantedLine = v.getVisitorId()+"#"+v.getVisitorName()+"#"+v.getPurpose()+"#"+v.getTelNo().toString()+"#"+v.getNicNo()+"#"+strDate+"#"+
+                        v.getInTime().toString()+"#"+v.getOutTime().toString()+"#"+v.getAttachment()+"#"+v.getNotes();
+                bw.write(wantedLine);
+                bw.newLine();
+            }
+
+            bw.close();
+            return true;
+
+
+
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
         return false;
     }
 

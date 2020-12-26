@@ -75,5 +75,10 @@ public class VisitorBOImpl implements VisitorBO {
         ));
     }
 
+    @Override
+    public boolean deleteVisitor(String visitorId) throws Exception {
+        return visitorDAO.delete(visitorId);
+    }
+
 
 }
