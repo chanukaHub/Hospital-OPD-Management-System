@@ -250,7 +250,6 @@ public class ReceptionistVisitorEditVisitorController implements Initializable {
         visitorId= visitorDTO.getVisitorId();
         visitorNameTxt.setText(visitorDTO.getVisitorName());
         purposeTxt.setText(visitorDTO.getPurpose());
-        visitorNameTxt.setText(visitorDTO.getVisitorName());
         nicTxt.setText(visitorDTO.getNicNo());
         telNoTxt.setText(String.valueOf(visitorDTO.getTelNo()));
         dateDatePicker.setValue(localDate);
@@ -258,6 +257,8 @@ public class ReceptionistVisitorEditVisitorController implements Initializable {
         outTimeTimePicker.setValue(visitorDTO.getOutTime());
         attachmentLabel.setText(visitorDTO.getAttachment());
         notesTxtArea.setText(visitorDTO.getNotes());
+
+        currentFilePath=visitorDTO.getAttachment();
 
     }
 }

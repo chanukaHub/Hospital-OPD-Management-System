@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXTextArea?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.admin.visitor.AdminVisitorDeleteViewController">
    <children>
       <HBox>
          <children>
@@ -58,7 +53,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <Label prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="Name" textFill="#282b2f">
+                  <Label fx:id="visitorNameLabel" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="Name" textFill="#282b2f">
                      <padding>
                         <Insets left="5.0" />
                      </padding>
@@ -77,7 +72,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <Label layoutX="25.0" layoutY="45.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="Purpose" textFill="#282b2f">
+                  <Label fx:id="purposeLabel" layoutX="25.0" layoutY="45.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="Purpose" textFill="#282b2f">
                      <padding>
                         <Insets left="5.0" />
                      </padding>
@@ -96,7 +91,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <Label layoutX="25.0" layoutY="166.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="012 345 6789" textFill="#282b2f">
+                  <Label fx:id="phoneNoLabel" layoutX="25.0" layoutY="166.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="012 345 6789" textFill="#282b2f">
                      <padding>
                         <Insets left="5.0" />
                      </padding>
@@ -115,7 +110,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <Label layoutX="25.0" layoutY="191.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="123456789V" textFill="#282b2f">
+                  <Label fx:id="nicNoLabel" layoutX="25.0" layoutY="191.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="123456789V" textFill="#282b2f">
                      <padding>
                         <Insets left="5.0" />
                      </padding>
@@ -139,7 +134,7 @@
                         <Insets bottom="25.0" />
                      </VBox.margin>
                      <children>
-                        <Label layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="2020" textFill="#282b2f">
+                        <Label fx:id="dateLabel" layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="2020" textFill="#282b2f">
                            <padding>
                               <Insets left="5.0" />
                            </padding>
@@ -169,7 +164,7 @@
                   </Text>
                   <HBox spacing="5.0">
                      <children>
-                        <Label prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="00" textFill="#282b2f">
+                        <Label fx:id="inTimeLabel" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="00" textFill="#282b2f">
                            <padding>
                               <Insets left="5.0" />
                            </padding>
@@ -192,7 +187,7 @@
                   </Text>
                   <HBox layoutX="25.0" layoutY="45.0" spacing="5.0">
                      <children>
-                        <Label prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="00" textFill="#282b2f">
+                        <Label fx:id="outTimeLabel" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="00" textFill="#282b2f">
                            <padding>
                               <Insets left="5.0" />
                            </padding>
@@ -218,7 +213,15 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXButton prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="SampleDocument.txt">
+                  <Label fx:id="attachmentLabel" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="00" textFill="#282b2f">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="attachmentBtn" onAction="#attachmentBtn_OnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="SampleDocument.txt">
                      <graphic>
                         <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -242,7 +245,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTextArea focusColor="#b8b6c7" prefColumnCount="25" promptText="Write here" style="-fx-background-radius: 5px; -fx-background-color: #F2F0FB;" unFocusColor="#4d4d4d00" VBox.vgrow="ALWAYS">
+                  <JFXTextArea fx:id="noteTextArea" focusColor="#b8b6c7" prefColumnCount="25" promptText="Write here" style="-fx-background-radius: 5px; -fx-background-color: #F2F0FB;" unFocusColor="#4d4d4d00" VBox.vgrow="ALWAYS">
                      <font>
                         <Font name="Gotham-Book" size="10.0" />
                      </font>
@@ -257,7 +260,7 @@
                      <children>
                         <HBox alignment="BOTTOM_RIGHT" spacing="20.0">
                            <children>
-                              <JFXButton layoutX="646.0" layoutY="10.0" prefHeight="32.0" prefWidth="100.0" style="-fx-background-color: #ffffff; -fx-border-color: #2484FF; -fx-border-radius: 5;" text="Cancel" textFill="#2484ff">
+                              <JFXButton fx:id="cancelBtn" layoutX="646.0" layoutY="10.0" onAction="#cancelBtn_OnAction" prefHeight="32.0" prefWidth="100.0" style="-fx-background-color: #ffffff; -fx-border-color: #2484FF; -fx-border-radius: 5;" text="Cancel" textFill="#2484ff">
                                  <font>
                                     <Font name="Gotham-Book" size="12.0" />
                                  </font>
@@ -265,7 +268,7 @@
                                     <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
                                  </padding>
                               </JFXButton>
-                              <JFXButton layoutX="163.0" layoutY="10.0" prefHeight="37.0" prefWidth="100.0" style="-fx-background-color: #FF4242;" text="Delete" textFill="WHITE">
+                              <JFXButton fx:id="deleteBtn" layoutX="163.0" layoutY="10.0" onAction="#deleteBtn_OnAction" prefHeight="37.0" prefWidth="100.0" style="-fx-background-color: #FF4242;" text="Delete" textFill="WHITE">
                                  <font>
                                     <Font name="Gotham-Book" size="12.0" />
                                  </font>
