@@ -167,5 +167,32 @@ public class AppointmentBOImpl implements AppointmentBO {
         ));
     }
 
+    @Override
+    public ArrayList<AppointmentDTO> getAppointmentList() throws Exception {
+        ArrayList<Appointment> pendingAppointments = appointmentDAO.getAll();
+        ArrayList<AppointmentDTO> appointments = new ArrayList<>();
+        for (Appointment appointment : pendingAppointments) {
+            appointments.add(new AppointmentDTO(
+                    appointment.getAppointmentId(),
+                    appointment.getAppointmentNo(),
+                    appointment.getAppointmentDate(),
+                    appointment.getAppointmentTime(),
+                    appointment.getSymptoms(),
+                    appointment.getStatus(),
+                    appointment.getPatient().getUsername(),
+                    appointment.getPatient().getName(),
+                    appointment.getPatient().getPhoneNumber(),
+                    appointment.getDoctor().getUsername(),
+                    appointment.getDoctor().getName(),
+                    appointment.getDoctor().getSpecialistArea()));
+        }
+        return appointments;
+    }
+
+    @Override
+    public boolean deleteAppointment(String appointmentId) throws Exception {
+        return appointmentDAO.delete(appointmentId);
+    }
+
 
 }
