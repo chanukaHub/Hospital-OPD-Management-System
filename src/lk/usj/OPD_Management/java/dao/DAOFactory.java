@@ -32,6 +32,8 @@ public class DAOFactory {
                 return (T) new PostalDAOImpl();
             case APPOINTMENT:
                 return (T) new AppointmentDAOImpl();
+            case LOGIN:
+                return (T) new LoginDAOImpl();
             default:
                 return null;
         }
@@ -44,7 +46,8 @@ public class DAOFactory {
         DOCTOR,
         VISITOR,
         POSTAL,
-        APPOINTMENT;
+        APPOINTMENT,
+        LOGIN;
 
         private DAOTypes() {
         }
