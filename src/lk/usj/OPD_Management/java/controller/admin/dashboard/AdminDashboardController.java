@@ -14,10 +14,13 @@ import javafx.scene.input.ScrollEvent;
 import javafx.scene.text.Text;
 import lk.usj.OPD_Management.java.dto.LoginDTO;
 import lk.usj.OPD_Management.java.service.custom.LoginBO;
+import lk.usj.OPD_Management.java.service.custom.PatientBO;
 import lk.usj.OPD_Management.java.service.custom.impl.LoginBOImpl;
+import lk.usj.OPD_Management.java.service.custom.impl.PatientBOImpl;
 
 public class AdminDashboardController implements Initializable {
     private LoginBO loginBO =new LoginBOImpl();
+    private PatientBO patientBO = new PatientBOImpl();
 
     @FXML
     private ResourceBundle resources;
@@ -44,6 +47,9 @@ public class AdminDashboardController implements Initializable {
     void RequestTable_MouseEvent(MouseEvent event) {
 
     }
+    private void countTotalPatient() throws Exception{
+        numberOfPatientText.setText(String.format("%03d",patientBO.countTotalPatient()));
+    }
 
     private void loadLoginUserTable() throws Exception {
 
@@ -57,6 +63,7 @@ public class AdminDashboardController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             loadLoginUserTable();
+            countTotalPatient();
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -95,4 +95,9 @@ public class PatientBOImpl implements PatientBO {
                 patient.getNote()
         );
     }
+
+    @Override
+    public int countTotalPatient() throws Exception {
+        return patientDAO.countTotalPatient();
+    }
 }

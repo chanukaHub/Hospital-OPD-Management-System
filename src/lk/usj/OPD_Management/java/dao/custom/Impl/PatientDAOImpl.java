@@ -336,4 +336,29 @@ public class PatientDAOImpl implements PatientDAO {
         }
         return null;
     }
+
+    @Override
+    public int countTotalPatient() throws Exception {
+        try{
+            int count=0;
+            File file = new File("Patient.txt");
+            if (!file.exists()) {//checking the is given file exists
+
+                file.createNewFile();//creating new file
+                Exception fileError =new IOException("File is not founded");
+                System.out.println(fileError);
+            }
+            Scanner scanner =new Scanner(file);
+
+            while(scanner.hasNextLine()){
+                scanner.nextLine();
+                count++;
+            }
+            return count;
+
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
+        return 0;
+    }
 }

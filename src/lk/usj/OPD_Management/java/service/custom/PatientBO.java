@@ -16,4 +16,6 @@ public interface PatientBO extends SuperBO {
     boolean deletePatient(String text)throws Exception;
 
     PatientDTO searchPatient(String text)throws Exception;
+
+    int countTotalPatient() throws Exception;
 }
