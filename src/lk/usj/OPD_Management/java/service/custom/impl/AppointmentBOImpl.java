@@ -194,5 +194,10 @@ public class AppointmentBOImpl implements AppointmentBO {
         return appointmentDAO.delete(appointmentId);
     }
 
+    @Override
+    public int countTodayAppointments() throws Exception {
+        return appointmentDAO.countTodayAppointments();
+    }
+
 
 }

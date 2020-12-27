@@ -24,4 +24,6 @@ public interface AppointmentBO extends SuperBO {
     ArrayList<AppointmentDTO> getAppointmentList() throws Exception;
 
     boolean deleteAppointment(String appointmentId)throws Exception;
+
+    int countTodayAppointments() throws Exception;
 }

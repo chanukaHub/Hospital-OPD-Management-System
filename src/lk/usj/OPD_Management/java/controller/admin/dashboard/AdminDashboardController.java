@@ -13,14 +13,18 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.text.Text;
 import lk.usj.OPD_Management.java.dto.LoginDTO;
+import lk.usj.OPD_Management.java.entity.Appointment;
+import lk.usj.OPD_Management.java.service.custom.AppointmentBO;
 import lk.usj.OPD_Management.java.service.custom.LoginBO;
 import lk.usj.OPD_Management.java.service.custom.PatientBO;
+import lk.usj.OPD_Management.java.service.custom.impl.AppointmentBOImpl;
 import lk.usj.OPD_Management.java.service.custom.impl.LoginBOImpl;
 import lk.usj.OPD_Management.java.service.custom.impl.PatientBOImpl;
 
 public class AdminDashboardController implements Initializable {
     private LoginBO loginBO =new LoginBOImpl();
     private PatientBO patientBO = new PatientBOImpl();
+    private AppointmentBO appointmentBO=new AppointmentBOImpl();
 
     @FXML
     private ResourceBundle resources;
@@ -51,6 +55,10 @@ public class AdminDashboardController implements Initializable {
         numberOfPatientText.setText(String.format("%03d",patientBO.countTotalPatient()));
     }
 
+    private void countTodayAppointments() throws Exception{
+        TodayAppointmentText.setText(String.format("%03d",appointmentBO.countTodayAppointments()));
+    }
+
     private void loadLoginUserTable() throws Exception {
 
         loginUserTable.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("userName"));
@@ -64,6 +72,7 @@ public class AdminDashboardController implements Initializable {
         try {
             loadLoginUserTable();
             countTotalPatient();
+            countTodayAppointments();
         } catch (Exception e) {
             e.printStackTrace();
         }
