@@ -1,9 +1,7 @@
 package lk.usj.OPD_Management.java.service;
 
-import lk.usj.OPD_Management.java.service.custom.impl.DoctorBOImpl;
-import lk.usj.OPD_Management.java.service.custom.impl.LoginBOImpl;
-import lk.usj.OPD_Management.java.service.custom.impl.PatientBOImpl;
-import lk.usj.OPD_Management.java.service.custom.impl.VisitorBOImpl;
+import lk.usj.OPD_Management.java.dao.custom.Impl.AppointmentDAOImpl;
+import lk.usj.OPD_Management.java.service.custom.impl.*;
 
 public class BOFactory {
     private static BOFactory boFactory;
@@ -29,6 +27,12 @@ public class BOFactory {
                 return (T) new VisitorBOImpl();
             case DOCTOR:
                 return (T) new DoctorBOImpl();
+            case APPOINTMENT:
+                return (T) new AppointmentBOImpl();
+            case POSTAL:
+                return (T) new PostalBOImpl();
+            case RECEPTIONIST:
+                return (T) new ReceptionistBOImpl();
             default:
                 return null;
         }
@@ -39,6 +43,8 @@ public class BOFactory {
         PATIENT,
         VISITOR,
         DOCTOR,
-        APPOINTMENT
+        APPOINTMENT,
+        POSTAL,
+        RECEPTIONIST
     }
 }
