@@ -32,8 +32,8 @@
                      <children>
                         <TableView fx:id="RequestTable" onMouseClicked="#RequestTable_MouseEvent" prefHeight="454.0" prefWidth="470.0" VBox.vgrow="ALWAYS">
                            <columns>
-                              <TableColumn prefWidth="75.0" text="Request No" />
-                              <TableColumn prefWidth="75.0" text="Title" />
+                              <TableColumn prefWidth="100.0" text="Request No" />
+                              <TableColumn prefWidth="335.0" text="Title" />
                            </columns>
                            <VBox.margin>
                               <Insets />
