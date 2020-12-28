@@ -2,7 +2,6 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXDatePicker?>
-<?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXTimePicker?>
 <?import javafx.geometry.Insets?>
@@ -227,18 +226,17 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTextArea fx:id="notesTxtArea" focusColor="#b8b6c7" onDragDetected="#notesTxtArea_OnActon" prefColumnCount="25" promptText="Write here" style="-fx-background-radius: 5px; -fx-background-color: #F2F0FB;" unFocusColor="#4d4d4d00" VBox.vgrow="ALWAYS">
-                     <font>
-                        <Font name="Gotham-Book" size="10.0" />
-                     </font>
-                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </padding>
-                     <VBox.margin>
-                        <Insets bottom="25.0" />
-                     </VBox.margin>
-                  </JFXTextArea>
-                  <VBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="65.0" />
+                  <VBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="397.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <JFXTextField fx:id="notesTxtArea" alignment="TOP_LEFT" focusColor="#b8b6c7" maxHeight="1.7976931348623157E308" onAction="#notesTxtArea_OnActon" prefWidth="200.0" promptText="Write here..." style="-fx-background-color: #F2F0FB; -fx-background-radius: 5;" unFocusColor="#ffffff00" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font name="Gotham-Book" size="12.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </JFXTextField>
+                     </children></VBox>
                </children>
             </VBox>
          </children>

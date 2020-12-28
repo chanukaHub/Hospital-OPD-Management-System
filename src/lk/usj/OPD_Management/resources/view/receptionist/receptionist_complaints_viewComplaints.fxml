@@ -172,7 +172,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <Label prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="Action taken" textFill="#282b2f">
+                  <Label prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="approved" textFill="#282b2f">
                      <padding>
                         <Insets left="5.0" />
                      </padding>
@@ -181,6 +181,25 @@
                      </font>
                      <VBox.margin>
                         <Insets bottom="25.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Text fill="#282b2f" layoutX="25.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Action taken">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Label layoutX="25.0" layoutY="45.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="write here.." textFill="#282b2f">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
                      </VBox.margin>
                   </Label>
                   <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Attachments">
