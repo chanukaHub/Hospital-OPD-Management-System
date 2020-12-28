@@ -108,3 +108,10 @@ r#null#28/12/2020 18:38:15#Receptionist
 r#null#28/12/2020 19:57:06#Receptionist
 r#null#28/12/2020 20:00:14#Receptionist
 r#null#28/12/2020 20:25:35#Receptionist
+admin#AdminName#28/12/2020 20:29:03#Admin
+admin#AdminName#28/12/2020 20:46:10#Admin
+admin#AdminName#28/12/2020 21:03:31#Admin
+admin#AdminName#28/12/2020 21:23:27#Admin
+admin#AdminName#28/12/2020 21:27:09#Admin
+admin#AdminName#28/12/2020 21:29:41#Admin
+admin#AdminName#28/12/2020 21:30:51#Admin
