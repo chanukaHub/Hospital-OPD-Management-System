@@ -77,3 +77,22 @@ r#null#28/12/2020 05:26:03#Receptionist
 r#null#28/12/2020 05:30:49#Receptionist
 r#null#28/12/2020 05:31:47#Receptionist
 r#null#28/12/2020 13:22:45#Receptionist
+r#null#28/12/2020 14:55:09#Receptionist
+r#null#28/12/2020 14:57:40#Receptionist
+patient#Test patient#28/12/2020 15:00:18#Patient
+admin#AdminName#28/12/2020 15:12:09#Admin
+admin#AdminName#28/12/2020 15:16:14#Admin
+admin#AdminName#28/12/2020 15:19:08#Admin
+admin#AdminName#28/12/2020 15:22:39#Admin
+admin#AdminName#28/12/2020 15:27:34#Admin
+admin#AdminName#28/12/2020 15:29:53#Admin
+admin#AdminName#28/12/2020 15:30:25#Admin
+admin#AdminName#28/12/2020 15:31:27#Admin
+admin#AdminName#28/12/2020 15:35:28#Admin
+admin#AdminName#28/12/2020 15:39:14#Admin
+admin#AdminName#28/12/2020 15:48:04#Admin
+admin#AdminName#28/12/2020 15:57:00#Admin
+admin#AdminName#28/12/2020 15:58:28#Admin
+admin#AdminName#28/12/2020 15:59:34#Admin
+admin#AdminName#28/12/2020 16:05:06#Admin
+admin#AdminName#28/12/2020 16:06:17#Admin

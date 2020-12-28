@@ -98,7 +98,7 @@ public class AdminUserSaveDoctorController implements Initializable {
     private JFXComboBox<String> specializedAreaComboBox;
 
     @FXML
-    private JFXTextArea notesTextArea;
+    private JFXTextField notesTextArea;
 
     @FXML
     private JFXButton staffPhotographBtn;

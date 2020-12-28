@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -43,7 +43,7 @@
             </VBox>
          </children>
       </HBox>
-      <HBox prefWidth="200.0" VBox.vgrow="ALWAYS">
+      <HBox prefWidth="200.0" spacing="20.0" VBox.vgrow="ALWAYS">
          <children>
             <VBox prefHeight="200.0">
                <padding>
@@ -198,6 +198,9 @@
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
                   </Label>
                   <JFXButton fx:id="attachmentBtn" onAction="#attachmentBtn_OnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="SampleDocument.txt">
                      <graphic>
@@ -223,47 +226,50 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTextArea fx:id="noteTextArea" editable="false" focusColor="#b8b6c7" prefColumnCount="25" promptText="Write here" style="-fx-background-radius: 5px; -fx-background-color: #F2F0FB;" unFocusColor="#4d4d4d00" VBox.vgrow="ALWAYS">
+                  <JFXTextField fx:id="noteTextArea" alignment="TOP_LEFT" focusColor="#b8b6c7" maxWidth="1.7976931348623157E308" prefHeight="457.0" prefWidth="230.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5;" text="Write here..." unFocusColor="#ffffff00">
                      <font>
-                        <Font name="Gotham-Book" size="10.0" />
+                        <Font name="Gotham-Book" size="12.0" />
                      </font>
                      <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                      </padding>
-                     <VBox.margin>
-                        <Insets bottom="25.0" />
-                     </VBox.margin>
-                  </JFXTextArea>
-                  <VBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="65.0">
-                     <children>
-                        <HBox alignment="BOTTOM_RIGHT" spacing="20.0">
-                           <children>
-                              <JFXButton fx:id="cancelBtn" layoutX="646.0" layoutY="10.0" onAction="#cancelBtn_OnAction" prefWidth="100.0" style="-fx-border-color: #2484FF; -fx-border-radius: 5;" text="Cancel" textFill="#2484ff">
-                                 <font>
-                                    <Font name="Gotham-Book" size="12.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
-                                 </padding>
-                              </JFXButton>
-                              <JFXButton fx:id="deleteBtn" layoutX="163.0" layoutY="10.0" onAction="#deleteBtn_OnAction" prefWidth="100.0" style="-fx-background-color: #FF4242;" text="Delete" textFill="WHITE">
-                                 <font>
-                                    <Font name="Gotham-Book" size="12.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
-                                 </padding>
-                              </JFXButton>
-                           </children>
-                           <VBox.margin>
-                              <Insets bottom="15.0" left="15.0" />
-                           </VBox.margin>
-                        </HBox>
-                     </children>
-                  </VBox>
+                  </JFXTextField>
                </children>
             </VBox>
          </children>
       </HBox>
+      <VBox alignment="BOTTOM_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="65.0">
+         <children>
+            <HBox alignment="BOTTOM_RIGHT" spacing="20.0">
+               <children>
+                  <JFXButton fx:id="cancelBtn" alignment="CENTER" layoutX="646.0" layoutY="10.0" onAction="#cancelBtn_OnAction" prefWidth="100.0" style="-fx-border-color: #2484FF; -fx-border-radius: 5;" text="Cancel" textFill="#2484ff">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton fx:id="deleteBtn" alignment="CENTER" layoutX="163.0" layoutY="10.0" onAction="#deleteBtn_OnAction" prefWidth="100.0" style="-fx-background-color: #FF4242;" text="Delete" textFill="WHITE">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
+                     </padding>
+                  </JFXButton>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets right="15.0" />
+         </padding>
+      </VBox>
    </children>
 </VBox>

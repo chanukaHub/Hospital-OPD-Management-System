@@ -5,7 +5,6 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -13,43 +12,40 @@
 
 <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.admin.dashboard.AdminDashboardController">
    <children>
-      <HBox HBox.hgrow="ALWAYS">
+      <HBox style="-fx-background-color: #ffffff; -fx-background-radius: 5;" HBox.hgrow="ALWAYS">
          <children>
-            <AnchorPane minWidth="500.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" HBox.hgrow="ALWAYS">
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
+            <VBox>
                <children>
-                  <VBox>
+                  <VBox prefWidth="500.0">
                      <children>
-                        <VBox prefWidth="500.0">
-                           <children>
-                              <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Support Request" VBox.vgrow="ALWAYS">
-                                 <font>
-                                    <Font name="Gotham Bold" size="16.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets bottom="15.0" left="15.0" top="15.0" />
-                                 </VBox.margin>
-                              </Text>
-                           </children>
-                        </VBox>
-                        <VBox VBox.vgrow="ALWAYS">
-                           <padding>
-                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                           </padding>
-                           <children>
-                              <TableView fx:id="RequestTable" onMouseClicked="#RequestTable_MouseEvent" prefHeight="466.0" prefWidth="399.0">
-                                 <columns>
-                                    <TableColumn prefWidth="75.0" text="Request No" />
-                                    <TableColumn prefWidth="75.0" text="Title" />
-                                 </columns>
-                              </TableView>
-                           </children></VBox>
+                        <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Support Request" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font name="Gotham Bold" size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="15.0" left="15.0" top="15.0" />
+                           </VBox.margin>
+                        </Text>
                      </children>
                   </VBox>
+                  <VBox maxHeight="1.7976931348623157E308" prefWidth="500.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <TableView fx:id="RequestTable" onMouseClicked="#RequestTable_MouseEvent" prefHeight="454.0" prefWidth="470.0" VBox.vgrow="ALWAYS">
+                           <columns>
+                              <TableColumn prefWidth="75.0" text="Request No" />
+                              <TableColumn prefWidth="75.0" text="Title" />
+                           </columns>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TableView>
+                     </children>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" />
+                     </padding>
+                  </VBox>
                </children>
-            </AnchorPane>
+            </VBox>
          </children>
          <HBox.margin>
             <Insets right="7.5" />
@@ -198,24 +194,30 @@
                   </HBox>
                </children>
             </VBox>
-            <AnchorPane style="-fx-background-radius: 5px; -fx-background-color: #ffffff;" VBox.vgrow="ALWAYS">
+            <VBox style="-fx-background-color: #ffffff; -fx-background-radius: 5;">
+               <children>
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Users log">
+                     <font>
+                        <Font name="Gotham Bold" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TableView fx:id="loginUserTable" focusTraversable="false" mouseTransparent="true" prefHeight="218.0" styleClass="scroll-bar" stylesheets="@../../css/styles.css" VBox.vgrow="ALWAYS">
+                    <columns>
+                      <TableColumn minWidth="8.0" prefWidth="150.0" text="Username" />
+                      <TableColumn prefWidth="100.0" text="User Type" />
+                    </columns>
+                  </TableView>
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
                <VBox.margin>
                   <Insets left="7.5" top="7.5" />
                </VBox.margin>
-               <children>
-                  <TableView fx:id="loginUserTable" focusTraversable="false" layoutX="1.0" layoutY="26.0" mouseTransparent="true" prefHeight="218.0" prefWidth="242.0" styleClass="scroll-bar" stylesheets="@../../css/styles.css">
-                    <columns>
-                      <TableColumn prefWidth="128.80005478858948" text="Name" />
-                      <TableColumn prefWidth="111.99994506835938" text="User Type" />
-                    </columns>
-                  </TableView>
-                  <Text fill="#7f858d" layoutX="22.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Login users">
-                     <font>
-                        <Font name="Gotham-Book" size="12.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
+            </VBox>
          </children>
       </VBox>
    </children>

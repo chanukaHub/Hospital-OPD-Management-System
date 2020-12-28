@@ -3,7 +3,6 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
-<?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
@@ -215,17 +214,17 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTextArea focusColor="#b8b6c7" layoutX="25.0" layoutY="45.0" prefColumnCount="25" promptText="Write here" style="-fx-background-radius: 5px; -fx-background-color: #F2F0FB;" unFocusColor="#4d4d4d00">
+                  <JFXTextField alignment="TOP_LEFT" focusColor="#b8b6c7" maxWidth="1.7976931348623157E308" prefHeight="150.0" prefWidth="230.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5;" text="Write here..." unFocusColor="#ffffff00">
                      <font>
-                        <Font name="Gotham-Book" size="10.0" />
+                        <Font name="Gotham-Book" size="12.0" />
                      </font>
                      <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                      </padding>
                      <VBox.margin>
-                        <Insets bottom="25.0" />
+                        <Insets bottom="15.0" />
                      </VBox.margin>
-                  </JFXTextArea>
+                  </JFXTextField>
                   <Text fill="#282b2f" layoutX="25.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notes">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
@@ -234,18 +233,14 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTextArea focusColor="#b8b6c7" prefColumnCount="25" promptText="Write here" style="-fx-background-radius: 5px; -fx-background-color: #F2F0FB;" unFocusColor="#4d4d4d00" VBox.vgrow="ALWAYS">
+                  <JFXTextField alignment="TOP_LEFT" focusColor="#b8b6c7" maxWidth="1.7976931348623157E308" prefHeight="150.0" prefWidth="230.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5;" text="Write here..." unFocusColor="#ffffff00">
                      <font>
-                        <Font name="Gotham-Book" size="10.0" />
+                        <Font name="Gotham-Book" size="12.0" />
                      </font>
                      <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                      </padding>
-                     <VBox.margin>
-                        <Insets bottom="25.0" />
-                     </VBox.margin>
-                  </JFXTextArea>
-                  <VBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="65.0" />
+                  </JFXTextField>
                </children>
             </VBox>
          </children>
@@ -278,7 +273,7 @@
             </JFXButton>
          </children>
          <padding>
-            <Insets bottom="15.0" left="15.0" right="15.0" />
+            <Insets bottom="15.0" left="15.0" right="15.0" top="10.0" />
          </padding>
       </HBox>
    </children>

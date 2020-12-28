@@ -7,6 +7,8 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ResourceBundle;
+
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -59,7 +61,7 @@ public class AdminVisitorDeleteViewController implements Initializable {
     private JFXButton attachmentBtn;
 
     @FXML
-    private JFXTextArea noteTextArea;
+    private Label noteTextArea;
 
     @FXML
     private JFXButton cancelBtn;

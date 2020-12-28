@@ -5,6 +5,8 @@ import com.jfoenix.controls.JFXTextArea;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
+
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -51,7 +53,7 @@ public class AdminAppointmentDeleteViewController implements Initializable {
     private Label timeLabel;
 
     @FXML
-    private JFXTextArea symptomsTextArea;
+    private JFXTextField symptomsTextArea;
 
     @FXML
     private JFXButton cancelBtn;
