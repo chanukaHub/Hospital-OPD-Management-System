@@ -5,6 +5,8 @@ import com.jfoenix.controls.JFXTextArea;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
+
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -54,7 +56,7 @@ public class AdminPostalDeleteViewController implements Initializable {
     private JFXButton attachmentBtn;
 
     @FXML
-    private JFXTextArea noteTextArea;
+    private JFXTextField noteTextArea;
 
     @FXML
     private JFXButton cancelBtn;

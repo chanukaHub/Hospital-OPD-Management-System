@@ -193,15 +193,7 @@
       </HBox>
       <HBox alignment="BOTTOM_RIGHT" spacing="20.0">
          <children>
-            <JFXButton layoutX="646.0" layoutY="10.0" prefWidth="100.0" style="-fx-border-color: #1CC270; -fx-border-radius: 5px;" text="Back" textFill="#1cc270">
-               <font>
-                  <Font name="Gotham-Book" size="12.0" />
-               </font>
-               <padding>
-                  <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
-               </padding>
-            </JFXButton>
-            <JFXButton layoutX="173.0" layoutY="10.0" prefHeight="35.0" prefWidth="148.0" style="-fx-background-color: #1CC270;" text="Mark as Completed" textFill="WHITE">
+            <JFXButton alignment="CENTER" layoutX="173.0" layoutY="10.0" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #2484FF;" text="OK" textFill="WHITE">
                <font>
                   <Font name="Gotham-Book" size="12.0" />
                </font>
