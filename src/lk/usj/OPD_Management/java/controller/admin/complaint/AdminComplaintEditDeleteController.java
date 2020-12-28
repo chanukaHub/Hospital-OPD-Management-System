@@ -3,22 +3,30 @@ package lk.usj.OPD_Management.java.controller.admin.complaint;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+
+import java.io.File;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import lk.usj.OPD_Management.java.common.Common;
 import lk.usj.OPD_Management.java.dto.ComplaintDTO;
 import lk.usj.OPD_Management.java.service.custom.ComplaintBO;
 import lk.usj.OPD_Management.java.service.custom.impl.ComplaintsBOImpl;
 
 public class AdminComplaintEditDeleteController implements Initializable {
     private ComplaintBO complaintBO= new ComplaintsBOImpl();
-    String complaintId;
+    String complaintId,currentFilePath;
 
     @FXML
     private ResourceBundle resources;
@@ -120,7 +128,46 @@ public class AdminComplaintEditDeleteController implements Initializable {
 
     @FXML
     void saveBtn_OnAction(ActionEvent event) {
+        try{
+            String complaintType,complaintStatus;
+            if (complainttypeComboBox.getSelectionModel().getSelectedItem().equals("Choose a Type")){
+                Common.showError("Please choose Type");
+                return;
+            }else{
+                complaintType = complainttypeComboBox.getSelectionModel().getSelectedItem();
+            }
 
+            complaintStatus= statusComboBox.getSelectionModel().getSelectedItem();
+
+            String[] dateArray = dateTextField.getText().split("/");
+            Date date = new GregorianCalendar(Integer.parseInt(dateArray[2]), Integer.parseInt(dateArray[1]) - 1, Integer.parseInt(dateArray[0])).getTime();
+
+            ComplaintDTO complaintDTO= new ComplaintDTO(
+                    complaintId,
+                    complaintType,
+                    complaintByTextField.getText(),
+                    phoneTextField.getText(),
+                    date,
+                    descriptionTextField.getText(),
+                    actionTakenTextField.getText(),
+                    noteTextField.getText(),
+                    currentFilePath,
+                    complaintStatus
+            );
+
+            boolean b = complaintBO.updateComplaint(complaintDTO);
+
+            if (b){
+                Common.showMessage("Updated Successfully!");
+                ((Node)(event.getSource())).getScene().getWindow().hide();
+
+            }
+            else
+                Common.showError("Not added");
+        } catch (Exception e1) {
+            Common.showError("Not added");
+            e1.printStackTrace();
+        }
     }
 
     @FXML
@@ -165,5 +212,7 @@ public class AdminComplaintEditDeleteController implements Initializable {
         attachmentLable.setText(complaintDTO.getAttachDocument());
         descriptionTextField.setText(complaintDTO.getDescription());
         noteTextField.setText(complaintDTO.getNote());
+
+        currentFilePath=complaintDTO.getAttachDocument();
     }
 }

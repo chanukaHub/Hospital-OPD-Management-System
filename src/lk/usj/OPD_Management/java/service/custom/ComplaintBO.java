@@ -11,4 +11,6 @@ public interface ComplaintBO extends SuperBO {
     boolean addComplaint(ComplaintDTO complaintDTO) throws Exception;
 
     ArrayList<ComplaintDTO> getAllComplaint() throws Exception;
+
+    boolean updateComplaint(ComplaintDTO complaintDTO)throws Exception;
 }

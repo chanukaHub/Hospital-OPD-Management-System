@@ -58,4 +58,21 @@ public class ComplaintsBOImpl implements ComplaintBO {
         }
         return complaints;
     }
+
+    @Override
+    public boolean updateComplaint(ComplaintDTO complaintDTO) throws Exception {
+        return complaintDAO.update(new Complaint(
+                complaintDTO.getComplaintId(),
+                complaintDTO.getType(),
+                complaintDTO.getComplaintBy(),
+                complaintDTO.getPhoneNumber(),
+                complaintDTO.getDate(),
+                complaintDTO.getDescription(),
+                complaintDTO.getActionTaken(),
+                complaintDTO.getNote(),
+                complaintDTO.getAttachDocument(),
+                complaintDTO.getStatus()
+
+        ));
+    }
 }

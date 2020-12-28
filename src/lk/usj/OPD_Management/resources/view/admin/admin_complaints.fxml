@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.admin.complaint.AdminComplaintController">
    <children>
@@ -19,12 +17,12 @@
       </Text>
       <TableView fx:id="complaintTable" onMouseClicked="#complaintTable_MouseEvent" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" VBox.vgrow="ALWAYS">
         <columns>
-          <TableColumn prefWidth="86.39999693632126" text="Complaint ID" />
-          <TableColumn prefWidth="134.39999389648438" text="Coplaint type" />
-            <TableColumn prefWidth="106.40000915527344" text="Complaint by" />
-            <TableColumn prefWidth="152.0" text="Date" />
-            <TableColumn prefWidth="175.199951171875" text="Action Taken" />
-            <TableColumn prefWidth="73.5999755859375" text="Status" />
+          <TableColumn prefWidth="81.399993121624" text="Complaint ID" />
+          <TableColumn prefWidth="139.40000915527344" text="Coplaint type" />
+            <TableColumn prefWidth="99.19998168945312" text="Complaint by" />
+            <TableColumn prefWidth="159.5999755859375" text="Date" />
+            <TableColumn prefWidth="153.99996948242188" text="Action Taken" />
+            <TableColumn prefWidth="97.20001220703125" text="Status" />
         </columns>
          <VBox.margin>
             <Insets bottom="15.0" left="15.0" right="15.0" />
