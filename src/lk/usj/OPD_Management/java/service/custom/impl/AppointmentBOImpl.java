@@ -199,5 +199,17 @@ public class AppointmentBOImpl implements AppointmentBO {
         return appointmentDAO.countTodayAppointments();
     }
 
+    @Override
+    public ArrayList<AppointmentDTO> getApprovedAppointmentListUsingDoctorUsername(String username) throws Exception{
+        ArrayList<AppointmentDTO> appointmentDTOS=getApprovedAppointmentList();
+        ArrayList<AppointmentDTO> thisDoctorAppointments =new ArrayList<>();
+        for (AppointmentDTO appointmentDTO:appointmentDTOS){
+            if (appointmentDTO.getDoctorUsername().equals(username)){
+                thisDoctorAppointments.add(appointmentDTO);
+            }
+        }
+        return thisDoctorAppointments;
+    }
+
 
 }

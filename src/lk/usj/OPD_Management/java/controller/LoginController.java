@@ -26,6 +26,7 @@ import lk.usj.OPD_Management.java.common.tool.ButtonFireForEnterSetter;
 import lk.usj.OPD_Management.java.common.tool.GlobalBoolean;
 import lk.usj.OPD_Management.java.controller.admin.AdminBaseController;
 import lk.usj.OPD_Management.java.controller.doctor.DoctorBaseController;
+import lk.usj.OPD_Management.java.controller.doctor.dashboard.DoctorDashboardController;
 import lk.usj.OPD_Management.java.controller.patient.PatientBaseController;
 import lk.usj.OPD_Management.java.controller.receptionist.ReceptionistBaseController;
 import lk.usj.OPD_Management.java.dto.*;
@@ -231,7 +232,8 @@ public class LoginController implements Initializable{
             }else if (userType.equals("Doctor")){
                 if (loginBO.isValidDoctorPassword(new DoctorDTO(usernameTxt1.getText(), passwordTxt1.getText()))) {
                     try {
-                        //Load second scene
+                      //Load second scene
+                        DoctorDashboardController.doctorUserName = usernameTxt1.getText();
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/doctor/doctor_base.fxml"));
                         Parent root = loader.load();
 
@@ -239,6 +241,8 @@ public class LoginController implements Initializable{
                         DoctorBaseController doctorBaseController = loader.getController();
                         //Pass whatever data you want. You can have multiple method calls here
                         doctorBaseController.transferMessage(usernameTxt1.getText());
+
+
 
                         Stage stage = new Stage();
                         stage.setScene(new Scene(root));
@@ -248,10 +252,11 @@ public class LoginController implements Initializable{
                         //stage.setMaximized(true);
                         stage.show();
 
+
                         ((Node)(event.getSource())).getScene().getWindow().hide();
 
 
-                    } catch (IOException e) {
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 } else {

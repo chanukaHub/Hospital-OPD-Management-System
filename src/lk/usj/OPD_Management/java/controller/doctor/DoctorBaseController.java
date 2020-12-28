@@ -9,16 +9,18 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lk.usj.OPD_Management.java.controller.admin.complaint.AdminComplaintEditDeleteController;
+import lk.usj.OPD_Management.java.controller.doctor.dashboard.DoctorDashboardController;
 
 public class DoctorBaseController implements Initializable {
 
@@ -50,9 +52,6 @@ public class DoctorBaseController implements Initializable {
     private HBox appointmentHBox;
 
     @FXML
-    private HBox supportHBox;
-
-    @FXML
     private JFXButton logoutBtn;
 
     @FXML
@@ -64,8 +63,21 @@ public class DoctorBaseController implements Initializable {
     }
 
     @FXML
-    void dashboardHBox_MouseEvent(MouseEvent event) {
+    void dashboardHBox_MouseEvent(MouseEvent event) throws Exception{
+        dashboardHBox.getStyleClass().add("hover_border");
+        appointmentHBox.getStyleClass().add("hover_border");
 
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/doctor/doctor_dashboard.fxml"));
+        root.getChildren().setAll(pane);
+        dashboardHBox.getStyleClass().removeAll("hover_border");
+
+        BackgroundFill background_fill = new BackgroundFill(Color.rgb(80, 157, 255), CornerRadii.EMPTY, Insets.EMPTY);
+        Background background = new Background(background_fill);
+        dashboardHBox.setBackground(background);
+
+        BackgroundFill background_fill2 = new BackgroundFill(Color.TRANSPARENT, CornerRadii.EMPTY, Insets.EMPTY);
+        Background background2 = new Background(background_fill2);
+        appointmentHBox.setBackground(background2);
     }
 
     @FXML
@@ -93,18 +105,37 @@ public class DoctorBaseController implements Initializable {
 
     }
 
-    @FXML
-    void supportHBox_MouseEvent(MouseEvent event) {
+    private void loadInitialPanel() throws Exception {
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/doctor/doctor_dashboard.fxml"));
+        root.getChildren().setAll(pane);
 
+        //FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/doctor/doctor_dashboard.fxml"));
+       // VBox pane = loader.load();
+       // DoctorDashboardController doctorDashboardController = loader.getController();
+        //doctorDashboardController.transferMessage(name);
+        //root.getChildren().setAll(pane);
     }
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        dashboardHBox.getStyleClass().add("hover_border");
+        appointmentHBox.getStyleClass().add("hover_border");
+
+        BackgroundFill background_fill = new BackgroundFill(Color.rgb(80, 157, 255), CornerRadii.EMPTY, Insets.EMPTY);
+        Background background = new Background(background_fill);
+        dashboardHBox.setBackground(background);
+
+        try {
+            loadInitialPanel();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
-    public void transferMessage(String text) {
+    public void transferMessage(String text) throws Exception {
         nameTxt.setText(text);
+        //loadInitialPanel(text);
     }
 }

@@ -10,8 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<VBox prefHeight="567.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.admin.dashboard.AdminDashboardController">
+<VBox prefHeight="567.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.doctor.dashboard.DoctorDashboardController">
    <children>
       <VBox prefWidth="500.0">
          <children>
@@ -33,7 +32,7 @@
                                  <children>
                                     <VBox VBox.vgrow="ALWAYS">
                                        <children>
-                                          <Text fill="#7f858d" strokeType="OUTSIDE" strokeWidth="0.0" text="New Appointments">
+                                          <Text fill="#7f858d" strokeType="OUTSIDE" strokeWidth="0.0" text="Pending Appointments">
                                              <font>
                                                 <Font name="Gotham-Book" size="12.0" />
                                              </font>
@@ -48,7 +47,7 @@
                                     </VBox>
                                     <VBox layoutX="10.0" layoutY="10.0" VBox.vgrow="ALWAYS">
                                        <children>
-                                          <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="07">
+                                          <Text fx:id="pendingCountText" fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="07">
                                              <font>
                                                 <Font name="Gotham-Book" size="32.0" />
                                              </font>
@@ -82,7 +81,7 @@
                                        <children>
                                           <VBox VBox.vgrow="ALWAYS">
                                              <children>
-                                                <Text fill="#7f858d" strokeType="OUTSIDE" strokeWidth="0.0" text="Cancelled Appointments">
+                                                <Text fill="#7f858d" strokeType="OUTSIDE" strokeWidth="0.0" text="Approved Appointments">
                                                    <font>
                                                       <Font name="Gotham-Book" size="12.0" />
                                                    </font>
@@ -91,7 +90,7 @@
                                           </VBox>
                                           <VBox VBox.vgrow="ALWAYS">
                                              <children>
-                                                <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="03">
+                                                <Text fx:id="approvedCountText" fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="03">
                                                    <font>
                                                       <Font name="Gotham-Book" size="32.0" />
                                                    </font>
@@ -117,7 +116,7 @@
                                  <children>
                                     <VBox VBox.vgrow="ALWAYS">
                                        <children>
-                                          <Text fill="#7f858d" strokeType="OUTSIDE" strokeWidth="0.0" text="New  Patients">
+                                          <Text fill="#7f858d" strokeType="OUTSIDE" strokeWidth="0.0" text="Completed  Appointments">
                                              <font>
                                                 <Font name="Gotham-Book" size="12.0" />
                                              </font>
@@ -129,7 +128,7 @@
                                     </VBox>
                                     <VBox VBox.vgrow="ALWAYS">
                                        <children>
-                                          <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="05">
+                                          <Text fx:id="completedCountText" fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="05">
                                              <font>
                                                 <Font name="Gotham-Book" size="32.0" />
                                              </font>
@@ -163,13 +162,13 @@
                   <Insets bottom="15.0" left="15.0" top="15.0" />
                </VBox.margin>
             </Text>
-            <TableView prefHeight="430.0" prefWidth="730.0" style="-fx-background-color: #ffffff;">
+            <TableView fx:id="upcomingAppointmentTable" onMouseClicked="#upcomingAppointmentTable_MouseEvent" prefHeight="430.0" prefWidth="730.0" style="-fx-background-color: #ffffff;">
                <columns>
-                  <TableColumn prefWidth="120.0" text="Appointment ID" />
-                  <TableColumn prefWidth="120.0" text="Patient ID" />
-                  <TableColumn prefWidth="250.0" text="Patient name" />
-                  <TableColumn prefWidth="132.0" text="Date" />
-                  <TableColumn prefWidth="132.0" text="Time" />
+                  <TableColumn prefWidth="128.79999083280563" text="Appointment ID" />
+                  <TableColumn prefWidth="123.20001220703125" text="Patient ID" />
+                  <TableColumn prefWidth="185.59996032714844" text="Patient name" />
+                  <TableColumn prefWidth="187.2000732421875" text="Date" />
+                  <TableColumn prefWidth="130.39996337890625" text="Time" />
                </columns>
                <VBox.margin>
                   <Insets bottom="15.0" left="15.0" right="15.0" />
