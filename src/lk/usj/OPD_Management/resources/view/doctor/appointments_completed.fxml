@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="root" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.doctor.dashboard.AppointmentCompletedController">
    <children>
       <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Do you want to &#10;complete this appointment?">
          <font>
@@ -23,12 +23,12 @@
             <Insets top="15.0" />
          </VBox.margin>
          <children>
-            <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment No :">
+            <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment ID :">
                <font>
                   <Font name="Gotham-Book" size="14.0" />
                </font>
             </Text>
-            <Label fx:id="doctorNameLabel" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" text="12345">
+            <Label fx:id="appointmentIdLabel" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" text="12345">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>

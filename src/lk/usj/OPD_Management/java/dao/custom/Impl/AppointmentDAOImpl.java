@@ -503,4 +503,81 @@ public class AppointmentDAOImpl implements AppointmentDAO {
         return 0;
     }
 
+    @Override
+    public void completeAppointment(String text) throws Exception {
+        try {
+            String appointmentID, patient, doctor, appointmentNo, date, time, symptoms, currentStatus;
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+            File file = new File("Appointment.txt");
+            if (!file.exists()) {//checking the is given file exists
+
+                file.createNewFile();//creating new file
+                Exception fileError = new IOException("File is not founded");
+                System.out.println(fileError);
+            }
+            Scanner scanner = new Scanner(file);
+
+            ArrayList<Appointment> appointments = new ArrayList<>();
+
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                String[] details = line.split("#");
+                appointmentID = details[0];
+                patient = details[1];
+                doctor = details[2];
+                appointmentNo = details[3];
+                date = details[4];
+                time = details[5];
+                symptoms = details[6];
+                currentStatus = details[7];
+
+
+                String[] dateArray = date.split("/");
+                Date appointmentDate = new GregorianCalendar(Integer.parseInt(dateArray[2]), Integer.parseInt(dateArray[1]) - 1, Integer.parseInt(dateArray[0])).getTime();
+                int intAppointmentNo = Integer.parseInt(appointmentNo);
+                Patient patient1 = patientDAO.search(patient);
+                Doctor doctor1 = doctorDAO.search(doctor);
+
+                Appointment appointment = new Appointment(appointmentID, patient1, doctor1, intAppointmentNo, appointmentDate, time, symptoms, currentStatus);
+                appointments.add(appointment);
+            }
+            for (Appointment appointment : appointments) {
+                if (appointment.getAppointmentId().equals(text)) {
+                    appointment.setStatus("Completed");
+                }
+            }
+
+            PrintWriter writer = new PrintWriter(file);
+            writer.print("");
+            writer.close();
+
+            File file1 = new File("Appointment.txt");
+
+            if (!file1.exists()) {//checking the is given file exists
+
+                file1.createNewFile();//creating new file
+                Exception fileError = new IOException("File is not founded");
+                System.out.println(fileError);
+            }
+
+            FileWriter fw = new FileWriter(file1, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+
+            for (Appointment a : appointments) {
+                String strDate = format.format(a.getAppointmentDate());
+
+                String wantedLine = a.getAppointmentId() + "#" + a.getPatient().getUsername() + "#" + a.getDoctor().getUsername() + "#" + a.getAppointmentNo() + "#" + strDate + "#" +
+                        a.getAppointmentTime() + "#" + a.getSymptoms() + "#" + a.getStatus();
+
+                bw.write(wantedLine);
+                bw.newLine();
+
+            }
+            bw.close();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
 }

@@ -211,5 +211,10 @@ public class AppointmentBOImpl implements AppointmentBO {
         return thisDoctorAppointments;
     }
 
+    @Override
+    public void completeAppointment(String text) throws Exception {
+        appointmentDAO.completeAppointment(text);
+    }
+
 
 }
