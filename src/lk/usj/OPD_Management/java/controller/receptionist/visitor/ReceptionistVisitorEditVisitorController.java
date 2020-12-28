@@ -72,7 +72,7 @@ public class ReceptionistVisitorEditVisitorController implements Initializable {
     private Label attachmentLabel;
 
     @FXML
-    private JFXTextArea notesTxtArea;
+    private JFXTextField notesTxtArea;
 
     @FXML
     private JFXButton cancelBtn;
