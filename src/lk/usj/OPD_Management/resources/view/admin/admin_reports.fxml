@@ -1,49 +1,174 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.postal.ReceptionistPostalController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.postal.ReceptionistPostalController">
    <children>
-      <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Reports">
-         <font>
-            <Font name="Gotham Bold" size="16.0" />
-         </font>
-         <VBox.margin>
-            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-         </VBox.margin>
-      </Text>
-      <HBox spacing="20.0">
-         <VBox.margin>
-            <Insets bottom="15.0" left="15.0" right="15.0" />
-         </VBox.margin>
+      <HBox prefHeight="240.0" prefWidth="730.0" spacing="15.0">
          <children>
-            <JFXButton fx:id="postalRecivedBtn" onAction="#postalRecivedBtn_OnAction" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="Appointment Report">
-               <font>
-                  <Font name="Gotham-Book" size="12.0" />
-               </font>
-            </JFXButton>
-            <JFXButton fx:id="postalDispatchedBtn1" layoutX="171.0" layoutY="10.0" onAction="#postalDispatchedBtn_OnAction" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="Patient Login Credentials">
-               <font>
-                  <Font name="Gotham-Book" size="12.0" />
-               </font>
-            </JFXButton>
-            <JFXButton fx:id="postalDispatchedBtn" layoutX="10.0" layoutY="10.0" onAction="#postalDispatchedBtn_OnAction" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" text="Users Log">
-               <font>
-                  <Font name="Gotham-Book" size="12.0" />
-               </font>
-            </JFXButton>
+            <VBox prefHeight="240.0" prefWidth="230.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5;">
+               <children>
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointments Records">
+                     <font>
+                        <Font name="Gotham-Book" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="From">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <JFXDatePicker defaultColor="#b8b6c7" prefHeight="30.0" prefWidth="200.0" promptText="Select date" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-date-picker" stylesheets="@../../css/styles.css">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </JFXDatePicker>
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="To">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <JFXDatePicker defaultColor="#b8b6c7" prefHeight="30.0" prefWidth="200.0" promptText="Select date" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-date-picker" stylesheets="@../../css/styles.css">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="40.0" />
+                     </VBox.margin>
+                  </JFXDatePicker>
+                  <Pane nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="229.0">
+                     <children>
+                        <JFXButton alignment="CENTER" prefWidth="100.0" style="-fx-background-color: #2484FF;" text="Export" textFill="WHITE">
+                           <font>
+                              <Font name="Gotham-Book" size="12.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
+                           </padding>
+                        </JFXButton>
+                     </children>
+                  </Pane>
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="10.0" prefHeight="240.0" prefWidth="230.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5;">
+               <children>
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Users Log">
+                     <font>
+                        <Font name="Gotham-Book" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="From">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <JFXDatePicker defaultColor="#b8b6c7" prefHeight="30.0" prefWidth="200.0" promptText="Select date" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-date-picker" stylesheets="@../../css/styles.css">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </JFXDatePicker>
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="To">
+                     <font>
+                        <Font name="Gotham-Book" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <JFXDatePicker defaultColor="#b8b6c7" prefHeight="30.0" prefWidth="200.0" promptText="Select date" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-date-picker" stylesheets="@../../css/styles.css">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="40.0" />
+                     </VBox.margin>
+                  </JFXDatePicker>
+                  <Pane nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="229.0">
+                     <children>
+                        <JFXButton alignment="CENTER" prefWidth="100.0" style="-fx-background-color: #2484FF;" text="Export" textFill="WHITE">
+                           <font>
+                              <Font name="Gotham-Book" size="12.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
+                           </padding>
+                        </JFXButton>
+                     </children>
+                  </Pane>
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+            </VBox>
          </children>
-      </HBox>
-      <AnchorPane fx:id="root" VBox.vgrow="ALWAYS">
          <VBox.margin>
-            <Insets bottom="15.0" left="15.0" right="15.0" />
+            <Insets />
          </VBox.margin>
-      </AnchorPane>
+      </HBox>
+      <HBox layoutX="25.0" layoutY="83.0" prefHeight="100.0" prefWidth="730.0" spacing="15.0">
+         <children>
+            <VBox prefHeight="100.0" prefWidth="230.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5;">
+               <children>
+                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Login credentials">
+                     <font>
+                        <Font name="Gotham-Book" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Pane nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="229.0">
+                     <children>
+                        <JFXButton alignment="CENTER" prefWidth="100.0" style="-fx-background-color: #2484FF;" text="Export" textFill="WHITE">
+                           <font>
+                              <Font name="Gotham-Book" size="12.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
+                           </padding>
+                        </JFXButton>
+                     </children>
+                  </Pane>
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+      </HBox>
    </children>
 </VBox>

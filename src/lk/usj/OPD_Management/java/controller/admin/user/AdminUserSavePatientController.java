@@ -79,7 +79,7 @@ public class AdminUserSavePatientController implements Initializable {
     private JFXComboBox<String> maritalStatusComboBox;
 
     @FXML
-    private JFXTextArea notesTextArea;
+    private JFXTextField notesTextArea;
 
     @FXML
     private JFXButton cancelBtn;

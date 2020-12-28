@@ -106,7 +106,7 @@ public class AdminUserSaveReceptionistController implements Initializable {
     private Label documentLabel;
 
     @FXML
-    private JFXTextArea notesTextArea;
+    private JFXTextField notesTextArea;
 
     @FXML
     private JFXButton cancelBtn;

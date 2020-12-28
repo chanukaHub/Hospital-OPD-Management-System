@@ -112,7 +112,7 @@ public class AdminUserEditDeleteReceptionistController implements Initializable 
     private Label documentLabel;
 
     @FXML
-    private JFXTextArea notesTextArea;
+    private JFXTextField notesTextArea;
 
     @FXML
     private JFXButton cancelBtn;

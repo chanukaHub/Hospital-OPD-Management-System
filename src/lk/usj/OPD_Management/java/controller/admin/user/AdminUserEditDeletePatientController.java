@@ -85,7 +85,7 @@ public class AdminUserEditDeletePatientController implements Initializable {
     private JFXPasswordField passwordField;
 
     @FXML
-    private JFXTextArea notesTextArea;
+    private JFXTextField notesTextArea;
 
     @FXML
     private JFXButton cancelBtn;

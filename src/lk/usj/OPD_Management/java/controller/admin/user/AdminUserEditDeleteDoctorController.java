@@ -103,7 +103,7 @@ public class AdminUserEditDeleteDoctorController implements Initializable {
     private JFXPasswordField passwordField;
 
     @FXML
-    private JFXTextArea notesTextArea;
+    private JFXTextField notesTextArea;
 
     @FXML
     private JFXButton staffPhotographBtn;

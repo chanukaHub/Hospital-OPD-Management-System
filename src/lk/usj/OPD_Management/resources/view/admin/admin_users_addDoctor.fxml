@@ -269,7 +269,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXTextField fx:id="notesTextArea" alignment="TOP_LEFT" focusColor="#b8b6c7" maxWidth="1.7976931348623157E308" prefHeight="457.0" prefWidth="230.0" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5;" text="Write here..." unFocusColor="#ffffff00">
+                  <JFXTextField fx:id="notesTextArea" alignment="TOP_LEFT" focusColor="#b8b6c7" maxWidth="1.7976931348623157E308" prefHeight="457.0" prefWidth="230.0" promptText="Write here..." style="-fx-background-color: #F2F0FB; -fx-background-radius: 5;" unFocusColor="#ffffff00">
                      <font>
                         <Font name="Gotham-Book" size="12.0" />
                      </font>
