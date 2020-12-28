@@ -580,4 +580,37 @@ public class AppointmentDAOImpl implements AppointmentDAO {
         }
     }
 
+    @Override
+    public int countPendingAppointmentsUsingDoctorUsername(String doctorUserName, String status) throws Exception {
+        try{
+            int count=0;
+            String doctor,currentStatus;
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+            File file = new File("Appointment.txt");
+            if (!file.exists()) {//checking the is given file exists
+
+                file.createNewFile();//creating new file
+                Exception fileError =new IOException("File is not founded");
+                System.out.println(fileError);
+            }
+            Scanner scanner =new Scanner(file);
+
+            while(scanner.hasNextLine()){
+                String line =scanner.nextLine();
+                String[] details = line.split("#");
+                doctor=details[2];
+                currentStatus=details[7];
+
+                if (doctor.equals(doctorUserName) && currentStatus.equals(status)){
+                    count++;
+                }
+            }
+            return count;
+
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
 }

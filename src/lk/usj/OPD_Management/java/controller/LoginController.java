@@ -26,6 +26,7 @@ import lk.usj.OPD_Management.java.common.tool.ButtonFireForEnterSetter;
 import lk.usj.OPD_Management.java.common.tool.GlobalBoolean;
 import lk.usj.OPD_Management.java.controller.admin.AdminBaseController;
 import lk.usj.OPD_Management.java.controller.doctor.DoctorBaseController;
+import lk.usj.OPD_Management.java.controller.doctor.appointment.DoctorAppointmentController;
 import lk.usj.OPD_Management.java.controller.doctor.dashboard.DoctorDashboardController;
 import lk.usj.OPD_Management.java.controller.patient.PatientBaseController;
 import lk.usj.OPD_Management.java.controller.receptionist.ReceptionistBaseController;
@@ -234,6 +235,7 @@ public class LoginController implements Initializable{
                     try {
                       //Load second scene
                         DoctorDashboardController.doctorUserName = usernameTxt1.getText();
+                        DoctorAppointmentController.doctorUserName= usernameTxt1.getText();
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/doctor/doctor_base.fxml"));
                         Parent root = loader.load();
 

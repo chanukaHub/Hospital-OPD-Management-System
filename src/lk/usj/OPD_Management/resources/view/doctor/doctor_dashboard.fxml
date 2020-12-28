@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <VBox fx:id="root" prefHeight="567.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.doctor.dashboard.DoctorDashboardController">
    <children>
@@ -168,7 +164,7 @@
                   <TableColumn prefWidth="123.20001220703125" text="Patient ID" />
                   <TableColumn prefWidth="185.59996032714844" text="Patient name" />
                   <TableColumn prefWidth="187.2000732421875" text="Date" />
-                  <TableColumn prefWidth="130.39996337890625" text="Time" />
+                  <TableColumn prefWidth="113.60003662109375" text="Time" />
                </columns>
                <VBox.margin>
                   <Insets bottom="15.0" left="15.0" right="15.0" />

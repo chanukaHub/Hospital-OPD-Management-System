@@ -216,5 +216,20 @@ public class AppointmentBOImpl implements AppointmentBO {
         appointmentDAO.completeAppointment(text);
     }
 
+    @Override
+    public int countPendingAppointmentsUsingDoctorUsername(String doctorUserName) throws Exception {
+        return appointmentDAO.countPendingAppointmentsUsingDoctorUsername(doctorUserName,"Pending");
+    }
+
+    @Override
+    public int countApproveAppointmentsUsingDoctorUsername(String doctorUserName) throws Exception {
+        return appointmentDAO.countPendingAppointmentsUsingDoctorUsername(doctorUserName,"Approve");
+    }
+
+    @Override
+    public int countCompletedAppointmentsUsingDoctorUsername(String doctorUserName) throws Exception {
+        return appointmentDAO.countPendingAppointmentsUsingDoctorUsername(doctorUserName,"Completed");
+    }
+
 
 }

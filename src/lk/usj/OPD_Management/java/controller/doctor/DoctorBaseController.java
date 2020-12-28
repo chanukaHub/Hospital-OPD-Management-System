@@ -58,8 +58,21 @@ public class DoctorBaseController implements Initializable {
     private AnchorPane root;
 
     @FXML
-    void appointmentHBox_MouseEvent(MouseEvent event) {
+    void appointmentHBox_MouseEvent(MouseEvent event) throws Exception{
+        dashboardHBox.getStyleClass().add("hover_border");
+        appointmentHBox.getStyleClass().add("hover_border");
 
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/doctor/doctor_appointments.fxml"));
+        root.getChildren().setAll(pane);
+        appointmentHBox.getStyleClass().removeAll("hover_border");
+
+        BackgroundFill background_fill = new BackgroundFill(Color.rgb(80, 157, 255), CornerRadii.EMPTY, Insets.EMPTY);
+        Background background = new Background(background_fill);
+        appointmentHBox.setBackground(background);
+
+        BackgroundFill background_fill2 = new BackgroundFill(Color.TRANSPARENT, CornerRadii.EMPTY, Insets.EMPTY);
+        Background background2 = new Background(background_fill2);
+        dashboardHBox.setBackground(background2);
     }
 
     @FXML

@@ -30,4 +30,10 @@ public interface AppointmentBO extends SuperBO {
     ArrayList<AppointmentDTO> getApprovedAppointmentListUsingDoctorUsername(String username)throws Exception;
 
     void completeAppointment(String text) throws Exception;
+
+    int countPendingAppointmentsUsingDoctorUsername(String doctorUserName)throws Exception;
+
+    int countApproveAppointmentsUsingDoctorUsername(String doctorUserName)throws Exception;
+
+    int countCompletedAppointmentsUsingDoctorUsername(String doctorUserName) throws Exception;
 }

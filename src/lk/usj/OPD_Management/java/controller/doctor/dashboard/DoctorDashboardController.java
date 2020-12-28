@@ -73,6 +73,18 @@ public class DoctorDashboardController implements Initializable {
 
     }
 
+    private void countPendingAppointments() throws Exception{
+        pendingCountText.setText(String.format("%03d",appointmentBO.countPendingAppointmentsUsingDoctorUsername(doctorUserName)));
+    }
+
+    private void countApproveAppointments() throws Exception{
+        approvedCountText.setText(String.format("%03d",appointmentBO.countApproveAppointmentsUsingDoctorUsername(doctorUserName)));
+    }
+
+    private void countCompletedAppointments() throws Exception{
+        completedCountText.setText(String.format("%03d",appointmentBO.countCompletedAppointmentsUsingDoctorUsername(doctorUserName)));
+    }
+
     private void loadUpcomingAppointmentTable() throws Exception {
         //System.out.println(doctorUserName);
         upcomingAppointmentTable.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("appointmentId"));
@@ -87,6 +99,9 @@ public class DoctorDashboardController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             loadUpcomingAppointmentTable();
+            countPendingAppointments();
+            countApproveAppointments();
+            countCompletedAppointments();
         } catch (Exception e) {
             e.printStackTrace();
         }

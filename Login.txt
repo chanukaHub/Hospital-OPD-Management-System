@@ -1,2 +1,0 @@
-doctor#DoctorName#29/12/2020 03:54:23#Doctor
-doctor#DoctorName#29/12/2020 03:55:21#Doctor
