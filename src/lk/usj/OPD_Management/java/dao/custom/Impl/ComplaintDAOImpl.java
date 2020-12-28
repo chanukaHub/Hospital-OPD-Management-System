@@ -2,10 +2,14 @@ package lk.usj.OPD_Management.java.dao.custom.Impl;
 
 import lk.usj.OPD_Management.java.dao.custom.ComplaintDAO;
 import lk.usj.OPD_Management.java.entity.Complaint;
+import lk.usj.OPD_Management.java.entity.Receptionist;
 
 import java.io.*;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class ComplaintDAOImpl implements ComplaintDAO {
@@ -15,7 +19,7 @@ public class ComplaintDAOImpl implements ComplaintDAO {
         String strDate = format.format(var1.getDate());
 
         String wantedLine = var1.getComplaintId()+"#"+var1.getType()+"#"+var1.getComplaintBy()+"#"+var1.getPhoneNumber()+"#"+strDate+"#"+
-                var1.getDescription()+"#"+var1.getActionTaken()+"#"+var1.getNote()+"#"+var1.getAttachDocument()+var1.getStatus();
+                var1.getDescription()+"#"+var1.getActionTaken()+"#"+var1.getNote()+"#"+var1.getAttachDocument()+"#"+var1.getStatus();
         File file = new File("Complaint.txt");
         if (!file.exists()) {//checking the is given file exists
 
@@ -55,6 +59,48 @@ public class ComplaintDAOImpl implements ComplaintDAO {
 
     @Override
     public ArrayList<Complaint> getAll() throws Exception {
+        try{
+            String complaintId,type,complaintBy,phoneNo,date,description,actionTaken,note,attachmentDocument,status;
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+            File file = new File("Complaint.txt");
+            if (!file.exists()) {//checking the is given file exists
+
+                file.createNewFile();//creating new file
+                Exception fileError =new IOException("File is not founded");
+                System.out.println(fileError);
+            }
+            Scanner scanner =new Scanner(file);
+
+            ArrayList<Complaint> complaints = new ArrayList<>();
+
+            while(scanner.hasNextLine()){
+                String line =scanner.nextLine();
+                String[] details = line.split("#");
+                complaintId=details[0];
+                type=details[1];
+                complaintBy=details[2];
+                phoneNo=details[3];
+                date=details[4];
+                description=details[5];
+                actionTaken=details[6];
+                note=details[7];
+                attachmentDocument=details[8];
+                status=details[9];
+
+
+
+                String[] dateArray = date.split("/");
+                Date date1 = new GregorianCalendar(Integer.parseInt(dateArray[2]), Integer.parseInt(dateArray[1]) - 1, Integer.parseInt(dateArray[0])).getTime();
+
+                Complaint complaint=new Complaint(complaintId,type,complaintBy,phoneNo,date1,description,actionTaken,note,attachmentDocument,status);
+                complaints.add(complaint);
+
+            }
+            return complaints;
+
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
         return null;
     }
 

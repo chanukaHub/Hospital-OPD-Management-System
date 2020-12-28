@@ -19,11 +19,12 @@
       </Text>
       <TableView fx:id="complainTable" onMouseClicked="#complainTable_MouseEvent" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" VBox.vgrow="ALWAYS">
         <columns>
-          <TableColumn prefWidth="95.0" text="Complaint ID" />
-          <TableColumn prefWidth="174.0" text="Coplaint type" />
-            <TableColumn prefWidth="193.0" text="Complaint by" />
-            <TableColumn prefWidth="126.0" text="Date" />
-            <TableColumn prefWidth="141.0" text="Status" />
+          <TableColumn prefWidth="87.20001524686813" text="Complaint ID" />
+          <TableColumn prefWidth="140.0" text="Coplaint type" />
+            <TableColumn prefWidth="107.99998474121094" text="Complaint by" />
+            <TableColumn prefWidth="120.800048828125" text="Date" />
+            <TableColumn prefWidth="180.800048828125" text="Action Taken" />
+            <TableColumn prefWidth="85.59991455078125" text="Status" />
         </columns>
          <VBox.margin>
             <Insets bottom="15.0" left="15.0" right="15.0" />
