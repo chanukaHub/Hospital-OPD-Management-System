@@ -231,5 +231,17 @@ public class AppointmentBOImpl implements AppointmentBO {
         return appointmentDAO.countPendingAppointmentsUsingDoctorUsername(doctorUserName,"Completed");
     }
 
+    @Override
+    public ArrayList<AppointmentDTO> loadThisDoctorAppointmentTable(String doctorUserName) throws Exception {
+        ArrayList<AppointmentDTO> appointmentDTOS=getAppointmentList();
+        ArrayList<AppointmentDTO> thisDoctorAppointments =new ArrayList<>();
+        for (AppointmentDTO appointmentDTO:appointmentDTOS){
+            if (appointmentDTO.getDoctorUsername().equals(doctorUserName)){
+                thisDoctorAppointments.add(appointmentDTO);
+            }
+        }
+        return thisDoctorAppointments;
+    }
+
 
 }
