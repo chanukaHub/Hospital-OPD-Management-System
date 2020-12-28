@@ -30,8 +30,9 @@ public class ReceptionistDashboardController implements Initializable {
     private AnchorPane root;
 
     @FXML
-    void AddComplaintBtn_OnActon(ActionEvent event) {
-
+    void AddComplaintBtn_OnActon(ActionEvent event) throws IOException{
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_dashboard_addComplaints.fxml"));
+        root.getChildren().setAll(pane);
     }
 
     @FXML
