@@ -89,8 +89,29 @@ public class ReceptionistBaseController implements Initializable {
     }
 
     @FXML
-    void complaintsHBox_MouseEvent(MouseEvent event) {
+    void complaintsHBox_MouseEvent(MouseEvent event) throws IOException{
+        dashboardHBox.getStyleClass().add("hover_border");
+        visitorsHBox.getStyleClass().add("hover_border");
+        postalHBox.getStyleClass().add("hover_border");
+        complaintsHBox.getStyleClass().add("hover_border");
+        appointmentsHBox.getStyleClass().add("hover_border");
+        patientHBox.getStyleClass().add("hover_border");
 
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/receptionist/receptionist_complaints.fxml"));
+        root.getChildren().setAll(pane);
+        complaintsHBox.getStyleClass().removeAll("hover_border");
+
+        BackgroundFill background_fill = new BackgroundFill(Color.rgb(80, 157, 255), CornerRadii.EMPTY, Insets.EMPTY);
+        Background background = new Background(background_fill);
+        complaintsHBox.setBackground(background);
+
+        BackgroundFill background_fill2 = new BackgroundFill(Color.TRANSPARENT, CornerRadii.EMPTY, Insets.EMPTY);
+        Background background2 = new Background(background_fill2);
+        patientHBox.setBackground(background2);
+        visitorsHBox.setBackground(background2);
+        postalHBox.setBackground(background2);
+        dashboardHBox.setBackground(background2);
+        appointmentsHBox.setBackground(background2);
     }
 
     @FXML

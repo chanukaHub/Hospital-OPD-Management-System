@@ -98,8 +98,31 @@ public class AdminBaseController implements Initializable {
     }
 
     @FXML
-    void complaintsHBox_MouseEvent(MouseEvent event) {
+    void complaintsHBox_MouseEvent(MouseEvent event) throws IOException{
+        dashboardHBox.getStyleClass().add("hover_border");
+        visitorHBox.getStyleClass().add("hover_border");
+        postalHBox.getStyleClass().add("hover_border");
+        complainsHBox.getStyleClass().add("hover_border");
+        appointmentHBox.getStyleClass().add("hover_border");
+        referenceHBox.getStyleClass().add("hover_border");
+        userHBox.getStyleClass().add("hover_border");
 
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_complaints.fxml"));
+        root.getChildren().setAll(pane);
+        complainsHBox.getStyleClass().removeAll("hover_border");
+
+        BackgroundFill background_fill = new BackgroundFill(Color.rgb(80, 157, 255), CornerRadii.EMPTY, Insets.EMPTY);
+        Background background = new Background(background_fill);
+        complainsHBox.setBackground(background);
+
+        BackgroundFill background_fill2 = new BackgroundFill(Color.TRANSPARENT, CornerRadii.EMPTY, Insets.EMPTY);
+        Background background2 = new Background(background_fill2);
+        userHBox.setBackground(background2);
+        visitorHBox.setBackground(background2);
+        postalHBox.setBackground(background2);
+        dashboardHBox.setBackground(background2);
+        referenceHBox.setBackground(background2);
+        appointmentHBox.setBackground(background2);
     }
 
     @FXML
