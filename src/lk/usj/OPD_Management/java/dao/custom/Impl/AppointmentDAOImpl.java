@@ -281,7 +281,7 @@ public class AppointmentDAOImpl implements AppointmentDAO {
             }else {
                 String[] details = last.split("#");
                 appointmentId=details[0];
-                return Integer.parseInt(appointmentId.substring(4));
+                return Integer.parseInt(appointmentId.substring(1));
             }
 
 

@@ -285,7 +285,7 @@ public class VisitorDAOImpl implements VisitorDAO {
             }else {
                 String[] details = last.split("#");
                 visitorId=details[0];
-                return Integer.parseInt(visitorId.substring(4));
+                return Integer.parseInt(visitorId.substring(1));
             }
 
 

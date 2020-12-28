@@ -207,7 +207,7 @@ public class ComplaintDAOImpl implements ComplaintDAO {
             }else {
                 String[] details = last.split("#");
                 complaintId=details[0];
-                return Integer.parseInt(complaintId.substring(4));
+                return Integer.parseInt(complaintId.substring(1));
             }
 
 

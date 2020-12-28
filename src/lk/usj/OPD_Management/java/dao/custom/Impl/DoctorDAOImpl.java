@@ -387,7 +387,7 @@ public class DoctorDAOImpl implements DoctorDAO {
             }else {
                 String[] details = last.split("#");
                 staffId=details[9];
-                return Integer.parseInt(staffId.substring(4));
+                return Integer.parseInt(staffId.substring(1));
             }
 
 
