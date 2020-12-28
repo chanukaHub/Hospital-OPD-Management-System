@@ -75,4 +75,9 @@ public class ComplaintsBOImpl implements ComplaintBO {
 
         ));
     }
+
+    @Override
+    public int countNewComplaints() throws Exception {
+        return complaintDAO.countNewComplaints();
+    }
 }

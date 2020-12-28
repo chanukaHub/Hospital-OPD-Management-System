@@ -217,4 +217,36 @@ public class ComplaintDAOImpl implements ComplaintDAO {
         }
         return 0;
     }
+
+    @Override
+    public int countNewComplaints() throws Exception {
+        try{
+            int count =0 ;
+            String status;
+            File file = new File("Complaint.txt");
+            if (!file.exists()) {//checking the is given file exists
+
+                file.createNewFile();//creating new file
+                Exception fileError =new IOException("File is not founded");
+                System.out.println(fileError);
+            }
+            Scanner scanner =new Scanner(file);
+
+            while(scanner.hasNextLine()){
+                String line =scanner.nextLine();
+                String[] details = line.split("#");
+                status=details[9];
+
+                if (status.equals("NEW")){
+                    count++;
+                }
+
+            }
+            return count;
+
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
+        return 0;
+    }
 }
