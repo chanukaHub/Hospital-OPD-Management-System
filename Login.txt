@@ -1,2 +1,4 @@
 r#null#28/12/2020 23:04:04#Receptionist
 admin#AdminName#28/12/2020 23:04:56#Admin
+r#null#29/12/2020 00:09:00#Receptionist
+patient#Test patient#29/12/2020 00:09:36#Patient

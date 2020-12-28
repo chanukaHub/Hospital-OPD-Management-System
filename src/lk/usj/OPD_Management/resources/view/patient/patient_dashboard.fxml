@@ -1,24 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.admin.dashboard.AdminDashboardController">
+
+<VBox maxHeight="567.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.admin.dashboard.AdminDashboardController">
    <children>
-      <HBox style="-fx-background-color: #ffffff; -fx-background-radius: 5;" HBox.hgrow="ALWAYS">
+      <VBox prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5;">
          <children>
-            <VBox>
+            <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Today's Appointments">
+               <font>
+                  <Font name="Gotham Bold" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </Text>
+            <TableView fx:id="loginUserTable11" focusTraversable="false" mouseTransparent="true" prefHeight="218.0" styleClass="scroll-bar" stylesheets="@../../css/styles.css" VBox.vgrow="ALWAYS">
+               <columns>
+                  <TableColumn minWidth="8.0" prefWidth="150.0" text="Appointment ID" />
+                  <TableColumn prefWidth="320.0" text="Doctor" />
+                  <TableColumn prefWidth="150.0" text="Date" />
+                  <TableColumn prefWidth="150.0" text="Time" />
+               </columns>
+            </TableView>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+         <VBox.margin>
+            <Insets bottom="15.0" />
+         </VBox.margin>
+      </VBox>
+      <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="273.0" prefWidth="760.0">
+         <children>
+            <VBox prefHeight="273.0" prefWidth="561.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5;">
                <children>
                   <VBox prefWidth="500.0">
                      <children>
-                        <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Support Request" VBox.vgrow="ALWAYS">
+                        <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Complaints" VBox.vgrow="ALWAYS">
                            <font>
                               <Font name="Gotham Bold" size="16.0" />
                            </font>
@@ -28,12 +54,13 @@
                         </Text>
                      </children>
                   </VBox>
-                  <VBox maxHeight="1.7976931348623157E308" prefWidth="500.0" VBox.vgrow="ALWAYS">
+                  <VBox maxHeight="1.7976931348623157E308" prefHeight="473.0" prefWidth="465.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <TableView fx:id="RequestTable" onMouseClicked="#RequestTable_MouseEvent" prefHeight="454.0" prefWidth="470.0" VBox.vgrow="ALWAYS">
+                        <TableView fx:id="RequestTable" onMouseClicked="#RequestTable_MouseEvent" prefHeight="300.0" prefWidth="470.0" VBox.vgrow="ALWAYS">
                            <columns>
-                              <TableColumn prefWidth="100.0" text="Request No" />
-                              <TableColumn prefWidth="335.0" text="Title" />
+                              <TableColumn prefWidth="150.0" text="Complaint ID" />
+                              <TableColumn prefWidth="290.0" text="Complaint Type" />
+                              <TableColumn prefWidth="100.0" text="Date" />
                            </columns>
                            <VBox.margin>
                               <Insets />
@@ -46,179 +73,24 @@
                   </VBox>
                </children>
             </VBox>
-         </children>
-         <HBox.margin>
-            <Insets right="7.5" />
-         </HBox.margin>
-      </HBox>
-      <VBox prefHeight="551.0" prefWidth="323.0">
-         <children>
-            <VBox prefHeight="80.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;">
-               <VBox.margin>
-                  <Insets bottom="7.5" left="7.5" />
-               </VBox.margin>
+            <VBox spacing="15.0" style="-fx-background-radius: 5;" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
                <children>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <ImageView fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../images/Appointments_card_img.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets bottom="20.0" left="30.0" right="20.0" top="20.0" />
-                           </HBox.margin>
-                        </ImageView>
-                        <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
-                           <children>
-                              <VBox VBox.vgrow="ALWAYS">
-                                 <children>
-                                    <Text fill="#7f858d" strokeType="OUTSIDE" strokeWidth="0.0" text="Today Appointments">
-                                       <font>
-                                          <Font name="Gotham-Book" size="12.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets />
-                                       </VBox.margin>
-                                    </Text>
-                                 </children>
-                                 <VBox.margin>
-                                    <Insets />
-                                 </VBox.margin>
-                              </VBox>
-                              <VBox layoutX="10.0" layoutY="10.0" VBox.vgrow="ALWAYS">
-                                 <children>
-                                    <Text fx:id="TodayAppointmentText" fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="14">
-                                       <font>
-                                          <Font name="Gotham-Book" size="32.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </VBox>
-                           </children>
-                           <HBox.margin>
-                              <Insets bottom="15.0" left="10.0" right="15.0" top="15.0" />
-                           </HBox.margin>
-                        </VBox>
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-            <VBox prefHeight="80.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;">
-               <VBox.margin>
-                  <Insets bottom="7.5" left="7.5" top="7.5" />
-               </VBox.margin>
-               <children>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <ImageView fitHeight="40.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../images/patient_card_img.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets bottom="20.0" left="40.0" right="20.0" top="20.0" />
-                           </HBox.margin>
-                        </ImageView>
-                        <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
-                           <children>
-                              <VBox VBox.vgrow="ALWAYS">
-                                 <children>
-                                    <Text fill="#7f858d" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Patients">
-                                       <font>
-                                          <Font name="Gotham-Book" size="12.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets />
-                                       </VBox.margin>
-                                    </Text>
-                                 </children>
-                              </VBox>
-                              <VBox VBox.vgrow="ALWAYS">
-                                 <children>
-                                    <Text fx:id="numberOfPatientText" fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="234">
-                                       <font>
-                                          <Font name="Gotham-Book" size="32.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </VBox>
-                           </children>
-                           <HBox.margin>
-                              <Insets bottom="15.0" left="10.0" right="15.0" top="15.0" />
-                           </HBox.margin>
-                        </VBox>
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-            <VBox prefHeight="80.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5px;">
-               <VBox.margin>
-                  <Insets bottom="7.5" left="7.5" top="7.5" />
-               </VBox.margin>
-               <children>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <ImageView fitHeight="40.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../images/complaints_card_img.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets bottom="20.0" left="30.0" right="20.0" top="20.0" />
-                           </HBox.margin>
-                        </ImageView>
-                        <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
-                           <children>
-                              <VBox VBox.vgrow="ALWAYS">
-                                 <children>
-                                    <Text fill="#7f858d" strokeType="OUTSIDE" strokeWidth="0.0" text="Open Complaints">
-                                       <font>
-                                          <Font name="Gotham-Book" size="12.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </VBox>
-                              <VBox VBox.vgrow="ALWAYS">
-                                 <children>
-                                    <Text fx:id="openComplaintsText" fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="03">
-                                       <font>
-                                          <Font name="Gotham-Book" size="32.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </VBox>
-                           </children>
-                           <HBox.margin>
-                              <Insets bottom="15.0" left="10.0" right="15.0" top="15.0" />
-                           </HBox.margin>
-                        </VBox>
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-            <VBox style="-fx-background-color: #ffffff; -fx-background-radius: 5;">
-               <children>
-                  <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Users log">
+                  <JFXButton fx:id="addNewPatientBtn" alignment="CENTER" onAction="#addNewPatientBtn_OnActon" prefHeight="130.0" prefWidth="184.0" style="-fx-background-color: #1CC270; -fx-background-radius: 5px;" text="Add New &#10;Appointment" textAlignment="CENTER" textFill="WHITE">
                      <font>
-                        <Font name="Gotham Bold" size="16.0" />
+                        <Font name="Gotham-Book" size="19.0" />
                      </font>
-                     <VBox.margin>
-                        <Insets bottom="15.0" />
-                     </VBox.margin>
-                  </Text>
-                  <TableView fx:id="loginUserTable" focusTraversable="false" mouseTransparent="true" prefHeight="218.0" styleClass="scroll-bar" stylesheets="@../../css/styles.css" VBox.vgrow="ALWAYS">
-                    <columns>
-                      <TableColumn minWidth="8.0" prefWidth="150.0" text="Username" />
-                      <TableColumn prefWidth="100.0" text="User Type" />
-                    </columns>
-                  </TableView>
+                  </JFXButton>
+                  <JFXButton fx:id="addNewPatientBtn1" alignment="CENTER" onAction="#addNewPatientBtn_OnActon" prefHeight="130.0" prefWidth="184.0" style="-fx-background-color: #FF4242; -fx-background-radius: 5px;" text="Add New&#10;Complaint" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Gotham-Book" size="19.0" />
+                     </font>
+                  </JFXButton>
                </children>
-               <padding>
-                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets left="7.5" top="7.5" />
-               </VBox.margin>
             </VBox>
          </children>
-      </VBox>
+      </HBox>
    </children>
-</HBox>
+</VBox>
