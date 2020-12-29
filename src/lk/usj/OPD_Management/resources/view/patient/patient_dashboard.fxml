@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <VBox fx:id="root" maxHeight="567.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.patient.dashboard.PatientDashboardController">
    <children>
@@ -23,10 +20,11 @@
             </Text>
             <TableView fx:id="appointmentTable" focusTraversable="false" mouseTransparent="true" onMouseClicked="#appointmentTable_MouseEvent" prefHeight="218.0" styleClass="scroll-bar" stylesheets="@../../css/styles.css" VBox.vgrow="ALWAYS">
                <columns>
-                  <TableColumn minWidth="8.0" prefWidth="150.0" text="Appointment ID" />
-                  <TableColumn prefWidth="320.0" text="Doctor" />
-                  <TableColumn prefWidth="150.0" text="Date" />
-                  <TableColumn prefWidth="150.0" text="Time" />
+                  <TableColumn minWidth="8.0" prefWidth="112.79993361234665" text="Appointment ID" />
+                  <TableColumn prefWidth="193.60000610351562" text="Doctor" />
+                  <TableColumn prefWidth="212.79998779296875" text="Date" />
+                  <TableColumn prefWidth="109.5999755859375" text="Time" />
+                  <TableColumn prefWidth="96.00006103515625" text="Status" />
                </columns>
             </TableView>
          </children>
@@ -55,11 +53,12 @@
                   </VBox>
                   <VBox maxHeight="1.7976931348623157E308" prefHeight="473.0" prefWidth="465.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <TableView fx:id="complaintTable" onMouseClicked="#complaintTable_MouseEvent" prefHeight="300.0" prefWidth="470.0" VBox.vgrow="ALWAYS">
+                        <TableView fx:id="complaintTable" onMouseClicked="#complaintTable_MouseEvent" prefHeight="206.0" prefWidth="479.0" VBox.vgrow="ALWAYS">
                            <columns>
-                              <TableColumn prefWidth="150.0" text="Complaint ID" />
-                              <TableColumn prefWidth="290.0" text="Complaint Type" />
-                              <TableColumn prefWidth="100.0" text="Date" />
+                              <TableColumn prefWidth="87.19998854398727" text="Complaint ID" />
+                              <TableColumn prefWidth="193.5999755859375" text="Complaint Type" />
+                              <TableColumn prefWidth="164.800048828125" text="Date" />
+                              <TableColumn prefWidth="78.0" text="Status" />
                            </columns>
                            <VBox.margin>
                               <Insets />

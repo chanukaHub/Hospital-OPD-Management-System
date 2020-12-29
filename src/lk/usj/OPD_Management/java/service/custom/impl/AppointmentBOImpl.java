@@ -8,7 +8,9 @@ import lk.usj.OPD_Management.java.entity.Doctor;
 import lk.usj.OPD_Management.java.entity.Patient;
 import lk.usj.OPD_Management.java.service.custom.AppointmentBO;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class AppointmentBOImpl implements AppointmentBO {
     private AppointmentDAO appointmentDAO= DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.APPOINTMENT);
@@ -241,6 +243,21 @@ public class AppointmentBOImpl implements AppointmentBO {
             }
         }
         return thisDoctorAppointments;
+    }
+
+    @Override
+    public ArrayList<AppointmentDTO> getTodayAppointmentListUsingPatientUsername(String patientUsername) throws Exception {
+        Date date = new Date();
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        String todayDate = format.format(date);
+        ArrayList<AppointmentDTO> appointmentDTOS=getAppointmentList();
+        ArrayList<AppointmentDTO> thisPatientTodayAppointments =new ArrayList<>();
+        for (AppointmentDTO appointmentDTO:appointmentDTOS){
+            String checkingDate = format.format(appointmentDTO.getAppointmentDate());
+            if (appointmentDTO.getPatientUsername().equals(patientUsername) && checkingDate.equals(todayDate)){
+                thisPatientTodayAppointments.add(appointmentDTO);
+            }
+        }return thisPatientTodayAppointments;
     }
 
 

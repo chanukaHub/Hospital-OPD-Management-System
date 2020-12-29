@@ -3,6 +3,7 @@ package lk.usj.OPD_Management.java.service.custom.impl;
 import lk.usj.OPD_Management.java.dao.DAOFactory;
 import lk.usj.OPD_Management.java.dao.custom.ComplaintDAO;
 import lk.usj.OPD_Management.java.dao.custom.VisitorDAO;
+import lk.usj.OPD_Management.java.dto.AppointmentDTO;
 import lk.usj.OPD_Management.java.dto.ComplaintDTO;
 import lk.usj.OPD_Management.java.dto.DoctorDTO;
 import lk.usj.OPD_Management.java.entity.Complaint;
@@ -79,5 +80,17 @@ public class ComplaintsBOImpl implements ComplaintBO {
     @Override
     public int countNewComplaints() throws Exception {
         return complaintDAO.countNewComplaints();
+    }
+
+    @Override
+    public ArrayList<ComplaintDTO> getComplaintUsingPatientUsername(String patientUsername) throws Exception {
+        ArrayList<ComplaintDTO> complaintDTOS=getAllComplaint();
+        ArrayList<ComplaintDTO> thisPatientComplaints =new ArrayList<>();
+        for (ComplaintDTO complaintDTO:complaintDTOS){
+            if (complaintDTO.getComplaintBy().equals(patientUsername)){
+                thisPatientComplaints.add(complaintDTO);
+            }
+        }
+        return thisPatientComplaints;
     }
 }
