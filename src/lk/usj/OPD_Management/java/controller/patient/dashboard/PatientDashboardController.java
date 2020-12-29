@@ -7,11 +7,17 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import lk.usj.OPD_Management.java.controller.doctor.dashboard.AppointmentCompletedController;
 import lk.usj.OPD_Management.java.dto.AppointmentDTO;
 import lk.usj.OPD_Management.java.dto.ComplaintDTO;
 import lk.usj.OPD_Management.java.service.custom.AppointmentBO;
@@ -49,13 +55,36 @@ public class PatientDashboardController implements Initializable {
     private JFXButton addNewComplaint;
 
     @FXML
-    void addNewAppointmentBtn_OnAction(ActionEvent event) {
+    void addNewAppointmentBtn_OnAction(ActionEvent event) throws Exception{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/patient/patient_dashboard_addAppointment.fxml"));
+        Parent root = loader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        //stage.setTitle("");
+        stage.centerOnScreen();
+        stage.setResizable(false);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.showAndWait();
+
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/patient/patient_dashboard.fxml"));
+        this.root.getChildren().setAll(pane);
 
     }
 
     @FXML
-    void addNewComplaint_OnAction(ActionEvent event) {
+    void addNewComplaint_OnAction(ActionEvent event) throws Exception{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/patient/patient_dashboard_addComplaints.fxml"));
+        Parent root = loader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        //stage.setTitle("");
+        stage.centerOnScreen();
+        stage.setResizable(false);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.showAndWait();
 
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/patient/patient_dashboard.fxml"));
+        this.root.getChildren().setAll(pane);
     }
 
     @FXML

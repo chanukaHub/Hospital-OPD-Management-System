@@ -13,6 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 public class PatientDashboardSaveComplaintController implements Initializable {
+    public static String patientUsername;
 
     @FXML
     private ResourceBundle resources;
