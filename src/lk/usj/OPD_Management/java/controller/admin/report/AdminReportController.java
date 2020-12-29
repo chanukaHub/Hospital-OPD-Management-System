@@ -124,7 +124,6 @@ public class AdminReportController implements Initializable {
 
             document.close();
             Common.showMessage("Report Generated Successfully");
-
             try {
                 Desktop.getDesktop().open(new java.io.File(fileName));
             }catch (Exception e){
