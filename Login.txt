@@ -13,3 +13,14 @@ r#null#29/12/2020 20:11:44#Receptionist
 r#null#29/12/2020 20:13:02#Receptionist
 r#null#29/12/2020 20:28:36#Receptionist
 r#null#29/12/2020 20:30:11#Receptionist
+patient#Test patient#29/12/2020 20:40:16#Patient
+doctor#DoctorName#29/12/2020 20:58:44#Doctor
+r#null#29/12/2020 21:02:08#Receptionist
+patient#Test patient#29/12/2020 21:10:00#Patient
+r#null#29/12/2020 21:13:45#Receptionist
+admin#AdminName#29/12/2020 21:27:28#Admin
+admin#AdminName#29/12/2020 21:36:31#Admin
+r#null#29/12/2020 21:41:56#Receptionist
+admin#AdminName#29/12/2020 21:45:57#Admin
+r#null#29/12/2020 21:47:42#Receptionist
+admin#AdminName#29/12/2020 21:49:35#Admin

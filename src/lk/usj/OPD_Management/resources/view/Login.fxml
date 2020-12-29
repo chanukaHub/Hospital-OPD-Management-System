@@ -35,9 +35,9 @@
                         <Font name="Gotham Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="14.0" layoutY="361.0" text="Lorem ipsum dolor sit amet, consectetur&#10;purus sit amet luctus venenatis" textFill="WHITE" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0">
+                  <Label layoutX="14.0" layoutY="361.0" text="To keep the body in good health is a duty... otherwise&#10;we shall not be able to keep our mind strong and clear." textFill="WHITE" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0">
                      <font>
-                        <Font name="Gotham-Book" size="12.0" />
+                        <Font name="Gotham-Book" size="11.0" />
                      </font>
                   </Label>
                </children>
