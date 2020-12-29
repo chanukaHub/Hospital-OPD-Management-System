@@ -19,6 +19,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import lk.usj.OPD_Management.java.controller.admin.complaint.AdminComplaintEditDeleteController;
 import lk.usj.OPD_Management.java.controller.doctor.dashboard.DoctorDashboardController;
 
@@ -103,6 +104,7 @@ public class DoctorBaseController implements Initializable {
             stage.setResizable(false);
             stage.centerOnScreen();
             stage.setTitle("Login");
+            stage.initStyle(StageStyle.UNDECORATED);
             stage.show();
 
             ((Node)(event.getSource())).getScene().getWindow().hide();
