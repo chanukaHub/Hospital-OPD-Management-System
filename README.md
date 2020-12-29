@@ -5,7 +5,7 @@
 ![count](https://img.shields.io/github/forks/chanukaHub/Hospital-OPD-Management-System?style=social) 
 ![count](https://img.shields.io/github/watchers/chanukaHub/Hospital-OPD-Management-System?style=social) 
 
-## Introduction
+## Introduction 🎉
 OPD (Out-Patient Department) is responsible for managing out-patients who just come for a doctor for their issue/ disease checkup and managing front desk operations such as managing a visitor book, call log, postal records, and complaints.
 <p>This system will be mainly used by:</p>
 <ul><li>Receptionist</li><li>Patient</li><li>Medical Officer</li><li>Admin</li></ul>
@@ -31,3 +31,33 @@ OPD (Out-Patient Department) is responsible for managing out-patients who just c
 ![intelij](https://img.shields.io/badge/Tool-intelij-lightgrey) 
 ![SceneBuilder](https://img.shields.io/badge/Tool-SceneBuilder-lightgrey) 
 ![Trello](https://img.shields.io/badge/Tool-Trello-lightgrey) 
+
+## Benefits 
+*   There will be Fewer Errors and Accuracy will be High.  
+*   Time will be Saved. 
+*   Reduce Error Risk. 
+*   Easy Access to Data. 
+*   Paperless Work. 
+
+## Login Interface & Credentials
+
+|  User Type   |   Username    |   Password   |
+|--------------|---------------|--------------|
+|ADMIN         |admin          |admin         |
+|RECEPTIONIST  |receptionist   |receptionist  |
+|PATIENT       |patient        |patient       |
+|DOCTOR        |doctor         |doctor        |
+
+ ## 👨🏼‍💻 Contributors
+* M.C.D. Mullevidana
+* A.M.R. Madusanka
+* K.G.N. Dilshan
+* P.M.S. Nimesha 
+* G.H.B.C. Rashani 
+
+You can also follow my GitHub Profile to stay updated about my latest projects: [![GitHub Follow](https://img.shields.io/badge/Connect-chanukaHub-blue.svg?logo=Github&longCache=true&style=social&label=Follow)](https://github.com/chanukaHub)
+
+If you liked the repo then please support it by giving it a star ⭐!
+
+## License
+[![License](https://img.shields.io/badge/License-Apache%202.0-red.svg)](https://opensource.org/licenses/Apache)
