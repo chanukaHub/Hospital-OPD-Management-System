@@ -17,4 +17,6 @@ public interface ComplaintBO extends SuperBO {
     int countNewComplaints() throws Exception;
 
     ArrayList<ComplaintDTO> getComplaintUsingPatientUsername(String patientUsername) throws Exception;
+
+    ArrayList<ComplaintDTO> getNewComplaints() throws Exception;
 }

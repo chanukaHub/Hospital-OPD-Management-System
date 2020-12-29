@@ -12,6 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.text.Text;
+import lk.usj.OPD_Management.java.dto.ComplaintDTO;
 import lk.usj.OPD_Management.java.dto.LoginDTO;
 import lk.usj.OPD_Management.java.entity.Appointment;
 import lk.usj.OPD_Management.java.service.custom.AppointmentBO;
@@ -36,7 +37,7 @@ public class AdminDashboardController implements Initializable {
     private URL location;
 
     @FXML
-    private TableView<String> RequestTable;
+    private TableView<ComplaintDTO> RequestTable;
 
     @FXML
     private Text TodayAppointmentText;
@@ -74,6 +75,13 @@ public class AdminDashboardController implements Initializable {
         loginUserTable.setItems(FXCollections.observableArrayList(loginBO.getLatestLoginUserList()));
     }
 
+    private void loadComplaintTable() throws Exception {
+        RequestTable.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("complaintId"));
+        RequestTable.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("type"));
+        RequestTable.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("complaintBy"));
+        RequestTable.setItems(FXCollections.observableArrayList(complaintBO.getNewComplaints()));
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
@@ -81,6 +89,7 @@ public class AdminDashboardController implements Initializable {
             countTotalPatient();
             countNewComplaints();
             countTodayAppointments();
+            loadComplaintTable();
         } catch (Exception e) {
             e.printStackTrace();
         }
