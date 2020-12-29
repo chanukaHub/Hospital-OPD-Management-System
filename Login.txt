@@ -1,20 +1,4 @@
-patient#Test patient#29/12/2020 16:24:52#Patient
-doctor#DoctorName#29/12/2020 16:25:14#Doctor
-doctor#DoctorName#29/12/2020 16:37:57#Doctor
-doctor#DoctorName#29/12/2020 16:41:55#Doctor
-patient#Test patient#29/12/2020 16:42:59#Patient
-r#null#29/12/2020 16:43:27#Receptionist
-admin#AdminName#29/12/2020 16:43:59#Admin
-admin#AdminName#29/12/2020 16:44:08#Admin
-admin#AdminName#29/12/2020 16:46:43#Admin
-admin#AdminName#29/12/2020 16:50:24#Admin
-patient#Test patient#29/12/2020 16:50:58#Patient
-r#null#29/12/2020 16:51:09#Receptionist
-patient#Test patient#29/12/2020 16:52:23#Patient
-r#null#29/12/2020 16:56:25#Receptionist
-doctor#DoctorName#29/12/2020 17:04:05#Doctor
-r#null#29/12/2020 17:04:15#Receptionist
-doctor#DoctorName#29/12/2020 18:02:14#Doctor
-r#null#29/12/2020 18:02:25#Receptionist
-patient#Test patient#29/12/2020 18:02:51#Patient
-admin#AdminName#29/12/2020 18:58:09#Admin
+patient#Test patient#29/12/2020 19:15:27#Patient
+admin#AdminName#29/12/2020 19:16:31#Admin
+patient#Test patient#29/12/2020 19:18:26#Patient
+admin#AdminName#29/12/2020 19:19:06#Admin

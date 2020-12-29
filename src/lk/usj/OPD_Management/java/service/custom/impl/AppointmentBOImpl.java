@@ -260,5 +260,17 @@ public class AppointmentBOImpl implements AppointmentBO {
         }return thisPatientTodayAppointments;
     }
 
+    @Override
+    public ArrayList<AppointmentDTO> getAppointmentUsingDateRange(Date fromDate, Date toDate) throws Exception {
+        ArrayList<AppointmentDTO> appointmentDTOS=getAppointmentList();
+        ArrayList<AppointmentDTO> dateRangeAppointments =new ArrayList<>();
+        for (AppointmentDTO appointmentDTO:appointmentDTOS){
+            if (appointmentDTO.getAppointmentDate().after(fromDate) && appointmentDTO.getAppointmentDate().before(toDate)){
+                dateRangeAppointments.add(appointmentDTO);
+            }
+        }
+        return dateRangeAppointments;
+    }
+
 
 }

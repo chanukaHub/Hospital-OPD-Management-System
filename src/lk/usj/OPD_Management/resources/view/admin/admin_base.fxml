@@ -341,7 +341,7 @@
                         <Insets left="5.0" />
                      </padding>
                   </HBox>
-                  <HBox fx:id="userHBox1" layoutX="10.0" layoutY="328.0" onMouseClicked="#usersHBox_MouseEvent" prefHeight="38.0" stylesheets="@../../css/styles.css">
+                  <HBox fx:id="reportHBox" layoutX="10.0" layoutY="328.0" onMouseClicked="#reportHBox_MouseEvent" prefHeight="38.0" stylesheets="@../../css/styles.css">
                      <children>
                         <HBox>
                            <children>

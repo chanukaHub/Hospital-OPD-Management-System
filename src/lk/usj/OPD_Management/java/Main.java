@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class Main extends Application {
 
@@ -17,7 +18,9 @@ public class Main extends Application {
         primaryStage.setResizable(false);
         primaryStage.centerOnScreen();
         primaryStage.setTitle("Login");
+        primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
+
     }
 
 
