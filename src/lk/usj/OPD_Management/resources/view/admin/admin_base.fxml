@@ -307,40 +307,6 @@
                         <Insets left="5.0" />
                      </padding>
                   </HBox>
-                  <HBox fx:id="referenceHBox" layoutX="10.0" layoutY="170.0" onMouseClicked="#referenceHBox_MouseEvent" stylesheets="@../../css/styles.css">
-                     <children>
-                        <HBox>
-                           <children>
-                              <ImageView fitHeight="20.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../images/reference_icon.png" />
-                                 </image>
-                                 <HBox.margin>
-                                    <Insets bottom="5.0" left="10.0" right="5.0" top="11.0" />
-                                 </HBox.margin>
-                              </ImageView>
-                           </children>
-                        </HBox>
-                        <HBox HBox.hgrow="ALWAYS">
-                           <children>
-                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Reference">
-                                 <font>
-                                    <Font name="Gotham-Book" size="14.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets bottom="12.0" left="5.0" top="12.0" />
-                                 </HBox.margin>
-                              </Text>
-                           </children>
-                        </HBox>
-                     </children>
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin>
-                     <padding>
-                        <Insets left="5.0" />
-                     </padding>
-                  </HBox>
                   <HBox fx:id="userHBox" layoutX="10.0" layoutY="210.0" onMouseClicked="#usersHBox_MouseEvent" prefHeight="38.0" stylesheets="@../../css/styles.css">
                      <children>
                         <HBox>

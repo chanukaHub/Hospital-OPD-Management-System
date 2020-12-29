@@ -56,8 +56,6 @@ public class AdminBaseController implements Initializable {
     @FXML
     private HBox appointmentHBox;
 
-    @FXML
-    private HBox referenceHBox;
 
     @FXML
     private HBox userHBox;
@@ -76,7 +74,7 @@ public class AdminBaseController implements Initializable {
         postalHBox.getStyleClass().add("hover_border");
         complainsHBox.getStyleClass().add("hover_border");
         appointmentHBox.getStyleClass().add("hover_border");
-        referenceHBox.getStyleClass().add("hover_border");
+
         userHBox.getStyleClass().add("hover_border");
 
         VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_appointments.fxml"));
@@ -93,7 +91,7 @@ public class AdminBaseController implements Initializable {
         visitorHBox.setBackground(background2);
         postalHBox.setBackground(background2);
         complainsHBox.setBackground(background2);
-        referenceHBox.setBackground(background2);
+
         dashboardHBox.setBackground(background2);
     }
 
@@ -104,7 +102,7 @@ public class AdminBaseController implements Initializable {
         postalHBox.getStyleClass().add("hover_border");
         complainsHBox.getStyleClass().add("hover_border");
         appointmentHBox.getStyleClass().add("hover_border");
-        referenceHBox.getStyleClass().add("hover_border");
+
         userHBox.getStyleClass().add("hover_border");
 
         VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_complaints.fxml"));
@@ -121,7 +119,7 @@ public class AdminBaseController implements Initializable {
         visitorHBox.setBackground(background2);
         postalHBox.setBackground(background2);
         dashboardHBox.setBackground(background2);
-        referenceHBox.setBackground(background2);
+
         appointmentHBox.setBackground(background2);
     }
 
@@ -132,7 +130,7 @@ public class AdminBaseController implements Initializable {
         postalHBox.getStyleClass().add("hover_border");
         complainsHBox.getStyleClass().add("hover_border");
         appointmentHBox.getStyleClass().add("hover_border");
-        referenceHBox.getStyleClass().add("hover_border");
+
         userHBox.getStyleClass().add("hover_border");
 
         HBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_dashboard.fxml"));
@@ -149,7 +147,7 @@ public class AdminBaseController implements Initializable {
         visitorHBox.setBackground(background2);
         postalHBox.setBackground(background2);
         complainsHBox.setBackground(background2);
-        referenceHBox.setBackground(background2);
+
         appointmentHBox.setBackground(background2);
 
     }
@@ -160,7 +158,7 @@ public class AdminBaseController implements Initializable {
         postalHBox.getStyleClass().add("hover_border");
         complainsHBox.getStyleClass().add("hover_border");
         appointmentHBox.getStyleClass().add("hover_border");
-        referenceHBox.getStyleClass().add("hover_border");
+
         userHBox.getStyleClass().add("hover_border");
 
         VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_visitors.fxml"));
@@ -177,7 +175,7 @@ public class AdminBaseController implements Initializable {
         dashboardHBox.setBackground(background2);
         postalHBox.setBackground(background2);
         complainsHBox.setBackground(background2);
-        referenceHBox.setBackground(background2);
+
         appointmentHBox.setBackground(background2);
 
     }
@@ -189,7 +187,7 @@ public class AdminBaseController implements Initializable {
         postalHBox.getStyleClass().add("hover_border");
         complainsHBox.getStyleClass().add("hover_border");
         appointmentHBox.getStyleClass().add("hover_border");
-        referenceHBox.getStyleClass().add("hover_border");
+
         userHBox.getStyleClass().add("hover_border");
 
         VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_postal.fxml"));
@@ -206,7 +204,7 @@ public class AdminBaseController implements Initializable {
         dashboardHBox.setBackground(background2);
         visitorHBox.setBackground(background2);
         complainsHBox.setBackground(background2);
-        referenceHBox.setBackground(background2);
+
         appointmentHBox.setBackground(background2);
 
     }
@@ -223,7 +221,7 @@ public class AdminBaseController implements Initializable {
         postalHBox.getStyleClass().add("hover_border");
         complainsHBox.getStyleClass().add("hover_border");
         appointmentHBox.getStyleClass().add("hover_border");
-        referenceHBox.getStyleClass().add("hover_border");
+
         userHBox.getStyleClass().add("hover_border");
 
         VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/admin/admin_users.fxml"));
@@ -240,7 +238,7 @@ public class AdminBaseController implements Initializable {
         dashboardHBox.setBackground(background2);
         postalHBox.setBackground(background2);
         complainsHBox.setBackground(background2);
-        referenceHBox.setBackground(background2);
+
         appointmentHBox.setBackground(background2);
 
     }
@@ -281,7 +279,7 @@ public class AdminBaseController implements Initializable {
         postalHBox.getStyleClass().add("hover_border");
         complainsHBox.getStyleClass().add("hover_border");
         appointmentHBox.getStyleClass().add("hover_border");
-        referenceHBox.getStyleClass().add("hover_border");
+
         userHBox.getStyleClass().add("hover_border");
 
 

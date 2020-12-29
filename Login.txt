@@ -1,0 +1,9 @@
+patient#Test patient#29/12/2020 16:24:52#Patient
+doctor#DoctorName#29/12/2020 16:25:14#Doctor
+doctor#DoctorName#29/12/2020 16:37:57#Doctor
+doctor#DoctorName#29/12/2020 16:41:55#Doctor
+patient#Test patient#29/12/2020 16:42:59#Patient
+r#null#29/12/2020 16:43:27#Receptionist
+admin#AdminName#29/12/2020 16:43:59#Admin
+admin#AdminName#29/12/2020 16:44:08#Admin
+admin#AdminName#29/12/2020 16:46:43#Admin
