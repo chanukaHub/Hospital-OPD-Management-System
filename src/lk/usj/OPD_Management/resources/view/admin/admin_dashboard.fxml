@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.admin.dashboard.AdminDashboardController">
    <children>
@@ -14,7 +18,7 @@
                <children>
                   <VBox prefWidth="500.0">
                      <children>
-                        <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="Support Request" VBox.vgrow="ALWAYS">
+                        <Text fill="#282b2f" strokeType="OUTSIDE" strokeWidth="0.0" text="New Complaints" VBox.vgrow="ALWAYS">
                            <font>
                               <Font name="Gotham Bold" size="16.0" />
                            </font>
@@ -26,10 +30,11 @@
                   </VBox>
                   <VBox maxHeight="1.7976931348623157E308" prefWidth="500.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <TableView fx:id="RequestTable" onMouseClicked="#RequestTable_MouseEvent" prefHeight="454.0" prefWidth="470.0" VBox.vgrow="ALWAYS">
+                        <TableView fx:id="RequestTable" focusTraversable="false" onMouseClicked="#RequestTable_MouseEvent" prefHeight="454.0" prefWidth="470.0" VBox.vgrow="ALWAYS">
                            <columns>
-                              <TableColumn prefWidth="100.0" text="Request No" />
-                              <TableColumn prefWidth="335.0" text="Title" />
+                              <TableColumn prefWidth="106.40003126859665" text="Complaint No" />
+                              <TableColumn prefWidth="179.19992065429688" text="Type" />
+                              <TableColumn prefWidth="144.0" text="Complaint By" />
                            </columns>
                            <VBox.margin>
                               <Insets />

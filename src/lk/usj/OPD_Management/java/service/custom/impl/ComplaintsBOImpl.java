@@ -93,4 +93,16 @@ public class ComplaintsBOImpl implements ComplaintBO {
         }
         return thisPatientComplaints;
     }
+
+    @Override
+    public ArrayList<ComplaintDTO> getNewComplaints() throws Exception {
+        ArrayList<ComplaintDTO> complaintDTOS=getAllComplaint();
+        ArrayList<ComplaintDTO> newComplaints =new ArrayList<>();
+        for (ComplaintDTO complaintDTO:complaintDTOS){
+            if (complaintDTO.getStatus().equals("NEW")){
+                newComplaints.add(complaintDTO);
+            }
+        }
+        return newComplaints;
+    }
 }
