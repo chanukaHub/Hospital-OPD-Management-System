@@ -9,8 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<VBox maxHeight="567.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.admin.dashboard.AdminDashboardController">
+<VBox fx:id="root" maxHeight="567.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.patient.dashboard.PatientDashboardController">
    <children>
       <VBox prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5;">
          <children>
@@ -22,7 +21,7 @@
                   <Insets bottom="15.0" />
                </VBox.margin>
             </Text>
-            <TableView fx:id="loginUserTable11" focusTraversable="false" mouseTransparent="true" prefHeight="218.0" styleClass="scroll-bar" stylesheets="@../../css/styles.css" VBox.vgrow="ALWAYS">
+            <TableView fx:id="appointmentTable" focusTraversable="false" mouseTransparent="true" onMouseClicked="#appointmentTable_MouseEvent" prefHeight="218.0" styleClass="scroll-bar" stylesheets="@../../css/styles.css" VBox.vgrow="ALWAYS">
                <columns>
                   <TableColumn minWidth="8.0" prefWidth="150.0" text="Appointment ID" />
                   <TableColumn prefWidth="320.0" text="Doctor" />
@@ -56,7 +55,7 @@
                   </VBox>
                   <VBox maxHeight="1.7976931348623157E308" prefHeight="473.0" prefWidth="465.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <TableView fx:id="RequestTable" onMouseClicked="#RequestTable_MouseEvent" prefHeight="300.0" prefWidth="470.0" VBox.vgrow="ALWAYS">
+                        <TableView fx:id="complaintTable" onMouseClicked="#complaintTable_MouseEvent" prefHeight="300.0" prefWidth="470.0" VBox.vgrow="ALWAYS">
                            <columns>
                               <TableColumn prefWidth="150.0" text="Complaint ID" />
                               <TableColumn prefWidth="290.0" text="Complaint Type" />
@@ -78,12 +77,12 @@
                   <Insets left="15.0" />
                </HBox.margin>
                <children>
-                  <JFXButton fx:id="addNewPatientBtn" alignment="CENTER" onAction="#addNewPatientBtn_OnActon" prefHeight="130.0" prefWidth="184.0" style="-fx-background-color: #1CC270; -fx-background-radius: 5px;" text="Add New &#10;Appointment" textAlignment="CENTER" textFill="WHITE">
+                  <JFXButton fx:id="addNewAppointmentBtn" alignment="CENTER" onAction="#addNewAppointmentBtn_OnAction" prefHeight="130.0" prefWidth="184.0" style="-fx-background-color: #1CC270; -fx-background-radius: 5px;" text="Add New &#10;Appointment" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Gotham-Book" size="19.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="addNewPatientBtn1" alignment="CENTER" onAction="#addNewPatientBtn_OnActon" prefHeight="130.0" prefWidth="184.0" style="-fx-background-color: #FF4242; -fx-background-radius: 5px;" text="Add New&#10;Complaint" textAlignment="CENTER" textFill="WHITE">
+                  <JFXButton fx:id="addNewComplaint" alignment="CENTER" onAction="#addNewComplaint_OnAction" prefHeight="130.0" prefWidth="184.0" style="-fx-background-color: #FF4242; -fx-background-radius: 5px;" text="Add New&#10;Complaint" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Gotham-Book" size="19.0" />
                      </font>
