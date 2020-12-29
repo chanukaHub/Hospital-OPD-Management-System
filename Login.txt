@@ -1,4 +1,0 @@
-patient#Test patient#29/12/2020 19:15:27#Patient
-admin#AdminName#29/12/2020 19:16:31#Admin
-patient#Test patient#29/12/2020 19:18:26#Patient
-admin#AdminName#29/12/2020 19:19:06#Admin

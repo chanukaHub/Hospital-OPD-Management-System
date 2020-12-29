@@ -20,6 +20,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class AdminBaseController implements Initializable {
 
@@ -213,11 +214,6 @@ public class AdminBaseController implements Initializable {
     }
 
     @FXML
-    void referenceHBox_MouseEvent(MouseEvent event) {
-
-    }
-
-    @FXML
     void usersHBox_MouseEvent(MouseEvent event) throws IOException{
         dashboardHBox.getStyleClass().add("hover_border");
         visitorHBox.getStyleClass().add("hover_border");
@@ -284,6 +280,7 @@ public class AdminBaseController implements Initializable {
             stage.setResizable(false);
             stage.centerOnScreen();
             stage.setTitle("Login");
+            stage.initStyle(StageStyle.UNDECORATED);
             stage.show();
 
             ((Node)(event.getSource())).getScene().getWindow().hide();

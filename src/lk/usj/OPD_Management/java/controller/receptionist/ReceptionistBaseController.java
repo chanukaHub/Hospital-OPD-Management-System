@@ -19,6 +19,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class ReceptionistBaseController implements Initializable {
 
@@ -236,6 +237,7 @@ public class ReceptionistBaseController implements Initializable {
             stage.setResizable(false);
             stage.centerOnScreen();
             stage.setTitle("Login");
+            stage.initStyle(StageStyle.UNDECORATED);
             stage.show();
 
             ((Node)(event.getSource())).getScene().getWindow().hide();
