@@ -31,6 +31,7 @@ import lk.usj.OPD_Management.java.controller.doctor.appointment.DoctorAppointmen
 import lk.usj.OPD_Management.java.controller.doctor.dashboard.DoctorDashboardController;
 import lk.usj.OPD_Management.java.controller.patient.PatientBaseController;
 import lk.usj.OPD_Management.java.controller.patient.appointment.PatientAppointmentController;
+import lk.usj.OPD_Management.java.controller.patient.complaint.PatientComplaintController;
 import lk.usj.OPD_Management.java.controller.patient.dashboard.PatientDashboardController;
 import lk.usj.OPD_Management.java.controller.patient.dashboard.PatientDashboardSaveAppointmentController;
 import lk.usj.OPD_Management.java.controller.patient.dashboard.PatientDashboardSaveComplaintController;
@@ -222,6 +223,7 @@ public class LoginController implements Initializable{
                         PatientDashboardSaveComplaintController.patientUsername = usernameTxt1.getText();
                         PatientDashboardSaveAppointmentController.patientUsername = usernameTxt1.getText();
                         PatientAppointmentController.patientUsername= usernameTxt1.getText();
+                        PatientComplaintController.patientUsername= usernameTxt1.getText();
                         //Load second scene
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/usj/OPD_Management/resources/view/patient/patient_base.fxml"));
                         Parent root = loader.load();

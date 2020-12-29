@@ -81,8 +81,23 @@ public class PatientBaseController implements Initializable {
     }
 
     @FXML
-    void complainsHBox_MouseEvent(MouseEvent event) {
+    void complainsHBox_MouseEvent(MouseEvent event) throws Exception{
+        dashboardHBox.getStyleClass().add("hover_border");
+        appointmentHBox.getStyleClass().add("hover_border");
+        complainsHBox.getStyleClass().add("hover_border");
 
+        VBox pane= FXMLLoader.load(this.getClass().getResource("/lk/usj/OPD_Management/resources/view/patient/patient_complaints.fxml"));
+        root.getChildren().setAll(pane);
+        complainsHBox.getStyleClass().removeAll("hover_border");
+
+        BackgroundFill background_fill = new BackgroundFill(Color.rgb(80, 157, 255), CornerRadii.EMPTY, Insets.EMPTY);
+        Background background = new Background(background_fill);
+        complainsHBox.setBackground(background);
+
+        BackgroundFill background_fill2 = new BackgroundFill(Color.TRANSPARENT, CornerRadii.EMPTY, Insets.EMPTY);
+        Background background2 = new Background(background_fill2);
+        dashboardHBox.setBackground(background2);
+        appointmentHBox.setBackground(background2);
     }
 
     @FXML
