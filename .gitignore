@@ -1,8 +1,13 @@
 out
+.idea
 OPD_Management.iml
 Admin.txt
 Doctor.txt
 Receptionist.txt
 Visitor.txt
 Patient.txt
+Login.txt
+Appointment.txt
+Complaint.txt
+Postal.txt
 StaffPhotograph
