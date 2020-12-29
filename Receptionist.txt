@@ -1,3 +1,1 @@
-receptionist#null#null#null#receptionist#30/11/0002# , , #null#receptionist#R0001#null#30/11/0002#null#null#null
-r#null#null#null#r#30/11/0002# , , #null#r#R0001#null#30/11/0002#null#null#null
-787878787V#TestReceptionist1#Female#0776600000#787878787V#12/12/1990#line1,line2,Galle#Single#787878787V#R0002#recep@gmail.com#17/12/2020#StaffPhotograph\787878787V171317.jpg#AttachmentDocumentsStorage\787878787V171317.txt#2nd Receptionist !
+receptionist#TestReceptionist#Male#0770000000#receptionist#01/01/2020#Line1,line2,Town#Single#receptionist#R0001#rec@gmail.com#29/12/2020#StaffPhotograph\receptionist293227.jpg#AttachmentDocumentsStorage\receptionist293227.txt#nothing

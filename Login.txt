@@ -1,0 +1,6 @@
+admin#AdminName#29/12/2020 23:25:16#Admin
+admin#AdminName#29/12/2020 23:26:33#Admin
+patient#TestPatient#29/12/2020 23:32:55#Patient
+doctor#TestDoctor#29/12/2020 23:33:06#Doctor
+receptionist#TestReceptionist#29/12/2020 23:33:18#Receptionist
+admin#AdminName#29/12/2020 23:33:27#Admin
