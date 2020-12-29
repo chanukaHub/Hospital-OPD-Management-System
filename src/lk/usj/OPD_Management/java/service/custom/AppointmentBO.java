@@ -5,6 +5,7 @@ import lk.usj.OPD_Management.java.dto.DoctorDTO;
 import lk.usj.OPD_Management.java.service.SuperBO;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public interface AppointmentBO extends SuperBO {
     int getNextAppointmentID()throws Exception;
@@ -40,4 +41,6 @@ public interface AppointmentBO extends SuperBO {
     ArrayList<AppointmentDTO> loadThisDoctorAppointmentTable(String doctorUserName) throws Exception;
 
     ArrayList<AppointmentDTO> getTodayAppointmentListUsingPatientUsername(String patientUsername) throws Exception;
+
+    ArrayList<AppointmentDTO> getAppointmentUsingDateRange(Date fromDate, Date toDate) throws Exception;
 }
