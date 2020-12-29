@@ -38,7 +38,7 @@
             <Insets top="15.0" />
          </VBox.margin>
          <children>
-            <AnchorPane fx:id="root" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+            <AnchorPane fx:id="root" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 5;" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
    </children>

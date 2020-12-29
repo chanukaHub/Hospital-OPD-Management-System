@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="760.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.appointment.ReceptionistAppointmentEditAppointmentController">
    <children>
@@ -21,19 +28,6 @@
                         <Insets bottom="5.0" left="15.0" right="15.0" top="15.0" />
                      </VBox.margin>
                   </Text>
-               </children>
-            </VBox>
-            <VBox alignment="TOP_RIGHT" prefWidth="50.0" HBox.hgrow="ALWAYS">
-               <children>
-                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="32.0" styleClass="hover_bg_color_red" stylesheets="@../../css/styles.css">
-                     <children>
-                        <ImageView fitHeight="8.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="8.0">
-                           <image>
-                              <Image url="@../../images/Close_Icon.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </AnchorPane>
                </children>
             </VBox>
          </children>
