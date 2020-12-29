@@ -1,3 +1,6 @@
 C0001#Long Wait Times#ravee#087676#28/12/2020#sfsdfs#nothing#sfsffsf#AttachmentDocumentsStorage\complaintravee11837.txt#NEW
 C0002#Insurance and Billing#dfbdfb#242342#28/12/2020#vsfvsfvs#aaaaaaaaaaaaaaaa#sfvsvsv#AttachmentDocumentsStorage\complaintdfbdfb12023.txt#IN PROGRESS
 C0003#Long Wait Times#patient#9796987987#29/12/2020#sgfsfsf#sfgsfgs#fdsfsfsf#AttachmentDocumentsStorage\complaintpatient21358.txt#NEW
+C0004#Issues with Staff Members#patient#hfdchgfjg#29/12/2020#gfhgfhgf##gfhfhgfh#AttachmentDocumentsStorage\complaintpatient21456.txt#NEW
+C0005#Insurance and Billing#patient#658768#29/12/2020#jgfhgfjjhv##hfdgdhgfhfc#AttachmentDocumentsStorage\complaintpatient21411.txt#NEW
+C0006#Amount of Time Spent with Doctor#patient#43243#29/12/2020#dsfsf##gsgs#AttachmentDocumentsStorage\complaintpatient21416.txt#NEW
