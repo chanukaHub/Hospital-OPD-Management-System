@@ -9,9 +9,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.receptionist.postal.ReceptionistPostalController">
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="760.0" style="-fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.usj.OPD_Management.java.controller.admin.report.AdminReportController">
    <children>
-      <HBox prefHeight="240.0" prefWidth="730.0" spacing="15.0">
+      <HBox prefHeight="260.0" prefWidth="730.0" spacing="15.0">
          <children>
             <VBox prefHeight="240.0" prefWidth="230.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5;">
                <children>
@@ -31,7 +31,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXDatePicker defaultColor="#b8b6c7" prefHeight="30.0" prefWidth="200.0" promptText="Select date" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-date-picker" stylesheets="@../../css/styles.css">
+                  <JFXDatePicker fx:id="appointmentFromDatePicker" defaultColor="#b8b6c7" onAction="#appointmentFromDatePicker_OnAction" prefHeight="30.0" prefWidth="200.0" promptText="Select date" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-date-picker" stylesheets="@../../css/styles.css">
                      <padding>
                         <Insets left="10.0" />
                      </padding>
@@ -47,7 +47,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXDatePicker defaultColor="#b8b6c7" prefHeight="30.0" prefWidth="200.0" promptText="Select date" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-date-picker" stylesheets="@../../css/styles.css">
+                  <JFXDatePicker fx:id="appointmentToDatePicker" defaultColor="#b8b6c7" onAction="#appointmentToDatePicker_OnAction" prefHeight="30.0" prefWidth="200.0" promptText="Select date" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-date-picker" stylesheets="@../../css/styles.css">
                      <padding>
                         <Insets left="10.0" />
                      </padding>
@@ -57,7 +57,7 @@
                   </JFXDatePicker>
                   <Pane nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="229.0">
                      <children>
-                        <JFXButton alignment="CENTER" prefWidth="100.0" style="-fx-background-color: #2484FF;" text="Export" textFill="WHITE">
+                        <JFXButton fx:id="generateAppointmentBtn" alignment="CENTER" onAction="#generateAppointmentBtn_OnAction" prefWidth="100.0" style="-fx-background-color: #2484FF;" text="Export" textFill="WHITE">
                            <font>
                               <Font name="Gotham-Book" size="12.0" />
                            </font>
@@ -90,7 +90,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXDatePicker defaultColor="#b8b6c7" prefHeight="30.0" prefWidth="200.0" promptText="Select date" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-date-picker" stylesheets="@../../css/styles.css">
+                  <JFXDatePicker fx:id="userLogFromDatePicker" defaultColor="#b8b6c7" onAction="#userLogFromDatePicker_OnAction" prefHeight="30.0" prefWidth="200.0" promptText="Select date" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-date-picker" stylesheets="@../../css/styles.css">
                      <padding>
                         <Insets left="10.0" />
                      </padding>
@@ -106,7 +106,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXDatePicker defaultColor="#b8b6c7" prefHeight="30.0" prefWidth="200.0" promptText="Select date" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-date-picker" stylesheets="@../../css/styles.css">
+                  <JFXDatePicker fx:id="userLogToDatePicker" defaultColor="#b8b6c7" onAction="#userLogToDatePicker_OnAction" prefHeight="30.0" prefWidth="200.0" promptText="Select date" style="-fx-background-color: #F2F0FB; -fx-background-radius: 5px;" styleClass="jfx-date-picker" stylesheets="@../../css/styles.css">
                      <padding>
                         <Insets left="10.0" />
                      </padding>
@@ -116,7 +116,7 @@
                   </JFXDatePicker>
                   <Pane nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="229.0">
                      <children>
-                        <JFXButton alignment="CENTER" prefWidth="100.0" style="-fx-background-color: #2484FF;" text="Export" textFill="WHITE">
+                        <JFXButton fx:id="generateUserLogBtn" alignment="CENTER" onAction="#generateUserLogBtn_OnAction" prefWidth="100.0" style="-fx-background-color: #2484FF;" text="Export" textFill="WHITE">
                            <font>
                               <Font name="Gotham-Book" size="12.0" />
                            </font>
@@ -150,7 +150,7 @@
                   </Text>
                   <Pane nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="229.0">
                      <children>
-                        <JFXButton alignment="CENTER" prefWidth="100.0" style="-fx-background-color: #2484FF;" text="Export" textFill="WHITE">
+                        <JFXButton fx:id="generatePatientLoginBtn" alignment="CENTER" onAction="#generatePatientLoginBtn_OnAction" prefWidth="100.0" style="-fx-background-color: #2484FF;" text="Export" textFill="WHITE">
                            <font>
                               <Font name="Gotham-Book" size="12.0" />
                            </font>
