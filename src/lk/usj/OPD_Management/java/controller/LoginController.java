@@ -19,6 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import lk.usj.OPD_Management.java.common.Common;
@@ -46,6 +47,10 @@ public class LoginController implements Initializable{
     private HBox root;
 
     @FXML
+    private VBox closeVBox;
+
+
+    @FXML
     private ResourceBundle resources;
 
     @FXML
@@ -71,6 +76,11 @@ public class LoginController implements Initializable{
 
     @FXML
     private JFXButton loginButton1;
+
+    @FXML
+    void closeVBox_MouseEvent(MouseEvent event) {
+        System.exit(0);
+    }
 
     @FXML
     void ReceptionistClick(MouseEvent event) {
