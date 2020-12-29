@@ -129,4 +129,22 @@ public class LoginBOImpl implements LoginBO {
 
         return logins;
     }
+
+    @Override
+    public ArrayList<LoginDTO> getAppointmentUsingDateRange(Date fromDate, Date toDate) throws Exception {
+        ArrayList<Login> allLogins = loginDAO.getAll();
+        ArrayList<LoginDTO> logins = new ArrayList<>();
+        for (Login login : allLogins) {
+            if (login.getLoginDateTime().after(fromDate) && login.getLoginDateTime().before(toDate)){
+                logins.add(new LoginDTO(
+                        login.getUserName(),
+                        login.getName(),
+                        login.getLoginDateTime(),
+                        login.getUserType()
+                ));
+            }
+
+        }
+        return logins;
+    }
 }
