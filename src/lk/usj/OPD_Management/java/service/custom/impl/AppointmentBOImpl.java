@@ -272,5 +272,16 @@ public class AppointmentBOImpl implements AppointmentBO {
         return dateRangeAppointments;
     }
 
+    @Override
+    public ArrayList<AppointmentDTO> getAppointmentListUsingPatientUsername(String patientUsername) throws Exception {
+        ArrayList<AppointmentDTO> appointmentDTOS=getAppointmentList();
+        ArrayList<AppointmentDTO> thisPatientAppointments =new ArrayList<>();
+        for (AppointmentDTO appointmentDTO:appointmentDTOS){
+            if (appointmentDTO.getPatientUsername().equals(patientUsername)){
+                thisPatientAppointments.add(appointmentDTO);
+            }
+        }return thisPatientAppointments;
+    }
+
 
 }

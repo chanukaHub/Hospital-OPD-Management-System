@@ -43,4 +43,6 @@ public interface AppointmentBO extends SuperBO {
     ArrayList<AppointmentDTO> getTodayAppointmentListUsingPatientUsername(String patientUsername) throws Exception;
 
     ArrayList<AppointmentDTO> getAppointmentUsingDateRange(Date fromDate, Date toDate) throws Exception;
+
+    ArrayList<AppointmentDTO> getAppointmentListUsingPatientUsername(String patientUsername)throws Exception;
 }
