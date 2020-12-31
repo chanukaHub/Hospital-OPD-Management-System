@@ -37,6 +37,11 @@ OPD (Out-Patient Department) is responsible for managing out-patients who just c
 ![SceneBuilder](https://img.shields.io/badge/Tool-SceneBuilder-lightgrey) 
 ![Trello](https://img.shields.io/badge/Tool-Trello-lightgrey) 
 
+## High-Level Diagram
+<p align="middle">
+  <img src="../master/interfaces/Untitled Diagram-Page-2.png"/>
+ </p>
+
 ## Login Interface & Credentials
 
 |  User Type   |   Username    |   Password   |
